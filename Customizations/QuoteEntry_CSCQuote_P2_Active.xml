@@ -76,9 +76,9 @@
     <Key2>App.QuoteEntry.QuoteForm</Key2>
     <Key3 />
     <Description />
-    <LastUpdated>2019-06-10T00:00:00-04:00</LastUpdated>
-    <LastUpdatedBy>19289-JStauffer</LastUpdatedBy>
-    <Version>6/10/2019 8:56:22 AM</Version>
+    <LastUpdated>2019-06-21T00:00:00-04:00</LastUpdated>
+    <LastUpdatedBy>19289-EBlackwelder</LastUpdatedBy>
+    <Version>6/21/2019 10:54:13 A</Version>
     <DataBaseVersion>0</DataBaseVersion>
     <SysCharacter01 />
     <SysCharacter02 />
@@ -183,7 +183,7 @@ jb
 [19289-Manager: 1/15/2019 9:46:03 AM]</CommentText>
     <CGCCode />
     <SystemFlag>false</SystemFlag>
-    <SysRevID>9889400194</SysRevID>
+    <SysRevID>9938292077</SysRevID>
     <SysRowID>581f2f74-6551-4e76-a1b3-e9e3b5a038ae</SysRowID>
     <SysCheckBox06>false</SysCheckBox06>
     <SysCheckBox07>false</SysCheckBox07>
@@ -1404,6 +1404,13 @@ jb
 // Custom code for QuoteForm
 // Created: 5/16/2018 3:44:01 PM
 // **************************************************
+//
+//	REVISION LOG
+//
+//	eb1 06/21/19 eric blackwelder @ compudata
+//		modify logic for Apply Color to only target lines that are flagged as paintable
+//
+// **************************************************
 
 extern alias Erp_Contracts_BO_QuoteDtlSearch;
 extern alias Erp_Contracts_BO_Quote;
@@ -2398,8 +2405,12 @@ private void CallDynamicQueryPainLn(int QuoteNum, int CustNum, string PntColor, 
 				             foreach (DataRow item in dsQuote.Tables["QuoteDtl"].Rows)
 				                         
 				             {
-				                  if (item["PartNum"].ToString() == QuotePart &amp;amp;&amp;amp; Convert.ToInt32(item["QuoteLine"]) == QuoteLn &amp;amp;&amp;amp; Convert.ToInt32(item["DisplaySeq"])==  LnSeq )
-				                    {  
+								//eb1:
+								//if (item["PartNum"].ToString() == QuotePart &amp;amp;&amp;amp; Convert.ToInt32(item["QuoteLine"]) == QuoteLn &amp;amp;&amp;amp; Convert.ToInt32(item["DisplaySeq"])==  LnSeq )
+								if ((item["PartNum"].ToString() == QuotePart &amp;amp;&amp;amp; Convert.ToInt32(item["QuoteLine"]) == QuoteLn &amp;amp;&amp;amp; Convert.ToInt32(item["DisplaySeq"])==  LnSeq )
+								&amp;amp;&amp;amp; ((bool)item["CheckBox01"] == true))
+
+								{
 		                            
 					                   item.BeginEdit(); 
 					                   item["CheckBox01"] = Paintable;
@@ -2409,7 +2420,7 @@ private void CallDynamicQueryPainLn(int QuoteNum, int CustNum, string PntColor, 
 		                           
 		                         
 		                  
-			                   }
+								}
 			
 			                 }
 			 
@@ -4133,6 +4144,7 @@ private string GetInsideSalesRep(string SalesRepCode)
 
 
 
+
 &lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
@@ -4949,7 +4961,7 @@ private string GetInsideSalesRep(string SalesRepCode)
     &lt;ControlName&gt;quoteLinePanel1&lt;/ControlName&gt;
     &lt;Key&gt;2f79fd4a-b329-477d-b741-aed428550339&lt;/Key&gt;
     &lt;PropertyName&gt;Width&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;952&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;929&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -4961,7 +4973,7 @@ private string GetInsideSalesRep(string SalesRepCode)
     &lt;ControlName&gt;quoteLinePanel1&lt;/ControlName&gt;
     &lt;Key&gt;2f79fd4a-b329-477d-b741-aed428550339&lt;/Key&gt;
     &lt;PropertyName&gt;AnchorWidth&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;952&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;929&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -4973,7 +4985,7 @@ private string GetInsideSalesRep(string SalesRepCode)
     &lt;ControlName&gt;quoteLinePanel1&lt;/ControlName&gt;
     &lt;Key&gt;2f79fd4a-b329-477d-b741-aed428550339&lt;/Key&gt;
     &lt;PropertyName&gt;Height&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;580&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;698&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -4985,7 +4997,7 @@ private string GetInsideSalesRep(string SalesRepCode)
     &lt;ControlName&gt;quoteLinePanel1&lt;/ControlName&gt;
     &lt;Key&gt;2f79fd4a-b329-477d-b741-aed428550339&lt;/Key&gt;
     &lt;PropertyName&gt;AnchorHeight&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;580&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;698&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -9713,7 +9725,7 @@ private string GetInsideSalesRep(string SalesRepCode)
     &lt;ControlName&gt;lblShowKitDtls&lt;/ControlName&gt;
     &lt;Key&gt;c5fa96a1-6135-4d2f-921c-dcd8ae2642be-1&lt;/Key&gt;
     &lt;PropertyName&gt;Left&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;710&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;649&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -10193,7 +10205,7 @@ private string GetInsideSalesRep(string SalesRepCode)
     &lt;ControlName&gt;epiPntMtlLn&lt;/ControlName&gt;
     &lt;Key&gt;20a03909-6fa4-41b4-8a87-4ed2bd1b6f41&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;2&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;3&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -10313,7 +10325,7 @@ private string GetInsideSalesRep(string SalesRepCode)
     &lt;ControlName&gt;epiReComputeQtyBtnLn&lt;/ControlName&gt;
     &lt;Key&gt;d553e19b-db95-40b2-8f30-da90070a7934&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;2&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -10433,7 +10445,7 @@ private string GetInsideSalesRep(string SalesRepCode)
     &lt;ControlName&gt;epiApplyAllLnBtn&lt;/ControlName&gt;
     &lt;Key&gt;b74a8901-0ad8-4fa8-a69c-b6dcec95503b&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;4&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -10505,7 +10517,7 @@ private string GetInsideSalesRep(string SalesRepCode)
     &lt;ControlName&gt;baqComboC1&lt;/ControlName&gt;
     &lt;Key&gt;289c2bed-dbc6-4a42-a618-0a5870228509&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -15905,7 +15917,7 @@ private string GetInsideSalesRep(string SalesRepCode)
     &lt;ControlName&gt;epiFreightLnBtn&lt;/ControlName&gt;
     &lt;Key&gt;4639a984-e57f-4f6e-8178-aeecbdd741c1&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;3&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;4&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -16385,7 +16397,7 @@ private string GetInsideSalesRep(string SalesRepCode)
     &lt;ControlName&gt;grpAmounts&lt;/ControlName&gt;
     &lt;Key&gt;642bd9f0-0ce0-44f3-b615-4f18b492596d&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -19061,7 +19073,7 @@ private string GetInsideSalesRep(string SalesRepCode)
     &lt;ControlName&gt;grpQuote&lt;/ControlName&gt;
     &lt;Key&gt;3eaf7d71-eb69-4fa8-b82e-8c514a7d2c31&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
