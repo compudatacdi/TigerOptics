@@ -1,0 +1,220 @@
+{
+  "odata.metadata": "https://pii-app1/ERPPIITest/api/v1/Erp.BO.SalesRepSvc/$metadata#Epicor.RestApi.SalesReps&$select=Company,%20SalesRepCode,%20Name",
+  "value": [
+    {
+      "Company": "PI03",
+      "SalesRepCode": "007",
+      "Name": "James Bond"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "101",
+      "Name": "E-tone Tech"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "102",
+      "Name": "Beijing TeamCorp Technology"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "104",
+      "Name": "Ankersmid M&C Bvba"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "105",
+      "Name": "SICA Medición"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "139",
+      "Name": "Semitorr Group, inc"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "140",
+      "Name": "Advanced Technology Solutions"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "143",
+      "Name": "APT S.r.l"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "145",
+      "Name": "APP Systems (India) Pvt Ltd"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "146",
+      "Name": "dpUNION"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "156",
+      "Name": "C. K. Environment A/S"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "158",
+      "Name": "Kull Instruments"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "159",
+      "Name": "Yaga AS"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "160",
+      "Name": "Mars Bioanalytical Pvt. Ltd."
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "166",
+      "Name": "A-Tech Technology Co., Ltd"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "208",
+      "Name": "Online Analytics"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "213",
+      "Name": "ANAGAZ"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "226",
+      "Name": "Thomson Group"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "227",
+      "Name": "YSW Semi"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "233",
+      "Name": "Sintrol Oy"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "407",
+      "Name": "Tokyo Instruments, Inc."
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "412",
+      "Name": "Quest Technologies Shanghai"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "413",
+      "Name": "Sun Woo Corporation"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "426",
+      "Name": "BERNT Messtechnik GmbH"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "430",
+      "Name": "United Analyzers Japan Limited"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "433",
+      "Name": "Shanghai FZ Technology"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "602",
+      "Name": "Process Analyzer Systems (PAS)"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "625",
+      "Name": "Atlas Technology Corporation"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "900",
+      "Name": "Chad Nelson"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "902",
+      "Name": "Chris Stokes"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "903",
+      "Name": "Dan Tomlinson"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "904",
+      "Name": "Drew Thomson"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "905",
+      "Name": "Erika Coyne"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "906",
+      "Name": "Hansen Wang"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "907",
+      "Name": "James Belanger"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "908",
+      "Name": "John Dunleavy"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "909",
+      "Name": "Karen Riccio"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "910",
+      "Name": "Luna Rowan"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "911",
+      "Name": "Mike Frey"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "912",
+      "Name": "Peter Maushake"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "913",
+      "Name": "Samantha Holmes"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "914",
+      "Name": "Steve Youse"
+    },
+    {
+      "Company": "PI03",
+      "SalesRepCode": "99",
+      "Name": "Jay Stauffer"
+    }
+  ]
+}

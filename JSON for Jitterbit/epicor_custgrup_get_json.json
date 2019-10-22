@@ -1,0 +1,24 @@
+{
+  "odata.metadata": "string",
+  "value": [
+    {
+      "Company": "PI03",
+      "GroupCode": "string",
+      "GroupDesc": "string",
+      "SalesCatID": "string",
+      "GlobalCustGrup": true,
+      "GlobalLock": true,
+      "SysRevID": "0",
+      "SysRowID": "00000000-0000-0000-0000-000000000000",
+      "CustGrupPriceLists": "string",
+      "AvailPriceLists": "string",
+      "CustGrupPLDesc": "string",
+      "AvailPLDesc": "string",
+      "BitFlag": 0,
+      "SalesCatIDDescription": "string",
+      "RowMod": "string",
+      "SFId_c": "string",
+      "UD_SysRevID": ""
+    }
+  ]
+}

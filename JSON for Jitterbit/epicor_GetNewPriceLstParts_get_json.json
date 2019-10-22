@@ -1,0 +1,17 @@
+{
+  "odata.metadata": "https://pii-app1/ERPPIITest/api/v1/BaqSvc/GetNewPriceLstParts/$metadata#Epicor.DynamicQuery.QueryResults",
+  "value": [
+    {
+      "PriceLst_Company": "PI03",
+      "PriceLst_ListCode": "eb1",
+      "PriceLst_ListDescription": "test pricelist eb1",
+      "PriceLst_SFId_c": "01s1U000007Gl5YQAS",
+      "PriceLstParts_PartNum": "eb1",
+      "PriceLstParts_UOMCode": "EA",
+      "PriceLstParts_BasePrice": "42.00000",
+      "PriceLstParts_SFId_c": "",
+      "Part_SFId_c": "01t1U000002H8s0QAC",
+      "RowIdent": "d073bdaf-ef31-4f87-95df-2dde159c4e62"
+    }
+  ]
+}

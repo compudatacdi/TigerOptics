@@ -1,0 +1,9 @@
+{
+  "odata.metadata": "string",
+  "value": [
+    {
+      "CustNum": 0,
+      "SFId_c": "string"
+    }
+  ]
+}

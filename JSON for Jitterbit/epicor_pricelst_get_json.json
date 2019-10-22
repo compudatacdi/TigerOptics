@@ -1,0 +1,29 @@
+{
+  "odata.metadata": "string",
+  "value": [
+    {
+      "Company": "PI03",
+      "ListCode": "string",
+      "CurrencyCode": "string",
+      "ListDescription": "string",
+      "StartDate": "2019-09-17T21:31:29.613Z",
+      "EndDate": "2019-09-17T21:31:29.613Z",
+      "WarehouseList": "string",
+      "GlobalPriceLst": true,
+      "GlobalLock": true,
+      "ListType": "string",
+      "SysRevID": "0",
+      "SysRowID": "00000000-0000-0000-0000-000000000000",
+      "UseZeroPrice": true,
+      "WareHouseListDescription": "string",
+      "DspWareHouseList": "string",
+      "BitFlag": 0,
+      "CurrencyCodeCurrName": "string",
+      "CurrencyCodeCurrencyID": "string",
+      "CurrencyCodeDocumentDesc": "string",
+      "CurrencyCodeCurrSymbol": "string",
+      "CurrencyCodeCurrDesc": "string",
+      "RowMod": "string"
+    }
+  ]
+}
