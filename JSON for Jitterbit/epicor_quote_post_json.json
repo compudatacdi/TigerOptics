@@ -350,7 +350,5 @@
   "SFRegion_c": "string",
   "SFCountry_c": "string",
   "EndUserCustNum_c": 0,
-  "Region_c": "string",
-  "Country_c": 0,
   "SFMarket_c": "string"
 }
