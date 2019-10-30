@@ -78,7 +78,7 @@
     <Description>PII Quote Entry Customization</Description>
     <LastUpdated>2019-10-30T00:00:00-04:00</LastUpdated>
     <LastUpdatedBy>manager</LastUpdatedBy>
-    <Version>10/30/2019 1:50:38 P</Version>
+    <Version>10/30/2019 2:54:34 P</Version>
     <DataBaseVersion>0</DataBaseVersion>
     <SysCharacter01 />
     <SysCharacter02 />
@@ -95,11 +95,11 @@
     <SysCheckBox03>false</SysCheckBox03>
     <SysCheckBox04>false</SysCheckBox04>
     <SysCheckBox05>false</SysCheckBox05>
-    <CommentText>JDS - removed Order Quantity from Line Detial.
-[jstauffer: 9/27/2019 11:17:48 AM]</CommentText>
+    <CommentText>
+[manager: 10/30/2019 2:54:29 PM]</CommentText>
     <CGCCode />
     <SystemFlag>false</SystemFlag>
-    <SysRevID>7269574</SysRevID>
+    <SysRevID>7297357</SysRevID>
     <SysRowID>e0f1f6a7-fb5b-4201-811a-bed34bb980ab</SysRowID>
     <SysCheckBox06>false</SysCheckBox06>
     <SysCheckBox07>false</SysCheckBox07>
@@ -351,6 +351,54 @@
     &lt;GroupID /&gt;
     &lt;ControlsID /&gt;
   &lt;/Controls&gt;
+  &lt;Controls&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;eucMarket&lt;/ControlName&gt;
+    &lt;Key&gt;8f43168f-3cbe-4756-8209-2fa8327f548f&lt;/Key&gt;
+    &lt;ParentControlKey&gt;7a521e47-48c3-49a7-b0cb-6f9c8a151106&lt;/ParentControlKey&gt;
+    &lt;ControlType&gt;Ice.Lib.Framework.EpiUltraCombo&lt;/ControlType&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserId /&gt;
+    &lt;GroupID /&gt;
+    &lt;ControlsID /&gt;
+  &lt;/Controls&gt;
+  &lt;Controls&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;ice.core.session.dll&lt;/ControlName&gt;
+    &lt;Key&gt;EpiString.ExecutionPath*ice.core.session.dll&lt;/Key&gt;
+    &lt;ParentControlKey /&gt;
+    &lt;ControlType&gt;AssemblyReference&lt;/ControlType&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserId /&gt;
+    &lt;GroupID /&gt;
+    &lt;ControlsID /&gt;
+  &lt;/Controls&gt;
+  &lt;Controls&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;ice.contracts.bo.dynamicquery.dll&lt;/ControlName&gt;
+    &lt;Key&gt;EpiString.ExecutionPath*ice.contracts.bo.dynamicquery.dll&lt;/Key&gt;
+    &lt;ParentControlKey /&gt;
+    &lt;ControlType&gt;AssemblyReference&lt;/ControlType&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserId /&gt;
+    &lt;GroupID /&gt;
+    &lt;ControlsID /&gt;
+  &lt;/Controls&gt;
+  &lt;Controls&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;epicor.servicemodel.dll&lt;/ControlName&gt;
+    &lt;Key&gt;EpiString.ExecutionPath*epicor.servicemodel.dll&lt;/Key&gt;
+    &lt;ParentControlKey /&gt;
+    &lt;ControlType&gt;AssemblyReference&lt;/ControlType&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserId /&gt;
+    &lt;GroupID /&gt;
+    &lt;ControlsID /&gt;
+  &lt;/Controls&gt;
   &lt;Properties&gt;
     &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
     &lt;ControlName&gt;lblShipToName&lt;/ControlName&gt;
@@ -438,8 +486,10 @@
 //	eb1 09/03/19 eric blackwelder @ cdi
 //		new customization
 //		add tab "Sales Force" and the objects in it
+//		references added
 //	eb2 10/30/19 eric blackwelder @ cdi
 //		add lookup functionality for market code
+//		more references added
 //
 // **************************************************
 
@@ -454,6 +504,7 @@ extern alias Erp_Contracts_BO_ShipTo;
 extern alias Erp_UI_CustomerEntry;
 extern alias Erp_Adapters_IndClassCodeSearch;
 extern alias Erp_Contracts_BO_IndClassCodeSearch;
+extern alias Ice_Contracts_BO_DynamicQuery;
 
 
 using System;
@@ -492,24 +543,31 @@ using Infragistics.Win.UltraWinToolbars;
 using System;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Ice.Proxy.BO;
+using Ice.Core;
+using Ice.Contracts;
+using Epicor.ServiceModel.Channels;
+using Ice.BO;
+using Ice.Common;
 
 public class Script
 {
 	// ** Wizard Insert Location - Do Not Remove 'Begin/End Wizard Added Module Level Variables' Comments! **
 	// Begin Wizard Added Module Level Variables **
 
-	private EpiDataView edvQuoteHed;
 	// End Wizard Added Module Level Variables **
 
 	// Add Custom Module Level Variables Here **
+
+	//eb2:
+	private EpiDataView edvQuoteHed;
+	private DynamicQueryImpl dynamicQuery;
 
 	public void InitializeCustomCode()
 	{
 		// ** Wizard Insert Location - Do not delete 'Begin/End Wizard Added Variable Initialization' lines **
 		// Begin Wizard Added Variable Initialization
 
-		this.edvQuoteHed = ((EpiDataView)(this.oTrans.EpiDataViews["QuoteHed"]));
-		this.edvQuoteHed.EpiViewNotification += new EpiViewNotification(this.edvQuoteHed_EpiViewNotification);
 		// End Wizard Added Variable Initialization
 
 		// Begin Wizard Added Custom Method Calls
@@ -521,6 +579,9 @@ public class Script
 		btnSFCountry.Click += new System.EventHandler(btnSFCountry_Click);
 		//eb2:
 		btnMarket.Click += new System.EventHandler(btnMarket_Click);
+		this.edvQuoteHed = ((EpiDataView)(this.oTrans.EpiDataViews["QuoteHed"]));
+		Session session = (Session)this.oTrans.Session;
+		dynamicQuery = WCFServiceSupport.CreateImpl&amp;lt;DynamicQueryImpl&amp;gt;(session, ImplBase&amp;lt;DynamicQuerySvcContract&amp;gt;.UriPath);
 
 	}
 
@@ -529,8 +590,6 @@ public class Script
 		// ** Wizard Insert Location - Do not delete 'Begin/End Wizard Added Object Disposal' lines **
 		// Begin Wizard Added Object Disposal
 
-		this.edvQuoteHed.EpiViewNotification -= new EpiViewNotification(this.edvQuoteHed_EpiViewNotification);
-		this.edvQuoteHed = null;
 		// End Wizard Added Object Disposal
 
 		// Begin Custom Code Disposal
@@ -542,8 +601,46 @@ public class Script
 		btnSFCountry.Click -= new System.EventHandler(btnSFCountry_Click);
 		//eb2:
 		btnMarket.Click -= new System.EventHandler(btnMarket_Click);
+		this.edvQuoteHed = null;
+		dynamicQuery = null;
+		dynamicQuery.Dispose();
 
 	}
+
+	//eb2:
+	private void QuoteForm_Load(object sender, EventArgs args)
+	{
+		DynamicQueryDataSet ds = new DynamicQueryDataSet();
+		try
+		{
+			ds = dynamicQuery.GetByID("GetMarketIndustryClassCodes");
+		}
+		catch (BusinessObjectException ex)
+		{
+			if (   (ex.ToString().Contains("does not exist"))
+			    || (ex.ToString().Contains("id is not found")) )
+			{
+				MessageBox.Show("The BAQ 'GetMarketIndustryClassCodes' does not exist.");
+			}
+			else
+			{
+				MessageBox.Show(ex.ToString());
+			}
+		}
+
+		QueryExecutionDataSet execDS = new QueryExecutionDataSet();
+		execDS.AcceptChanges();
+		
+		DataTable dtResults = dynamicQuery.Execute(ds, execDS).Tables["Results"];
+		eucMarket.DataSource = dtResults;
+		eucMarket.DataMember = "";
+		eucMarket.ValueMember = "ICCode_Description";
+		eucMarket.DisplayMember = "ICCode_Description";
+		eucMarket.DataBind();                
+
+
+	}
+
 
 	private void btnSFEndUser_Click(object sender, System.EventArgs args)
 	{			
@@ -560,9 +657,6 @@ public class Script
 	//eb2:
 	private void btnMarket_Click(object sender, System.EventArgs args)
 	{			
-		//SearchOnIndClassCodeSearchAdapterShowDialog();
-		//SearchOnIndustryClassAdapterShowDialog();
-		//SearchOnIndClassCodeSearchAdapterFillDropDown();
 		getIndClassCodeFromSearch(true, "MARKET");
 
 	}
@@ -645,96 +739,6 @@ public class Script
 	}
 
 
-	private void SearchOnIndClassCodeSearchAdapterShowDialog()
-	{
-		// Wizard Generated Search Method
-		// You will need to call this method from another method in custom code
-		// For example, [Form]_Load or [Button]_Click
-
-MessageBox.Show("1");
-		bool recSelected;
-		string whereClause = string.Empty;
-		whereClause = "ICTypeID = 'MARKET'";
-		System.Data.DataSet dsIndClassCodeSearchAdapter = Ice.UI.FormFunctions.SearchFunctions.listLookup(this.oTrans, "IndClassCodeSearchAdapter", out recSelected, true, whereClause);
-MessageBox.Show("row count: " + dsIndClassCodeSearchAdapter.Tables[0].Rows.Count.ToString());
-
-		if (recSelected)
-		{
-MessageBox.Show("2");
-			System.Data.DataRow adapterRow = dsIndClassCodeSearchAdapter.Tables[0].Rows[0];
-
-			// Map Search Fields to Application Fields
-			EpiDataView edvQuoteHed = ((EpiDataView)(this.oTrans.EpiDataViews["QuoteHed"]));
-			System.Data.DataRow edvQuoteHedRow = edvQuoteHed.CurrentDataRow;
-			if ((edvQuoteHedRow != null))
-			{
-				edvQuoteHedRow.BeginEdit();
-				//edvQuoteHedRow["SFMarket_c"] = adapterRow["ICCode"];
-				edvQuoteHedRow["SFMarket_c"] = adapterRow["Description"];
-				edvQuoteHedRow.EndEdit();
-			}
-		}
-else
-{
-//MessageBox.Show("x");
-}
-
-	}
-
-
-
-//this works perfectly fine, but not what wanted (header)
-	private void SearchOnIndustryClassAdapterShowDialog()
-	{
-		// Wizard Generated Search Method
-		// You will need to call this method from another method in custom code
-		// For example, [Form]_Load or [Button]_Click
-
-		bool recSelected;
-		string whereClause = string.Empty;
-		System.Data.DataSet dsIndustryClassAdapter = Ice.UI.FormFunctions.SearchFunctions.listLookup(this.oTrans, "IndustryClassAdapter", out recSelected, true, whereClause);
-		if (recSelected)
-		{
-			System.Data.DataRow adapterRow = dsIndustryClassAdapter.Tables[0].Rows[0];
-
-			// Map Search Fields to Application Fields
-			EpiDataView edvQuoteHed = ((EpiDataView)(this.oTrans.EpiDataViews["QuoteHed"]));
-			System.Data.DataRow edvQuoteHedRow = edvQuoteHed.CurrentDataRow;
-			if ((edvQuoteHedRow != null))
-			{
-				edvQuoteHedRow.BeginEdit();
-				edvQuoteHedRow["SFMarket_c"] = adapterRow["Description"];
-				edvQuoteHedRow.EndEdit();
-			}
-		}
-	}
-
-
-/*
-	private void SearchOnIndClassCodeSearchAdapterFillDropDown()
-	{
-		// Wizard Generated Search Method
-		// You will need to call this method from another method in custom code
-		// For example, [Form]_Load or [Button]_Click
-
-		bool recSelected;
-		string whereClause = string.Empty;
-		whereClause = "ICTypeID = 'MARKET'";
-		System.Data.DataSet dsIndClassCodeSearchAdapter = Ice.UI.FormFunctions.SearchFunctions.listLookup(this.oTrans, "IndClassCodeSearchAdapter", out recSelected, false, whereClause);
-		if (recSelected)
-		{
-			// Set EpiUltraCombo Properties
-			//this.eucMarket.ValueMember = "Description";
-			this.eucMarket.ValueMember = "ICCode";
-			this.eucMarket.DataSource = dsIndClassCodeSearchAdapter;
-			this.eucMarket.DisplayMember = "Description";
-			string[] fields = new string[] {
-					"Description"};
-			this.eucMarket.SetColumnFilter(fields);
-		}
-	}
-*/
-
 	
 	//eb2:
 	private void getIndClassCodeFromSearch(bool fromSearch, string icCode)
@@ -791,21 +795,13 @@ else
 	}
 
 
-	private void edvQuoteHed_EpiViewNotification(EpiDataView view, EpiNotifyArgs args)
-	{
-		// ** Argument Properties and Uses **
-		// view.dataView[args.Row]["FieldName"]
-		// args.Row, args.Column, args.Sender, args.NotifyType
-		// NotifyType.Initialize, NotifyType.AddRow, NotifyType.DeleteRow, NotifyType.InitLastView, NotifyType.InitAndResetTreeNodes
-		if ((args.NotifyType == EpiTransaction.NotifyType.AddRow))
-		{
-			if ((args.Row &amp;gt; -1))
-			{
-			}
-		}
-	}
+
+
+
 
 }
+
+
 
 
 &lt;/PropertyValue&gt;
@@ -1696,7 +1692,7 @@ else
     &lt;ControlName&gt;cboSFRegion&lt;/ControlName&gt;
     &lt;Key&gt;7150e609-dfb1-489f-8645-b410c20056af&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;4&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;5&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -1852,7 +1848,7 @@ else
     &lt;ControlName&gt;cboSFCountry&lt;/ControlName&gt;
     &lt;Key&gt;d46ee01d-dd03-4cdd-a85b-f68a02a57b5a&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;5&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;4&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -2128,7 +2124,7 @@ else
     &lt;ControlName&gt;btnSFCountry&lt;/ControlName&gt;
     &lt;Key&gt;9b68020d-333a-43c9-8b2c-e70e2dcd56fa&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;6&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -2548,7 +2544,7 @@ else
     &lt;ControlName&gt;lblMarket&lt;/ControlName&gt;
     &lt;Key&gt;b8d22527-6868-4133-aadb-6a48b2bba5fa&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;2&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;6&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -2920,7 +2916,7 @@ else
     &lt;ControlName&gt;btnMarket&lt;/ControlName&gt;
     &lt;Key&gt;d592ca5b-fe47-4fc4-903d-13f2f5d4b8b2&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;2&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -3004,7 +3000,7 @@ else
     &lt;ControlName&gt;txtMarket&lt;/ControlName&gt;
     &lt;Key&gt;896bcf9b-1074-4ba4-878d-fb3533703908&lt;/Key&gt;
     &lt;PropertyName&gt;Visible&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;True&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;False&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -3017,6 +3013,138 @@ else
     &lt;Key&gt;b8d22527-6868-4133-aadb-6a48b2bba5fa&lt;/Key&gt;
     &lt;PropertyName&gt;Visible&lt;/PropertyName&gt;
     &lt;PropertyValue&gt;False&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;eucMarket&lt;/ControlName&gt;
+    &lt;Key&gt;8f43168f-3cbe-4756-8209-2fa8327f548f&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;2&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;eucMarket&lt;/ControlName&gt;
+    &lt;Key&gt;8f43168f-3cbe-4756-8209-2fa8327f548f&lt;/Key&gt;
+    &lt;PropertyName&gt;Parent&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;7a521e47-48c3-49a7-b0cb-6f9c8a151106&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;eucMarket&lt;/ControlName&gt;
+    &lt;Key&gt;8f43168f-3cbe-4756-8209-2fa8327f548f&lt;/Key&gt;
+    &lt;PropertyName&gt;Width&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;146&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;eucMarket&lt;/ControlName&gt;
+    &lt;Key&gt;8f43168f-3cbe-4756-8209-2fa8327f548f&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorWidth&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;146&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;eucMarket&lt;/ControlName&gt;
+    &lt;Key&gt;8f43168f-3cbe-4756-8209-2fa8327f548f&lt;/Key&gt;
+    &lt;PropertyName&gt;Left&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;94&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;eucMarket&lt;/ControlName&gt;
+    &lt;Key&gt;8f43168f-3cbe-4756-8209-2fa8327f548f&lt;/Key&gt;
+    &lt;PropertyName&gt;Top&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;101&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;eucMarket&lt;/ControlName&gt;
+    &lt;Key&gt;8f43168f-3cbe-4756-8209-2fa8327f548f&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorLeft&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;94&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;eucMarket&lt;/ControlName&gt;
+    &lt;Key&gt;8f43168f-3cbe-4756-8209-2fa8327f548f&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorTop&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;101&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;eucMarket&lt;/ControlName&gt;
+    &lt;Key&gt;8f43168f-3cbe-4756-8209-2fa8327f548f&lt;/Key&gt;
+    &lt;PropertyName&gt;Height&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;20&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;eucMarket&lt;/ControlName&gt;
+    &lt;Key&gt;8f43168f-3cbe-4756-8209-2fa8327f548f&lt;/Key&gt;
+    &lt;PropertyName&gt;Text&lt;/PropertyName&gt;
+    &lt;PropertyValue /&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;eucMarket&lt;/ControlName&gt;
+    &lt;Key&gt;8f43168f-3cbe-4756-8209-2fa8327f548f&lt;/Key&gt;
+    &lt;PropertyName&gt;EpiBinding&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;QuoteHed.SFMarket_c&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
