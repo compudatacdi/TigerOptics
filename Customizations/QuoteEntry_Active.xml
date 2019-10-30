@@ -76,9 +76,9 @@
     <Key2>App.QuoteEntry.QuoteForm</Key2>
     <Key3 />
     <Description>PII Quote Entry Customization</Description>
-    <LastUpdated>2019-10-29T00:00:00-04:00</LastUpdated>
+    <LastUpdated>2019-10-30T00:00:00-04:00</LastUpdated>
     <LastUpdatedBy>manager</LastUpdatedBy>
-    <Version>10/29/2019 1:04:26 P</Version>
+    <Version>10/30/2019 1:50:38 P</Version>
     <DataBaseVersion>0</DataBaseVersion>
     <SysCharacter01 />
     <SysCharacter02 />
@@ -99,7 +99,7 @@
 [jstauffer: 9/27/2019 11:17:48 AM]</CommentText>
     <CGCCode />
     <SystemFlag>false</SystemFlag>
-    <SysRevID>7053888</SysRevID>
+    <SysRevID>7269574</SysRevID>
     <SysRowID>e0f1f6a7-fb5b-4201-811a-bed34bb980ab</SysRowID>
     <SysCheckBox06>false</SysCheckBox06>
     <SysCheckBox07>false</SysCheckBox07>
@@ -303,6 +303,54 @@
     &lt;GroupID /&gt;
     &lt;ControlsID /&gt;
   &lt;/Controls&gt;
+  &lt;Controls&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;btnMarket&lt;/ControlName&gt;
+    &lt;Key&gt;d592ca5b-fe47-4fc4-903d-13f2f5d4b8b2&lt;/Key&gt;
+    &lt;ParentControlKey&gt;7a521e47-48c3-49a7-b0cb-6f9c8a151106&lt;/ParentControlKey&gt;
+    &lt;ControlType&gt;Ice.Lib.Framework.EpiButton&lt;/ControlType&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserId /&gt;
+    &lt;GroupID /&gt;
+    &lt;ControlsID /&gt;
+  &lt;/Controls&gt;
+  &lt;Controls&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;erp.ui.customerentry.dll&lt;/ControlName&gt;
+    &lt;Key&gt;EpiString.ExecutionPath*erp.ui.customerentry.dll&lt;/Key&gt;
+    &lt;ParentControlKey /&gt;
+    &lt;ControlType&gt;AssemblyReference&lt;/ControlType&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserId /&gt;
+    &lt;GroupID /&gt;
+    &lt;ControlsID /&gt;
+  &lt;/Controls&gt;
+  &lt;Controls&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;erp.adapters.indclasscodesearch.dll&lt;/ControlName&gt;
+    &lt;Key&gt;EpiString.ExecutionPath*erp.adapters.indclasscodesearch.dll&lt;/Key&gt;
+    &lt;ParentControlKey /&gt;
+    &lt;ControlType&gt;AssemblyReference&lt;/ControlType&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserId /&gt;
+    &lt;GroupID /&gt;
+    &lt;ControlsID /&gt;
+  &lt;/Controls&gt;
+  &lt;Controls&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;erp.contracts.bo.indclasscodesearch.dll&lt;/ControlName&gt;
+    &lt;Key&gt;EpiString.ExecutionPath*erp.contracts.bo.indclasscodesearch.dll&lt;/Key&gt;
+    &lt;ParentControlKey /&gt;
+    &lt;ControlType&gt;AssemblyReference&lt;/ControlType&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserId /&gt;
+    &lt;GroupID /&gt;
+    &lt;ControlsID /&gt;
+  &lt;/Controls&gt;
   &lt;Properties&gt;
     &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
     &lt;ControlName&gt;lblShipToName&lt;/ControlName&gt;
@@ -390,6 +438,8 @@
 //	eb1 09/03/19 eric blackwelder @ cdi
 //		new customization
 //		add tab "Sales Force" and the objects in it
+//	eb2 10/30/19 eric blackwelder @ cdi
+//		add lookup functionality for market code
 //
 // **************************************************
 
@@ -401,6 +451,9 @@ extern alias Erp_Contracts_BO_Part;
 extern alias Erp_Contracts_BO_Vendor;
 extern alias Erp_Contracts_BO_VendorPPSearch;
 extern alias Erp_Contracts_BO_ShipTo;
+extern alias Erp_UI_CustomerEntry;
+extern alias Erp_Adapters_IndClassCodeSearch;
+extern alias Erp_Contracts_BO_IndClassCodeSearch;
 
 
 using System;
@@ -418,11 +471,34 @@ using Ice.Lib.Framework;
 using Ice.Lib.Searches;
 using Ice.UI.FormFunctions;
 
+//eb2:
+using Erp.Adapters;
+using Epicor.ServiceModel.Channels;
+using Erp.BO;
+using Erp.Contracts;
+using Erp.Proxy.BO;
+using Ice.Bpm.Context;
+using Ice.Core;
+using Ice.Lib.Adapters;
+using Ice.Lib.ClassAttribute;
+using Ice.Lib.Framework;
+using Ice.Lib.Searches;
+using System.Data;
+using System.Reflection;
+using Erp.Adapters;
+using Erp.BO;
+using Ice.Lib.Framework;
+using Infragistics.Win.UltraWinToolbars;
+using System;
+using System.Runtime.CompilerServices;
+using System.Text;
+
 public class Script
 {
 	// ** Wizard Insert Location - Do Not Remove 'Begin/End Wizard Added Module Level Variables' Comments! **
 	// Begin Wizard Added Module Level Variables **
 
+	private EpiDataView edvQuoteHed;
 	// End Wizard Added Module Level Variables **
 
 	// Add Custom Module Level Variables Here **
@@ -432,6 +508,8 @@ public class Script
 		// ** Wizard Insert Location - Do not delete 'Begin/End Wizard Added Variable Initialization' lines **
 		// Begin Wizard Added Variable Initialization
 
+		this.edvQuoteHed = ((EpiDataView)(this.oTrans.EpiDataViews["QuoteHed"]));
+		this.edvQuoteHed.EpiViewNotification += new EpiViewNotification(this.edvQuoteHed_EpiViewNotification);
 		// End Wizard Added Variable Initialization
 
 		// Begin Wizard Added Custom Method Calls
@@ -441,6 +519,8 @@ public class Script
 		btnSFEndUser.Click += new System.EventHandler(btnSFEndUser_Click);
 		btnSFRegion.Click += new System.EventHandler(btnSFRegion_Click);
 		btnSFCountry.Click += new System.EventHandler(btnSFCountry_Click);
+		//eb2:
+		btnMarket.Click += new System.EventHandler(btnMarket_Click);
 
 	}
 
@@ -449,6 +529,8 @@ public class Script
 		// ** Wizard Insert Location - Do not delete 'Begin/End Wizard Added Object Disposal' lines **
 		// Begin Wizard Added Object Disposal
 
+		this.edvQuoteHed.EpiViewNotification -= new EpiViewNotification(this.edvQuoteHed_EpiViewNotification);
+		this.edvQuoteHed = null;
 		// End Wizard Added Object Disposal
 
 		// Begin Custom Code Disposal
@@ -458,6 +540,8 @@ public class Script
 		btnSFEndUser.Click -= new System.EventHandler(btnSFEndUser_Click);
 		btnSFRegion.Click -= new System.EventHandler(btnSFRegion_Click);
 		btnSFCountry.Click -= new System.EventHandler(btnSFCountry_Click);
+		//eb2:
+		btnMarket.Click -= new System.EventHandler(btnMarket_Click);
 
 	}
 
@@ -472,6 +556,15 @@ public class Script
 	private void btnSFCountry_Click(object sender, System.EventArgs args)
 	{			
 		SearchOnCountryAdapterShowDialog();
+	}
+	//eb2:
+	private void btnMarket_Click(object sender, System.EventArgs args)
+	{			
+		//SearchOnIndClassCodeSearchAdapterShowDialog();
+		//SearchOnIndustryClassAdapterShowDialog();
+		//SearchOnIndClassCodeSearchAdapterFillDropDown();
+		getIndClassCodeFromSearch(true, "MARKET");
+
 	}
 
 	private void SearchOnCustomerAdapterShowDialog()
@@ -551,16 +644,168 @@ public class Script
 		}
 	}
 
+
+	private void SearchOnIndClassCodeSearchAdapterShowDialog()
+	{
+		// Wizard Generated Search Method
+		// You will need to call this method from another method in custom code
+		// For example, [Form]_Load or [Button]_Click
+
+MessageBox.Show("1");
+		bool recSelected;
+		string whereClause = string.Empty;
+		whereClause = "ICTypeID = 'MARKET'";
+		System.Data.DataSet dsIndClassCodeSearchAdapter = Ice.UI.FormFunctions.SearchFunctions.listLookup(this.oTrans, "IndClassCodeSearchAdapter", out recSelected, true, whereClause);
+MessageBox.Show("row count: " + dsIndClassCodeSearchAdapter.Tables[0].Rows.Count.ToString());
+
+		if (recSelected)
+		{
+MessageBox.Show("2");
+			System.Data.DataRow adapterRow = dsIndClassCodeSearchAdapter.Tables[0].Rows[0];
+
+			// Map Search Fields to Application Fields
+			EpiDataView edvQuoteHed = ((EpiDataView)(this.oTrans.EpiDataViews["QuoteHed"]));
+			System.Data.DataRow edvQuoteHedRow = edvQuoteHed.CurrentDataRow;
+			if ((edvQuoteHedRow != null))
+			{
+				edvQuoteHedRow.BeginEdit();
+				//edvQuoteHedRow["SFMarket_c"] = adapterRow["ICCode"];
+				edvQuoteHedRow["SFMarket_c"] = adapterRow["Description"];
+				edvQuoteHedRow.EndEdit();
+			}
+		}
+else
+{
+//MessageBox.Show("x");
 }
 
+	}
 
 
 
+//this works perfectly fine, but not what wanted (header)
+	private void SearchOnIndustryClassAdapterShowDialog()
+	{
+		// Wizard Generated Search Method
+		// You will need to call this method from another method in custom code
+		// For example, [Form]_Load or [Button]_Click
+
+		bool recSelected;
+		string whereClause = string.Empty;
+		System.Data.DataSet dsIndustryClassAdapter = Ice.UI.FormFunctions.SearchFunctions.listLookup(this.oTrans, "IndustryClassAdapter", out recSelected, true, whereClause);
+		if (recSelected)
+		{
+			System.Data.DataRow adapterRow = dsIndustryClassAdapter.Tables[0].Rows[0];
+
+			// Map Search Fields to Application Fields
+			EpiDataView edvQuoteHed = ((EpiDataView)(this.oTrans.EpiDataViews["QuoteHed"]));
+			System.Data.DataRow edvQuoteHedRow = edvQuoteHed.CurrentDataRow;
+			if ((edvQuoteHedRow != null))
+			{
+				edvQuoteHedRow.BeginEdit();
+				edvQuoteHedRow["SFMarket_c"] = adapterRow["Description"];
+				edvQuoteHedRow.EndEdit();
+			}
+		}
+	}
 
 
+/*
+	private void SearchOnIndClassCodeSearchAdapterFillDropDown()
+	{
+		// Wizard Generated Search Method
+		// You will need to call this method from another method in custom code
+		// For example, [Form]_Load or [Button]_Click
+
+		bool recSelected;
+		string whereClause = string.Empty;
+		whereClause = "ICTypeID = 'MARKET'";
+		System.Data.DataSet dsIndClassCodeSearchAdapter = Ice.UI.FormFunctions.SearchFunctions.listLookup(this.oTrans, "IndClassCodeSearchAdapter", out recSelected, false, whereClause);
+		if (recSelected)
+		{
+			// Set EpiUltraCombo Properties
+			//this.eucMarket.ValueMember = "Description";
+			this.eucMarket.ValueMember = "ICCode";
+			this.eucMarket.DataSource = dsIndClassCodeSearchAdapter;
+			this.eucMarket.DisplayMember = "Description";
+			string[] fields = new string[] {
+					"Description"};
+			this.eucMarket.SetColumnFilter(fields);
+		}
+	}
+*/
+
+	
+	//eb2:
+	private void getIndClassCodeFromSearch(bool fromSearch, string icCode)
+	{
+		//from ilspy findings in customer entry ui and tweaked
+		//since using the typical simple search doesn't work on the industry code child table
+	
+		DataView dataView = oTrans.QuoteHedView.dataView;
+		foreach (DataRowView dataRowView in dataView)
+		{
+			SearchOptions searchOptions = new SearchOptions(SearchMode.ShowDialog);
+			searchOptions.DataSetMode = DataSetMode.RowsDataSet;
+			searchOptions.SelectMode = SelectMode.SingleSelect;
+			string text = "MARKET";
+	
+			if (!string.IsNullOrEmpty(text))
+			{
+				searchOptions.PreLoadSearchFilter = "ICTypeID = '" + text + "'";
+			}
+			try
+			{
+				IndClassCodeSearchAdapter icCodeSearchAdapter = new IndClassCodeSearchAdapter(oTrans);
+				icCodeSearchAdapter.ClearData();
+	
+				if (fromSearch)
+				{
+					icCodeSearchAdapter.InvokeSearch(searchOptions);
+				}
+				else
+				{
+					icCodeSearchAdapter.GetByID(text, icCode);
+				}
+				if (icCodeSearchAdapter.IndClassCodeSearchData.ICCode.Count &amp;gt; 0)
+				{
+					IndClassCodeSearchDataSet.ICCodeRow iCCodeRow = icCodeSearchAdapter.IndClassCodeSearchData.ICCode[0];
+					dataRowView.BeginEdit();
+					dataRowView["SFMarket_c"] = iCCodeRow.Description;
+					dataRowView.EndEdit();
+	
+					//need this:???
+					//base.LastView.Notify(new EpiNotifyArgs(this, base.LastView.Row, base.LastView.Column));
+	
+				}
+			}
+			catch (Exception ex)
+			{
+				dataRowView["SFMarket_c"] = "";
+				ExceptionBox.Show(ex);
+			}
+	
+		}
+	
+	
+	}
 
 
+	private void edvQuoteHed_EpiViewNotification(EpiDataView view, EpiNotifyArgs args)
+	{
+		// ** Argument Properties and Uses **
+		// view.dataView[args.Row]["FieldName"]
+		// args.Row, args.Column, args.Sender, args.NotifyType
+		// NotifyType.Initialize, NotifyType.AddRow, NotifyType.DeleteRow, NotifyType.InitLastView, NotifyType.InitAndResetTreeNodes
+		if ((args.NotifyType == EpiTransaction.NotifyType.AddRow))
+		{
+			if ((args.Row &amp;gt; -1))
+			{
+			}
+		}
+	}
 
+}
 
 
 &lt;/PropertyValue&gt;
@@ -935,7 +1180,7 @@ public class Script
     &lt;ControlName&gt;cboSFEndUser1&lt;/ControlName&gt;
     &lt;Key&gt;d7f98692-737c-4701-bea0-68306c7f9415&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;7&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -1259,7 +1504,7 @@ public class Script
     &lt;ControlName&gt;btnSFEndUser&lt;/ControlName&gt;
     &lt;Key&gt;5217ab69-4471-4d67-bb5f-f1fe1e3b0c7e&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;5&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;8&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -1403,7 +1648,7 @@ public class Script
     &lt;ControlName&gt;QuoteForm&lt;/ControlName&gt;
     &lt;Key&gt;88EEE34C-4DE7-4fc6-902C-B54512138CC9&lt;/Key&gt;
     &lt;PropertyName&gt;Left&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;152&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;140&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -1415,7 +1660,7 @@ public class Script
     &lt;ControlName&gt;QuoteForm&lt;/ControlName&gt;
     &lt;Key&gt;88EEE34C-4DE7-4fc6-902C-B54512138CC9&lt;/Key&gt;
     &lt;PropertyName&gt;Top&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;6&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -1427,7 +1672,7 @@ public class Script
     &lt;ControlName&gt;QuoteForm&lt;/ControlName&gt;
     &lt;Key&gt;88EEE34C-4DE7-4fc6-902C-B54512138CC9&lt;/Key&gt;
     &lt;PropertyName&gt;AnchorLeft&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;152&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;140&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -1439,7 +1684,7 @@ public class Script
     &lt;ControlName&gt;QuoteForm&lt;/ControlName&gt;
     &lt;Key&gt;88EEE34C-4DE7-4fc6-902C-B54512138CC9&lt;/Key&gt;
     &lt;PropertyName&gt;AnchorTop&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;6&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -1607,7 +1852,7 @@ public class Script
     &lt;ControlName&gt;cboSFCountry&lt;/ControlName&gt;
     &lt;Key&gt;d46ee01d-dd03-4cdd-a85b-f68a02a57b5a&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;3&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;5&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -1763,7 +2008,7 @@ public class Script
     &lt;ControlName&gt;btnSFRegion&lt;/ControlName&gt;
     &lt;Key&gt;137328c7-58f4-48f2-9a0b-4f5fb76637e2&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;3&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;8&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -1883,7 +2128,7 @@ public class Script
     &lt;ControlName&gt;btnSFCountry&lt;/ControlName&gt;
     &lt;Key&gt;9b68020d-333a-43c9-8b2c-e70e2dcd56fa&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;3&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;6&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -2303,7 +2548,7 @@ public class Script
     &lt;ControlName&gt;lblMarket&lt;/ControlName&gt;
     &lt;Key&gt;b8d22527-6868-4133-aadb-6a48b2bba5fa&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;2&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -2375,7 +2620,7 @@ public class Script
     &lt;ControlName&gt;txtMarket&lt;/ControlName&gt;
     &lt;Key&gt;896bcf9b-1074-4ba4-878d-fb3533703908&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;2&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;3&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -2507,7 +2752,7 @@ public class Script
     &lt;ControlName&gt;txtMarket&lt;/ControlName&gt;
     &lt;Key&gt;896bcf9b-1074-4ba4-878d-fb3533703908&lt;/Key&gt;
     &lt;PropertyName&gt;EpiLabel&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;lblMarket&lt;/PropertyValue&gt;
+    &lt;PropertyValue /&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -2616,6 +2861,162 @@ public class Script
     &lt;Key&gt;714aba24-c076-420f-a942-b996376f0fde&lt;/Key&gt;
     &lt;PropertyName&gt;AnchorHeight&lt;/PropertyName&gt;
     &lt;PropertyValue&gt;125&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;btnMarket&lt;/ControlName&gt;
+    &lt;Key&gt;d592ca5b-fe47-4fc4-903d-13f2f5d4b8b2&lt;/Key&gt;
+    &lt;PropertyName&gt;Top&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;99&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;btnMarket&lt;/ControlName&gt;
+    &lt;Key&gt;d592ca5b-fe47-4fc4-903d-13f2f5d4b8b2&lt;/Key&gt;
+    &lt;PropertyName&gt;Left&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;26&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;btnMarket&lt;/ControlName&gt;
+    &lt;Key&gt;d592ca5b-fe47-4fc4-903d-13f2f5d4b8b2&lt;/Key&gt;
+    &lt;PropertyName&gt;Width&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;60&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;btnMarket&lt;/ControlName&gt;
+    &lt;Key&gt;d592ca5b-fe47-4fc4-903d-13f2f5d4b8b2&lt;/Key&gt;
+    &lt;PropertyName&gt;Height&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;20&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;btnMarket&lt;/ControlName&gt;
+    &lt;Key&gt;d592ca5b-fe47-4fc4-903d-13f2f5d4b8b2&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;2&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;btnMarket&lt;/ControlName&gt;
+    &lt;Key&gt;d592ca5b-fe47-4fc4-903d-13f2f5d4b8b2&lt;/Key&gt;
+    &lt;PropertyName&gt;Parent&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;7a521e47-48c3-49a7-b0cb-6f9c8a151106&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;btnMarket&lt;/ControlName&gt;
+    &lt;Key&gt;d592ca5b-fe47-4fc4-903d-13f2f5d4b8b2&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorWidth&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;60&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;btnMarket&lt;/ControlName&gt;
+    &lt;Key&gt;d592ca5b-fe47-4fc4-903d-13f2f5d4b8b2&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorHeight&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;20&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;btnMarket&lt;/ControlName&gt;
+    &lt;Key&gt;d592ca5b-fe47-4fc4-903d-13f2f5d4b8b2&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorLeft&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;26&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;btnMarket&lt;/ControlName&gt;
+    &lt;Key&gt;d592ca5b-fe47-4fc4-903d-13f2f5d4b8b2&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorTop&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;99&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;btnMarket&lt;/ControlName&gt;
+    &lt;Key&gt;d592ca5b-fe47-4fc4-903d-13f2f5d4b8b2&lt;/Key&gt;
+    &lt;PropertyName&gt;Text&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;Market&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtMarket&lt;/ControlName&gt;
+    &lt;Key&gt;896bcf9b-1074-4ba4-878d-fb3533703908&lt;/Key&gt;
+    &lt;PropertyName&gt;Visible&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;True&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;QuoteForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblMarket&lt;/ControlName&gt;
+    &lt;Key&gt;b8d22527-6868-4133-aadb-6a48b2bba5fa&lt;/Key&gt;
+    &lt;PropertyName&gt;Visible&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;False&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
