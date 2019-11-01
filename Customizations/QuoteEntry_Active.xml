@@ -76,9 +76,9 @@
     <Key2>App.QuoteEntry.QuoteForm</Key2>
     <Key3 />
     <Description>PII Quote Entry Customization</Description>
-    <LastUpdated>2019-10-30T00:00:00-04:00</LastUpdated>
+    <LastUpdated>2019-11-01T00:00:00-04:00</LastUpdated>
     <LastUpdatedBy>manager</LastUpdatedBy>
-    <Version>10/30/2019 2:54:34 P</Version>
+    <Version>11/1/2019 4:26:39 PM</Version>
     <DataBaseVersion>0</DataBaseVersion>
     <SysCharacter01 />
     <SysCharacter02 />
@@ -99,7 +99,7 @@
 [manager: 10/30/2019 2:54:29 PM]</CommentText>
     <CGCCode />
     <SystemFlag>false</SystemFlag>
-    <SysRevID>7297357</SysRevID>
+    <SysRevID>7670025</SysRevID>
     <SysRowID>e0f1f6a7-fb5b-4201-811a-bed34bb980ab</SysRowID>
     <SysCheckBox06>false</SysCheckBox06>
     <SysCheckBox07>false</SysCheckBox07>
@@ -680,7 +680,7 @@ public class Script
 			if ((edvQuoteHedRow != null))
 			{
 				edvQuoteHedRow.BeginEdit();
-				edvQuoteHedRow["SFEndUser_c"] = adapterRow["CustNum"];
+				edvQuoteHedRow["EndUserCustNum_c"] = adapterRow["CustNum"];
 				edvQuoteHedRow.EndEdit();
 			}
 		}
@@ -800,6 +800,7 @@ public class Script
 
 
 }
+
 
 
 
@@ -2424,7 +2425,7 @@ public class Script
     &lt;ControlName&gt;grpSoldToAddress&lt;/ControlName&gt;
     &lt;Key&gt;685ca82b-77f9-42d1-b8ca-5d1682329764&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -2796,7 +2797,7 @@ public class Script
     &lt;ControlName&gt;grpShipToAddress&lt;/ControlName&gt;
     &lt;Key&gt;714aba24-c076-420f-a942-b996376f0fde&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
