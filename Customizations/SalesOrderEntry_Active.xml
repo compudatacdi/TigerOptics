@@ -76,9 +76,9 @@
     <Key2>App.SalesOrderEntry.SalesOrderForm</Key2>
     <Key3 />
     <Description>SalesOrderEntry_Active</Description>
-    <LastUpdated>2019-11-01T00:00:00-04:00</LastUpdated>
+    <LastUpdated>2019-11-11T00:00:00-05:00</LastUpdated>
     <LastUpdatedBy>manager</LastUpdatedBy>
-    <Version>11/1/2019 2:29:03 PM</Version>
+    <Version>11/11/2019 11:40:05</Version>
     <DataBaseVersion>0</DataBaseVersion>
     <SysCharacter01 />
     <SysCharacter02 />
@@ -98,7 +98,7 @@
     <CommentText />
     <CGCCode />
     <SystemFlag>false</SystemFlag>
-    <SysRevID>7662925</SysRevID>
+    <SysRevID>8477676</SysRevID>
     <SysRowID>cfe33aeb-9a31-494b-a101-e2cc6e5f8eba</SysRowID>
     <SysCheckBox06>false</SysCheckBox06>
     <SysCheckBox07>false</SysCheckBox07>
@@ -367,7 +367,7 @@
     &lt;ControlName&gt;lblShowKitDtls&lt;/ControlName&gt;
     &lt;Key&gt;d32c8912-8bec-4e3e-a9f8-1057647043b3&lt;/Key&gt;
     &lt;PropertyName&gt;Left&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;557&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;565&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -471,8 +471,16 @@
 //
 //	eb1 11/01/19 eric blackwelder @ cdi
 //		new customization
+//	eb2 11/01/19 eric blackwelder @ cdi
+//		change how industry works
+//	eb3 11/11/19 eric blackwelder @ cdi
+//		refresh so header data after bpm updates ud fields
 //
 // **************************************************
+
+extern alias Erp_Adapters_SalesOrder;
+extern alias Erp_Adapters_Customer;
+
 
 extern alias Erp_Contracts_BO_AlternatePart;
 extern alias Erp_Contracts_BO_SalesOrder;
@@ -546,6 +554,10 @@ public class Script
 
 	private EpiDataView edvOrderHed;
 	private DynamicQueryImpl dynamicQuery;
+	//eb3:
+	private EpiBaseAdapter oTrans_ordAdapter;
+	private bool blnRefreshData = false;
+	private int intRefreshCount = 0;
 
 	public void InitializeCustomCode()
 	{
@@ -565,6 +577,9 @@ public class Script
 		this.edvOrderHed = ((EpiDataView)(this.oTrans.EpiDataViews["OrderHed"]));
 		Session session = (Session)this.oTrans.Session;
 		dynamicQuery = WCFServiceSupport.CreateImpl&amp;lt;DynamicQueryImpl&amp;gt;(session, ImplBase&amp;lt;DynamicQuerySvcContract&amp;gt;.UriPath);
+		//eb3:
+		this.oTrans_ordAdapter = ((EpiBaseAdapter)(this.csm.TransAdaptersHT["oTrans_ordAdapter"]));
+		this.oTrans_ordAdapter.AfterAdapterMethod += new AfterAdapterMethod(this.oTrans_ordAdapter_AfterAdapterMethod);
 
 	}
 
@@ -586,11 +601,13 @@ public class Script
 		this.edvOrderHed = null;
 		dynamicQuery = null;
 		dynamicQuery.Dispose();
+		//eb3:
+		this.oTrans_ordAdapter.AfterAdapterMethod -= new AfterAdapterMethod(this.oTrans_ordAdapter_AfterAdapterMethod);
+		this.oTrans_ordAdapter = null;
 
 	}
 
 	//eb2:
-
 	private void SalesOrderForm_Load(object sender, EventArgs args)
 	{
 		DynamicQueryDataSet ds = new DynamicQueryDataSet();
@@ -775,6 +792,40 @@ public class Script
 		}
 	
 	
+	}
+
+	//eb3:
+	private void oTrans_ordAdapter_AfterAdapterMethod(object sender, AfterAdapterMethodArgs args)
+	{
+		// ** Argument Properties and Uses **
+		// ** args.MethodName **
+		// ** Add Event Handler Code **
+
+		// ** Use MessageBox to find adapter method name
+		//MessageBox.Show(args.MethodName);
+		switch (args.MethodName)
+		{
+			case "OnChangeOfQuoteLine":
+				blnRefreshData = true;
+				intRefreshCount = 0;
+				break;
+
+			case "Update":
+				if(blnRefreshData)
+				{
+					intRefreshCount += 1;
+					if(intRefreshCount &amp;gt; 1)
+					{
+						blnRefreshData = false;
+						intRefreshCount = 0;
+						oTrans.Refresh();
+					}
+
+				}
+				break;
+
+		}
+
 	}
 
 }
