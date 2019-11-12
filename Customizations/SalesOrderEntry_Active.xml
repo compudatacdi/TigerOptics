@@ -76,9 +76,9 @@
     <Key2>App.SalesOrderEntry.SalesOrderForm</Key2>
     <Key3 />
     <Description>SalesOrderEntry_Active</Description>
-    <LastUpdated>2019-11-11T00:00:00-05:00</LastUpdated>
+    <LastUpdated>2019-11-12T00:00:00-05:00</LastUpdated>
     <LastUpdatedBy>manager</LastUpdatedBy>
-    <Version>11/11/2019 11:40:05</Version>
+    <Version>11/12/2019 10:59:55</Version>
     <DataBaseVersion>0</DataBaseVersion>
     <SysCharacter01 />
     <SysCharacter02 />
@@ -98,7 +98,7 @@
     <CommentText />
     <CGCCode />
     <SystemFlag>false</SystemFlag>
-    <SysRevID>8477676</SysRevID>
+    <SysRevID>8599645</SysRevID>
     <SysRowID>cfe33aeb-9a31-494b-a101-e2cc6e5f8eba</SysRowID>
     <SysCheckBox06>false</SysCheckBox06>
     <SysCheckBox07>false</SysCheckBox07>
@@ -806,13 +806,19 @@ public class Script
 		switch (args.MethodName)
 		{
 			case "OnChangeOfQuoteLine":
+//MessageBox.Show("OnChangeOfQuoteLine");
 				blnRefreshData = true;
 				intRefreshCount = 0;
 				break;
 
 			case "Update":
+//MessageBox.Show("Update");
+//EpiDataView CallContextBPMView = (EpiDataView)oTrans.EpiDataViews["CallContextBPMData"];
+//MessageBox.Show("CallContextBPM.ShortChar01: " + CallContextBPMView.dataView[0]["ShortChar01"].ToString());
 				if(blnRefreshData)
 				{
+					// note: update hit once normally, twice if customer is on hold
+					/*
 					intRefreshCount += 1;
 					if(intRefreshCount &amp;gt; 1)
 					{
@@ -820,6 +826,26 @@ public class Script
 						intRefreshCount = 0;
 						oTrans.Refresh();
 					}
+					*/
+
+/*
+					if(intRefreshCount &amp;gt; 0)
+					{
+//						oTrans.Refresh();
+					}
+					if(intRefreshCount &amp;gt; 2)
+					{
+						blnRefreshData = false;
+						intRefreshCount = 0;
+					}
+*/
+					EpiDataView CallContextBPMView = (EpiDataView)oTrans.EpiDataViews["CallContextBPMData"];
+					if((string)CallContextBPMView.dataView[0]["ShortChar01"] == "refresh")
+					{
+						CallContextBPMView.dataView[0]["ShortChar01"] = "";
+						oTrans.Refresh();
+					}
+
 
 				}
 				break;
@@ -829,6 +855,8 @@ public class Script
 	}
 
 }
+
+
 
 
 &lt;/PropertyValue&gt;
