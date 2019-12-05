@@ -503,6 +503,6 @@
   "TermsDescription": "string",
   "TerritoryTerritoryDesc": "string",
   "RowMod": "string",
-  "UD_SysRevID": "",
-  "SFId_c": "string"
+  "SFId_c": "string",
+  "UD_SysRevID": ""
 }

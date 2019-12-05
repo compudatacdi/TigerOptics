@@ -1,0 +1,18 @@
+{
+  "ds": {
+    "RlsHead": [
+      {
+		"Company": "PI03"
+      }
+    ],
+    "RlsParent": [
+      {
+		"Company": "PI03"
+      }
+    ]
+  },
+  "ipRlsClassCode": "PARENT",
+  "ipTopCustNum": 1431,
+  "ipCustNum": 1431,
+  "ipChildCustID": "1c2.1x"
+}

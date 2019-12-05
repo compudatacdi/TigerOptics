@@ -1,0 +1,12 @@
+{
+  "odata.metadata": "https://pii-app1/ERPPIIProd/api/v1/BaqSvc/GetNewParts/$metadata#Epicor.DynamicQuery.QueryResults",
+  "value": [
+    {
+      "Part_Company": "PI03",
+      "Part_PartNum": "F7607",
+      "Part_PartDescription": "CO-rekt ANALYZER CO2 NEMA ENC",
+      "ProdGrup_Description": "Other",
+      "RowIdent": "33918434-f31a-4ed9-b672-73df13a56b09"
+    }
+  ]
+}
