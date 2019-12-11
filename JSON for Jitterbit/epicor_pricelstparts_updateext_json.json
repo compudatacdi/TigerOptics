@@ -1,0 +1,16 @@
+{
+  "ds": {
+    "PriceLstParts": [
+      {
+        "PriceChanged_c": false,
+        "Company": "PI03",
+        "ListCode": "PI030001",
+        "PartNum": "OP1701-S/E",
+        "UOMCode": "EA",
+        "SFId_c": "x"
+	  }
+    ]
+  },
+  "continueProcessingOnError": true,
+  "rollbackParentOnChildError": true
+}

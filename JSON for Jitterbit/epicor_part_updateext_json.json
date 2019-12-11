@@ -1,0 +1,13 @@
+{
+  "ds": {
+    "Part": [
+      {
+        "Company": "PI03",
+        "PartNum": "OP1701-S/E",
+        "SFId_c": "01t2M000005vuHBQAY"
+      }
+    ]
+  },
+  "continueProcessingOnError": true,
+  "rollbackParentOnChildError": true
+}
