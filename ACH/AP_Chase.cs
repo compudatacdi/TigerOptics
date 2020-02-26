@@ -16,7 +16,10 @@ Revision History:
 06/23/09 JHMartinez SCR 58256 - References to Vendor were replaced with Supplier.
 07/07/09 galinad SCR 64216 - buildInfo procedure - the logic to equate IsoCurrencySymbol = "EUR" is commented out to avoid error message.
 05/14/10 jajohnson scr 67341 - CheckHed may be a different currency than APChkGrp.
+
 02/26/20 eblackwelder cdi create AP_Chase from Payment_BTL91
+	using this for the formatting:  https://www.chase.com/content/dam/chaseonline/en/demos/cbo/pdfs/cbo_achfile_helpguide.pdf
+
   ----------------------------------------------------------------------*/
 using System;
 using Epicor.Utilities;
@@ -323,43 +326,52 @@ namespace Erp.Internal.EI
             */
             OutFileLineRow = new SFCommon.OutFileLine();
             SFCommon.ttOutFileLineRows.Add(OutFileLineRow);
-//zzz
+
+			// FILE HEADER RECORD (1)
+
             string line_out = ((lineLen > 0) ? " ".PadRight(lineLen + " ".Length, ' ') : null);
             // field 1
-            //line_out = ErpUtilities.Overlay(line_out, 0, Compatibility.Convert.ToString(lineLevel), 2);
             line_out = ErpUtilities.Overlay(line_out, 0, "1", 1);
             // field 2
-            //line_out = ErpUtilities.Overlay(line_out, 2, "ABNA", 4);
             line_out = ErpUtilities.Overlay(line_out, 1, "01", 2);
             // field 3
-            //line_out = ErpUtilities.Overlay(line_out, 6, "X", 1);
             line_out = ErpUtilities.Overlay(line_out, 3, "0021000021", 10);
             // field 4
-            //line_out = ErpUtilities.Overlay(line_out, 7, "01", 2);
             line_out = ErpUtilities.Overlay(line_out, 13, "0000000000", 10);
             // field 5
-            //line_out = ErpUtilities.Overlay(line_out, 9, Compatibility.Convert.ToString(CompanyTime.Today().Year, "9999") + Compatibility.Convert.ToString(CompanyTime.Today().Month, "99") + Compatibility.Convert.ToString(CompanyTime.Today().Day, "99"), 8);
-            //line_out = ErpUtilities.Overlay(line_out, 23, Compatibility.Convert.ToString(CompanyTime.Today().Year, "99") + Compatibility.Convert.ToString(CompanyTime.Today().Month, "99") + Compatibility.Convert.ToString(CompanyTime.Today().Day, "99"), 6);
             line_out = ErpUtilities.Overlay(line_out, 23, DateTime.Now.ToString("yyMMdd"), 6);
-
             // field 6
-            //line_out = ErpUtilities.Overlay(line_out, 17, "001", 3);
             line_out = ErpUtilities.Overlay(line_out, 29, DateTime.Now.ToString("HHmm"), 4);
 
-/*
+//zzz
             // field 7
-            line_out = ErpUtilities.Overlay(line_out, 20, Company.Name, 35);
+//            line_out = ErpUtilities.Overlay(line_out, 20, Company.Name, 35);
+            line_out = ErpUtilities.Overlay(line_out, 33, "A", 1);
+
             // field 8
-            line_out = ErpUtilities.Overlay(line_out, 55, Company.Address1, 35);
+//            line_out = ErpUtilities.Overlay(line_out, 55, Company.Address1, 35);
+            line_out = ErpUtilities.Overlay(line_out, 34, "094", 3);
+
             // field 9
-            line_out = ErpUtilities.Overlay(line_out, 90, ((!String.IsNullOrEmpty(Company.Zip)) ? (Company.Zip + " " + Company.City) : Company.City), 35);
-            /* 10
-            line_out = ErpUtilities.Overlay(line_out, 125, Country.Description, 35);
-            /* 11
-            line_out = ErpUtilities.Overlay(line_out, 160, "0000", 4);
-            /* 12
-            line_out = ErpUtilities.Overlay(line_out, 164, Compatibility.Convert.ToString(((DateTime)CurCheckDate).Year, "9999") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Month, "99") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Day, "99"), 8);
-*/
+//            line_out = ErpUtilities.Overlay(line_out, 90, ((!String.IsNullOrEmpty(Company.Zip)) ? (Company.Zip + " " + Company.City) : Company.City), 35);
+            line_out = ErpUtilities.Overlay(line_out, 37, "10", 2);
+
+            // field 10
+            //line_out = ErpUtilities.Overlay(line_out, 125, Country.Description, 35);
+            line_out = ErpUtilities.Overlay(line_out, 39, "1", 1);
+
+            // field 11
+//            line_out = ErpUtilities.Overlay(line_out, 160, "0000", 4);
+            line_out = ErpUtilities.Overlay(line_out, 40, "JPMORGAN CHASE", 23);
+
+            // field 12
+//            line_out = ErpUtilities.Overlay(line_out, 164, Compatibility.Convert.ToString(((DateTime)CurCheckDate).Year, "9999") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Month, "99") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Day, "99"), 8);
+            line_out = ErpUtilities.Overlay(line_out, 63, Company.Name, 23);
+
+            // field 13
+            line_out = ErpUtilities.Overlay(line_out, 86, "", 8);
+
+//*/
 
             TotalRecords = TotalRecords + 1;
             lineLevel = lineLevel + 1;
