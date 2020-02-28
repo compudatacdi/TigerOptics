@@ -41,6 +41,8 @@ using Erp.Internal.Lib;
 using Erp.Services.Lib.Resources;
 using BankBatching = Erp.Internal.Lib.BankBatching;
 using Ice.Lib;
+
+
 #if USE_EF_CORE
 using Microsoft.EntityFrameworkCore;
 #else
@@ -284,8 +286,10 @@ namespace Erp.Internal.EI
 
             //Selfbanknumber = Payment_Common.BankAccount(BankAcct.CheckingAccount);
 //needs to be right justified, zero filled
-            Selfbanknumber = String.Format("{0:00000}", Payment_Common.BankAccount(BankAcct.CheckingAccount));  
-			
+            //Selfbanknumber = String.Format("{0:00000000000000000000}", Payment_Common.BankAccount(BankAcct.CheckingAccount));
+            //Selfbanknumber = String.Format("{0:00000000000000000000}", Convert.ToInt32(Payment_Common.BankAccount(BankAcct.CheckingAccount)));
+            Selfbanknumber = String.Format("{0:00000000000000000000}", Convert.ToDouble(Payment_Common.BankAccount(BankAcct.CheckingAccount)));
+
 
             BankCurrencySymbol = GetCurrencyID(BankAcct.CurrencyCode);
             IsoCurrencySymbol = GetCurrencyID(CurGroupCurrencyCode);/* CurGroupCurrencyCode will be blank if more than one currency in the group 67341*/
@@ -420,7 +424,17 @@ namespace Erp.Internal.EI
             // field 13
             //line_out2 = ErpUtilities.Overlay(line_out2, 87, TmpElec.HeadNum.ToString(), 7);
 //Selfbanknumber = String.Format("{0:00000}", Payment_Common.BankAccount(BankAcct.CheckingAccount));  
-//            line_out2 = ErpUtilities.Overlay(line_out2, 87, String.Format("{0:00000}", TmpElec.HeadNum), 7);
+//this is not the check number:
+            //line_out2 = ErpUtilities.Overlay(line_out2, 87, String.Format("{0:0000000}", TmpElec.HeadNum), 7);
+			// >> yields: 0000774
+//note: CheckHed.CheckNum is currently 8 digits, field 13 is only 7
+//		that is bad anyway because it's per payment, not ap batch
+
+//not a line, just for testing:
+string x = GetPaymentBankBatchID(string.Empty);
+line_out2 = ErpUtilities.Overlay(line_out2, 87, x, 7);
+
+
 
 
 
@@ -534,6 +548,7 @@ namespace Erp.Internal.EI
                 #endregion == ABL Source =================================<<
 
                 //invoices:
+				//this is a list of invoice numbers
                 foreach (var APTran_iterator in (this.SelectAPTran(Session.CompanyID, TmpElec.HeadNum)))
                 {
                     APTran = APTran_iterator;
@@ -557,6 +572,7 @@ namespace Erp.Internal.EI
                         }
                     }
                 }
+
                 SAmount = this.cnvAmount(IsoCurrencySymbol, Compatibility.Convert.ToString((TmpElec.DocCheckAmt * 100), "999999999999999"), 14);
                 /* 21: batch payment record part 1 */
 //zzz
@@ -576,6 +592,7 @@ namespace Erp.Internal.EI
                 line_out = ErpUtilities.Overlay(line_out, 19, IsoCurrencySymbol, 3);
                 /*  6 */
                 line_out = ErpUtilities.Overlay(line_out, 22, SAmount, 15);
+                //testing: line_out = ErpUtilities.Overlay(line_out, 22, "12345", 15);
                 /*  7 */
                 line_out = ErpUtilities.Overlay(line_out, 37, Compatibility.Convert.ToString(((DateTime)CurCheckDate).Year, "9999") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Month, "99") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Day, "99"), 8);
                 /*  8 */
