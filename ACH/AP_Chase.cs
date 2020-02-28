@@ -206,6 +206,7 @@ namespace Erp.Internal.EI
             string v_CurrCode = string.Empty;
             int lineLevel = 0;
             SFCommon.OutFileLine OutFileLineRow;
+            SFCommon.OutFileLine OutFileLineRow2;
 
             #region >>===== ABL Source ================================>>
             //
@@ -280,7 +281,12 @@ namespace Erp.Internal.EI
             {
                 throw new BLException(GlobalStrings.AValidFromBankAcctIsRequired);
             }
-            Selfbanknumber = Payment_Common.BankAccount(BankAcct.CheckingAccount);
+
+            //Selfbanknumber = Payment_Common.BankAccount(BankAcct.CheckingAccount);
+//needs to be right justified, zero filled
+            Selfbanknumber = String.Format("{0:00000}", Payment_Common.BankAccount(BankAcct.CheckingAccount));  
+			
+
             BankCurrencySymbol = GetCurrencyID(BankAcct.CurrencyCode);
             IsoCurrencySymbol = GetCurrencyID(CurGroupCurrencyCode);/* CurGroupCurrencyCode will be blank if more than one currency in the group 67341*/
 
@@ -302,6 +308,8 @@ namespace Erp.Internal.EI
             /* 11: file information */
             lineLevel = 11;
             TotalRecords = 0;
+
+//zzz fix the doc notes:
             /* This code adds information from the specified payment method into a document.
                The document will have the structure like this:
 
@@ -328,7 +336,6 @@ namespace Erp.Internal.EI
             SFCommon.ttOutFileLineRows.Add(OutFileLineRow);
 
 			// FILE HEADER RECORD (1)
-
             string line_out = ((lineLen > 0) ? " ".PadRight(lineLen + " ".Length, ' ') : null);
             // field 1
             line_out = ErpUtilities.Overlay(line_out, 0, "1", 1);
@@ -342,36 +349,20 @@ namespace Erp.Internal.EI
             line_out = ErpUtilities.Overlay(line_out, 23, DateTime.Now.ToString("yyMMdd"), 6);
             // field 6
             line_out = ErpUtilities.Overlay(line_out, 29, DateTime.Now.ToString("HHmm"), 4);
-
-//zzz
             // field 7
-//            line_out = ErpUtilities.Overlay(line_out, 20, Company.Name, 35);
             line_out = ErpUtilities.Overlay(line_out, 33, "A", 1);
-
             // field 8
-//            line_out = ErpUtilities.Overlay(line_out, 55, Company.Address1, 35);
             line_out = ErpUtilities.Overlay(line_out, 34, "094", 3);
-
             // field 9
-//            line_out = ErpUtilities.Overlay(line_out, 90, ((!String.IsNullOrEmpty(Company.Zip)) ? (Company.Zip + " " + Company.City) : Company.City), 35);
             line_out = ErpUtilities.Overlay(line_out, 37, "10", 2);
-
             // field 10
-            //line_out = ErpUtilities.Overlay(line_out, 125, Country.Description, 35);
             line_out = ErpUtilities.Overlay(line_out, 39, "1", 1);
-
             // field 11
-//            line_out = ErpUtilities.Overlay(line_out, 160, "0000", 4);
             line_out = ErpUtilities.Overlay(line_out, 40, "JPMORGAN CHASE", 23);
-
             // field 12
-//            line_out = ErpUtilities.Overlay(line_out, 164, Compatibility.Convert.ToString(((DateTime)CurCheckDate).Year, "9999") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Month, "99") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Day, "99"), 8);
             line_out = ErpUtilities.Overlay(line_out, 63, Company.Name, 23);
-
             // field 13
             line_out = ErpUtilities.Overlay(line_out, 86, "", 8);
-
-//*/
 
             TotalRecords = TotalRecords + 1;
             lineLevel = lineLevel + 1;
@@ -379,6 +370,70 @@ namespace Erp.Internal.EI
             TotalOrders = 0;
             OutFileLineRow.Line_out = line_out;
 
+
+			// BATCH HEADER RECORD (5)
+            OutFileLineRow2 = new SFCommon.OutFileLine();
+            SFCommon.ttOutFileLineRows.Add(OutFileLineRow2);
+				
+
+            string line_out2 = ((lineLen > 0) ? " ".PadRight(lineLen + " ".Length, ' ') : null);
+            // field 1
+            line_out2 = ErpUtilities.Overlay(line_out2, 0, "5", 1);
+
+//need logic here
+//	220 for credits
+//	225 for debits
+//	can't combine both
+            // field 2
+            line_out2 = ErpUtilities.Overlay(line_out2, 1, "???", 3);
+
+
+            // field 3
+            line_out2 = ErpUtilities.Overlay(line_out2, 4, "", 16);
+            // field 4
+            line_out2 = ErpUtilities.Overlay(line_out2, 20, Selfbanknumber, 20);
+            // field 5
+            line_out2 = ErpUtilities.Overlay(line_out2, 40, "0000000000", 10);
+            // field 6
+            line_out2 = ErpUtilities.Overlay(line_out2, 50, "CCD", 3);
+            // field 7
+            line_out2 = ErpUtilities.Overlay(line_out2, 53, "ACH PMT", 10);
+            // field 8
+            line_out2 = ErpUtilities.Overlay(line_out2, 63, DateTime.Now.ToString("MMM dd"), 6);
+            // field 9
+            line_out2 = ErpUtilities.Overlay(line_out2, 69, DateTime.Now.ToString("yyMMdd"), 6);
+            // field 10
+            line_out2 = ErpUtilities.Overlay(line_out2, 75, "", 3);
+            // field 11
+            line_out2 = ErpUtilities.Overlay(line_out2, 78, "1", 1);
+            // field 12
+            line_out2 = ErpUtilities.Overlay(line_out2, 79, "02100002", 8);
+
+//zzzz
+//batch number need to figure out:
+//for each APTran where APTran.Company = Cur-Comp and APTran.HeadNum = TmpElec.HeadNum no-lock
+//                             by APTran.Company
+//                               by APTran.HeadNum
+//                                 by APTranNo
+//                                   by InvoiceNum:
+
+            // field 13
+            //line_out2 = ErpUtilities.Overlay(line_out2, 87, TmpElec.HeadNum.ToString(), 7);
+//Selfbanknumber = String.Format("{0:00000}", Payment_Common.BankAccount(BankAcct.CheckingAccount));  
+//            line_out2 = ErpUtilities.Overlay(line_out2, 87, String.Format("{0:00000}", TmpElec.HeadNum), 7);
+
+
+
+            TotalRecords = TotalRecords + 1;
+            lineLevel = lineLevel + 1;
+            PaymentNumber = "";
+            TotalOrders = 0;
+//zzzz
+            OutFileLineRow2.Line_out = line_out2;
+
+
+
+//zzz fix the doc notes:
             /* This code adds information from the specified payment method into a document.
                The document will have the structure like this:
 
@@ -504,8 +559,10 @@ namespace Erp.Internal.EI
                 }
                 SAmount = this.cnvAmount(IsoCurrencySymbol, Compatibility.Convert.ToString((TmpElec.DocCheckAmt * 100), "999999999999999"), 14);
                 /* 21: batch payment record part 1 */
+//zzz
                 OutFileLineRow = new SFCommon.OutFileLine();
                 SFCommon.ttOutFileLineRows.Add(OutFileLineRow);
+				
                 line_out = ((lineLen > 0) ? " ".PadRight(lineLen + " ".Length, ' ') : null);
                 /*  1 */
                 line_out = ErpUtilities.Overlay(line_out, 0, Compatibility.Convert.ToString(lineLevel), 2);
