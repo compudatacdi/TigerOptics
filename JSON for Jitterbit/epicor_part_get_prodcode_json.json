@@ -1,0 +1,10 @@
+{
+  "odata.metadata": "string",
+  "value": [
+    {
+      "Company": "PI03",
+      "PartNum": "string",
+      "ProdCode": "string"
+	  }
+  ]
+}

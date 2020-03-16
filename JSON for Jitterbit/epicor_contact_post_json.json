@@ -1,0 +1,23 @@
+{
+  "Company": "PI03",
+  "CustNum": 102,
+  "ShipToNum": "",
+  "ConNum": 2,
+
+  "CellPhoneNum": "string",
+  "CorpName": "1eb",
+  "Country": "string",
+  "CountryNum": 0,
+  "EMailAddress": "string",
+  "Address1": "string",
+  "City": "string",
+  "FaxNum": "string",
+  "FirstName": "string",
+  "LastName": "string",
+  "Name": "eric b test update",
+  "PhoneNum": "string",
+  "SpecialAddress": true,
+  "State": "string",
+  "Zip": "string",
+  "SFId_c": "x"
+}
