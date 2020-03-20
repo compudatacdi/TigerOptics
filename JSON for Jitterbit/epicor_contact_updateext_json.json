@@ -19,6 +19,7 @@
 		"LastName": "string",
 		"Name": "eric b test update",
 		"PhoneNum": "string",
+		"HomeNum": "string",
 		"SpecialAddress": true,
 		"State": "string",
 		"Zip": "string",
