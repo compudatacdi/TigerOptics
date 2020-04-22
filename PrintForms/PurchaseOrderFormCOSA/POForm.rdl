@@ -4376,10 +4376,10 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
         <Height>6.84904in</Height>
         <Style />
       </Body>
-      <Width>7.7944in</Width>
+      <Width>7.882in</Width>
       <Page>
         <PageHeader>
-          <Height>2.54597in</Height>
+          <Height>2.79597in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -4421,7 +4421,7 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
                       <TextRuns>
                         <TextRun>
                           <Label>Calc_AddressList</Label>
-                          <Value>=split(First(Fields!Calc_AddressList.Value, "Company"),"~")(1).ToString()</Value>
+                          <Value>=split(First(Fields!Calc_AddressList.Value, "Company"),"~")(0).ToString()</Value>
                           <Style>
                             <FontFamily>Arial Unicode MS</FontFamily>
                           </Style>
@@ -4435,7 +4435,7 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
                   <Top>0.665in</Top>
                   <Left>0.23in</Left>
                   <Height>0.18in</Height>
-                  <Width>2.20534in</Width>
+                  <Width>3.4525in</Width>
                   <ZIndex>1</ZIndex>
                   <Visibility>
                     <Hidden>=First(Fields!Calc_PrintCompanyName.Value, "Company")= false</Hidden>
@@ -4463,7 +4463,7 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>0.85889in</Top>
+                  <Top>1.10889in</Top>
                   <Left>0.23in</Left>
                   <Height>0.18in</Height>
                   <Width>2.20534in</Width>
@@ -4491,7 +4491,7 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>1.06166in</Top>
+                  <Top>1.31166in</Top>
                   <Left>0.23in</Left>
                   <Height>0.18in</Height>
                   <Width>2.20534in</Width>
@@ -4646,8 +4646,8 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>0.69069in</Top>
-                  <Left>2.59in</Left>
+                  <Top>1.10889in</Top>
+                  <Left>2.965in</Left>
                   <Height>0.18in</Height>
                   <Width>1.33783in</Width>
                   <ZIndex>8</ZIndex>
@@ -4677,8 +4677,8 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>0.88166in</Top>
-                  <Left>2.59in</Left>
+                  <Top>1.31166in</Top>
+                  <Left>2.965in</Left>
                   <Height>0.18in</Height>
                   <Width>1.33783in</Width>
                   <ZIndex>9</ZIndex>
@@ -4865,7 +4865,7 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
                       </Action>
                     </Actions>
                   </ActionInfo>
-                  <Top>1.3493in</Top>
+                  <Top>1.53333in</Top>
                   <Left>0.23in</Left>
                   <Height>0.18in</Height>
                   <Width>3.14945in</Width>
@@ -4902,7 +4902,7 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
                       </Action>
                     </Actions>
                   </ActionInfo>
-                  <Top>1.54319in</Top>
+                  <Top>1.72722in</Top>
                   <Left>0.23in</Left>
                   <Height>0.18in</Height>
                   <Width>3.14945in</Width>
@@ -4939,7 +4939,7 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
                       </Action>
                     </Actions>
                   </ActionInfo>
-                  <Top>1.76486in</Top>
+                  <Top>1.94889in</Top>
                   <Left>0.23in</Left>
                   <Height>0.18in</Height>
                   <Width>3.14945in</Width>
@@ -4950,82 +4950,41 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
                     </Border>
                   </Style>
                 </Textbox>
+                <Textbox Name="TxtCalc_AddressList6">
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Label>Calc_AddressList</Label>
+                          <Value>=split(First(Fields!Calc_AddressList.Value, "Company"), "~")(1).ToString</Value>
+                          <Style>
+                            <FontFamily>Arial Unicode MS</FontFamily>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                      </Style>
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>0.88166in</Top>
+                  <Left>0.23in</Left>
+                  <Height>0.18in</Height>
+                  <Width>3.4525in</Width>
+                  <ZIndex>18</ZIndex>
+                  <Visibility>
+                    <Hidden>=First(Fields!Calc_PrintCompanyName.Value, "Company") = False</Hidden>
+                  </Visibility>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
               </ReportItems>
               <Left>0.052in</Left>
-              <Height>1.94486in</Height>
-              <Width>7.6225in</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Rectangle>
-            <Rectangle Name="Rectangle5">
-              <ReportItems>
-                <Textbox Name="TxtCalc_AddressList6">
-                  <CanGrow>true</CanGrow>
-                  <CanShrink>true</CanShrink>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Label>Calc_AddressList</Label>
-                          <Value>=split(First(Fields!Calc_AddressList.Value, "Company"),"~")(6).ToString()</Value>
-                          <Style>
-                            <FontFamily>Arial Unicode MS</FontFamily>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Left>0.27in</Left>
-                  <Height>0.01042in</Height>
-                  <Width>1.77in</Width>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                  </Style>
-                </Textbox>
-                <Textbox Name="TxtCalc_AddressList7">
-                  <CanGrow>true</CanGrow>
-                  <CanShrink>true</CanShrink>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Label>Calc_AddressList</Label>
-                          <Value>=split(First(Fields!Calc_AddressList.Value, "Company"),"~")(7).ToString()</Value>
-                          <Style>
-                            <FontFamily>Arial Unicode MS</FontFamily>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>0.01042in</Top>
-                  <Left>0.27in</Left>
-                  <Height>0.01042in</Height>
-                  <Width>1.77in</Width>
-                  <ZIndex>1</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                  </Style>
-                </Textbox>
-              </ReportItems>
-              <Top>1.3111in</Top>
-              <Left>0.032in</Left>
-              <Height>0.02084in</Height>
-              <Width>7.6225in</Width>
-              <ZIndex>1</ZIndex>
+              <Height>2.15486in</Height>
+              <Width>7.83in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -5180,11 +5139,11 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
                   </Style>
                 </Textbox>
               </ReportItems>
-              <Top>1.9643in</Top>
+              <Top>2.2143in</Top>
               <Left>0.03893in</Left>
               <Height>0.31611in</Height>
               <Width>7.6799in</Width>
-              <ZIndex>2</ZIndex>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -5263,11 +5222,11 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
                   </Style>
                 </Line>
               </ReportItems>
-              <Top>2.33597in</Top>
+              <Top>2.58597in</Top>
               <Left>0.0425in</Left>
               <Height>0.21in</Height>
               <Width>7.612in</Width>
-              <ZIndex>3</ZIndex>
+              <ZIndex>2</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -5794,6 +5753,7 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
                   </Style>
                 </Textbox>
               </ReportItems>
+              <Top>0in</Top>
               <Left>0.052in</Left>
               <Height>1.31125in</Height>
               <Width>7.7424in</Width>
