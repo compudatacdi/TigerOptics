@@ -5684,6 +5684,19 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
                             <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>All prices are in US Dollars</Value>
+                              <Style>
+                                <Color>Blue</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox5</rd:DefaultName>
                       <ActionInfo>
@@ -5695,7 +5708,7 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
                       </ActionInfo>
                       <Top>0.96088in</Top>
                       <Left>0.065in</Left>
-                      <Height>0.25in</Height>
+                      <Height>0.39484in</Height>
                       <Width>7.4675in</Width>
                       <ZIndex>13</ZIndex>
                       <Style>
@@ -5711,7 +5724,7 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
                   </ReportItems>
                   <Top>0.02498in</Top>
                   <Left>0.07in</Left>
-                  <Height>1.28627in</Height>
+                  <Height>1.35572in</Height>
                   <Width>7.6724in</Width>
                   <Visibility>
                     <Hidden>=ReportItems!Textbox1.Value=false</Hidden>
@@ -5753,9 +5766,8 @@ True,nothing))="" and Fields!substitutePartNum.Value=""</Hidden>
                   </Style>
                 </Textbox>
               </ReportItems>
-              <Top>0in</Top>
               <Left>0.052in</Left>
-              <Height>1.31125in</Height>
+              <Height>1.3807in</Height>
               <Width>7.7424in</Width>
               <ZIndex>1</ZIndex>
               <Style>
