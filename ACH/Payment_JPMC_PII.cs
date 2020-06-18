@@ -34,8 +34,10 @@ History:
 
 02/28/20 eb1 eric blackwelder @ cdi create from Payment_JPMC
 	using this for the formatting:  https://www.chase.com/content/dam/chaseonline/en/demos/cbo/pdfs/cbo_achfile_helpguide.pdf
-06/15/20 eb1 eric blackwelder @ cdi create from Payment_JPMC
+06/15/20 eb2 eric blackwelder @ cdi create from Payment_JPMC
 	changes after first validation results
+06/18/20 eb3 eric blackwelder @ cdi create from Payment_JPMC
+	changes after 2nd validation results
 	
 
   ----------------------------------------------------------------------*/
@@ -347,15 +349,16 @@ namespace Erp.Internal.EI
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "200", 3);
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "220", 3);
 
-			//eb1: chase wants this blank
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 4, Company.Name.ToUpperInvariant().SubString(0, 16), 16);  /* short company name */
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 4, "", 16);  /* short company name */
+			//eb3:
+			////eb1: chase wants this blank as per the spec
+            ////ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 4, Company.Name.ToUpperInvariant().SubString(0, 16), 16);  /* short company name */
+            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 4, "", 16);
+			ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 4, Company.Name.ToUpperInvariant().SubString(0, 16), 16);  /* short company name */
 
 			//eb1: was missing, not sure why:
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 20, SelfBankNumber, 20);
 
 
-//is "01" in results
 			// COMPANY IDENTIFICATION (Assigned by JPMC)
             //eb2:
 			//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 40, ImmediateOrigine, 10);
@@ -379,10 +382,11 @@ namespace Erp.Internal.EI
 
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 78, "1", 1);
             
-//zzz
 			// bank routing number first 8 digits
 			//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, ImmediateOrigine.SubString(1, 8), 8);
-			ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, BankAcct.BankRoutingNum.SubString(0, 8), 8);
+			//eb3:
+			//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, BankAcct.BankRoutingNum.SubString(0, 8), 8);
+			ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, "02100002", 8);
 
 			// batch number
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, "0000001", 7);
@@ -418,7 +422,11 @@ namespace Erp.Internal.EI
                 }
                 VendorBankNumber = Payment_Common.FillZero(Payment_Common.GetOnlyNumbers(TmpElec.VendorBankAcctNumber), 17);
                 TotalAmount = TotalAmount + (TmpElec.DocCheckAmt);
-                TotalNumber = TotalNumber + Compatibility.Convert.ToInt32(VendBank.DFIIdentification);
+                
+				//eb3:
+				//TotalNumber = TotalNumber + Compatibility.Convert.ToInt32(VendBank.DFIIdentification);
+				TotalNumber = TotalNumber + Compatibility.Convert.ToInt32(BankAcct.BankRoutingNum);
+				
                 Payment = Payment + 1;
                 if (String.IsNullOrEmpty(TmpElec.VendorBankAcctNumber))
                 {
@@ -451,7 +459,12 @@ namespace Erp.Internal.EI
                 ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 39, TmpElec.VendorBankID, 15);  /* or maybe tmpElect.VendorAccountRef ?*/
                 ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 54, TmpElec.VendorBankNameOnAccount.Trim().SubString(0, 22), 22);
                 ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 78, "0", 1);
-                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, ImmediateOrigine.SubString(1, 8) + Compatibility.Convert.ToString(Payment, "9999999"), 15);
+				
+				//eb3:
+                //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, ImmediateOrigine.SubString(1, 8) + Compatibility.Convert.ToString(Payment, "9999999"), 15);
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, "02100002", 8);
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, "0000001", 7);
+				
             }/* for each TmpElec: */
             /* convert amounts and numbers to string and replace speces with zeros */
 
