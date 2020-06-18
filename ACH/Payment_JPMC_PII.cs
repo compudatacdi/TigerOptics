@@ -34,6 +34,9 @@ History:
 
 02/28/20 eb1 eric blackwelder @ cdi create from Payment_JPMC
 	using this for the formatting:  https://www.chase.com/content/dam/chaseonline/en/demos/cbo/pdfs/cbo_achfile_helpguide.pdf
+06/15/20 eb1 eric blackwelder @ cdi create from Payment_JPMC
+	changes after first validation results
+	
 
   ----------------------------------------------------------------------*/
 using System;
@@ -303,12 +306,18 @@ namespace Erp.Internal.EI
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, CompanyBankAcct, 10);
 //spec example: 0021000021
 //BankAcct.CheckingAccount = 390198528
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, BankAcct.CheckingAccount, 10);
+			//eb2:
+            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, BankAcct.CheckingAccount, 10);
+            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, " 021000021", 10);
 
 
 //spec example: 0000000000
 //should it be that?
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 13, ImmediateOrigine, 10);
+			//eb2:
+            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 13, ImmediateOrigine, 10);
+            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 13, "8184584039", 10);
+
+
 			
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 23, Compatibility.Convert.ToString(CompanyTime.Today().Day, "99") + Compatibility.Convert.ToString(CompanyTime.Today().Month, "99") + Compatibility.Convert.ToString(CompanyTime.Today().Year, "9999").SubString(2, 2), 6);
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 23, DateTime.Now.ToString("yyMMdd"), 6);
@@ -347,9 +356,12 @@ namespace Erp.Internal.EI
 
 
 //is "01" in results
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 40, ImmediateOrigine, 10);
+			// COMPANY IDENTIFICATION (Assigned by JPMC)
+            //eb2:
+			//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 40, ImmediateOrigine, 10);
+			ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 40, "9198528000", 10);
 
-
+			// STANDARD ENTRY CLASS CODE
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 50, "PPD", 3);
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 50, "CCD", 3);
 
@@ -424,10 +436,18 @@ namespace Erp.Internal.EI
                 ttOutFileLine.Line_out = ((lineLen > 0) ? " ".PadRight(lineLen + " ".Length, ' ') : null);
                 ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 0, "6", 1);
                 ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "22", 2);    /*vendbank.Character03 or hardcode:"22":U   checking */
-                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, ((VendBank.DFIIdentification.Length > 7) ? VendBank.DFIIdentification.Substring(0, 8) : string.Empty), 8);  /* ROUTING NUMBER */
-                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 11, ((VendBank.DFIIdentification.Length > 8) ? VendBank.DFIIdentification.Substring(8, 1) : string.Empty), 1);  /* ROUTING NUMBER CHECK DIGIT */
-                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 12, VendorBankNumber, 17);
-                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 29, SAmount, 10);
+
+				//eb2:  changes needed here: sh be...  position 4-12 : Receiving DFI Routing Number
+                //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, ((VendBank.DFIIdentification.Length > 7) ? VendBank.DFIIdentification.Substring(0, 8) : string.Empty), 8);  /* ROUTING NUMBER */
+                //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 11, ((VendBank.DFIIdentification.Length > 8) ? VendBank.DFIIdentification.Substring(8, 1) : string.Empty), 1);  /* ROUTING NUMBER CHECK DIGIT */
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, BankAcct.BankRoutingNum, 9);
+				
+				//eb2:  changes needed here: sh be...  position 13-29 : Receving DFI account number
+                //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 12, VendorBankNumber, 17);
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 12, BankAcct.CheckingAccount, 17);
+
+                
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 29, SAmount, 10);
                 ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 39, TmpElec.VendorBankID, 15);  /* or maybe tmpElect.VendorAccountRef ?*/
                 ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 54, TmpElec.VendorBankNameOnAccount.Trim().SubString(0, 22), 22);
                 ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 78, "0", 1);
@@ -456,8 +476,16 @@ namespace Erp.Internal.EI
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 10, STotalNumber, 10);
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 20, STotalAmount, 12);
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 32, "0", 12);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 44, ImmediateOrigine, 10);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, ImmediateOrigine.SubString(1, 8), 8);
+
+            //eb2:
+            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 44, ImmediateOrigine, 10);
+            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 44, "9198528000", 10);
+
+            //eb2:
+			//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, ImmediateOrigine.SubString(1, 8), 8);
+			ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, "02100002", 8);
+
+
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, "0000001", 7);
 
 
