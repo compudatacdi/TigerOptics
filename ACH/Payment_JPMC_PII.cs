@@ -38,6 +38,8 @@ History:
 	changes after first validation results
 06/18/20 eb3 eric blackwelder @ cdi create from Payment_JPMC
 	changes after 2nd validation results
+06/23/20 eb4 eric blackwelder @ cdi create from Payment_JPMC
+	changes after 3rd validation results
 	
 
   ----------------------------------------------------------------------*/
@@ -425,7 +427,9 @@ namespace Erp.Internal.EI
                 
 				//eb3:
 				//TotalNumber = TotalNumber + Compatibility.Convert.ToInt32(VendBank.DFIIdentification);
-				TotalNumber = TotalNumber + Compatibility.Convert.ToInt32(BankAcct.BankRoutingNum);
+				//eb4: the last digit in the BankRoutingNum is a check digit so need to strip it off
+				//TotalNumber = TotalNumber + Compatibility.Convert.ToInt32(BankAcct.BankRoutingNum);
+				TotalNumber = TotalNumber + Compatibility.Convert.ToInt32(BankAcct.BankRoutingNum.Substring(0, BankAcct.BankRoutingNum.Length - 1) );
 				
                 Payment = Payment + 1;
                 if (String.IsNullOrEmpty(TmpElec.VendorBankAcctNumber))
@@ -446,6 +450,11 @@ namespace Erp.Internal.EI
                 ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "22", 2);    /*vendbank.Character03 or hardcode:"22":U   checking */
 
 				//eb2:  changes needed here: sh be...  position 4-12 : Receiving DFI Routing Number
+				//		that was definition in one doc, the proper doc says:
+				//			4-11	RECEIVING DFI ID	Must be a valid Routing Number
+				//			12-12	CHECK DIGIT			Routing Number Check Digit
+				//		SOOO... the last digit in routing number is a check digit
+				//		SOOO... when using routing number later, strip off the last digit
                 //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, ((VendBank.DFIIdentification.Length > 7) ? VendBank.DFIIdentification.Substring(0, 8) : string.Empty), 8);  /* ROUTING NUMBER */
                 //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 11, ((VendBank.DFIIdentification.Length > 8) ? VendBank.DFIIdentification.Substring(8, 1) : string.Empty), 1);  /* ROUTING NUMBER CHECK DIGIT */
 				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, BankAcct.BankRoutingNum, 9);
@@ -470,6 +479,7 @@ namespace Erp.Internal.EI
 
             STotalAmount = this.cnvAmount(Compatibility.Convert.ToString((TotalAmount * 100), "9999999999"), 12);
             STotalNumber = this.cnvAmount(Compatibility.Convert.ToString(TotalNumber), 10);
+
             SPayment = this.cnvAmount(Compatibility.Convert.ToString(Payment), 6);
             Sblocks = this.cnvAmount(Compatibility.Convert.ToString(Payment + 4), 6);
 
@@ -486,9 +496,21 @@ namespace Erp.Internal.EI
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "220", 3);
             
 			ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 4, SPayment, 6);
+//zzzz	
+//eb4:
+//feedback makes no sense, hold off changing yet
+			//The sum of positions 4-11 of all Entry Detail (6) Records in the batch.
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 10, STotalNumber, 10);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 20, STotalAmount, 12);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 32, "0", 12);
+			
+			//Must equal the total debit dollar amount in the batch.
+			//eb4:
+            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 20, STotalAmount, 12);
+            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 20, "000000000000", 12);
+			
+			//Must equal the total credit dollar amount in the batch.
+			//eb4:
+            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 32, "0", 12);
+            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 32, STotalAmount, 12);
 
             //eb2:
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 44, ImmediateOrigine, 10);
@@ -512,8 +534,15 @@ namespace Erp.Internal.EI
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 7, Sblocks, 6);
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 13, "00" + SPayment, 8);
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 21, STotalNumber, 10);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 31, STotalAmount, 12);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 43, "0", 12);
+			
+			//eb4:
+            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 31, STotalAmount, 12);
+            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 31, "000000000000", 12);
+			
+			//eb4:
+            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 43, "0", 12);
+            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 43, STotalAmount, 12);
+
         }
         private string cnvAmount(string Amount, int Alength)
         {
