@@ -233,6 +233,8 @@ namespace Erp.Internal.EI
             string SPayment = string.Empty;
             string Sblocks = string.Empty;
             string SAmount = string.Empty;
+			//eb5:
+            string SCheckNum = string.Empty;
 
             #region >>===== ABL Source ================================>>
             //
@@ -348,6 +350,9 @@ namespace Erp.Internal.EI
                     throw new BLException(GlobalStrings.AValidSupplBankAccountNumberIsRequi);
                 }
                 SAmount = this.cnvAmount(Compatibility.Convert.ToString((TmpElec.DocCheckAmt * 100), "9999999999"), 10);
+				
+				//eb5:
+				SCheckNum = Compatibility.Convert.ToString(TmpElec.CheckNum);
   
 
 
@@ -357,8 +362,18 @@ namespace Erp.Internal.EI
                 EISFCommon.ttOutFileLineRows.Add(ttOutFileLine);
                 ttOutFileLine.HeadNum = TmpElec.HeadNum;
                 ttOutFileLine.Line_out = ((lineLen > 0) ? " ".PadRight(lineLen + " ".Length, ' ') : null);
-                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 0, "6", 1);
-                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "22", 2);    /*vendbank.Character03 or hardcode:"22":U   checking */
+                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 0, "P", 1); //Record Type
+                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, " ", 1); //Filler
+				
+                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 2, BankAcct.CheckingAccount, 20);  //Account  Number
+                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 22, " ", 1); //Filler
+
+//zzz
+//last:  this shows up in file, but check num is 50000002, in file as 5000000000
+//next:  fix and move on
+                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 23, SCheckNum, 18);  //Serial/Check Number
+
+
 
 				//eb2:  changes needed here: sh be...  position 4-12 : Receiving DFI Routing Number
 				//		that was definition in one doc, the proper doc says:
