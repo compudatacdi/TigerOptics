@@ -40,6 +40,8 @@ History:
 	changes after 2nd validation results
 06/23/20 eb4 eric blackwelder @ cdi create from Payment_JPMC
 	changes after 3rd validation results
+
+08/04/20 eb5 eric blackwelder @ cdi create from Payment_JPMC_PII
 	
 
   ----------------------------------------------------------------------*/
@@ -113,10 +115,6 @@ namespace Erp.Internal.EI
         {
             if (LibBankBatching != null && !String.IsNullOrEmpty(ipBankBatchID) && ipHeadNum != 0)
                 LibBankBatching.SavePaymentBankBatchID(ipHeadNum, ipBankBatchID, BankBatching.SourceType.EICheckHed, Session.UserID, ipBatchDate, string.Empty);
-//eb1: testing:
-//this does not save a record to BankBatch table
-//can't put in an int or string into the BankBatching.SourceType.EICheckHed field = get error
-//LibBankBatching.SavePaymentBankBatchID(10001, "eb1", BankBatching.SourceType.EICheckHed, Session.UserID, ipBatchDate, string.Empty);
 
         }
         /// ATTENTION!!!
@@ -198,8 +196,6 @@ namespace Erp.Internal.EI
                                           select OutFileLine_Row))
                 {
                     fileWriter.FileWriteLine(EISFCommon.SpecialCaps(_OutFileLine.Line_out.Substring(0, Math.Min(lineLen, _OutFileLine.Line_out.Length - 1))));
-//eb1:
-//storeBankBatchID = true;
 
                     if (storeBankBatchID)
                         SavePaymentBankBatchID(_OutFileLine.HeadNum, GetPaymentBankBatchID(string.Empty), tmpElec.ProcessDate);
@@ -298,100 +294,15 @@ namespace Erp.Internal.EI
                 EISFCommon.ttOutFileLineRows = new List<SFCommon.OutFileLine>();
             else EISFCommon.ttOutFileLineRows.Clear();
 
-            /* 1 - file header information */
             ttOutFileLine = new SFCommon.OutFileLine();
 
-            EISFCommon.ttOutFileLineRows.Add(ttOutFileLine);
-            ttOutFileLine.Line_out = ((lineLen > 0) ? " ".PadRight(lineLen + " ".Length, ' ') : null);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 0, "1", 1);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "01", 2);
-			
-			//eb1:
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, CompanyBankAcct, 10);
-//spec example: 0021000021
-//BankAcct.CheckingAccount = 390198528
-			//eb2:
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, BankAcct.CheckingAccount, 10);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, " 021000021", 10);
-
-
-//spec example: 0000000000
-//should it be that?
-			//eb2:
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 13, ImmediateOrigine, 10);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 13, "8184584039", 10);
-
-
-			
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 23, Compatibility.Convert.ToString(CompanyTime.Today().Day, "99") + Compatibility.Convert.ToString(CompanyTime.Today().Month, "99") + Compatibility.Convert.ToString(CompanyTime.Today().Year, "9999").SubString(2, 2), 6);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 23, DateTime.Now.ToString("yyMMdd"), 6);
-
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 29, Compatibility.Convert.TimeToString(CompanyTime.Now(), "HH:MM").Replace(":", ""), 4);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 29, DateTime.Now.ToString("HHmm"), 4);
-
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 33, Compatibility.Convert.ToString(CompanyTime.Today().Day, "99").SubString(1, 1), 1);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 33, "A", 1);
-
-
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 34, "094", 3);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 37, "10", 2);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 39, "1", 1);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 40, "JPMORGAN CHASE", 23);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 63, Company.Name.ToUpperInvariant().SubString(0, 23), 23);/* long company name */
+            /* 1 - file header information */
+			//eb5: only need detail lines for positive pay, so take out this whole section
 
 
             /* 5 - batch header information */
-            ttOutFileLine = new SFCommon.OutFileLine();
+			//eb5: only need detail lines for positive pay, so take out this whole section
 
-            EISFCommon.ttOutFileLineRows.Add(ttOutFileLine);
-            ttOutFileLine.Line_out = ((lineLen > 0) ? " ".PadRight(lineLen + " ".Length, ' ') : null);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 0, "5", 1);
-
-			//eb1:
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "200", 3);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "220", 3);
-
-			//eb3:
-			////eb1: chase wants this blank as per the spec
-            ////ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 4, Company.Name.ToUpperInvariant().SubString(0, 16), 16);  /* short company name */
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 4, "", 16);
-			ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 4, Company.Name.ToUpperInvariant().SubString(0, 16), 16);  /* short company name */
-
-			//eb1: was missing, not sure why:
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 20, SelfBankNumber, 20);
-
-
-			// COMPANY IDENTIFICATION (Assigned by JPMC)
-            //eb2:
-			//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 40, ImmediateOrigine, 10);
-			ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 40, "9198528000", 10);
-
-			// STANDARD ENTRY CLASS CODE
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 50, "PPD", 3);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 50, "CCD", 3);
-
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 53, "PAYROLL", 10);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 53, "ACH PMT", 10);
-
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 63, GlobalStrings.JANFEBMARAPRMAYJUNJULAUGSEPOCTNOVDEC.Entry(CompanyTime.Today().Month - 1, ',') + " " + Compatibility.Convert.ToString(CompanyTime.Today().Year, "9999").SubString(2, 2), 6);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 63, DateTime.Now.ToString("MMM dd"), 6);
-			
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 69, Compatibility.Convert.ToString(((DateTime)CurCheckDate).Day, "99") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Month, "99") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Year, "9999").SubString(2, 2), 6);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 69, DateTime.Now.ToString("yyMMdd"), 6);
-
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 75, "", 3);
-
-
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 78, "1", 1);
-            
-			// bank routing number first 8 digits
-			//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, ImmediateOrigine.SubString(1, 8), 8);
-			//eb3:
-			//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, BankAcct.BankRoutingNum.SubString(0, 8), 8);
-			ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, "02100002", 8);
-
-			// batch number
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, "0000001", 7);
 
             /* transactions */
 
@@ -485,63 +396,11 @@ namespace Erp.Internal.EI
 
 
             /* 8 - Batch control record information */
-            ttOutFileLine = new SFCommon.OutFileLine();
-
-            EISFCommon.ttOutFileLineRows.Add(ttOutFileLine);
-            ttOutFileLine.Line_out = ((lineLen > 0) ? " ".PadRight(lineLen + " ".Length, ' ') : null);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 0, "8", 1);
-			
-            //eb1:
-			//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "200", 3);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "220", 3);
-            
-			ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 4, SPayment, 6);
-//zzzz	
-//eb4:
-//feedback makes no sense, hold off changing yet
-			//The sum of positions 4-11 of all Entry Detail (6) Records in the batch.
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 10, STotalNumber, 10);
-			
-			//Must equal the total debit dollar amount in the batch.
-			//eb4:
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 20, STotalAmount, 12);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 20, "000000000000", 12);
-			
-			//Must equal the total credit dollar amount in the batch.
-			//eb4:
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 32, "0", 12);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 32, STotalAmount, 12);
-
-            //eb2:
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 44, ImmediateOrigine, 10);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 44, "9198528000", 10);
-
-            //eb2:
-			//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, ImmediateOrigine.SubString(1, 8), 8);
-			ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, "02100002", 8);
-
-
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, "0000001", 7);
+			//eb5: only need detail lines for positive pay, so take out this whole section
 
 
             /* 9 - file control record information */
-            ttOutFileLine = new SFCommon.OutFileLine();
-
-            EISFCommon.ttOutFileLineRows.Add(ttOutFileLine);
-            ttOutFileLine.Line_out = ((lineLen > 0) ? " ".PadRight(lineLen + " ".Length, ' ') : null);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 0, "9", 1);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "000001", 6);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 7, Sblocks, 6);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 13, "00" + SPayment, 8);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 21, STotalNumber, 10);
-			
-			//eb4:
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 31, STotalAmount, 12);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 31, "000000000000", 12);
-			
-			//eb4:
-            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 43, "0", 12);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 43, STotalAmount, 12);
+			//eb5: only need detail lines for positive pay, so take out this whole section
 
         }
         private string cnvAmount(string Amount, int Alength)
