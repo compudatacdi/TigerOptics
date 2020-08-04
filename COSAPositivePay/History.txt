@@ -1,0 +1,5 @@
+01/27/17 JShay			- SCR 197590 - Initial Check in to generate the Chase export file template for Positive Pay electronic interface.
+02/02/17 JShay			- SCR 197587 - Removed assignation of the Output File, this is done in the internal of the process.
+02/03/17 JShay			- SCR 197590 - Modified to use the check amount based on the bank's currency (BankTotalAmt) instead of the company's currency (CheckAmt).
+									   Convert.ToInt32 and integer variable have been changed to Convert.ToInt64 and a long variable to support bigger amounts.
+									   Also, an error is displayed if the BankTotalAmt exceed the allowed digits.
