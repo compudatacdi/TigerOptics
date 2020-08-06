@@ -235,6 +235,9 @@ namespace Erp.Internal.EI
             string SAmount = string.Empty;
 			//eb5:
             string SCheckNum = string.Empty;
+            decimal CheckingAccount = decimal.Zero;
+            string SCheckingAccount = string.Empty;
+
 
             #region >>===== ABL Source ================================>>
             //
@@ -349,12 +352,15 @@ namespace Erp.Internal.EI
                 {
                     throw new BLException(GlobalStrings.AValidSupplBankAccountNumberIsRequi);
                 }
-                SAmount = this.cnvAmount(Compatibility.Convert.ToString((TmpElec.DocCheckAmt * 100), "9999999999"), 10);
+                //SAmount = this.cnvAmount(Compatibility.Convert.ToString((TmpElec.DocCheckAmt * 100), "9999999999"), 10);
+                SAmount = this.cnvAmount(Compatibility.Convert.ToString((TmpElec.DocCheckAmt * 100), "999999999999999999"), 18);
 				
-				//eb5:
-				SCheckNum = Compatibility.Convert.ToString(TmpElec.CheckNum);
-  
-
+				//eb5:  (right justify, zero filled, 18 characters)
+//				SCheckingAccount = string.Format("{0:00000000000000000000}", BankAcct.CheckingAccount);
+				CheckingAccount = Convert.ToDecimal(BankAcct.CheckingAccount);
+				SCheckingAccount = string.Format("{0:00000000000000000000}", CheckingAccount);
+				//SCheckNum = Compatibility.Convert.ToString(TmpElec.CheckNum);
+				SCheckNum = string.Format("{0:000000000000000000}", TmpElec.CheckNum);
 
 				/* 6 - Entry Detail transaction information */
                 ttOutFileLine = new SFCommon.OutFileLine();
@@ -365,13 +371,23 @@ namespace Erp.Internal.EI
                 ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 0, "P", 1); //Record Type
                 ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, " ", 1); //Filler
 				
-                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 2, BankAcct.CheckingAccount, 20);  //Account  Number
+                //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 2, BankAcct.CheckingAccount, 20);  //Account  Number
+                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 2, SCheckingAccount, 20);  //Account  Number
                 ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 22, " ", 1); //Filler
+				
+                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 23, SCheckNum, 18);  //Serial/Check Number
+                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 41, " ", 1); //Filler
+
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 42, SAmount, 18); //Amount
+                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 60, " ", 1); //Filler
+
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 61, Compatibility.Convert.ToString(((DateTime)CurCheckDate).Year, "9999") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Month, "99") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Day, "99") , 8); //Issue Date
+                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 69, " ", 1); //Filler
+
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 70, Compatibility.Convert.ToString(((DateTime)CurCheckDate).Year, "9999") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Month, "99") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Day, "99") , 8); //Paid Date
+                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 78, " ", 1); //Filler
 
 //zzz
-//last:  this shows up in file, but check num is 50000002, in file as 5000000000
-//next:  fix and move on
-                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 23, SCheckNum, 18);  //Serial/Check Number
 
 
 
@@ -383,23 +399,24 @@ namespace Erp.Internal.EI
 				//		SOOO... when using routing number later, strip off the last digit
                 //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, ((VendBank.DFIIdentification.Length > 7) ? VendBank.DFIIdentification.Substring(0, 8) : string.Empty), 8);  /* ROUTING NUMBER */
                 //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 11, ((VendBank.DFIIdentification.Length > 8) ? VendBank.DFIIdentification.Substring(8, 1) : string.Empty), 1);  /* ROUTING NUMBER CHECK DIGIT */
-				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, BankAcct.BankRoutingNum, 9);
+//				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, BankAcct.BankRoutingNum, 9);
 				
 				//eb2:  changes needed here: sh be...  position 13-29 : Receving DFI account number
                 //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 12, VendorBankNumber, 17);
-				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 12, BankAcct.CheckingAccount, 17);
+//				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 12, BankAcct.CheckingAccount, 17);
 
                 
-				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 29, SAmount, 10);
-                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 39, TmpElec.VendorBankID, 15);  /* or maybe tmpElect.VendorAccountRef ?*/
-                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 54, TmpElec.VendorBankNameOnAccount.Trim().SubString(0, 22), 22);
-                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 78, "0", 1);
+//				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 29, SAmount, 10);
+//                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 39, TmpElec.VendorBankID, 15);  /* or maybe tmpElect.VendorAccountRef ?*/
+//                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 54, TmpElec.VendorBankNameOnAccount.Trim().SubString(0, 22), 22);
+//                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 78, "0", 1);
 				
 				//eb3:
                 //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, ImmediateOrigine.SubString(1, 8) + Compatibility.Convert.ToString(Payment, "9999999"), 15);
-				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, "02100002", 8);
-				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, "0000001", 7);
-				
+//				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, "02100002", 8);
+//				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, "0000001", 7);
+	
+	
             }/* for each TmpElec: */
             /* convert amounts and numbers to string and replace speces with zeros */
 
