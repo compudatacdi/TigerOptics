@@ -118,7 +118,9 @@ namespace Erp.Internal.EI
 
         }
         /// ATTENTION!!!
-        int lineLen = 94;
+        //eb5:
+		//int lineLen = 94;
+        int lineLen = 200;
         string OutputFile = string.Empty;
 
         #region Implicit buffers
@@ -361,6 +363,11 @@ namespace Erp.Internal.EI
 				SCheckingAccount = string.Format("{0:00000000000000000000}", CheckingAccount);
 				//SCheckNum = Compatibility.Convert.ToString(TmpElec.CheckNum);
 				SCheckNum = string.Format("{0:000000000000000000}", TmpElec.CheckNum);
+				string SBankName = "";
+				for(int i = 0; i < BankAcct.BankName.Length; i++)
+				{
+					SBankName += BankAcct.BankName[i]; 
+				}
 
 				/* 6 - Entry Detail transaction information */
                 ttOutFileLine = new SFCommon.OutFileLine();
@@ -387,7 +394,57 @@ namespace Erp.Internal.EI
 				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 70, Compatibility.Convert.ToString(((DateTime)CurCheckDate).Year, "9999") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Month, "99") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Day, "99") , 8); //Paid Date
                 ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 78, " ", 1); //Filler
 
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, "", 15); //Additional Data
+
 //zzz
+//				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, TmpElec.VendorBankNameOnAccount, 50); //Expanded Additional Data (Payee Name)
+//				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, TmpElec.VendorBankNameOnAccount.Trim().SubString(0, 22), 50); //Expanded Additional Data (Payee Name)
+//				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, TmpElec.VendorBankNameOnAccount.Trim().SubString(0, 22), 22); //Expanded Additional Data (Payee Name)
+//this works:
+//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, " ", 50); //Filler
+//index outside bounds of array error:
+//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, TmpElec.VendorBankNameOnAccount, 50); //Filler
+//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, TmpElec.VendorBankNameOnAccount, 150); //Filler
+//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, VendBank.NameOnAccount, 50); //Filler
+//works:
+//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, VendBank.MemberID, 50); //Filler
+//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, VendBank.LegalName, 50); //Filler
+
+//errors:
+//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, VendBank.NameOnAccount.Substring(2, 2), 50); //Filler
+//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, VendBank.NameOnAccount.Length.ToString(), 50); //Filler
+//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, VendBank.LegalName.Length.ToString(), 50); //Filler
+
+//string SNameOnAccount = "";
+//if (TmpElec.VendorBankNameOnAccount[0] != null)
+//	SNameOnAccount = TmpElec.VendorBankNameOnAccount[0]; 
+//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, SNameOnAccount, 50); //Filler
+		
+//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, VendBank.BankName, 50); //Filler
+
+//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, BankAcct.BankName.Substring(0, BankAcct.BankName.Length - 1) , 50); //Filler
+//string X1 = "x";
+//string SNameOnAccount = "";
+//string X1 = "";
+//for(int i = 0; i < BankAcct.BankName.Length; i++)
+//{
+//    X1 = X1 + BankAcct.BankName[i]; 
+
+//works and givs 15 X's:
+//    X1 = X1 + "x"; 
+//}
+//for testing only:
+//X1 += " / bank acct id: " + TmpElec.FromBankAcctID;
+//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, X1.Substring(0, 1), 50); //Filler
+//works:
+//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, X1, 50); //Filler
+//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, BankAcct.BankName[0].ToString(), 50); //Filler
+
+//zzz
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 94, TmpElec.VendorBankNameOnAccount, 50); //Expanded Additional Data (Payee Name)
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 144, "", 50); //2nd Payee Name
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 194, "", 6); //Filler
+
 
 
 
