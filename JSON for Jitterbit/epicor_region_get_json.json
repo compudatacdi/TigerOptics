@@ -1,0 +1,23 @@
+{
+  "odata.metadata": "https://pii-app1/ERPPIITest/api/v1/Erp.BO.RegionSvc/$metadata#Epicor.RestApi.Regions",
+  "value": [
+    {
+      "Company": "PI03",
+      "RegionCode": "1",
+      "Description": "North America excl USA",
+      "CountryNum": 0,
+      "Inactive": false,
+      "RegionComment": "",
+      "SalesManagerID": "",
+      "GlobalRegion": false,
+      "GlobalLock": false,
+      "SysRevID": "7441199",
+      "SysRowID": "14d4b681-9d83-4ab2-9395-2db43190a8ce",
+      "CountryDescription": "",
+      "SalesManagerName": "",
+      "BitFlag": 0,
+      "CountryNumDescription": "",
+      "RowMod": ""
+    }
+  ]
+}
