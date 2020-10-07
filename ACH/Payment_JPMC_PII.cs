@@ -32,15 +32,17 @@ History:
 03/23/12  KrisM  SCR 90748 - lines 6 and 8 were not getting output.
 05/10/12  KrisM  SCR 90748 - additional changes not specified in original fix.
 
-02/28/20 eb1 eric blackwelder @ cdi create from Payment_JPMC
+02/28/20 eb1 eric blackwelder @ cdi
+	create from Payment_JPMC
 	using this for the formatting:  https://www.chase.com/content/dam/chaseonline/en/demos/cbo/pdfs/cbo_achfile_helpguide.pdf
-06/15/20 eb2 eric blackwelder @ cdi create from Payment_JPMC
+06/15/20 eb2 eric blackwelder @ cdi
 	changes after first validation results
-06/18/20 eb3 eric blackwelder @ cdi create from Payment_JPMC
+06/18/20 eb3 eric blackwelder @ cdi
 	changes after 2nd validation results
-06/23/20 eb4 eric blackwelder @ cdi create from Payment_JPMC
+06/23/20 eb4 eric blackwelder @ cdi
 	changes after 3rd validation results
-	
+10/07/20 eb5 eric blackwelder @ cdi
+	change where vendor bank info comes from
 
   ----------------------------------------------------------------------*/
 using System;
@@ -457,11 +459,15 @@ namespace Erp.Internal.EI
 				//		SOOO... when using routing number later, strip off the last digit
                 //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, ((VendBank.DFIIdentification.Length > 7) ? VendBank.DFIIdentification.Substring(0, 8) : string.Empty), 8);  /* ROUTING NUMBER */
                 //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 11, ((VendBank.DFIIdentification.Length > 8) ? VendBank.DFIIdentification.Substring(8, 1) : string.Empty), 1);  /* ROUTING NUMBER CHECK DIGIT */
-				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, BankAcct.BankRoutingNum, 9);
+				//eb5:
+				//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, BankAcct.BankRoutingNum, 9);
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, VendBank.SwiftNum, 9);
 				
 				//eb2:  changes needed here: sh be...  position 13-29 : Receving DFI account number
                 //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 12, VendorBankNumber, 17);
-				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 12, BankAcct.CheckingAccount, 17);
+				//eb5:
+				//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 12, BankAcct.CheckingAccount, 17);
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 12, VendBank.BankAcctNumber, 17);
 
                 
 				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 29, SAmount, 10);
