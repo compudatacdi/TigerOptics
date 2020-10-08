@@ -1,5 +1,9 @@
 rem batch file to encrypt and send file via sftp
 
+rem 10/08/20 move delete here from below, and add delete of the signed file
+del COSA.ACH.NACHA.PII.txt
+del COSA.ACH.NACHA.PII.txt.sig
+
 rem create c:\ChaseACH\COSA.TEST.IN.txt
 copy C:\EpicorData\Users\manager\AP_Chase.txt COSA.ACH.NACHA.PII.txt /y
 TIMEOUT /T 2
@@ -20,6 +24,6 @@ rem TIMEOUT /T 2
 rem exit
 rem quit
 
-del COSA.ACH.NACHA.PII.txt
+rem del COSA.ACH.NACHA.PII.txt
 
 
