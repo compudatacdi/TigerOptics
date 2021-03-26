@@ -175,7 +175,7 @@
       <Query>
         <DataSourceName>dsServCall</DataSourceName>
         <CommandText>="SELECT T1.CallComment,T1.CallNum,T1.CallPriority,T1.SchedDate,T1.CustNum,T1.Calc_SchTime,T1.Calc_ShipToContactName,T1.Calc_ShipToAddr, T2.CallComment as FSCallDt_CallComment,T2.CallLine,CAST( T2.CallQty as float ) as CallQty,T2.IUM,T2.JobNum,T2.LabCovered,T2.LineDesc,T2.MatCovered,T2.MiscCovered,T2.PartNum,T2.ProjectID,T2.RevisionNum,T2.SerialNumber,T2.XPartNum,T2.XRevisionNum,T2.Calc_ContDesc,T2.Calc_ReasonDesc,T2.Calc_SerialNumber,T2.Calc_WarrDesc, CAST( T3.AssemblySeq as nvarchar ) as AssemblySeq,T3.CallLine as JobAsmbl_CallLine,T3.CallNum as JobAsmbl_CallNum,T3.Company,T3.[Description],T3.JobNum as JobAsmbl_JobNum,T3.PartNum as JobAsmbl_PartNum, T4.MiscCode,CAST( T4.Calc_DocBillMiscAmt as float ) as Calc_DocBillMiscAmt,T4.MiscCode_Description,T4.Calc_SCMiscCode,T4.Calc_SCMiscDescription,T5.Address1,T5.Address2,T5.Address3,T5.City,T5.State,T5.Zip,T1.CustNum_CustID
- FROM FSCallHd_" + Parameters!TableGuid.Value + " T1
+,T5.Name,T5.Country FROM FSCallHd_" + Parameters!TableGuid.Value + " T1
  LEFT OUTER JOIN FSCallDt_" + Parameters!TableGuid.Value + " T2
   ON T1.Company = T2.Company AND T1.CallNum = T2.CallNum
  LEFT OUTER JOIN JobAsmbl_" + Parameters!TableGuid.Value + " T3
@@ -365,6 +365,14 @@
         </Field>
         <Field Name="Zip">
           <DataField>Zip</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="Name">
+          <DataField>Name</DataField>
+          <rd:UserDefined>true</rd:UserDefined>
+        </Field>
+        <Field Name="Country">
+          <DataField>Country</DataField>
           <rd:UserDefined>true</rd:UserDefined>
         </Field>
       </Fields>
@@ -701,7 +709,7 @@
                                         <Paragraph>
                                           <TextRuns>
                                             <TextRun>
-                                              <Value>=First(Fields!Company.Value)</Value>
+                                              <Value>=First(Fields!Name.Value)</Value>
                                               <Style />
                                             </TextRun>
                                           </TextRuns>
@@ -751,7 +759,7 @@
                                         <Paragraph>
                                           <TextRuns>
                                             <TextRun>
-                                              <Value>=First(Fields!Address2.Value)</Value>
+                                              <Value>=IIF(First(Fields!Address2.Value) = "", First(Fields!City.Value) &amp; ", " &amp; First(Fields!State.Value) &amp;  "  " &amp; First(Fields!Zip.Value), First(Fields!Address2.Value) )</Value>
                                               <Style />
                                             </TextRun>
                                           </TextRuns>
@@ -777,7 +785,8 @@
                                         <Paragraph>
                                           <TextRuns>
                                             <TextRun>
-                                              <Value>=First(Fields!Address3.Value)</Value>
+                                              <Value>=IIF(First(Fields!Address3.Value) &lt;&gt; "", First(Fields!Address3.Value),
+   IIF(First(Fields!Address2.Value) = "", First(Fields!Country.Value), First(Fields!City.Value) &amp; ", " &amp; First(Fields!State.Value) &amp;  "  " &amp; First(Fields!Zip.Value) ) )</Value>
                                               <Style />
                                             </TextRun>
                                           </TextRuns>
@@ -960,7 +969,7 @@
                                         <Paragraph>
                                           <TextRuns>
                                             <TextRun>
-                                              <Value>=First(Fields!City.Value)</Value>
+                                              <Value>=IIF(First(Fields!Address3.Value) &lt;&gt; "", First(Fields!City.Value) &amp; ", " &amp; First(Fields!State.Value) &amp;  "  " &amp; First(Fields!Zip.Value), "")</Value>
                                               <Style />
                                             </TextRun>
                                           </TextRuns>
@@ -986,7 +995,7 @@
                                         <Paragraph>
                                           <TextRuns>
                                             <TextRun>
-                                              <Value>=First(Fields!State.Value)</Value>
+                                              <Value EvaluationMode="Constant" />
                                               <Style />
                                             </TextRun>
                                           </TextRuns>
@@ -1012,7 +1021,7 @@
                                         <Paragraph>
                                           <TextRuns>
                                             <TextRun>
-                                              <Value>=First(Fields!Zip.Value)</Value>
+                                              <Value EvaluationMode="Constant" />
                                               <Style />
                                             </TextRun>
                                           </TextRuns>
@@ -1707,7 +1716,7 @@
                                     </TextRun>
                                   </TextRuns>
                                   <Style>
-                                    <TextAlign>Center</TextAlign>
+                                    <TextAlign>Left</TextAlign>
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
@@ -3140,7 +3149,7 @@ and
                         </TablixMember>
                         <TablixMember>
                           <Visibility>
-                            <Hidden>=isnothing(Fields!FSCallDt_CallComment.Value) or Fields!FSCallDt_CallComment.Value=""</Hidden>
+                            <Hidden>true</Hidden>
                           </Visibility>
                           <HideIfNoRows>true</HideIfNoRows>
                         </TablixMember>
@@ -3193,7 +3202,6 @@ and
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>FSCallHd</DataSetName>
-            <Left>0in</Left>
             <Height>6.4825in</Height>
             <Width>7.62in</Width>
             <Style>
@@ -3473,7 +3481,7 @@ and
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.91945in</Top>
-                  <Left>2.36042in</Left>
+                  <Left>2.61042in</Left>
                   <Height>0.18in</Height>
                   <Width>1.21458in</Width>
                   <ZIndex>2</ZIndex>
@@ -3502,7 +3510,7 @@ and
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.12945in</Top>
-                  <Left>2.36042in</Left>
+                  <Left>2.61042in</Left>
                   <Height>0.18in</Height>
                   <Width>1.20458in</Width>
                   <ZIndex>3</ZIndex>
@@ -3603,7 +3611,7 @@ and
                   <Top>0.91945in</Top>
                   <Left>0.11792in</Left>
                   <Height>0.56708in</Height>
-                  <Width>2.17306in</Width>
+                  <Width>2.42306in</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
@@ -3896,7 +3904,6 @@ and
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Left>0in</Left>
               <Height>2.39487in</Height>
               <Width>7.62in</Width>
               <Style>
@@ -4141,7 +4148,7 @@ and
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Left>0in</Left>
+              <Top>0in</Top>
               <Height>0.36542in</Height>
               <Width>7.62in</Width>
               <ZIndex>1</ZIndex>
