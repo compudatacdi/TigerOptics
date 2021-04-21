@@ -3,10 +3,57 @@ using System.Linq;
 using System.Linq.Expressions;
 using Epicor.Data;
 using Erp.Tables;
+
+//eb7:
+using System.Collections.Generic;
+
+
 namespace Erp.Internal.EI
 {
     public partial class Payment_JPMC_PII
     {
+
+		//eb7:
+        #region APTran Queries
+        #region >>===== ABL Source ================================>>
+        //
+        //for each APTran where APTran.Company = Cur-Comp and APTran.HeadNum = TmpElec.HeadNum no-lock
+        //                             by APTran.Company
+        //                               by APTran.HeadNum
+        //                                 by APTranNo
+        //                                   by InvoiceNum:
+        //                                   
+        //                 
+        //            
+        //
+        #endregion == ABL Source =================================<<
+
+        static Func<ErpContext, string, int, IEnumerable<APTran>> selectAPTranQuery;
+//        static Func<ErpContext, string, int,<APTran> selectAPTranQuery;
+//        static Func<ErpContext, string, int, APTran> selectAPTranQuery;
+//        static Func<ErpContext, string, int, IEnumerable<APTran>> selectAPTranQuery;
+
+        private IEnumerable<APTran> SelectAPTran(string company, int headNum)
+//        private APTran SelectAPTran(string company, int headNum)
+        {
+            if (selectAPTranQuery == null)
+            {
+                Expression<Func<ErpContext, string, int, IEnumerable<APTran>>> expression =
+//                Expression<Func<ErpContext, string, int, APTran>> expression =
+      (ctx, company_ex, headNum_ex) =>
+        (from row in ctx.APTran
+         where row.Company == company_ex &&
+         row.HeadNum == headNum_ex
+         orderby row.Company, row.HeadNum, row.APTranNo, row.InvoiceNum
+         select row);
+                selectAPTranQuery = DBExpressionCompiler.Compile(expression);
+            }
+
+            return selectAPTranQuery(this.Db, company, headNum);
+        }
+        #endregion APTran Queries
+		
+		
         #region BankAcct Queries
         #region >>===== ABL Source ================================>>
         //

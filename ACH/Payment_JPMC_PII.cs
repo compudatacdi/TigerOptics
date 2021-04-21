@@ -21,7 +21,9 @@ What needs to be done by the user:
 Here are the fields that have to be put into the UI through customization:
 
 BankAcct:
-ImmediateOrigine        BankAcct.Character01
+//eb7:
+//ImmediateOrigine        BankAcct.Character01
+ImmediateOrigine        BankAcct.ImmediateOrigin_c
 
 VendBank:
 VendAccountType         VendBank.Character01    /* 22 = checking  * /
@@ -43,6 +45,10 @@ History:
 	changes after 3rd validation results
 10/07/20 eb5 eric blackwelder @ cdi
 	change where vendor bank info comes from
+10/09/20 eb6 eric blackwelder @ cdi
+	change hash totals
+10/09/20 eb7 eric blackwelder @ cdi
+	add record type 7
 
   ----------------------------------------------------------------------*/
 using System;
@@ -68,6 +74,8 @@ using Microsoft.EntityFrameworkCore;
 #else
 using System.Data.Entity;
 #endif
+
+
 
 namespace Erp.Internal.EI
 {
@@ -130,7 +138,6 @@ namespace Erp.Internal.EI
         Erp.Tables.BankAcct BankAcct;
         Erp.Tables.VendBank VendBank;
         Erp.Internal.EI.SFCommon.OutFileLine ttOutFileLine;
-
         #endregion
 
         private Lazy<Erp.Internal.EI.Payment_Def> _Payment_Def = new Lazy<Payment_Def>(() => new Erp.Internal.EI.Payment_Def());
@@ -239,6 +246,8 @@ namespace Erp.Internal.EI
             string SPayment = string.Empty;
             string Sblocks = string.Empty;
             string SAmount = string.Empty;
+			//eb6:
+            int Record6Count = 0;
 
             #region >>===== ABL Source ================================>>
             //
@@ -270,13 +279,16 @@ namespace Erp.Internal.EI
             {
                 throw new BLException(GlobalStrings.CompanyNotFound);
             }
-            ImmediateOrigine = "1" + System.Text.RegularExpressions.Regex.Replace(Company.FEIN, "[^0-9]", ""); 
+
+			//eb7:
+            //ImmediateOrigine = "1" + System.Text.RegularExpressions.Regex.Replace(Company.FEIN, "[^0-9]", ""); 
 
             #region >>===== ABL Source ================================>>
             //
             //FIND first BankAcct WHERE BankAcct.Company = Cur-comp and BankAcct.BankAcctID = TmpElec.FromBankAcctID no-lock
             //
             #endregion == ABL Source =================================<<
+
 
             BankAcct = this.FindFirstBankAcct(Session.CompanyID, TmpElec.FromBankAcctID);
             if (BankAcct == null)
@@ -296,6 +308,10 @@ namespace Erp.Internal.EI
 			//eb1:
 			SelfBankNumber = String.Format("{0:00000000000000000000}", Convert.ToDouble(Payment_Common.BankAccount(BankAcct.CheckingAccount)));
 
+			//eb7:
+			ImmediateOrigine = BankAcct.ImmediateOrigin_c;
+
+
             if (EISFCommon.ttOutFileLineRows == null)
                 EISFCommon.ttOutFileLineRows = new List<SFCommon.OutFileLine>();
             else EISFCommon.ttOutFileLineRows.Clear();
@@ -310,18 +326,18 @@ namespace Erp.Internal.EI
 			
 			//eb1:
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, CompanyBankAcct, 10);
-//spec example: 0021000021
-//BankAcct.CheckingAccount = 390198528
+			//spec example: 0021000021
+			//BankAcct.CheckingAccount = 390198528
 			//eb2:
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, BankAcct.CheckingAccount, 10);
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, " 021000021", 10);
 
 
-//spec example: 0000000000
-//should it be that?
 			//eb2:
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 13, ImmediateOrigine, 10);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 13, "8184584039", 10);
+            //eb7:
+			//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 13, "8184584039", 10);
+            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 13, ImmediateOrigine, 10);
 
 
 			
@@ -366,7 +382,9 @@ namespace Erp.Internal.EI
 			// COMPANY IDENTIFICATION (Assigned by JPMC)
             //eb2:
 			//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 40, ImmediateOrigine, 10);
-			ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 40, "9198528000", 10);
+            //eb7:
+			//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 40, "9198528000", 10);
+			ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 40, ImmediateOrigine, 10);
 
 			// STANDARD ENTRY CLASS CODE
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 50, "PPD", 3);
@@ -440,11 +458,13 @@ namespace Erp.Internal.EI
                 }
                 SAmount = this.cnvAmount(Compatibility.Convert.ToString((TmpElec.DocCheckAmt * 100), "9999999999"), 10);
   
-
-
+  
 				/* 6 - Entry Detail transaction information */
                 ttOutFileLine = new SFCommon.OutFileLine();
 
+				//eb6:
+				Record6Count += 1;
+				
                 EISFCommon.ttOutFileLineRows.Add(ttOutFileLine);
                 ttOutFileLine.HeadNum = TmpElec.HeadNum;
                 ttOutFileLine.Line_out = ((lineLen > 0) ? " ".PadRight(lineLen + " ".Length, ' ') : null);
@@ -479,16 +499,52 @@ namespace Erp.Internal.EI
                 //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, ImmediateOrigine.SubString(1, 8) + Compatibility.Convert.ToString(Payment, "9999999"), 15);
 				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, "02100002", 8);
 				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, "0000001", 7);
+
 				
             }/* for each TmpElec: */
             /* convert amounts and numbers to string and replace speces with zeros */
 
             STotalAmount = this.cnvAmount(Compatibility.Convert.ToString((TotalAmount * 100), "9999999999"), 12);
-            STotalNumber = this.cnvAmount(Compatibility.Convert.ToString(TotalNumber), 10);
+			//eb6:
+            //STotalNumber = this.cnvAmount(Compatibility.Convert.ToString(TotalNumber), 10);
+			STotalNumber = this.cnvAmount(Compatibility.Convert.ToString(Record6Count * 02100002), 10);
+
 
             SPayment = this.cnvAmount(Compatibility.Convert.ToString(Payment), 6);
             Sblocks = this.cnvAmount(Compatibility.Convert.ToString(Payment + 4), 6);
 
+
+			//eb7:
+			//invoices:
+			//this is a list of invoice numbers
+			/* 7 - Addenda Record */
+			int record7TotalCount = 0;
+			foreach (var APTran_iterator in (this.SelectAPTran(Session.CompanyID, TmpElec.HeadNum)))
+			{
+				record7TotalCount += 1;
+			}
+
+			int record7Counter = 0;
+			foreach (var APTran_iterator in (this.SelectAPTran(Session.CompanyID, TmpElec.HeadNum)))
+			{
+				record7Counter += 1;
+
+				ttOutFileLine = new SFCommon.OutFileLine();
+				ttOutFileLine.Line_out = ((lineLen > 0) ? " ".PadRight(lineLen + " ".Length, ' ') : null);				
+				EISFCommon.ttOutFileLineRows.Add(ttOutFileLine);
+
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 0, "7", 1);
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "200", 3);
+				if (APTran_iterator.InvoiceNum != "")
+				{
+					ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, "Invoice " + APTran_iterator.InvoiceNum, 80);
+				}
+
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 83, record7TotalCount, 4);
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, record7Counter, 7);
+
+			}
+			
 
             /* 8 - Batch control record information */
             ttOutFileLine = new SFCommon.OutFileLine();
@@ -502,9 +558,7 @@ namespace Erp.Internal.EI
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "220", 3);
             
 			ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 4, SPayment, 6);
-//zzzz	
-//eb4:
-//feedback makes no sense, hold off changing yet
+
 			//The sum of positions 4-11 of all Entry Detail (6) Records in the batch.
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 10, STotalNumber, 10);
 			
