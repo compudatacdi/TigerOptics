@@ -540,8 +540,8 @@ namespace Erp.Internal.EI
 					ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, "Invoice " + APTran_iterator.InvoiceNum, 80);
 				}
 
-				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 83, record7TotalCount, 4);
-				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, record7Counter, 7);
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 83, record7TotalCount.ToString("D4"), 4);
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, record7Counter.ToString("D7"), 7);
 
 			}
 			
