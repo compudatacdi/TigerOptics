@@ -29,17 +29,11 @@ namespace Erp.Internal.EI
         #endregion == ABL Source =================================<<
 
         static Func<ErpContext, string, int, IEnumerable<APTran>> selectAPTranQuery;
-//        static Func<ErpContext, string, int,<APTran> selectAPTranQuery;
-//        static Func<ErpContext, string, int, APTran> selectAPTranQuery;
-//        static Func<ErpContext, string, int, IEnumerable<APTran>> selectAPTranQuery;
-
         private IEnumerable<APTran> SelectAPTran(string company, int headNum)
-//        private APTran SelectAPTran(string company, int headNum)
         {
             if (selectAPTranQuery == null)
             {
                 Expression<Func<ErpContext, string, int, IEnumerable<APTran>>> expression =
-//                Expression<Func<ErpContext, string, int, APTran>> expression =
       (ctx, company_ex, headNum_ex) =>
         (from row in ctx.APTran
          where row.Company == company_ex &&

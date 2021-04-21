@@ -48,7 +48,7 @@ History:
 10/09/20 eb6 eric blackwelder @ cdi
 	change hash totals
 10/09/20 eb7 eric blackwelder @ cdi
-	add record type 7
+	add record type 7 and other changes
 
   ----------------------------------------------------------------------*/
 using System;
@@ -394,7 +394,11 @@ namespace Erp.Internal.EI
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 53, "ACH PMT", 10);
 
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 63, GlobalStrings.JANFEBMARAPRMAYJUNJULAUGSEPOCTNOVDEC.Entry(CompanyTime.Today().Month - 1, ',') + " " + Compatibility.Convert.ToString(CompanyTime.Today().Year, "9999").SubString(2, 2), 6);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 63, DateTime.Now.ToString("MMM dd"), 6);
+			//eb7:
+            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 63, DateTime.Now.ToString("MMM dd"), 6);
+			DateTime checkDate = (DateTime)TmpElec.CheckDate;
+			ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 63, checkDate.ToString("MMM dd"), 6);
+
 			
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 69, Compatibility.Convert.ToString(((DateTime)CurCheckDate).Day, "99") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Month, "99") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Year, "9999").SubString(2, 2), 6);
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 69, DateTime.Now.ToString("yyMMdd"), 6);
@@ -528,6 +532,10 @@ namespace Erp.Internal.EI
 						ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, "Invoice " + APTran_iterator.InvoiceNum.ToString(), 80);
 					}
 
+					//KEEP for testing:
+					//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 40, "HeadNum " + TmpElec.HeadNum, 40);
+					
+					
 					ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 83, record7TotalCount.ToString("D4"), 4);
 					ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, record7Counter.ToString("D7"), 7);
 
