@@ -500,6 +500,38 @@ namespace Erp.Internal.EI
 				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, "02100002", 8);
 				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, "0000001", 7);
 
+
+
+				//eb7:
+				//invoices:
+				//this is a list of invoice numbers
+				/* 7 - Addenda Record */
+				int record7TotalCount = 0;
+				foreach (var APTran_iterator in (this.SelectAPTran(Session.CompanyID, TmpElec.HeadNum)))
+				{
+					record7TotalCount += 1;
+				}
+
+				int record7Counter = 0;
+				foreach (var APTran_iterator in (this.SelectAPTran(Session.CompanyID, TmpElec.HeadNum)))
+				{
+					record7Counter += 1;
+
+					ttOutFileLine = new SFCommon.OutFileLine();
+					ttOutFileLine.Line_out = ((lineLen > 0) ? " ".PadRight(lineLen + " ".Length, ' ') : null);				
+					EISFCommon.ttOutFileLineRows.Add(ttOutFileLine);
+
+					ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 0, "7", 1);
+					ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "200", 3);
+					if (APTran_iterator.InvoiceNum != "")
+					{
+						ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, "Invoice " + APTran_iterator.InvoiceNum.ToString(), 80);
+					}
+
+					ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 83, record7TotalCount.ToString("D4"), 4);
+					ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, record7Counter.ToString("D7"), 7);
+
+				}
 				
             }/* for each TmpElec: */
             /* convert amounts and numbers to string and replace speces with zeros */
@@ -514,36 +546,6 @@ namespace Erp.Internal.EI
             Sblocks = this.cnvAmount(Compatibility.Convert.ToString(Payment + 4), 6);
 
 
-			//eb7:
-			//invoices:
-			//this is a list of invoice numbers
-			/* 7 - Addenda Record */
-			int record7TotalCount = 0;
-			foreach (var APTran_iterator in (this.SelectAPTran(Session.CompanyID, TmpElec.HeadNum)))
-			{
-				record7TotalCount += 1;
-			}
-
-			int record7Counter = 0;
-			foreach (var APTran_iterator in (this.SelectAPTran(Session.CompanyID, TmpElec.HeadNum)))
-			{
-				record7Counter += 1;
-
-				ttOutFileLine = new SFCommon.OutFileLine();
-				ttOutFileLine.Line_out = ((lineLen > 0) ? " ".PadRight(lineLen + " ".Length, ' ') : null);				
-				EISFCommon.ttOutFileLineRows.Add(ttOutFileLine);
-
-				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 0, "7", 1);
-				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "200", 3);
-				if (APTran_iterator.InvoiceNum != "")
-				{
-					ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, "Invoice " + APTran_iterator.InvoiceNum, 80);
-				}
-
-				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 83, record7TotalCount.ToString("D4"), 4);
-				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, record7Counter.ToString("D7"), 7);
-
-			}
 			
 
             /* 8 - Batch control record information */
