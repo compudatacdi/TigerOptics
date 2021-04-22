@@ -513,31 +513,33 @@ namespace Erp.Internal.EI
 				int record7TotalCount = 0;
 				foreach (var APTran_iterator in (this.SelectAPTran(Session.CompanyID, TmpElec.HeadNum)))
 				{
-					record7TotalCount += 1;
+					if (APTran_iterator.InvoiceNum != "")
+					{
+						record7TotalCount += 1;
+					}
 				}
 
 				int record7Counter = 0;
 				foreach (var APTran_iterator in (this.SelectAPTran(Session.CompanyID, TmpElec.HeadNum)))
 				{
-					record7Counter += 1;
-
-					ttOutFileLine = new SFCommon.OutFileLine();
-					ttOutFileLine.Line_out = ((lineLen > 0) ? " ".PadRight(lineLen + " ".Length, ' ') : null);				
-					EISFCommon.ttOutFileLineRows.Add(ttOutFileLine);
-
-					ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 0, "7", 1);
-					ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "200", 3);
 					if (APTran_iterator.InvoiceNum != "")
 					{
-						ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, "Invoice " + APTran_iterator.InvoiceNum.ToString(), 80);
-					}
+						record7Counter += 1;
 
-					//KEEP for testing:
-					//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 40, "HeadNum " + TmpElec.HeadNum, 40);
-					
-					
-					ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 83, record7TotalCount.ToString("D4"), 4);
-					ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, record7Counter.ToString("D7"), 7);
+						ttOutFileLine = new SFCommon.OutFileLine();
+						ttOutFileLine.Line_out = ((lineLen > 0) ? " ".PadRight(lineLen + " ".Length, ' ') : null);				
+						EISFCommon.ttOutFileLineRows.Add(ttOutFileLine);
+
+						ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 0, "7", 1);
+						ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "200", 3);
+						ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, "Invoice " + APTran_iterator.InvoiceNum.ToString(), 80);
+
+						//KEEP for testing:
+						//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 40, "HeadNum " + TmpElec.HeadNum, 40);						
+						
+						ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 83, record7TotalCount.ToString("D4"), 4);
+						ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, record7Counter.ToString("D7"), 7);
+					}
 
 				}
 				
