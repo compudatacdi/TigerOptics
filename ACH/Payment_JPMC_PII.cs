@@ -339,10 +339,12 @@ namespace Erp.Internal.EI
 			//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 13, "8184584039", 10);
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 13, ImmediateOrigine, 10);
 
-
-			
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 23, Compatibility.Convert.ToString(CompanyTime.Today().Day, "99") + Compatibility.Convert.ToString(CompanyTime.Today().Month, "99") + Compatibility.Convert.ToString(CompanyTime.Today().Year, "9999").SubString(2, 2), 6);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 23, DateTime.Now.ToString("yyMMdd"), 6);
+            //eb7:
+			//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 23, DateTime.Now.ToString("yyMMdd"), 6);
+			DateTime checkDate = (DateTime)TmpElec.CheckDate;
+			ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 23, checkDate.ToString("yyMMdd"), 6);
+
 
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 29, Compatibility.Convert.TimeToString(CompanyTime.Now(), "HH:MM").Replace(":", ""), 4);
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 29, DateTime.Now.ToString("HHmm"), 4);
@@ -396,12 +398,13 @@ namespace Erp.Internal.EI
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 63, GlobalStrings.JANFEBMARAPRMAYJUNJULAUGSEPOCTNOVDEC.Entry(CompanyTime.Today().Month - 1, ',') + " " + Compatibility.Convert.ToString(CompanyTime.Today().Year, "9999").SubString(2, 2), 6);
 			//eb7:
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 63, DateTime.Now.ToString("MMM dd"), 6);
-			DateTime checkDate = (DateTime)TmpElec.CheckDate;
 			ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 63, checkDate.ToString("MMM dd"), 6);
 
 			
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 69, Compatibility.Convert.ToString(((DateTime)CurCheckDate).Day, "99") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Month, "99") + Compatibility.Convert.ToString(((DateTime)CurCheckDate).Year, "9999").SubString(2, 2), 6);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 69, DateTime.Now.ToString("yyMMdd"), 6);
+			//eb7:
+            //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 69, DateTime.Now.ToString("yyMMdd"), 6);
+            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 69, checkDate.ToString("yyMMdd"), 6);
 
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 75, "", 3);
 
