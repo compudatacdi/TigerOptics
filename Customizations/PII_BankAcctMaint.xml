@@ -1,0 +1,784 @@
+<?xml version="1.0" standalone="yes"?>
+<GenXDataDataSet xmlns="http://www.epicor.com/Ice/300/BO/GenXData/GenXData">
+  <xs:schema id="GenXDataDataSet" targetNamespace="http://www.epicor.com/Ice/300/BO/GenXData/GenXData" xmlns:mstns="http://www.epicor.com/Ice/300/BO/GenXData/GenXData" xmlns="http://www.epicor.com/Ice/300/BO/GenXData/GenXData" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+    <xs:element name="GenXDataDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:ExportFormat="Gen3" msprop:IsMain="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="XXXDef" msprop:SchemaName="Ice">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Company" msprop:ReadOnly="True" msprop:Like="Company.Company" msprop:Format="x(8)" type="xs:string" />
+                <xs:element name="ProductID" msdata:Caption="Product" msprop:ReadOnly="True" msprop:Like="DashBdDef.ProductID" msprop:Format="x(2)" type="xs:string" />
+                <xs:element name="TypeCode" msdata:Caption="Type" msprop:ReadOnly="True" msprop:Like="XXXDef.TypeCode" msprop:Format="x(20)" type="xs:string" />
+                <xs:element name="Key1" msdata:Caption="Key 1" msprop:Like="XXXDef.Key1" msprop:Format="x(50)" type="xs:string" />
+                <xs:element name="Key2" msdata:Caption="Key 2" msprop:Like="XXXDef.Key2" msprop:Format="x(100)" type="xs:string" />
+                <xs:element name="Key3" msdata:Caption="Key 3" msprop:Like="XXXDef.Key3" msprop:Format="x(50)" type="xs:string" />
+                <xs:element name="Description" msprop:Format="x(60)" type="xs:string" minOccurs="0" />
+                <xs:element name="LastUpdated" msdata:Caption="Last Updated" msprop:ReadOnly="True" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="LastUpdatedBy" msdata:Caption="User ID" msprop:ReadOnly="True" msprop:Like="UserFile.UserID" msprop:Format="x(75)" type="xs:string" minOccurs="0" />
+                <xs:element name="Version" msprop:ReadOnly="True" msprop:Format="x(20)" type="xs:string" minOccurs="0" />
+                <xs:element name="DataBaseVersion" msprop:ReadOnly="True" msprop:Format="99999999" type="xs:int" minOccurs="0" />
+                <xs:element name="SysCharacter01" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysCharacter02" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysCharacter03" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysCharacter04" msprop:ReadOnly="True" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysCharacter05" msprop:ReadOnly="True" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysNumber01" type="xs:decimal" minOccurs="0" />
+                <xs:element name="SysNumber02" type="xs:decimal" minOccurs="0" />
+                <xs:element name="SysNumber03" type="xs:decimal" minOccurs="0" />
+                <xs:element name="SysNumber04" type="xs:decimal" minOccurs="0" />
+                <xs:element name="SysNumber05" type="xs:decimal" minOccurs="0" />
+                <xs:element name="SysDate01" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="SysDate02" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="SysDate03" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="SysDate04" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="SysDate05" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="SysCheckBox01" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysCheckBox02" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysCheckBox03" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysCheckBox04" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysCheckBox05" type="xs:boolean" minOccurs="0" />
+                <xs:element name="CommentText" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="CGCCode" msprop:ReadOnly="True" msprop:Format="x(8)" type="xs:string" />
+                <xs:element name="SystemFlag" msprop:ReadOnly="True" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysRevID" msprop:SystemColumn="True" msprop:Format="&gt;&gt;,&gt;&gt;&gt;,&gt;&gt;9" type="xs:long" minOccurs="0" />
+                <xs:element name="SysRowID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:SystemColumn="True" msprop:Format="X(36)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysCheckBox06" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysCheckBox07" type="xs:boolean" minOccurs="0" />
+                <xs:element name="OnMenu" msprop:ReadOnly="True" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Duplicate" msprop:ReadOnly="True" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Cosmetic" msprop:ReadOnly="True" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Content" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="BitFlag" msdata:Caption="Bit Flag" msprop:ReadOnly="True" msprop:SystemColumn="True" msprop:External="True" type="xs:int" minOccurs="0" />
+                <xs:element name="RowMod" msprop:SystemColumn="True" msprop:External="True" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="XXXDefPK_XXXDef" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//mstns:XXXDef" />
+        <xs:field xpath="mstns:Company" />
+        <xs:field xpath="mstns:ProductID" />
+        <xs:field xpath="mstns:TypeCode" />
+        <xs:field xpath="mstns:CGCCode" />
+        <xs:field xpath="mstns:Key1" />
+        <xs:field xpath="mstns:Key2" />
+        <xs:field xpath="mstns:Key3" />
+      </xs:unique>
+    </xs:element>
+  </xs:schema>
+  <XXXDef>
+    <Company />
+    <ProductID>EP</ProductID>
+    <TypeCode>Customization</TypeCode>
+    <Key1>PII_BankAcctMaint</Key1>
+    <Key2>App.BankAcctEntry.BankAcctEntryForm</Key2>
+    <Key3 />
+    <Description>PII Bank Account Maintenance</Description>
+    <LastUpdated>2021-04-20T00:00:00-04:00</LastUpdated>
+    <LastUpdatedBy>manager</LastUpdatedBy>
+    <Version>4/20/2021 3:32:55 PM</Version>
+    <DataBaseVersion>0</DataBaseVersion>
+    <SysCharacter01 />
+    <SysCharacter02 />
+    <SysCharacter03 />
+    <SysCharacter04>Pass</SysCharacter04>
+    <SysCharacter05>3.2.700.0</SysCharacter05>
+    <SysNumber01>0.000000000</SysNumber01>
+    <SysNumber02>0.000000000</SysNumber02>
+    <SysNumber03>0.000000000</SysNumber03>
+    <SysNumber04>0.000000000</SysNumber04>
+    <SysNumber05>0.000000000</SysNumber05>
+    <SysCheckBox01>false</SysCheckBox01>
+    <SysCheckBox02>false</SysCheckBox02>
+    <SysCheckBox03>false</SysCheckBox03>
+    <SysCheckBox04>false</SysCheckBox04>
+    <SysCheckBox05>false</SysCheckBox05>
+    <CommentText />
+    <CGCCode />
+    <SystemFlag>false</SystemFlag>
+    <SysRevID>68601273</SysRevID>
+    <SysRowID>43db9e9b-46e8-45eb-a4c2-bf3236743d07</SysRowID>
+    <SysCheckBox06>false</SysCheckBox06>
+    <SysCheckBox07>false</SysCheckBox07>
+    <OnMenu>true</OnMenu>
+    <Duplicate>false</Duplicate>
+    <Cosmetic>false</Cosmetic>
+    <Content>&lt;CustomizationDS xmlns="http://tempuri.org/XMLSchema.xsd"&gt;
+  &lt;xs:schema id="CustomizationDS" targetNamespace="http://tempuri.org/XMLSchema.xsd" xmlns:mstns="http://tempuri.org/XMLSchema.xsd" xmlns="http://tempuri.org/XMLSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified"&gt;
+    &lt;xs:element name="CustomizationDS" msdata:IsDataSet="true" msdata:Locale="" msprop:BuildVersion="3.2.700.0"&gt;
+      &lt;xs:complexType&gt;
+        &lt;xs:choice minOccurs="0" maxOccurs="unbounded"&gt;
+          &lt;xs:element name="Controls"&gt;
+            &lt;xs:complexType&gt;
+              &lt;xs:sequence&gt;
+                &lt;xs:element name="FormsID" type="xs:string" /&gt;
+                &lt;xs:element name="ControlName" type="xs:string" /&gt;
+                &lt;xs:element name="Key" type="xs:string" /&gt;
+                &lt;xs:element name="ParentControlKey" type="xs:string" /&gt;
+                &lt;xs:element name="ControlType" type="xs:string" /&gt;
+                &lt;xs:element name="Company" type="xs:string" /&gt;
+                &lt;xs:element name="Plant" type="xs:string" /&gt;
+                &lt;xs:element name="DcdUserId" type="xs:string" /&gt;
+                &lt;xs:element name="GroupID" type="xs:string" /&gt;
+                &lt;xs:element name="ControlsID" type="xs:string" /&gt;
+              &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+          &lt;/xs:element&gt;
+          &lt;xs:element name="Properties"&gt;
+            &lt;xs:complexType&gt;
+              &lt;xs:sequence&gt;
+                &lt;xs:element name="FormsID" type="xs:string" /&gt;
+                &lt;xs:element name="ControlName" type="xs:string" /&gt;
+                &lt;xs:element name="Key" type="xs:string" /&gt;
+                &lt;xs:element name="PropertyName" type="xs:string" /&gt;
+                &lt;xs:element name="PropertyValue" type="xs:string" /&gt;
+                &lt;xs:element name="Company" type="xs:string" /&gt;
+                &lt;xs:element name="Plant" type="xs:string" /&gt;
+                &lt;xs:element name="DcdUserID" type="xs:string" /&gt;
+                &lt;xs:element name="GroupID" type="xs:string" /&gt;
+                &lt;xs:element name="PropertiesID" type="xs:string" /&gt;
+              &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+          &lt;/xs:element&gt;
+        &lt;/xs:choice&gt;
+      &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:schema&gt;
+  &lt;Controls&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;6a4a29a5-b991-475b-9eef-40399bc72718&lt;/Key&gt;
+    &lt;ParentControlKey&gt;7b6b9b4f-8464-4c83-bdb2-cb7d8747e726&lt;/ParentControlKey&gt;
+    &lt;ControlType&gt;Ice.Lib.Framework.EpiLabel&lt;/ControlType&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserId /&gt;
+    &lt;GroupID /&gt;
+    &lt;ControlsID /&gt;
+  &lt;/Controls&gt;
+  &lt;Controls&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;a226731a-0615-4d82-9bd0-b2c521c375e8&lt;/Key&gt;
+    &lt;ParentControlKey&gt;7b6b9b4f-8464-4c83-bdb2-cb7d8747e726&lt;/ParentControlKey&gt;
+    &lt;ControlType&gt;Ice.Lib.Framework.EpiTextBox&lt;/ControlType&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserId /&gt;
+    &lt;GroupID /&gt;
+    &lt;ControlsID /&gt;
+  &lt;/Controls&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtBankAcctDesc&lt;/ControlName&gt;
+    &lt;Key&gt;72b80303-f07f-4b14-9c35-c8778ba1b117&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;2&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;Customization&lt;/ControlName&gt;
+    &lt;Key&gt;214A2F77-4181-4a42-A897-ACD84DC10C23&lt;/Key&gt;
+    &lt;PropertyName&gt;Script&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;// **************************************************
+// Custom code for BankAcctEntryForm
+// Created: 4/20/2021 1:41:07 PM
+// **************************************************
+//
+//	REVISION LOG:
+//
+//	eb1 04/20/21 eric blackwelder @ CDI
+//		add "ACH Immediate Origin" on Detail tab
+//
+// **************************************************
+
+extern alias Erp_Contracts_BO_BankAcct;
+extern alias Erp_Contracts_BO_Currency;
+
+
+
+using System;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Windows.Forms;
+using Erp.Adapters;
+using Erp.UI;
+using Ice.Lib;
+using Ice.Adapters;
+using Ice.Lib.Customization;
+using Ice.Lib.ExtendedProps;
+using Ice.Lib.Framework;
+using Ice.Lib.Searches;
+using Ice.UI.FormFunctions;
+
+public class Script
+{
+	// ** Wizard Insert Location - Do Not Remove 'Begin/End Wizard Added Module Level Variables' Comments! **
+	// Begin Wizard Added Module Level Variables **
+
+	// End Wizard Added Module Level Variables **
+
+	// Add Custom Module Level Variables Here **
+
+	public void InitializeCustomCode()
+	{
+		// ** Wizard Insert Location - Do not delete 'Begin/End Wizard Added Variable Initialization' lines **
+		// Begin Wizard Added Variable Initialization
+
+		// End Wizard Added Variable Initialization
+
+		// Begin Wizard Added Custom Method Calls
+
+		// End Wizard Added Custom Method Calls
+	}
+
+	public void DestroyCustomCode()
+	{
+		// ** Wizard Insert Location - Do not delete 'Begin/End Wizard Added Object Disposal' lines **
+		// Begin Wizard Added Object Disposal
+
+		// End Wizard Added Object Disposal
+
+		// Begin Custom Code Disposal
+
+		// End Custom Code Disposal
+	}
+}
+
+
+&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;Customization&lt;/ControlName&gt;
+    &lt;Key&gt;214A2F77-4181-4a42-A897-ACD84DC10C23&lt;/Key&gt;
+    &lt;PropertyName&gt;Language&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;CSharp&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpRouting&lt;/ControlName&gt;
+    &lt;Key&gt;7b6b9b4f-8464-4c83-bdb2-cb7d8747e726&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpRouting&lt;/ControlName&gt;
+    &lt;Key&gt;7b6b9b4f-8464-4c83-bdb2-cb7d8747e726&lt;/Key&gt;
+    &lt;PropertyName&gt;Anchor&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;Top, Left&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpRouting&lt;/ControlName&gt;
+    &lt;Key&gt;7b6b9b4f-8464-4c83-bdb2-cb7d8747e726&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorTop&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;241&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpRouting&lt;/ControlName&gt;
+    &lt;Key&gt;7b6b9b4f-8464-4c83-bdb2-cb7d8747e726&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorLeft&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;5&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpRouting&lt;/ControlName&gt;
+    &lt;Key&gt;7b6b9b4f-8464-4c83-bdb2-cb7d8747e726&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorWidth&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;690&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpRouting&lt;/ControlName&gt;
+    &lt;Key&gt;7b6b9b4f-8464-4c83-bdb2-cb7d8747e726&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorHeight&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;90&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpBankAcct&lt;/ControlName&gt;
+    &lt;Key&gt;652bf75b-e617-403a-b7fa-c02e2b5fcea0&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpBankAcct&lt;/ControlName&gt;
+    &lt;Key&gt;652bf75b-e617-403a-b7fa-c02e2b5fcea0&lt;/Key&gt;
+    &lt;PropertyName&gt;Anchor&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;Top, Left&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpBankAcct&lt;/ControlName&gt;
+    &lt;Key&gt;652bf75b-e617-403a-b7fa-c02e2b5fcea0&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorTop&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;10&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpBankAcct&lt;/ControlName&gt;
+    &lt;Key&gt;652bf75b-e617-403a-b7fa-c02e2b5fcea0&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorLeft&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;5&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpBankAcct&lt;/ControlName&gt;
+    &lt;Key&gt;652bf75b-e617-403a-b7fa-c02e2b5fcea0&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorWidth&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;690&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpBankAcct&lt;/ControlName&gt;
+    &lt;Key&gt;652bf75b-e617-403a-b7fa-c02e2b5fcea0&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorHeight&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;231&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;6a4a29a5-b991-475b-9eef-40399bc72718&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;6a4a29a5-b991-475b-9eef-40399bc72718&lt;/Key&gt;
+    &lt;PropertyName&gt;Parent&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;7b6b9b4f-8464-4c83-bdb2-cb7d8747e726&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;6a4a29a5-b991-475b-9eef-40399bc72718&lt;/Key&gt;
+    &lt;PropertyName&gt;Width&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;153&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;6a4a29a5-b991-475b-9eef-40399bc72718&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorWidth&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;153&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;6a4a29a5-b991-475b-9eef-40399bc72718&lt;/Key&gt;
+    &lt;PropertyName&gt;Height&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;20&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;6a4a29a5-b991-475b-9eef-40399bc72718&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorHeight&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;20&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;6a4a29a5-b991-475b-9eef-40399bc72718&lt;/Key&gt;
+    &lt;PropertyName&gt;Left&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;419&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;6a4a29a5-b991-475b-9eef-40399bc72718&lt;/Key&gt;
+    &lt;PropertyName&gt;Top&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;64&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;6a4a29a5-b991-475b-9eef-40399bc72718&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorLeft&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;419&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;6a4a29a5-b991-475b-9eef-40399bc72718&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorTop&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;64&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;a226731a-0615-4d82-9bd0-b2c521c375e8&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;a226731a-0615-4d82-9bd0-b2c521c375e8&lt;/Key&gt;
+    &lt;PropertyName&gt;Parent&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;7b6b9b4f-8464-4c83-bdb2-cb7d8747e726&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;a226731a-0615-4d82-9bd0-b2c521c375e8&lt;/Key&gt;
+    &lt;PropertyName&gt;Width&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;88&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;a226731a-0615-4d82-9bd0-b2c521c375e8&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorWidth&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;88&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;a226731a-0615-4d82-9bd0-b2c521c375e8&lt;/Key&gt;
+    &lt;PropertyName&gt;Height&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;20&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;a226731a-0615-4d82-9bd0-b2c521c375e8&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorHeight&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;20&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;a226731a-0615-4d82-9bd0-b2c521c375e8&lt;/Key&gt;
+    &lt;PropertyName&gt;Left&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;586&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;a226731a-0615-4d82-9bd0-b2c521c375e8&lt;/Key&gt;
+    &lt;PropertyName&gt;Top&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;64&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;a226731a-0615-4d82-9bd0-b2c521c375e8&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorLeft&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;586&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;a226731a-0615-4d82-9bd0-b2c521c375e8&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorTop&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;64&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;a226731a-0615-4d82-9bd0-b2c521c375e8&lt;/Key&gt;
+    &lt;PropertyName&gt;Text&lt;/PropertyName&gt;
+    &lt;PropertyValue /&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;a226731a-0615-4d82-9bd0-b2c521c375e8&lt;/Key&gt;
+    &lt;PropertyName&gt;EpiBinding&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;BankAcct.ImmediateOrigin_c&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;a226731a-0615-4d82-9bd0-b2c521c375e8&lt;/Key&gt;
+    &lt;PropertyName&gt;EpiLabel&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;lblImmediateOrigin&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblImmediateOrigin&lt;/ControlName&gt;
+    &lt;Key&gt;6a4a29a5-b991-475b-9eef-40399bc72718&lt;/Key&gt;
+    &lt;PropertyName&gt;Text&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;ACH Immediate Origin:&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblLOCLimit&lt;/ControlName&gt;
+    &lt;Key&gt;05151ed4-efe7-4bf4-b9f7-f70944d05345&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;currLOCLimit&lt;/ControlName&gt;
+    &lt;Key&gt;08c6de60-6360-4f9f-ad87-943dc94ce08c&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblLOCLimit&lt;/ControlName&gt;
+    &lt;Key&gt;05151ed4-efe7-4bf4-b9f7-f70944d05345&lt;/Key&gt;
+    &lt;PropertyName&gt;Top&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;207&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblLOCLimit&lt;/ControlName&gt;
+    &lt;Key&gt;05151ed4-efe7-4bf4-b9f7-f70944d05345&lt;/Key&gt;
+    &lt;PropertyName&gt;Left&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;10&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblLOCLimit&lt;/ControlName&gt;
+    &lt;Key&gt;05151ed4-efe7-4bf4-b9f7-f70944d05345&lt;/Key&gt;
+    &lt;PropertyName&gt;Width&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;174&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;BankAcctEntryForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblLOCLimit&lt;/ControlName&gt;
+    &lt;Key&gt;05151ed4-efe7-4bf4-b9f7-f70944d05345&lt;/Key&gt;
+    &lt;PropertyName&gt;Height&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;20&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+&lt;/CustomizationDS&gt;</Content>
+    <BitFlag>0</BitFlag>
+    <RowMod />
+  </XXXDef>
+</GenXDataDataSet>
