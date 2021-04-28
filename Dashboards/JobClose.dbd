@@ -1,0 +1,1861 @@
+<?xml version="1.0" standalone="yes"?>
+<diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+  <DashboardDataSet xmlns="http://tempuri.org/DashboardDataSet.xsd">
+    <DashboardDefinition diffgr:id="DashboardDefinition2" msdata:rowOrder="0">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <Description>Extrel Month End Job Close</Description>
+      <IsAdvancedSearch>false</IsAdvancedSearch>
+      <LikeList />
+      <DockLayoutXML>&lt;FormMetrics Top="110" Left="560" Height="774" Width="1129" ActivePane="92beaa72-27e0-4d46-b6e5-d4f6cf3158d4" LastPanel="ba36914d-7fb1-4153-a3cc-aad8fb1b40f6" /&gt;&lt;SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&gt;&lt;SOAP-ENV:Body&gt;&lt;a1:UltraDockManager id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;ControlPanes href="#ref-3" /&gt;&lt;DefaultGroupSettings href="#ref-4" /&gt;&lt;DockAreas href="#ref-5" /&gt;&lt;ShowCloseButton&gt;false&lt;/ShowCloseButton&gt;&lt;UseDefaultContextMenus&gt;false&lt;/UseDefaultContextMenus&gt;&lt;LayoutStyle&gt;1&lt;/LayoutStyle&gt;&lt;UnpinnedTabInfoLeft href="#ref-6" /&gt;&lt;UnpinnedTabInfoTop href="#ref-7" /&gt;&lt;UnpinnedTabInfoBottom href="#ref-8" /&gt;&lt;UnpinnedTabInfoRight href="#ref-9" /&gt;&lt;ShowMenuButton&gt;2&lt;/ShowMenuButton&gt;&lt;/a1:UltraDockManager&gt;&lt;a1:DockableControlPanesCollection id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;Count&gt;1&lt;/Count&gt;&lt;/a1:DockableControlPanesCollection&gt;&lt;a1:GroupSettings id="ref-4" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;TabLocation&gt;1&lt;/TabLocation&gt;&lt;TabStyle&gt;1&lt;/TabStyle&gt;&lt;/a1:GroupSettings&gt;&lt;a1:DockAreasCollection id="ref-5" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;Count&gt;1&lt;/Count&gt;&lt;_x0030_ href="#ref-10" /&gt;&lt;/a1:DockAreasCollection&gt;&lt;a1:UnpinnedTabAreaInfo id="ref-6" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;tabGroups href="#ref-11" /&gt;&lt;tabAreaSide&gt;Left&lt;/tabAreaSide&gt;&lt;/a1:UnpinnedTabAreaInfo&gt;&lt;a1:UnpinnedTabAreaInfo id="ref-7" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;tabGroups href="#ref-12" /&gt;&lt;tabAreaSide&gt;Top&lt;/tabAreaSide&gt;&lt;/a1:UnpinnedTabAreaInfo&gt;&lt;a1:UnpinnedTabAreaInfo id="ref-8" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;tabGroups href="#ref-13" /&gt;&lt;tabAreaSide&gt;Bottom&lt;/tabAreaSide&gt;&lt;/a1:UnpinnedTabAreaInfo&gt;&lt;a1:UnpinnedTabAreaInfo id="ref-9" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;tabGroups href="#ref-14" /&gt;&lt;tabAreaSide&gt;Right&lt;/tabAreaSide&gt;&lt;/a1:UnpinnedTabAreaInfo&gt;&lt;a1:DockAreaPane id="ref-10" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;Size xsi:type="a2:Size" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;&lt;width&gt;912&lt;/width&gt;&lt;height&gt;640&lt;/height&gt;&lt;/Size&gt;&lt;Id xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;-227748963&lt;/_a&gt;&lt;_b&gt;-29308&lt;/_b&gt;&lt;_c&gt;17163&lt;/_c&gt;&lt;_d&gt;150&lt;/_d&gt;&lt;_e&gt;0&lt;/_e&gt;&lt;_f&gt;97&lt;/_f&gt;&lt;_g&gt;71&lt;/_g&gt;&lt;_h&gt;203&lt;/_h&gt;&lt;_i&gt;206&lt;/_i&gt;&lt;_j&gt;133&lt;/_j&gt;&lt;_k&gt;184&lt;/_k&gt;&lt;/Id&gt;&lt;DockedParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;0&lt;/_a&gt;&lt;_b&gt;0&lt;/_b&gt;&lt;_c&gt;0&lt;/_c&gt;&lt;_d&gt;0&lt;/_d&gt;&lt;_e&gt;0&lt;/_e&gt;&lt;_f&gt;0&lt;/_f&gt;&lt;_g&gt;0&lt;/_g&gt;&lt;_h&gt;0&lt;/_h&gt;&lt;_i&gt;0&lt;/_i&gt;&lt;_j&gt;0&lt;/_j&gt;&lt;_k&gt;0&lt;/_k&gt;&lt;/DockedParentId&gt;&lt;FloatingParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;0&lt;/_a&gt;&lt;_b&gt;0&lt;/_b&gt;&lt;_c&gt;0&lt;/_c&gt;&lt;_d&gt;0&lt;/_d&gt;&lt;_e&gt;0&lt;/_e&gt;&lt;_f&gt;0&lt;/_f&gt;&lt;_g&gt;0&lt;/_g&gt;&lt;_h&gt;0&lt;/_h&gt;&lt;_i&gt;0&lt;/_i&gt;&lt;_j&gt;0&lt;/_j&gt;&lt;_k&gt;0&lt;/_k&gt;&lt;/FloatingParentId&gt;&lt;Key id="ref-16"&gt;TopDockArea&lt;/Key&gt;&lt;Panes href="#ref-17" /&gt;&lt;SelectedTabIndex&gt;0&lt;/SelectedTabIndex&gt;&lt;/a1:DockAreaPane&gt;&lt;SOAP-ENC:Array id="ref-11" SOAP-ENC:arrayType="a1:UnpinnedTabGroupInfo[0]" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;/SOAP-ENC:Array&gt;&lt;SOAP-ENC:Array id="ref-12" SOAP-ENC:arrayType="a1:UnpinnedTabGroupInfo[0]" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;/SOAP-ENC:Array&gt;&lt;SOAP-ENC:Array id="ref-13" SOAP-ENC:arrayType="a1:UnpinnedTabGroupInfo[0]" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;/SOAP-ENC:Array&gt;&lt;SOAP-ENC:Array id="ref-14" SOAP-ENC:arrayType="a1:UnpinnedTabGroupInfo[0]" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;/SOAP-ENC:Array&gt;&lt;a1:DockablePanesCollection id="ref-17" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;Count&gt;1&lt;/Count&gt;&lt;_x0030_ href="#ref-18" /&gt;&lt;/a1:DockablePanesCollection&gt;&lt;a1:DockableControlPane id="ref-18" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;Text id="ref-19"&gt;Job Closing BAQ&lt;/Text&gt;&lt;TextTab href="#ref-19" /&gt;&lt;Size xsi:type="a2:Size" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;&lt;width&gt;0&lt;/width&gt;&lt;height&gt;0&lt;/height&gt;&lt;/Size&gt;&lt;Id xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;69797227&lt;/_a&gt;&lt;_b&gt;21141&lt;/_b&gt;&lt;_c&gt;20063&lt;/_c&gt;&lt;_d&gt;169&lt;/_d&gt;&lt;_e&gt;100&lt;/_e&gt;&lt;_f&gt;39&lt;/_f&gt;&lt;_g&gt;76&lt;/_g&gt;&lt;_h&gt;23&lt;/_h&gt;&lt;_i&gt;188&lt;/_i&gt;&lt;_j&gt;8&lt;/_j&gt;&lt;_k&gt;99&lt;/_k&gt;&lt;/Id&gt;&lt;DockedParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;-227748963&lt;/_a&gt;&lt;_b&gt;-29308&lt;/_b&gt;&lt;_c&gt;17163&lt;/_c&gt;&lt;_d&gt;150&lt;/_d&gt;&lt;_e&gt;0&lt;/_e&gt;&lt;_f&gt;97&lt;/_f&gt;&lt;_g&gt;71&lt;/_g&gt;&lt;_h&gt;203&lt;/_h&gt;&lt;_i&gt;206&lt;/_i&gt;&lt;_j&gt;133&lt;/_j&gt;&lt;_k&gt;184&lt;/_k&gt;&lt;/DockedParentId&gt;&lt;FloatingParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;0&lt;/_a&gt;&lt;_b&gt;0&lt;/_b&gt;&lt;_c&gt;0&lt;/_c&gt;&lt;_d&gt;0&lt;/_d&gt;&lt;_e&gt;0&lt;/_e&gt;&lt;_f&gt;0&lt;/_f&gt;&lt;_g&gt;0&lt;/_g&gt;&lt;_h&gt;0&lt;/_h&gt;&lt;_i&gt;0&lt;/_i&gt;&lt;_j&gt;0&lt;/_j&gt;&lt;_k&gt;0&lt;/_k&gt;&lt;/FloatingParentId&gt;&lt;Key id="ref-20"&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/Key&gt;&lt;ControlName id="ref-21"&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/ControlName&gt;&lt;OriginalControlBounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;&lt;x&gt;0&lt;/x&gt;&lt;y&gt;0&lt;/y&gt;&lt;width&gt;576&lt;/width&gt;&lt;height&gt;440&lt;/height&gt;&lt;/OriginalControlBounds&gt;&lt;ControlPaneIndex&gt;0&lt;/ControlPaneIndex&gt;&lt;/a1:DockableControlPane&gt;&lt;/SOAP-ENV:Body&gt;&lt;/SOAP-ENV:Envelope&gt;</DockLayoutXML>
+      <DockLayoutXMLDefault />
+      <DashboardNotes />
+      <DashboardTechNotes />
+      <InhibitRefreshAll>false</InhibitRefreshAll>
+      <IncludeAppBuiltTree>false</IncludeAppBuiltTree>
+      <TargetMobile>false</TargetMobile>
+    </DashboardDefinition>
+    <DashboardQuery diffgr:id="DashboardQuery1" msdata:rowOrder="0">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <DynamicQueryID>JobClose</DynamicQueryID>
+      <QueryPanelID>fcfbd216-b649-4ea3-a692-4e677c0a2a13</QueryPanelID>
+      <RefreshInterval>-1</RefreshInterval>
+      <SynchronizeViews>true</SynchronizeViews>
+      <Caption>Job Closing BAQ</Caption>
+      <PublishToTitle>false</PublishToTitle>
+      <PublishToTitleColumn />
+      <PublishToTitleCaption />
+      <DockLayoutXML>&lt;SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&gt;&lt;SOAP-ENV:Body&gt;&lt;a1:UltraDockManager id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;ControlPanes href="#ref-3" /&gt;&lt;DefaultGroupSettings href="#ref-4" /&gt;&lt;DockAreas href="#ref-5" /&gt;&lt;ShowCloseButton&gt;false&lt;/ShowCloseButton&gt;&lt;UseDefaultContextMenus&gt;false&lt;/UseDefaultContextMenus&gt;&lt;LayoutStyle&gt;1&lt;/LayoutStyle&gt;&lt;UnpinnedTabInfoLeft href="#ref-6" /&gt;&lt;UnpinnedTabInfoTop href="#ref-7" /&gt;&lt;UnpinnedTabInfoBottom href="#ref-8" /&gt;&lt;UnpinnedTabInfoRight href="#ref-9" /&gt;&lt;ShowMenuButton&gt;2&lt;/ShowMenuButton&gt;&lt;/a1:UltraDockManager&gt;&lt;a1:DockableControlPanesCollection id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;Count&gt;3&lt;/Count&gt;&lt;/a1:DockableControlPanesCollection&gt;&lt;a1:GroupSettings id="ref-4" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;TabLocation&gt;1&lt;/TabLocation&gt;&lt;TabStyle&gt;1&lt;/TabStyle&gt;&lt;/a1:GroupSettings&gt;&lt;a1:DockAreasCollection id="ref-5" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;Count&gt;3&lt;/Count&gt;&lt;_x0030_ href="#ref-10" /&gt;&lt;_x0031_ href="#ref-11" /&gt;&lt;_x0032_ href="#ref-12" /&gt;&lt;/a1:DockAreasCollection&gt;&lt;a1:UnpinnedTabAreaInfo id="ref-6" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;tabGroups href="#ref-13" /&gt;&lt;tabAreaSide&gt;Left&lt;/tabAreaSide&gt;&lt;/a1:UnpinnedTabAreaInfo&gt;&lt;a1:UnpinnedTabAreaInfo id="ref-7" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;tabGroups href="#ref-14" /&gt;&lt;tabAreaSide&gt;Top&lt;/tabAreaSide&gt;&lt;/a1:UnpinnedTabAreaInfo&gt;&lt;a1:UnpinnedTabAreaInfo id="ref-8" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;tabGroups href="#ref-15" /&gt;&lt;tabAreaSide&gt;Bottom&lt;/tabAreaSide&gt;&lt;/a1:UnpinnedTabAreaInfo&gt;&lt;a1:UnpinnedTabAreaInfo id="ref-9" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;tabGroups href="#ref-16" /&gt;&lt;tabAreaSide&gt;Right&lt;/tabAreaSide&gt;&lt;/a1:UnpinnedTabAreaInfo&gt;&lt;a1:DockAreaPane id="ref-10" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;Settings href="#ref-18" /&gt;&lt;Size xsi:type="a2:Size" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;&lt;width&gt;912&lt;/width&gt;&lt;height&gt;94&lt;/height&gt;&lt;/Size&gt;&lt;Id xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;916229031&lt;/_a&gt;&lt;_b&gt;-11545&lt;/_b&gt;&lt;_c&gt;18704&lt;/_c&gt;&lt;_d&gt;143&lt;/_d&gt;&lt;_e&gt;55&lt;/_e&gt;&lt;_f&gt;185&lt;/_f&gt;&lt;_g&gt;44&lt;/_g&gt;&lt;_h&gt;79&lt;/_h&gt;&lt;_i&gt;153&lt;/_i&gt;&lt;_j&gt;88&lt;/_j&gt;&lt;_k&gt;62&lt;/_k&gt;&lt;/Id&gt;&lt;DockedParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;0&lt;/_a&gt;&lt;_b&gt;0&lt;/_b&gt;&lt;_c&gt;0&lt;/_c&gt;&lt;_d&gt;0&lt;/_d&gt;&lt;_e&gt;0&lt;/_e&gt;&lt;_f&gt;0&lt;/_f&gt;&lt;_g&gt;0&lt;/_g&gt;&lt;_h&gt;0&lt;/_h&gt;&lt;_i&gt;0&lt;/_i&gt;&lt;_j&gt;0&lt;/_j&gt;&lt;_k&gt;0&lt;/_k&gt;&lt;/DockedParentId&gt;&lt;FloatingParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;-284523608&lt;/_a&gt;&lt;_b&gt;25635&lt;/_b&gt;&lt;_c&gt;18938&lt;/_c&gt;&lt;_d&gt;143&lt;/_d&gt;&lt;_e&gt;157&lt;/_e&gt;&lt;_f&gt;200&lt;/_f&gt;&lt;_g&gt;46&lt;/_g&gt;&lt;_h&gt;207&lt;/_h&gt;&lt;_i&gt;213&lt;/_i&gt;&lt;_j&gt;50&lt;/_j&gt;&lt;_k&gt;175&lt;/_k&gt;&lt;/FloatingParentId&gt;&lt;FloatingSize xsi:type="a2:Size" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;&lt;width&gt;909&lt;/width&gt;&lt;height&gt;418&lt;/height&gt;&lt;/FloatingSize&gt;&lt;Panes href="#ref-19" /&gt;&lt;ChildPaneStyle&gt;2&lt;/ChildPaneStyle&gt;&lt;SelectedTabIndex&gt;0&lt;/SelectedTabIndex&gt;&lt;FloatingLocation xsi:type="a2:Point" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;&lt;x&gt;529&lt;/x&gt;&lt;y&gt;411&lt;/y&gt;&lt;/FloatingLocation&gt;&lt;/a1:DockAreaPane&gt;&lt;a1:DockAreaPane id="ref-11" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;Settings href="#ref-20" /&gt;&lt;Size xsi:type="a2:Size" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;&lt;width&gt;912&lt;/width&gt;&lt;height&gt;521&lt;/height&gt;&lt;/Size&gt;&lt;Id xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;-310545057&lt;/_a&gt;&lt;_b&gt;-5578&lt;/_b&gt;&lt;_c&gt;17481&lt;/_c&gt;&lt;_d&gt;139&lt;/_d&gt;&lt;_e&gt;176&lt;/_e&gt;&lt;_f&gt;100&lt;/_f&gt;&lt;_g&gt;97&lt;/_g&gt;&lt;_h&gt;91&lt;/_h&gt;&lt;_i&gt;85&lt;/_i&gt;&lt;_j&gt;41&lt;/_j&gt;&lt;_k&gt;252&lt;/_k&gt;&lt;/Id&gt;&lt;DockedParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;0&lt;/_a&gt;&lt;_b&gt;0&lt;/_b&gt;&lt;_c&gt;0&lt;/_c&gt;&lt;_d&gt;0&lt;/_d&gt;&lt;_e&gt;0&lt;/_e&gt;&lt;_f&gt;0&lt;/_f&gt;&lt;_g&gt;0&lt;/_g&gt;&lt;_h&gt;0&lt;/_h&gt;&lt;_i&gt;0&lt;/_i&gt;&lt;_j&gt;0&lt;/_j&gt;&lt;_k&gt;0&lt;/_k&gt;&lt;/DockedParentId&gt;&lt;FloatingParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;0&lt;/_a&gt;&lt;_b&gt;0&lt;/_b&gt;&lt;_c&gt;0&lt;/_c&gt;&lt;_d&gt;0&lt;/_d&gt;&lt;_e&gt;0&lt;/_e&gt;&lt;_f&gt;0&lt;/_f&gt;&lt;_g&gt;0&lt;/_g&gt;&lt;_h&gt;0&lt;/_h&gt;&lt;_i&gt;0&lt;/_i&gt;&lt;_j&gt;0&lt;/_j&gt;&lt;_k&gt;0&lt;/_k&gt;&lt;/FloatingParentId&gt;&lt;Key id="ref-21"&gt;TopDockArea&lt;/Key&gt;&lt;Panes href="#ref-22" /&gt;&lt;ChildPaneStyle&gt;2&lt;/ChildPaneStyle&gt;&lt;SelectedTabIndex&gt;1&lt;/SelectedTabIndex&gt;&lt;/a1:DockAreaPane&gt;&lt;a1:DockAreaPane id="ref-12" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;Settings href="#ref-23" /&gt;&lt;Size xsi:type="a2:Size" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;&lt;width&gt;909&lt;/width&gt;&lt;height&gt;418&lt;/height&gt;&lt;/Size&gt;&lt;Id xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;-284523608&lt;/_a&gt;&lt;_b&gt;25635&lt;/_b&gt;&lt;_c&gt;18938&lt;/_c&gt;&lt;_d&gt;143&lt;/_d&gt;&lt;_e&gt;157&lt;/_e&gt;&lt;_f&gt;200&lt;/_f&gt;&lt;_g&gt;46&lt;/_g&gt;&lt;_h&gt;207&lt;/_h&gt;&lt;_i&gt;213&lt;/_i&gt;&lt;_j&gt;50&lt;/_j&gt;&lt;_k&gt;175&lt;/_k&gt;&lt;/Id&gt;&lt;DockedParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;0&lt;/_a&gt;&lt;_b&gt;0&lt;/_b&gt;&lt;_c&gt;0&lt;/_c&gt;&lt;_d&gt;0&lt;/_d&gt;&lt;_e&gt;0&lt;/_e&gt;&lt;_f&gt;0&lt;/_f&gt;&lt;_g&gt;0&lt;/_g&gt;&lt;_h&gt;0&lt;/_h&gt;&lt;_i&gt;0&lt;/_i&gt;&lt;_j&gt;0&lt;/_j&gt;&lt;_k&gt;0&lt;/_k&gt;&lt;/DockedParentId&gt;&lt;FloatingParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;0&lt;/_a&gt;&lt;_b&gt;0&lt;/_b&gt;&lt;_c&gt;0&lt;/_c&gt;&lt;_d&gt;0&lt;/_d&gt;&lt;_e&gt;0&lt;/_e&gt;&lt;_f&gt;0&lt;/_f&gt;&lt;_g&gt;0&lt;/_g&gt;&lt;_h&gt;0&lt;/_h&gt;&lt;_i&gt;0&lt;/_i&gt;&lt;_j&gt;0&lt;/_j&gt;&lt;_k&gt;0&lt;/_k&gt;&lt;/FloatingParentId&gt;&lt;FloatingSize xsi:type="a2:Size" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;&lt;width&gt;909&lt;/width&gt;&lt;height&gt;418&lt;/height&gt;&lt;/FloatingSize&gt;&lt;ChildPaneStyle&gt;2&lt;/ChildPaneStyle&gt;&lt;SelectedTabIndex&gt;0&lt;/SelectedTabIndex&gt;&lt;DockedLocation&gt;0&lt;/DockedLocation&gt;&lt;FloatingLocation xsi:type="a2:Point" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;&lt;x&gt;529&lt;/x&gt;&lt;y&gt;411&lt;/y&gt;&lt;/FloatingLocation&gt;&lt;/a1:DockAreaPane&gt;&lt;SOAP-ENC:Array id="ref-13" SOAP-ENC:arrayType="a1:UnpinnedTabGroupInfo[0]" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;/SOAP-ENC:Array&gt;&lt;SOAP-ENC:Array id="ref-14" SOAP-ENC:arrayType="a1:UnpinnedTabGroupInfo[0]" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;/SOAP-ENC:Array&gt;&lt;SOAP-ENC:Array id="ref-15" SOAP-ENC:arrayType="a1:UnpinnedTabGroupInfo[0]" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;/SOAP-ENC:Array&gt;&lt;SOAP-ENC:Array id="ref-16" SOAP-ENC:arrayType="a1:UnpinnedTabGroupInfo[0]" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;/SOAP-ENC:Array&gt;&lt;a1:PaneSettings id="ref-18" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;ShowCaption&gt;2&lt;/ShowCaption&gt;&lt;/a1:PaneSettings&gt;&lt;a1:DockablePanesCollection id="ref-19" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;Count&gt;1&lt;/Count&gt;&lt;_x0030_ href="#ref-24" /&gt;&lt;/a1:DockablePanesCollection&gt;&lt;a1:PaneSettings id="ref-20" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;ShowCaption&gt;2&lt;/ShowCaption&gt;&lt;/a1:PaneSettings&gt;&lt;a1:DockablePanesCollection id="ref-22" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;Count&gt;2&lt;/Count&gt;&lt;_x0030_ href="#ref-25" /&gt;&lt;_x0031_ href="#ref-26" /&gt;&lt;/a1:DockablePanesCollection&gt;&lt;a1:PaneSettings id="ref-23" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;ShowCaption&gt;2&lt;/ShowCaption&gt;&lt;/a1:PaneSettings&gt;&lt;a1:DockableControlPane id="ref-24" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;Settings href="#ref-27" /&gt;&lt;Text id="ref-28"&gt;JobClose: Tracker&lt;/Text&gt;&lt;TextTab href="#ref-28" /&gt;&lt;Size xsi:type="a2:Size" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;&lt;width&gt;0&lt;/width&gt;&lt;height&gt;0&lt;/height&gt;&lt;/Size&gt;&lt;Id xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;-629569588&lt;/_a&gt;&lt;_b&gt;-22689&lt;/_b&gt;&lt;_c&gt;17602&lt;/_c&gt;&lt;_d&gt;138&lt;/_d&gt;&lt;_e&gt;66&lt;/_e&gt;&lt;_f&gt;122&lt;/_f&gt;&lt;_g&gt;32&lt;/_g&gt;&lt;_h&gt;204&lt;/_h&gt;&lt;_i&gt;174&lt;/_i&gt;&lt;_j&gt;211&lt;/_j&gt;&lt;_k&gt;0&lt;/_k&gt;&lt;/Id&gt;&lt;DockedParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;916229031&lt;/_a&gt;&lt;_b&gt;-11545&lt;/_b&gt;&lt;_c&gt;18704&lt;/_c&gt;&lt;_d&gt;143&lt;/_d&gt;&lt;_e&gt;55&lt;/_e&gt;&lt;_f&gt;185&lt;/_f&gt;&lt;_g&gt;44&lt;/_g&gt;&lt;_h&gt;79&lt;/_h&gt;&lt;_i&gt;153&lt;/_i&gt;&lt;_j&gt;88&lt;/_j&gt;&lt;_k&gt;62&lt;/_k&gt;&lt;/DockedParentId&gt;&lt;FloatingParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;-284523608&lt;/_a&gt;&lt;_b&gt;25635&lt;/_b&gt;&lt;_c&gt;18938&lt;/_c&gt;&lt;_d&gt;143&lt;/_d&gt;&lt;_e&gt;157&lt;/_e&gt;&lt;_f&gt;200&lt;/_f&gt;&lt;_g&gt;46&lt;/_g&gt;&lt;_h&gt;207&lt;/_h&gt;&lt;_i&gt;213&lt;/_i&gt;&lt;_j&gt;50&lt;/_j&gt;&lt;_k&gt;175&lt;/_k&gt;&lt;/FloatingParentId&gt;&lt;Key id="ref-29"&gt;ba36914d-7fb1-4153-a3cc-aad8fb1b40f6&lt;/Key&gt;&lt;ControlName id="ref-30"&gt;ba36914d-7fb1-4153-a3cc-aad8fb1b40f6&lt;/ControlName&gt;&lt;OriginalControlBounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;&lt;x&gt;0&lt;/x&gt;&lt;y&gt;0&lt;/y&gt;&lt;width&gt;624&lt;/width&gt;&lt;height&gt;320&lt;/height&gt;&lt;/OriginalControlBounds&gt;&lt;ControlPaneIndex&gt;1&lt;/ControlPaneIndex&gt;&lt;/a1:DockableControlPane&gt;&lt;a1:DockableControlPane id="ref-25" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;Settings href="#ref-31" /&gt;&lt;Text id="ref-32"&gt;Open, Firm Jobs&lt;/Text&gt;&lt;TextTab href="#ref-32" /&gt;&lt;Size xsi:type="a2:Size" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;&lt;width&gt;0&lt;/width&gt;&lt;height&gt;0&lt;/height&gt;&lt;/Size&gt;&lt;Id xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;-478296220&lt;/_a&gt;&lt;_b&gt;25786&lt;/_b&gt;&lt;_c&gt;16474&lt;/_c&gt;&lt;_d&gt;179&lt;/_d&gt;&lt;_e&gt;204&lt;/_e&gt;&lt;_f&gt;135&lt;/_f&gt;&lt;_g&gt;207&lt;/_g&gt;&lt;_h&gt;51&lt;/_h&gt;&lt;_i&gt;193&lt;/_i&gt;&lt;_j&gt;27&lt;/_j&gt;&lt;_k&gt;151&lt;/_k&gt;&lt;/Id&gt;&lt;DockedParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;-310545057&lt;/_a&gt;&lt;_b&gt;-5578&lt;/_b&gt;&lt;_c&gt;17481&lt;/_c&gt;&lt;_d&gt;139&lt;/_d&gt;&lt;_e&gt;176&lt;/_e&gt;&lt;_f&gt;100&lt;/_f&gt;&lt;_g&gt;97&lt;/_g&gt;&lt;_h&gt;91&lt;/_h&gt;&lt;_i&gt;85&lt;/_i&gt;&lt;_j&gt;41&lt;/_j&gt;&lt;_k&gt;252&lt;/_k&gt;&lt;/DockedParentId&gt;&lt;FloatingParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;0&lt;/_a&gt;&lt;_b&gt;0&lt;/_b&gt;&lt;_c&gt;0&lt;/_c&gt;&lt;_d&gt;0&lt;/_d&gt;&lt;_e&gt;0&lt;/_e&gt;&lt;_f&gt;0&lt;/_f&gt;&lt;_g&gt;0&lt;/_g&gt;&lt;_h&gt;0&lt;/_h&gt;&lt;_i&gt;0&lt;/_i&gt;&lt;_j&gt;0&lt;/_j&gt;&lt;_k&gt;0&lt;/_k&gt;&lt;/FloatingParentId&gt;&lt;Key id="ref-33"&gt;565eafb6-2d75-44d8-86cd-995b8429670a&lt;/Key&gt;&lt;ControlName id="ref-34"&gt;565eafb6-2d75-44d8-86cd-995b8429670a&lt;/ControlName&gt;&lt;OriginalControlBounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;&lt;x&gt;0&lt;/x&gt;&lt;y&gt;0&lt;/y&gt;&lt;width&gt;552&lt;/width&gt;&lt;height&gt;392&lt;/height&gt;&lt;/OriginalControlBounds&gt;&lt;ControlPaneIndex&gt;0&lt;/ControlPaneIndex&gt;&lt;/a1:DockableControlPane&gt;&lt;a1:DockableControlPane id="ref-26" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;Settings href="#ref-35" /&gt;&lt;Text id="ref-36"&gt;Preview - Jobs to be closed&lt;/Text&gt;&lt;TextTab href="#ref-36" /&gt;&lt;Size xsi:type="a2:Size" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;&lt;width&gt;0&lt;/width&gt;&lt;height&gt;0&lt;/height&gt;&lt;/Size&gt;&lt;Id xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;-1711705349&lt;/_a&gt;&lt;_b&gt;29813&lt;/_b&gt;&lt;_c&gt;19704&lt;/_c&gt;&lt;_d&gt;167&lt;/_d&gt;&lt;_e&gt;144&lt;/_e&gt;&lt;_f&gt;34&lt;/_f&gt;&lt;_g&gt;114&lt;/_g&gt;&lt;_h&gt;63&lt;/_h&gt;&lt;_i&gt;34&lt;/_i&gt;&lt;_j&gt;110&lt;/_j&gt;&lt;_k&gt;246&lt;/_k&gt;&lt;/Id&gt;&lt;DockedParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;-310545057&lt;/_a&gt;&lt;_b&gt;-5578&lt;/_b&gt;&lt;_c&gt;17481&lt;/_c&gt;&lt;_d&gt;139&lt;/_d&gt;&lt;_e&gt;176&lt;/_e&gt;&lt;_f&gt;100&lt;/_f&gt;&lt;_g&gt;97&lt;/_g&gt;&lt;_h&gt;91&lt;/_h&gt;&lt;_i&gt;85&lt;/_i&gt;&lt;_j&gt;41&lt;/_j&gt;&lt;_k&gt;252&lt;/_k&gt;&lt;/DockedParentId&gt;&lt;FloatingParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;&lt;_a&gt;0&lt;/_a&gt;&lt;_b&gt;0&lt;/_b&gt;&lt;_c&gt;0&lt;/_c&gt;&lt;_d&gt;0&lt;/_d&gt;&lt;_e&gt;0&lt;/_e&gt;&lt;_f&gt;0&lt;/_f&gt;&lt;_g&gt;0&lt;/_g&gt;&lt;_h&gt;0&lt;/_h&gt;&lt;_i&gt;0&lt;/_i&gt;&lt;_j&gt;0&lt;/_j&gt;&lt;_k&gt;0&lt;/_k&gt;&lt;/FloatingParentId&gt;&lt;Key id="ref-37"&gt;c545ba8e-4cc5-47dd-bf08-d0258282bf63&lt;/Key&gt;&lt;ControlName id="ref-38"&gt;c545ba8e-4cc5-47dd-bf08-d0258282bf63&lt;/ControlName&gt;&lt;OriginalControlBounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;&lt;x&gt;0&lt;/x&gt;&lt;y&gt;0&lt;/y&gt;&lt;width&gt;552&lt;/width&gt;&lt;height&gt;392&lt;/height&gt;&lt;/OriginalControlBounds&gt;&lt;ControlPaneIndex&gt;2&lt;/ControlPaneIndex&gt;&lt;/a1:DockableControlPane&gt;&lt;a1:PaneSettings id="ref-27" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;ShowCaption&gt;1&lt;/ShowCaption&gt;&lt;/a1:PaneSettings&gt;&lt;a1:PaneSettings id="ref-31" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;ShowCaption&gt;1&lt;/ShowCaption&gt;&lt;/a1:PaneSettings&gt;&lt;a1:PaneSettings id="ref-35" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;&lt;ShowCaption&gt;1&lt;/ShowCaption&gt;&lt;/a1:PaneSettings&gt;&lt;/SOAP-ENV:Body&gt;&lt;/SOAP-ENV:Envelope&gt;</DockLayoutXML>
+      <AutoRefreshOnLoad>true</AutoRefreshOnLoad>
+      <IsPrimary>true</IsPrimary>
+      <ParentView />
+      <ParentColumn />
+      <ChildColumn />
+      <PanelSize>{X=0,Y=0,Width=912,Height=640}</PanelSize>
+      <ViewName>V_JobClose_1View</ViewName>
+    </DashboardQuery>
+    <DashboardView diffgr:id="DashboardView1" msdata:rowOrder="0">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <ViewType>Grid</ViewType>
+      <Caption>Open, Firm Jobs</Caption>
+      <ViewPanelID>6ace24b7-47c6-4172-8a9c-acf0606389dc</ViewPanelID>
+      <PanelSize>{X=0,Y=0,Width=0,Height=0}</PanelSize>
+    </DashboardView>
+    <DashboardView diffgr:id="DashboardView2" msdata:rowOrder="1">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <ViewType>Tracker</ViewType>
+      <Caption>JobClose: Tracker</Caption>
+      <ViewPanelID>aa734a98-61f1-4d3a-942a-ec077204c22b</ViewPanelID>
+      <PanelSize>{X=0,Y=0,Width=912,Height=94}</PanelSize>
+    </DashboardView>
+    <DashboardView diffgr:id="DashboardView3" msdata:rowOrder="2">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <ViewType>Grid</ViewType>
+      <Caption>Preview - Jobs to be closed</Caption>
+      <ViewPanelID>80a69b80-3aa2-4534-9510-0ebcbd34c1ba</ViewPanelID>
+      <PanelSize>{X=0,Y=24,Width=912,Height=497}</PanelSize>
+    </DashboardView>
+    <DashboardViewFilter diffgr:id="DashboardViewFilter1" msdata:rowOrder="0">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <ColumnName>JobProd_ReceivedQty</ColumnName>
+      <Condition>&gt;=</Condition>
+      <Value>JobHead_ProdQty</Value>
+      <IsPublisher>false</IsPublisher>
+      <IsValueAnotherColumn>true</IsValueAnotherColumn>
+    </DashboardViewFilter>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns76" msdata:rowOrder="0">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <ColumnName>JobHead_JobClosed</ColumnName>
+      <IsVisible>true</IsVisible>
+      <DataType>bit</DataType>
+      <Caption>Closed</Caption>
+      <DashboardPrompt>false</DashboardPrompt>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns77" msdata:rowOrder="1">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <ColumnName>JobHead_JobNum</ColumnName>
+      <IsVisible>true</IsVisible>
+      <DataType>nvarchar</DataType>
+      <Caption>Job</Caption>
+      <DashboardPrompt>false</DashboardPrompt>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns78" msdata:rowOrder="2">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <ColumnName>JobHead_PartNum</ColumnName>
+      <IsVisible>true</IsVisible>
+      <DataType>nvarchar</DataType>
+      <Caption>Part</Caption>
+      <DashboardPrompt>false</DashboardPrompt>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns79" msdata:rowOrder="3">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <ColumnName>Part_PartDescription</ColumnName>
+      <IsVisible>true</IsVisible>
+      <DataType>nvarchar</DataType>
+      <Caption>Description</Caption>
+      <DashboardPrompt>false</DashboardPrompt>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns80" msdata:rowOrder="4">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <ColumnName>JobHead_ProdQty</ColumnName>
+      <IsVisible>true</IsVisible>
+      <DataType>decimal</DataType>
+      <Caption>Prod. Qty</Caption>
+      <DashboardPrompt>false</DashboardPrompt>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns81" msdata:rowOrder="5">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <ColumnName>JobHead_QtyCompleted</ColumnName>
+      <IsVisible>true</IsVisible>
+      <DataType>decimal</DataType>
+      <Caption>Completed Qty</Caption>
+      <DashboardPrompt>false</DashboardPrompt>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns82" msdata:rowOrder="6">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <ColumnName>JobProd_ReceivedQty</ColumnName>
+      <IsVisible>true</IsVisible>
+      <DataType>decimal</DataType>
+      <Caption>Received Qty</Caption>
+      <DashboardPrompt>false</DashboardPrompt>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns83" msdata:rowOrder="7">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <ColumnName>JobHead_Company</ColumnName>
+      <IsVisible>false</IsVisible>
+      <DataType>nvarchar</DataType>
+      <Caption>Company</Caption>
+      <DashboardPrompt>false</DashboardPrompt>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns84" msdata:rowOrder="8">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <ColumnName>JobHead_JobClosed</ColumnName>
+      <IsVisible>false</IsVisible>
+      <DataType>bit</DataType>
+      <Caption>Closed</Caption>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns85" msdata:rowOrder="9">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <ColumnName>JobHead_JobNum</ColumnName>
+      <IsVisible>false</IsVisible>
+      <DataType>nvarchar</DataType>
+      <Caption>Job</Caption>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns86" msdata:rowOrder="10">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <ColumnName>JobHead_PartNum</ColumnName>
+      <IsVisible>false</IsVisible>
+      <DataType>nvarchar</DataType>
+      <Caption>Part</Caption>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns87" msdata:rowOrder="11">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <ColumnName>JobHead_ProdQty</ColumnName>
+      <IsVisible>false</IsVisible>
+      <DataType>decimal</DataType>
+      <Caption>Prod. Qty</Caption>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns88" msdata:rowOrder="12">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <ColumnName>JobHead_QtyCompleted</ColumnName>
+      <IsVisible>false</IsVisible>
+      <DataType>decimal</DataType>
+      <Caption>Completed Qty</Caption>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns89" msdata:rowOrder="13">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <ColumnName>JobProd_ReceivedQty</ColumnName>
+      <IsVisible>false</IsVisible>
+      <DataType>decimal</DataType>
+      <Caption>Received Qty</Caption>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns90" msdata:rowOrder="14">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <ColumnName>Part_PartDescription</ColumnName>
+      <IsVisible>false</IsVisible>
+      <DataType>nvarchar</DataType>
+      <Caption>Description</Caption>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns91" msdata:rowOrder="15">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <ColumnName>JobHead_Company</ColumnName>
+      <IsVisible>false</IsVisible>
+      <DataType>nvarchar</DataType>
+      <Caption>Company</Caption>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns92" msdata:rowOrder="16">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <ColumnName>JobHead_JobNum</ColumnName>
+      <IsVisible>true</IsVisible>
+      <DataType>nvarchar</DataType>
+      <Caption>Job</Caption>
+      <DashboardPrompt>false</DashboardPrompt>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns93" msdata:rowOrder="17">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <ColumnName>JobHead_PartNum</ColumnName>
+      <IsVisible>true</IsVisible>
+      <DataType>nvarchar</DataType>
+      <Caption>Part</Caption>
+      <DashboardPrompt>false</DashboardPrompt>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns94" msdata:rowOrder="18">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <ColumnName>Part_PartDescription</ColumnName>
+      <IsVisible>true</IsVisible>
+      <DataType>nvarchar</DataType>
+      <Caption>Description</Caption>
+      <DashboardPrompt>false</DashboardPrompt>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns95" msdata:rowOrder="19">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <ColumnName>JobHead_ProdQty</ColumnName>
+      <IsVisible>true</IsVisible>
+      <DataType>decimal</DataType>
+      <Caption>Prod. Qty</Caption>
+      <DashboardPrompt>false</DashboardPrompt>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns96" msdata:rowOrder="20">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <ColumnName>JobProd_ReceivedQty</ColumnName>
+      <IsVisible>true</IsVisible>
+      <DataType>decimal</DataType>
+      <Caption>Received Qty</Caption>
+      <DashboardPrompt>false</DashboardPrompt>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns97" msdata:rowOrder="21">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <ColumnName>JobHead_JobClosed</ColumnName>
+      <IsVisible>true</IsVisible>
+      <DataType>bit</DataType>
+      <Caption>Closed</Caption>
+      <DashboardPrompt>true</DashboardPrompt>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns98" msdata:rowOrder="22">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <ColumnName>JobHead_QtyCompleted</ColumnName>
+      <IsVisible>false</IsVisible>
+      <DataType>decimal</DataType>
+      <Caption>Completed Qty</Caption>
+      <DashboardPrompt>false</DashboardPrompt>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewColumns diffgr:id="DashboardViewColumns99" msdata:rowOrder="23">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <ColumnName>JobHead_Company</ColumnName>
+      <IsVisible>false</IsVisible>
+      <DataType>nvarchar</DataType>
+      <Caption>Company</Caption>
+      <DashboardPrompt>false</DashboardPrompt>
+      <IsKeyField>false</IsKeyField>
+      <QuickSearchId />
+      <IsFocused>false</IsFocused>
+    </DashboardViewColumns>
+    <DashboardViewRules diffgr:id="DashboardViewRules1" msdata:rowOrder="0">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <RuleID>247b3edf-fe37-4ed0-aef2-780dfb8cbd8d</RuleID>
+      <Argument1>JobHead_QtyCompleted</Argument1>
+      <Argument2>JobHead_ProdQty</Argument2>
+      <Condition>GreaterThan</Condition>
+      <ForeignKeyName />
+      <Arg1Type>String</Arg1Type>
+      <Arg2Type>String</Arg2Type>
+    </DashboardViewRules>
+    <DashboardViewRuleActions diffgr:id="DashboardViewRuleActions1" msdata:rowOrder="0">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <RuleID>247b3edf-fe37-4ed0-aef2-780dfb8cbd8d</RuleID>
+      <ColumnName>JobHead_QtyCompleted</ColumnName>
+      <SettingStyle>Error</SettingStyle>
+      <ForeignKeyName />
+      <IsImageSetting>false</IsImageSetting>
+    </DashboardViewRuleActions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions1" msdata:rowOrder="0">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <PropertyName>ForceAllUpdate</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions2" msdata:rowOrder="1">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <PropertyName>ViewColumnTable</PropertyName>
+      <PropertyType>System.String</PropertyType>
+      <PropertyValue>&lt;NewDataSet&gt;
+  &lt;xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"&gt;
+    &lt;xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="DashboardViewColumns" msdata:UseCurrentLocale="true"&gt;
+      &lt;xs:complexType&gt;
+        &lt;xs:choice minOccurs="0" maxOccurs="unbounded"&gt;
+          &lt;xs:element name="DashboardViewColumns"&gt;
+            &lt;xs:complexType&gt;
+              &lt;xs:sequence&gt;
+                &lt;xs:element name="Company" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="DefinitionID" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="QueryID" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ViewID" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ColumnName" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="IsVisible" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="OnXAxis" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="OnYAxis" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="OnZAxis" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="DataType" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="Caption" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="LabelSize" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="LabelLocation" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="LabelGuid" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ControlSize" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ControlLocation" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ControlGuid" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="DashboardPrompt" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="DashboardHonorNull" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="DashboardCondition" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ControlType" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="BaseType" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="RetrieverCombo" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="DescColumnName" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="IsKeyField" type="xs:boolean" default="false" minOccurs="0" /&gt;
+                &lt;xs:element name="QuickSearchId" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="DisplayCaption" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="IsFocused" type="xs:boolean" default="false" minOccurs="0" /&gt;
+                &lt;xs:element name="ControlName" type="xs:string" minOccurs="0" /&gt;
+              &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+          &lt;/xs:element&gt;
+        &lt;/xs:choice&gt;
+      &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:schema&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;565eafb6-2d75-44d8-86cd-995b8429670a&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_JobClosed&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;true&lt;/IsVisible&gt;
+    &lt;DataType&gt;bit&lt;/DataType&gt;
+    &lt;Caption&gt;Closed&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;565eafb6-2d75-44d8-86cd-995b8429670a&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_JobNum&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;true&lt;/IsVisible&gt;
+    &lt;DataType&gt;nvarchar&lt;/DataType&gt;
+    &lt;Caption&gt;Job&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;565eafb6-2d75-44d8-86cd-995b8429670a&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_PartNum&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;true&lt;/IsVisible&gt;
+    &lt;DataType&gt;nvarchar&lt;/DataType&gt;
+    &lt;Caption&gt;Part&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;565eafb6-2d75-44d8-86cd-995b8429670a&lt;/ViewID&gt;
+    &lt;ColumnName&gt;Part_PartDescription&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;true&lt;/IsVisible&gt;
+    &lt;DataType&gt;nvarchar&lt;/DataType&gt;
+    &lt;Caption&gt;Description&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;565eafb6-2d75-44d8-86cd-995b8429670a&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_ProdQty&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;true&lt;/IsVisible&gt;
+    &lt;DataType&gt;decimal&lt;/DataType&gt;
+    &lt;Caption&gt;Prod. Qty&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;565eafb6-2d75-44d8-86cd-995b8429670a&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_QtyCompleted&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;true&lt;/IsVisible&gt;
+    &lt;DataType&gt;decimal&lt;/DataType&gt;
+    &lt;Caption&gt;Completed Qty&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;565eafb6-2d75-44d8-86cd-995b8429670a&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobProd_ReceivedQty&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;true&lt;/IsVisible&gt;
+    &lt;DataType&gt;decimal&lt;/DataType&gt;
+    &lt;Caption&gt;Received Qty&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;565eafb6-2d75-44d8-86cd-995b8429670a&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_Company&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;false&lt;/IsVisible&gt;
+    &lt;DataType&gt;nvarchar&lt;/DataType&gt;
+    &lt;Caption&gt;Company&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+&lt;/NewDataSet&gt;</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions3" msdata:rowOrder="2">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <PropertyName>Updatable</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions4" msdata:rowOrder="3">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <PropertyName>StaticGetNew</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions5" msdata:rowOrder="4">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <PropertyName>GridCaption</PropertyName>
+      <PropertyType>System.String</PropertyType>
+      <PropertyValue>CDI_JobClose: Summary</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions6" msdata:rowOrder="5">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <PropertyName>GridSummaries</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions7" msdata:rowOrder="6">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <PropertyName>ViewButtons</PropertyName>
+      <PropertyType>System.String</PropertyType>
+      <PropertyValue>&lt;DocumentElement /&gt;</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions8" msdata:rowOrder="7">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <PropertyName>GridGroupBy</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions9" msdata:rowOrder="8">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <PropertyName>AddNewSubscribers</PropertyName>
+      <PropertyType>System.String</PropertyType>
+      <PropertyValue>&lt;DocumentElement /&gt;</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions10" msdata:rowOrder="9">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <PropertyName>ForceAllUpdate</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions11" msdata:rowOrder="10">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <PropertyName>Updatable</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions12" msdata:rowOrder="11">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <PropertyName>InputPrompts</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions13" msdata:rowOrder="12">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <PropertyName>StaticGetNew</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions14" msdata:rowOrder="13">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <PropertyName>ViewButtons</PropertyName>
+      <PropertyType>System.String</PropertyType>
+      <PropertyValue>&lt;DocumentElement /&gt;</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions15" msdata:rowOrder="14">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <PropertyName>GridSummaries</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions16" msdata:rowOrder="15">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <PropertyName>ViewColumnTable</PropertyName>
+      <PropertyType>System.String</PropertyType>
+      <PropertyValue>&lt;NewDataSet&gt;
+  &lt;xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"&gt;
+    &lt;xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="DashboardViewColumns" msdata:UseCurrentLocale="true"&gt;
+      &lt;xs:complexType&gt;
+        &lt;xs:choice minOccurs="0" maxOccurs="unbounded"&gt;
+          &lt;xs:element name="DashboardViewColumns"&gt;
+            &lt;xs:complexType&gt;
+              &lt;xs:sequence&gt;
+                &lt;xs:element name="Company" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="DefinitionID" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="QueryID" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ViewID" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ColumnName" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="IsVisible" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="OnXAxis" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="OnYAxis" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="OnZAxis" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="DataType" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="Caption" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="LabelSize" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="LabelLocation" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="LabelGuid" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ControlSize" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ControlLocation" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ControlGuid" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="DashboardPrompt" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="DashboardHonorNull" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="DashboardCondition" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ControlType" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="BaseType" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="RetrieverCombo" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="DescColumnName" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="IsKeyField" type="xs:boolean" default="false" minOccurs="0" /&gt;
+                &lt;xs:element name="QuickSearchId" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="DisplayCaption" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="IsFocused" type="xs:boolean" default="false" minOccurs="0" /&gt;
+                &lt;xs:element name="ControlName" type="xs:string" minOccurs="0" /&gt;
+              &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+          &lt;/xs:element&gt;
+        &lt;/xs:choice&gt;
+      &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:schema&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;ba36914d-7fb1-4153-a3cc-aad8fb1b40f6&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_JobClosed&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;false&lt;/IsVisible&gt;
+    &lt;DataType&gt;bit&lt;/DataType&gt;
+    &lt;Caption&gt;Closed&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;ba36914d-7fb1-4153-a3cc-aad8fb1b40f6&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_JobNum&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;false&lt;/IsVisible&gt;
+    &lt;DataType&gt;nvarchar&lt;/DataType&gt;
+    &lt;Caption&gt;Job&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;ba36914d-7fb1-4153-a3cc-aad8fb1b40f6&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_PartNum&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;false&lt;/IsVisible&gt;
+    &lt;DataType&gt;nvarchar&lt;/DataType&gt;
+    &lt;Caption&gt;Part&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;ba36914d-7fb1-4153-a3cc-aad8fb1b40f6&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_ProdQty&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;false&lt;/IsVisible&gt;
+    &lt;DataType&gt;decimal&lt;/DataType&gt;
+    &lt;Caption&gt;Prod. Qty&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;ba36914d-7fb1-4153-a3cc-aad8fb1b40f6&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_QtyCompleted&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;false&lt;/IsVisible&gt;
+    &lt;DataType&gt;decimal&lt;/DataType&gt;
+    &lt;Caption&gt;Completed Qty&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;ba36914d-7fb1-4153-a3cc-aad8fb1b40f6&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobProd_ReceivedQty&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;false&lt;/IsVisible&gt;
+    &lt;DataType&gt;decimal&lt;/DataType&gt;
+    &lt;Caption&gt;Received Qty&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;ba36914d-7fb1-4153-a3cc-aad8fb1b40f6&lt;/ViewID&gt;
+    &lt;ColumnName&gt;Part_PartDescription&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;false&lt;/IsVisible&gt;
+    &lt;DataType&gt;nvarchar&lt;/DataType&gt;
+    &lt;Caption&gt;Description&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;ba36914d-7fb1-4153-a3cc-aad8fb1b40f6&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_Company&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;false&lt;/IsVisible&gt;
+    &lt;DataType&gt;nvarchar&lt;/DataType&gt;
+    &lt;Caption&gt;Company&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+&lt;/NewDataSet&gt;</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions17" msdata:rowOrder="16">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <PropertyName>GridGroupBy</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions18" msdata:rowOrder="17">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <PropertyName>TrackerEmbedGrid</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions19" msdata:rowOrder="18">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <PropertyName>AddNewSubscribers</PropertyName>
+      <PropertyType>System.String</PropertyType>
+      <PropertyValue>&lt;DocumentElement /&gt;</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions20" msdata:rowOrder="19">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <PropertyName>CriteriaRequired</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions21" msdata:rowOrder="20">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <PropertyName>ForceAllUpdate</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions22" msdata:rowOrder="21">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <PropertyName>GridSummaries</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions23" msdata:rowOrder="22">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <PropertyName>ViewColumnTable</PropertyName>
+      <PropertyType>System.String</PropertyType>
+      <PropertyValue>&lt;NewDataSet&gt;
+  &lt;xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"&gt;
+    &lt;xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="DashboardViewColumns" msdata:UseCurrentLocale="true"&gt;
+      &lt;xs:complexType&gt;
+        &lt;xs:choice minOccurs="0" maxOccurs="unbounded"&gt;
+          &lt;xs:element name="DashboardViewColumns"&gt;
+            &lt;xs:complexType&gt;
+              &lt;xs:sequence&gt;
+                &lt;xs:element name="Company" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="DefinitionID" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="QueryID" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ViewID" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ColumnName" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="IsVisible" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="OnXAxis" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="OnYAxis" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="OnZAxis" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="DataType" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="Caption" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="LabelSize" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="LabelLocation" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="LabelGuid" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ControlSize" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ControlLocation" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ControlGuid" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="DashboardPrompt" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="DashboardHonorNull" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="DashboardCondition" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="ControlType" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="BaseType" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="RetrieverCombo" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="DescColumnName" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="IsKeyField" type="xs:boolean" default="false" minOccurs="0" /&gt;
+                &lt;xs:element name="QuickSearchId" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="DisplayCaption" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="IsFocused" type="xs:boolean" default="false" minOccurs="0" /&gt;
+                &lt;xs:element name="ControlName" type="xs:string" minOccurs="0" /&gt;
+              &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+          &lt;/xs:element&gt;
+        &lt;/xs:choice&gt;
+      &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:schema&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;c545ba8e-4cc5-47dd-bf08-d0258282bf63&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_JobNum&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;true&lt;/IsVisible&gt;
+    &lt;DataType&gt;nvarchar&lt;/DataType&gt;
+    &lt;Caption&gt;Job&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;c545ba8e-4cc5-47dd-bf08-d0258282bf63&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_PartNum&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;true&lt;/IsVisible&gt;
+    &lt;DataType&gt;nvarchar&lt;/DataType&gt;
+    &lt;Caption&gt;Part&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;c545ba8e-4cc5-47dd-bf08-d0258282bf63&lt;/ViewID&gt;
+    &lt;ColumnName&gt;Part_PartDescription&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;true&lt;/IsVisible&gt;
+    &lt;DataType&gt;nvarchar&lt;/DataType&gt;
+    &lt;Caption&gt;Description&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;c545ba8e-4cc5-47dd-bf08-d0258282bf63&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_ProdQty&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;true&lt;/IsVisible&gt;
+    &lt;DataType&gt;decimal&lt;/DataType&gt;
+    &lt;Caption&gt;Prod. Qty&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;c545ba8e-4cc5-47dd-bf08-d0258282bf63&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobProd_ReceivedQty&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;true&lt;/IsVisible&gt;
+    &lt;DataType&gt;decimal&lt;/DataType&gt;
+    &lt;Caption&gt;Received Qty&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;c545ba8e-4cc5-47dd-bf08-d0258282bf63&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_JobClosed&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;true&lt;/IsVisible&gt;
+    &lt;DataType&gt;bit&lt;/DataType&gt;
+    &lt;Caption&gt;Closed&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;true&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;c545ba8e-4cc5-47dd-bf08-d0258282bf63&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_QtyCompleted&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;false&lt;/IsVisible&gt;
+    &lt;DataType&gt;decimal&lt;/DataType&gt;
+    &lt;Caption&gt;Completed Qty&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+  &lt;DashboardViewColumns&gt;
+    &lt;Company&gt;PI04&lt;/Company&gt;
+    &lt;DefinitionID&gt;JobClose&lt;/DefinitionID&gt;
+    &lt;QueryID&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/QueryID&gt;
+    &lt;ViewID&gt;c545ba8e-4cc5-47dd-bf08-d0258282bf63&lt;/ViewID&gt;
+    &lt;ColumnName&gt;JobHead_Company&lt;/ColumnName&gt;
+    &lt;IsVisible&gt;false&lt;/IsVisible&gt;
+    &lt;DataType&gt;nvarchar&lt;/DataType&gt;
+    &lt;Caption&gt;Company&lt;/Caption&gt;
+    &lt;DashboardPrompt&gt;false&lt;/DashboardPrompt&gt;
+    &lt;DashboardHonorNull&gt;false&lt;/DashboardHonorNull&gt;
+    &lt;DescColumnName /&gt;
+    &lt;IsKeyField&gt;false&lt;/IsKeyField&gt;
+    &lt;QuickSearchId /&gt;
+    &lt;IsFocused&gt;false&lt;/IsFocused&gt;
+  &lt;/DashboardViewColumns&gt;
+&lt;/NewDataSet&gt;</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions24" msdata:rowOrder="23">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <PropertyName>Updatable</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>True</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions25" msdata:rowOrder="24">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <PropertyName>StaticGetNew</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>True</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions26" msdata:rowOrder="25">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <PropertyName>ViewButtons</PropertyName>
+      <PropertyType>System.String</PropertyType>
+      <PropertyValue>&lt;DocumentElement /&gt;</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions27" msdata:rowOrder="26">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <PropertyName>GridCaption</PropertyName>
+      <PropertyType>System.String</PropertyType>
+      <PropertyValue>Preview - Jobs to be closed</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions28" msdata:rowOrder="27">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <PropertyName>GridGroupBy</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions29" msdata:rowOrder="28">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <PropertyName>AddNewSubscribers</PropertyName>
+      <PropertyType>System.String</PropertyType>
+      <PropertyValue>&lt;DocumentElement /&gt;</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions39" msdata:rowOrder="29">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <PropertyName>GridLayout</PropertyName>
+      <PropertyType>System.String</PropertyType>
+      <PropertyValue>&lt;SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&gt;&lt;SOAP-ENV:Body&gt;&lt;a1:UltraGridDisplayLayout id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;AddNewBox href="#ref-3" /&gt;&lt;GroupByBox href="#ref-4" /&gt;&lt;Override href="#ref-5" /&gt;&lt;ViewStyleBand&gt;1&lt;/ViewStyleBand&gt;&lt;Bands href="#ref-6" /&gt;&lt;/a1:UltraGridDisplayLayout&gt;&lt;a1:AddNewBox id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Prompt id="ref-7"&gt;Add ...&lt;/Prompt&gt;&lt;/a1:AddNewBox&gt;&lt;a1:GroupByBox id="ref-4" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Prompt id="ref-8"&gt;Drag a column header here to group by that column.&lt;/Prompt&gt;&lt;/a1:GroupByBox&gt;&lt;a1:UltraGridOverride id="ref-5" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;AllowUpdate&gt;2&lt;/AllowUpdate&gt;&lt;HeaderClickAction&gt;2&lt;/HeaderClickAction&gt;&lt;NullText id="ref-9"&gt;&lt;/NullText&gt;&lt;/a1:UltraGridOverride&gt;&lt;a1:BandsCollection id="ref-6" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Count&gt;1&lt;/Count&gt;&lt;_x0030_ href="#ref-10" /&gt;&lt;/a1:BandsCollection&gt;&lt;a1:UltraGridBand id="ref-10" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Key id="ref-11"&gt;Results&lt;/Key&gt;&lt;Columns href="#ref-12" /&gt;&lt;/a1:UltraGridBand&gt;&lt;a1:ColumnsCollection id="ref-12" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Count&gt;11&lt;/Count&gt;&lt;_x0030_ href="#ref-13" /&gt;&lt;_x0031_ href="#ref-14" /&gt;&lt;_x0032_ href="#ref-15" /&gt;&lt;_x0033_ href="#ref-16" /&gt;&lt;_x0034_ href="#ref-17" /&gt;&lt;_x0035_ href="#ref-18" /&gt;&lt;_x0036_ href="#ref-19" /&gt;&lt;_x0037_ href="#ref-20" /&gt;&lt;_x0038_ href="#ref-21" /&gt;&lt;_x0039_ href="#ref-22" /&gt;&lt;_x0031_0 href="#ref-23" /&gt;&lt;/a1:ColumnsCollection&gt;&lt;a1:UltraGridColumn id="ref-13" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Header href="#ref-24" /&gt;&lt;Key id="ref-25"&gt;JobHead_JobClosed&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;Width&gt;87&lt;/Width&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-14" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;MaxLength&gt;14&lt;/MaxLength&gt;&lt;Header href="#ref-26" /&gt;&lt;Key id="ref-27"&gt;JobHead_JobNum&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;Width&gt;72&lt;/Width&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-15" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Header href="#ref-28" /&gt;&lt;Key id="ref-29"&gt;JobHead_PartNum&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;Width&gt;74&lt;/Width&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-16" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;MaxLength&gt;1000&lt;/MaxLength&gt;&lt;Header href="#ref-30" /&gt;&lt;Key id="ref-31"&gt;Part_PartDescription&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;Width&gt;108&lt;/Width&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-17" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;CellAppearanceHolder href="#ref-33" /&gt;&lt;Header href="#ref-34" /&gt;&lt;Key id="ref-35"&gt;JobHead_ProdQty&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;Width&gt;99&lt;/Width&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;EditorComponentName href="#ref-9" /&gt;&lt;UseEditorMaskSettings&gt;true&lt;/UseEditorMaskSettings&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-18" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;CellAppearanceHolder href="#ref-36" /&gt;&lt;Header href="#ref-37" /&gt;&lt;Key id="ref-38"&gt;JobHead_QtyCompleted&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;Width&gt;124&lt;/Width&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;EditorComponentName href="#ref-9" /&gt;&lt;UseEditorMaskSettings&gt;true&lt;/UseEditorMaskSettings&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-19" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;CellAppearanceHolder href="#ref-39" /&gt;&lt;Header href="#ref-40" /&gt;&lt;Key id="ref-41"&gt;JobProd_ReceivedQty&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;Width&gt;120&lt;/Width&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;EditorComponentName href="#ref-9" /&gt;&lt;UseEditorMaskSettings&gt;true&lt;/UseEditorMaskSettings&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-20" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;MaxLength&gt;8&lt;/MaxLength&gt;&lt;Header href="#ref-42" /&gt;&lt;Hidden&gt;true&lt;/Hidden&gt;&lt;Key id="ref-43"&gt;JobHead_Company&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-21" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Header href="#ref-44" /&gt;&lt;Hidden&gt;true&lt;/Hidden&gt;&lt;Key id="ref-45"&gt;RowMod&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-22" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Header href="#ref-46" /&gt;&lt;Hidden&gt;true&lt;/Hidden&gt;&lt;Key id="ref-47"&gt;RowIdent&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-23" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Header href="#ref-48" /&gt;&lt;Hidden&gt;true&lt;/Hidden&gt;&lt;Key id="ref-49"&gt;SysRowID&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:ColumnHeader id="ref-24" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;0&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a1:ColumnHeader id="ref-26" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;1&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a1:ColumnHeader id="ref-28" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;2&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a1:ColumnHeader id="ref-30" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;3&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a2:AppearanceHolder id="ref-33" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v12.2"&gt;&lt;Appearance href="#ref-50" /&gt;&lt;/a2:AppearanceHolder&gt;&lt;a1:ColumnHeader id="ref-34" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;4&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a2:AppearanceHolder id="ref-36" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v12.2"&gt;&lt;Appearance href="#ref-51" /&gt;&lt;/a2:AppearanceHolder&gt;&lt;a1:ColumnHeader id="ref-37" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;5&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a2:AppearanceHolder id="ref-39" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v12.2"&gt;&lt;Appearance href="#ref-52" /&gt;&lt;/a2:AppearanceHolder&gt;&lt;a1:ColumnHeader id="ref-40" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;6&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a1:ColumnHeader id="ref-42" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;9&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a1:ColumnHeader id="ref-44" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;7&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a1:ColumnHeader id="ref-46" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;8&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a1:ColumnHeader id="ref-48" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;10&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a2:Appearance id="ref-50" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v12.2"&gt;&lt;TextHAlign&gt;3&lt;/TextHAlign&gt;&lt;Id&gt;0&lt;/Id&gt;&lt;/a2:Appearance&gt;&lt;a2:Appearance id="ref-51" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v12.2"&gt;&lt;TextHAlign&gt;3&lt;/TextHAlign&gt;&lt;Id&gt;0&lt;/Id&gt;&lt;/a2:Appearance&gt;&lt;a2:Appearance id="ref-52" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v12.2"&gt;&lt;TextHAlign&gt;3&lt;/TextHAlign&gt;&lt;Id&gt;0&lt;/Id&gt;&lt;/a2:Appearance&gt;&lt;/SOAP-ENV:Body&gt;&lt;/SOAP-ENV:Envelope&gt;</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions40" msdata:rowOrder="30">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>565eafb6-2d75-44d8-86cd-995b8429670a</ViewID>
+      <PropertyName>FilteredBaqView</PropertyName>
+      <PropertyType>System.String</PropertyType>
+      <PropertyValue>V_JobClose_1View1</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions41" msdata:rowOrder="31">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <PropertyName>HasKeyField</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions42" msdata:rowOrder="32">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <PropertyName>IsSearchPanel</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>False</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions43" msdata:rowOrder="33">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <PropertyName>DockLayout-TrackerDockMgraa734a98-61f1-4d3a-942a-ec077204c22b</PropertyName>
+      <PropertyType>System.String</PropertyType>
+      <PropertyValue>&lt;SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&gt;
+&lt;SOAP-ENV:Body&gt;
+&lt;a1:UltraDockManager id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;
+&lt;ControlPanes href="#ref-3"/&gt;
+&lt;DefaultGroupSettings href="#ref-4"/&gt;
+&lt;DockAreas href="#ref-5"/&gt;
+&lt;LayoutStyle&gt;1&lt;/LayoutStyle&gt;
+&lt;UnpinnedTabInfoLeft href="#ref-6"/&gt;
+&lt;UnpinnedTabInfoTop href="#ref-7"/&gt;
+&lt;UnpinnedTabInfoBottom href="#ref-8"/&gt;
+&lt;UnpinnedTabInfoRight href="#ref-9"/&gt;
+&lt;/a1:UltraDockManager&gt;
+&lt;a1:DockableControlPanesCollection id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;
+&lt;Count&gt;1&lt;/Count&gt;
+&lt;/a1:DockableControlPanesCollection&gt;
+&lt;a1:GroupSettings id="ref-4" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;
+&lt;TabStyle&gt;1&lt;/TabStyle&gt;
+&lt;/a1:GroupSettings&gt;
+&lt;a1:DockAreasCollection id="ref-5" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;
+&lt;Count&gt;1&lt;/Count&gt;
+&lt;_x0030_ href="#ref-10"/&gt;
+&lt;/a1:DockAreasCollection&gt;
+&lt;a1:UnpinnedTabAreaInfo id="ref-6" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;
+&lt;tabGroups href="#ref-11"/&gt;
+&lt;tabAreaSide&gt;Left&lt;/tabAreaSide&gt;
+&lt;/a1:UnpinnedTabAreaInfo&gt;
+&lt;a1:UnpinnedTabAreaInfo id="ref-7" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;
+&lt;tabGroups href="#ref-12"/&gt;
+&lt;tabAreaSide&gt;Top&lt;/tabAreaSide&gt;
+&lt;/a1:UnpinnedTabAreaInfo&gt;
+&lt;a1:UnpinnedTabAreaInfo id="ref-8" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;
+&lt;tabGroups href="#ref-13"/&gt;
+&lt;tabAreaSide&gt;Bottom&lt;/tabAreaSide&gt;
+&lt;/a1:UnpinnedTabAreaInfo&gt;
+&lt;a1:UnpinnedTabAreaInfo id="ref-9" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;
+&lt;tabGroups href="#ref-14"/&gt;
+&lt;tabAreaSide&gt;Right&lt;/tabAreaSide&gt;
+&lt;/a1:UnpinnedTabAreaInfo&gt;
+&lt;a1:DockAreaPane id="ref-10" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;
+&lt;Size xsi:type="a2:Size" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;
+&lt;width&gt;912&lt;/width&gt;
+&lt;height&gt;74&lt;/height&gt;
+&lt;/Size&gt;
+&lt;Id xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;
+&lt;_a&gt;1343439213&lt;/_a&gt;
+&lt;_b&gt;-31105&lt;/_b&gt;
+&lt;_c&gt;19419&lt;/_c&gt;
+&lt;_d&gt;162&lt;/_d&gt;
+&lt;_e&gt;132&lt;/_e&gt;
+&lt;_f&gt;106&lt;/_f&gt;
+&lt;_g&gt;51&lt;/_g&gt;
+&lt;_h&gt;80&lt;/_h&gt;
+&lt;_i&gt;136&lt;/_i&gt;
+&lt;_j&gt;192&lt;/_j&gt;
+&lt;_k&gt;104&lt;/_k&gt;
+&lt;/Id&gt;
+&lt;DockedParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;
+&lt;_a&gt;0&lt;/_a&gt;
+&lt;_b&gt;0&lt;/_b&gt;
+&lt;_c&gt;0&lt;/_c&gt;
+&lt;_d&gt;0&lt;/_d&gt;
+&lt;_e&gt;0&lt;/_e&gt;
+&lt;_f&gt;0&lt;/_f&gt;
+&lt;_g&gt;0&lt;/_g&gt;
+&lt;_h&gt;0&lt;/_h&gt;
+&lt;_i&gt;0&lt;/_i&gt;
+&lt;_j&gt;0&lt;/_j&gt;
+&lt;_k&gt;0&lt;/_k&gt;
+&lt;/DockedParentId&gt;
+&lt;FloatingParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;
+&lt;_a&gt;0&lt;/_a&gt;
+&lt;_b&gt;0&lt;/_b&gt;
+&lt;_c&gt;0&lt;/_c&gt;
+&lt;_d&gt;0&lt;/_d&gt;
+&lt;_e&gt;0&lt;/_e&gt;
+&lt;_f&gt;0&lt;/_f&gt;
+&lt;_g&gt;0&lt;/_g&gt;
+&lt;_h&gt;0&lt;/_h&gt;
+&lt;_i&gt;0&lt;/_i&gt;
+&lt;_j&gt;0&lt;/_j&gt;
+&lt;_k&gt;0&lt;/_k&gt;
+&lt;/FloatingParentId&gt;
+&lt;Panes href="#ref-16"/&gt;
+&lt;GroupSettings href="#ref-17"/&gt;
+&lt;ChildPaneStyle&gt;2&lt;/ChildPaneStyle&gt;
+&lt;SelectedTabIndex&gt;0&lt;/SelectedTabIndex&gt;
+&lt;DockedLocation&gt;1&lt;/DockedLocation&gt;
+&lt;/a1:DockAreaPane&gt;
+&lt;SOAP-ENC:Array id="ref-11" SOAP-ENC:arrayType="a1:UnpinnedTabGroupInfo[0]" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;
+&lt;/SOAP-ENC:Array&gt;
+&lt;SOAP-ENC:Array id="ref-12" SOAP-ENC:arrayType="a1:UnpinnedTabGroupInfo[0]" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;
+&lt;/SOAP-ENC:Array&gt;
+&lt;SOAP-ENC:Array id="ref-13" SOAP-ENC:arrayType="a1:UnpinnedTabGroupInfo[0]" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;
+&lt;/SOAP-ENC:Array&gt;
+&lt;SOAP-ENC:Array id="ref-14" SOAP-ENC:arrayType="a1:UnpinnedTabGroupInfo[0]" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;
+&lt;/SOAP-ENC:Array&gt;
+&lt;a1:DockablePanesCollection id="ref-16" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;
+&lt;Count&gt;1&lt;/Count&gt;
+&lt;_x0030_ href="#ref-18"/&gt;
+&lt;/a1:DockablePanesCollection&gt;
+&lt;a1:GroupSettings id="ref-17" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;
+&lt;TabLocation&gt;1&lt;/TabLocation&gt;
+&lt;/a1:GroupSettings&gt;
+&lt;a1:DockableControlPane id="ref-18" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;
+&lt;Settings href="#ref-19"/&gt;
+&lt;Text id="ref-20"&gt;JobClose: Tracker&lt;/Text&gt;
+&lt;Size xsi:type="a2:Size" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;
+&lt;width&gt;624&lt;/width&gt;
+&lt;height&gt;392&lt;/height&gt;
+&lt;/Size&gt;
+&lt;Id xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;
+&lt;_a&gt;352728141&lt;/_a&gt;
+&lt;_b&gt;-19881&lt;/_b&gt;
+&lt;_c&gt;17461&lt;/_c&gt;
+&lt;_d&gt;186&lt;/_d&gt;
+&lt;_e&gt;162&lt;/_e&gt;
+&lt;_f&gt;231&lt;/_f&gt;
+&lt;_g&gt;120&lt;/_g&gt;
+&lt;_h&gt;226&lt;/_h&gt;
+&lt;_i&gt;73&lt;/_i&gt;
+&lt;_j&gt;249&lt;/_j&gt;
+&lt;_k&gt;250&lt;/_k&gt;
+&lt;/Id&gt;
+&lt;DockedParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;
+&lt;_a&gt;1343439213&lt;/_a&gt;
+&lt;_b&gt;-31105&lt;/_b&gt;
+&lt;_c&gt;19419&lt;/_c&gt;
+&lt;_d&gt;162&lt;/_d&gt;
+&lt;_e&gt;132&lt;/_e&gt;
+&lt;_f&gt;106&lt;/_f&gt;
+&lt;_g&gt;51&lt;/_g&gt;
+&lt;_h&gt;80&lt;/_h&gt;
+&lt;_i&gt;136&lt;/_i&gt;
+&lt;_j&gt;192&lt;/_j&gt;
+&lt;_k&gt;104&lt;/_k&gt;
+&lt;/DockedParentId&gt;
+&lt;FloatingParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&gt;
+&lt;_a&gt;0&lt;/_a&gt;
+&lt;_b&gt;0&lt;/_b&gt;
+&lt;_c&gt;0&lt;/_c&gt;
+&lt;_d&gt;0&lt;/_d&gt;
+&lt;_e&gt;0&lt;/_e&gt;
+&lt;_f&gt;0&lt;/_f&gt;
+&lt;_g&gt;0&lt;/_g&gt;
+&lt;_h&gt;0&lt;/_h&gt;
+&lt;_i&gt;0&lt;/_i&gt;
+&lt;_j&gt;0&lt;/_j&gt;
+&lt;_k&gt;0&lt;/_k&gt;
+&lt;/FloatingParentId&gt;
+&lt;Key id="ref-21"&gt;TrackerPanel&lt;/Key&gt;
+&lt;ControlName id="ref-22"&gt;TrackerPanel&lt;/ControlName&gt;
+&lt;OriginalControlBounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&gt;
+&lt;x&gt;392&lt;/x&gt;
+&lt;y&gt;240&lt;/y&gt;
+&lt;width&gt;136&lt;/width&gt;
+&lt;height&gt;72&lt;/height&gt;
+&lt;/OriginalControlBounds&gt;
+&lt;ControlPaneIndex&gt;0&lt;/ControlPaneIndex&gt;
+&lt;/a1:DockableControlPane&gt;
+&lt;a1:PaneSettings id="ref-19" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&gt;
+&lt;ShowCaption&gt;2&lt;/ShowCaption&gt;
+&lt;/a1:PaneSettings&gt;
+&lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions44" msdata:rowOrder="34">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <PropertyName>AllowAddNew</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>True</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions45" msdata:rowOrder="35">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <PropertyName>GridLayout</PropertyName>
+      <PropertyType>System.String</PropertyType>
+      <PropertyValue>&lt;SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&gt;&lt;SOAP-ENV:Body&gt;&lt;a1:UltraGridDisplayLayout id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;AddNewBox href="#ref-3" /&gt;&lt;GroupByBox href="#ref-4" /&gt;&lt;Override href="#ref-5" /&gt;&lt;ViewStyleBand&gt;1&lt;/ViewStyleBand&gt;&lt;Bands href="#ref-6" /&gt;&lt;/a1:UltraGridDisplayLayout&gt;&lt;a1:AddNewBox id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Prompt id="ref-7"&gt;Add ...&lt;/Prompt&gt;&lt;/a1:AddNewBox&gt;&lt;a1:GroupByBox id="ref-4" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Prompt id="ref-8"&gt;Drag a column header here to group by that column.&lt;/Prompt&gt;&lt;/a1:GroupByBox&gt;&lt;a1:UltraGridOverride id="ref-5" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;AllowAddNew&gt;2&lt;/AllowAddNew&gt;&lt;AllowDelete&gt;2&lt;/AllowDelete&gt;&lt;AllowUpdate&gt;2&lt;/AllowUpdate&gt;&lt;HeaderClickAction&gt;2&lt;/HeaderClickAction&gt;&lt;NullText id="ref-9"&gt;&lt;/NullText&gt;&lt;/a1:UltraGridOverride&gt;&lt;a1:BandsCollection id="ref-6" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Count&gt;1&lt;/Count&gt;&lt;_x0030_ href="#ref-10" /&gt;&lt;/a1:BandsCollection&gt;&lt;a1:UltraGridBand id="ref-10" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Key id="ref-11"&gt;Results&lt;/Key&gt;&lt;Columns href="#ref-12" /&gt;&lt;SortedCols href="#ref-13" /&gt;&lt;/a1:UltraGridBand&gt;&lt;a1:ColumnsCollection id="ref-12" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Count&gt;11&lt;/Count&gt;&lt;_x0030_ href="#ref-14" /&gt;&lt;_x0031_ href="#ref-15" /&gt;&lt;_x0032_ href="#ref-16" /&gt;&lt;_x0033_ href="#ref-17" /&gt;&lt;_x0034_ href="#ref-18" /&gt;&lt;_x0035_ href="#ref-19" /&gt;&lt;_x0036_ href="#ref-20" /&gt;&lt;_x0037_ href="#ref-21" /&gt;&lt;_x0038_ href="#ref-22" /&gt;&lt;_x0039_ href="#ref-23" /&gt;&lt;_x0031_0 href="#ref-24" /&gt;&lt;/a1:ColumnsCollection&gt;&lt;a1:SortedColumnsCollection id="ref-13" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Count&gt;1&lt;/Count&gt;&lt;_x0030_ href="#ref-25" /&gt;&lt;/a1:SortedColumnsCollection&gt;&lt;a1:UltraGridColumn id="ref-14" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Header href="#ref-26" /&gt;&lt;Key id="ref-27"&gt;JobHead_JobClosed&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;Width&gt;87&lt;/Width&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-15" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;MaxLength&gt;14&lt;/MaxLength&gt;&lt;Header href="#ref-28" /&gt;&lt;Key id="ref-29"&gt;JobHead_JobNum&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;Width&gt;90&lt;/Width&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-16" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;MaxLength&gt;50&lt;/MaxLength&gt;&lt;Header href="#ref-30" /&gt;&lt;Key id="ref-31"&gt;JobHead_PartNum&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;Width&gt;105&lt;/Width&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-17" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;MaxLength&gt;1000&lt;/MaxLength&gt;&lt;Header href="#ref-32" /&gt;&lt;Key id="ref-33"&gt;Part_PartDescription&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;Width&gt;225&lt;/Width&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-18" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;CellAppearanceHolder href="#ref-35" /&gt;&lt;Header href="#ref-36" /&gt;&lt;Key id="ref-37"&gt;JobHead_ProdQty&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;Width&gt;99&lt;/Width&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;EditorComponentName id="ref-38"&gt;&lt;/EditorComponentName&gt;&lt;UseEditorMaskSettings&gt;true&lt;/UseEditorMaskSettings&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-19" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;CellAppearanceHolder href="#ref-39" /&gt;&lt;Header href="#ref-40" /&gt;&lt;Hidden&gt;true&lt;/Hidden&gt;&lt;Key id="ref-41"&gt;JobHead_QtyCompleted&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;EditorComponentName href="#ref-38" /&gt;&lt;UseEditorMaskSettings&gt;true&lt;/UseEditorMaskSettings&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-20" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;CellAppearanceHolder href="#ref-42" /&gt;&lt;Header href="#ref-43" /&gt;&lt;Key id="ref-44"&gt;JobProd_ReceivedQty&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;Width&gt;96&lt;/Width&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;EditorComponentName href="#ref-38" /&gt;&lt;UseEditorMaskSettings&gt;true&lt;/UseEditorMaskSettings&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-21" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;MaxLength&gt;8&lt;/MaxLength&gt;&lt;Header href="#ref-45" /&gt;&lt;Hidden&gt;true&lt;/Hidden&gt;&lt;Key id="ref-46"&gt;JobHead_Company&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-22" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Header href="#ref-47" /&gt;&lt;Hidden&gt;true&lt;/Hidden&gt;&lt;Key id="ref-48"&gt;RowMod&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-23" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Header href="#ref-49" /&gt;&lt;Hidden&gt;true&lt;/Hidden&gt;&lt;Key id="ref-50"&gt;RowIdent&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:UltraGridColumn id="ref-24" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Header href="#ref-51" /&gt;&lt;Hidden&gt;true&lt;/Hidden&gt;&lt;Key id="ref-52"&gt;SysRowID&lt;/Key&gt;&lt;PromptChar&gt;&lt;/PromptChar&gt;&lt;AllowRowSummaries&gt;2&lt;/AllowRowSummaries&gt;&lt;IsBound&gt;true&lt;/IsBound&gt;&lt;/a1:UltraGridColumn&gt;&lt;a1:SerializedColumnID id="ref-25" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;Key href="#ref-37" /&gt;&lt;RelativeIndex&gt;4&lt;/RelativeIndex&gt;&lt;Bound&gt;true&lt;/Bound&gt;&lt;SortIndicator&gt;1&lt;/SortIndicator&gt;&lt;IsGroupByColumn&gt;false&lt;/IsGroupByColumn&gt;&lt;/a1:SerializedColumnID&gt;&lt;a1:ColumnHeader id="ref-26" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;5&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a1:ColumnHeader id="ref-28" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;0&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a1:ColumnHeader id="ref-30" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;1&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a1:ColumnHeader id="ref-32" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;2&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a2:AppearanceHolder id="ref-35" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v12.2"&gt;&lt;Appearance href="#ref-53" /&gt;&lt;/a2:AppearanceHolder&gt;&lt;a1:ColumnHeader id="ref-36" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;3&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a2:AppearanceHolder id="ref-39" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v12.2"&gt;&lt;Appearance href="#ref-54" /&gt;&lt;/a2:AppearanceHolder&gt;&lt;a1:ColumnHeader id="ref-40" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;8&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a2:AppearanceHolder id="ref-42" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v12.2"&gt;&lt;Appearance href="#ref-55" /&gt;&lt;/a2:AppearanceHolder&gt;&lt;a1:ColumnHeader id="ref-43" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;4&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a1:ColumnHeader id="ref-45" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;10&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a1:ColumnHeader id="ref-47" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;7&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a1:ColumnHeader id="ref-49" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;9&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a1:ColumnHeader id="ref-51" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinGrid/Infragistics4.Win.UltraWinGrid.v12.2"&gt;&lt;VisiblePosition&gt;6&lt;/VisiblePosition&gt;&lt;/a1:ColumnHeader&gt;&lt;a2:Appearance id="ref-53" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v12.2"&gt;&lt;TextHAlign&gt;3&lt;/TextHAlign&gt;&lt;Id&gt;0&lt;/Id&gt;&lt;/a2:Appearance&gt;&lt;a2:Appearance id="ref-54" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v12.2"&gt;&lt;TextHAlign&gt;3&lt;/TextHAlign&gt;&lt;Id&gt;0&lt;/Id&gt;&lt;/a2:Appearance&gt;&lt;a2:Appearance id="ref-55" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win/Infragistics4.Win.v12.2"&gt;&lt;TextHAlign&gt;3&lt;/TextHAlign&gt;&lt;Id&gt;0&lt;/Id&gt;&lt;/a2:Appearance&gt;&lt;/SOAP-ENV:Body&gt;&lt;/SOAP-ENV:Envelope&gt;</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions46" msdata:rowOrder="36">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <PropertyName>MultiDirtyRow</PropertyName>
+      <PropertyType>System.Boolean</PropertyType>
+      <PropertyValue>True</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewOptions diffgr:id="DashboardViewOptions47" msdata:rowOrder="37">
+      <Company>PI04</Company>
+      <DefininitionID>JobClose</DefininitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>c545ba8e-4cc5-47dd-bf08-d0258282bf63</ViewID>
+      <PropertyName>FilteredBaqView</PropertyName>
+      <PropertyType>System.String</PropertyType>
+      <PropertyValue>V_JobClose_1View2</PropertyValue>
+    </DashboardViewOptions>
+    <DashboardViewCustomizations diffgr:id="DashboardViewCustomizations1" msdata:rowOrder="0">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <ViewID>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</ViewID>
+      <CustomizationID />
+      <CustomizationDataSetXML>&lt;CustomizationDS xmlns="http://tempuri.org/XMLSchema.xsd"&gt;
+  &lt;xs:schema id="CustomizationDS" targetNamespace="http://tempuri.org/XMLSchema.xsd" xmlns:mstns="http://tempuri.org/XMLSchema.xsd" xmlns="http://tempuri.org/XMLSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified"&gt;
+    &lt;xs:element name="CustomizationDS" msdata:IsDataSet="true" msdata:Locale=""&gt;
+      &lt;xs:complexType&gt;
+        &lt;xs:choice minOccurs="0" maxOccurs="unbounded"&gt;
+          &lt;xs:element name="Controls"&gt;
+            &lt;xs:complexType&gt;
+              &lt;xs:sequence&gt;
+                &lt;xs:element name="FormsID" type="xs:string" /&gt;
+                &lt;xs:element name="ControlName" type="xs:string" /&gt;
+                &lt;xs:element name="Key" type="xs:string" /&gt;
+                &lt;xs:element name="ParentControlKey" type="xs:string" /&gt;
+                &lt;xs:element name="ControlType" type="xs:string" /&gt;
+                &lt;xs:element name="Company" type="xs:string" /&gt;
+                &lt;xs:element name="Plant" type="xs:string" /&gt;
+                &lt;xs:element name="DcdUserId" type="xs:string" /&gt;
+                &lt;xs:element name="GroupID" type="xs:string" /&gt;
+                &lt;xs:element name="ControlsID" type="xs:string" /&gt;
+              &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+          &lt;/xs:element&gt;
+          &lt;xs:element name="Properties"&gt;
+            &lt;xs:complexType&gt;
+              &lt;xs:sequence&gt;
+                &lt;xs:element name="FormsID" type="xs:string" /&gt;
+                &lt;xs:element name="ControlName" type="xs:string" /&gt;
+                &lt;xs:element name="Key" type="xs:string" /&gt;
+                &lt;xs:element name="PropertyName" type="xs:string" /&gt;
+                &lt;xs:element name="PropertyValue" type="xs:string" /&gt;
+                &lt;xs:element name="Company" type="xs:string" /&gt;
+                &lt;xs:element name="Plant" type="xs:string" /&gt;
+                &lt;xs:element name="DcdUserID" type="xs:string" /&gt;
+                &lt;xs:element name="GroupID" type="xs:string" /&gt;
+                &lt;xs:element name="PropertiesID" type="xs:string" /&gt;
+              &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+          &lt;/xs:element&gt;
+        &lt;/xs:choice&gt;
+      &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:schema&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ba36914d-7fb1-4153-a3cc-aad8fb1b40f6&lt;/FormsID&gt;
+    &lt;ControlName&gt;TrackerDockMgr&lt;/ControlName&gt;
+    &lt;Key&gt;TrackerDockMgraa734a98-61f1-4d3a-942a-ec077204c22b&lt;/Key&gt;
+    &lt;PropertyName&gt;LayoutXML&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;&amp;lt;SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&amp;gt;
+&amp;lt;SOAP-ENV:Body&amp;gt;
+&amp;lt;a1:UltraDockManager id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&amp;gt;
+&amp;lt;ControlPanes href="#ref-3"/&amp;gt;
+&amp;lt;DefaultGroupSettings href="#ref-4"/&amp;gt;
+&amp;lt;DockAreas href="#ref-5"/&amp;gt;
+&amp;lt;LayoutStyle&amp;gt;1&amp;lt;/LayoutStyle&amp;gt;
+&amp;lt;UnpinnedTabInfoLeft href="#ref-6"/&amp;gt;
+&amp;lt;UnpinnedTabInfoTop href="#ref-7"/&amp;gt;
+&amp;lt;UnpinnedTabInfoBottom href="#ref-8"/&amp;gt;
+&amp;lt;UnpinnedTabInfoRight href="#ref-9"/&amp;gt;
+&amp;lt;/a1:UltraDockManager&amp;gt;
+&amp;lt;a1:DockableControlPanesCollection id="ref-3" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&amp;gt;
+&amp;lt;Count&amp;gt;1&amp;lt;/Count&amp;gt;
+&amp;lt;/a1:DockableControlPanesCollection&amp;gt;
+&amp;lt;a1:GroupSettings id="ref-4" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&amp;gt;
+&amp;lt;TabStyle&amp;gt;1&amp;lt;/TabStyle&amp;gt;
+&amp;lt;/a1:GroupSettings&amp;gt;
+&amp;lt;a1:DockAreasCollection id="ref-5" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&amp;gt;
+&amp;lt;Count&amp;gt;1&amp;lt;/Count&amp;gt;
+&amp;lt;_x0030_ href="#ref-10"/&amp;gt;
+&amp;lt;/a1:DockAreasCollection&amp;gt;
+&amp;lt;a1:UnpinnedTabAreaInfo id="ref-6" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&amp;gt;
+&amp;lt;tabGroups href="#ref-11"/&amp;gt;
+&amp;lt;tabAreaSide&amp;gt;Left&amp;lt;/tabAreaSide&amp;gt;
+&amp;lt;/a1:UnpinnedTabAreaInfo&amp;gt;
+&amp;lt;a1:UnpinnedTabAreaInfo id="ref-7" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&amp;gt;
+&amp;lt;tabGroups href="#ref-12"/&amp;gt;
+&amp;lt;tabAreaSide&amp;gt;Top&amp;lt;/tabAreaSide&amp;gt;
+&amp;lt;/a1:UnpinnedTabAreaInfo&amp;gt;
+&amp;lt;a1:UnpinnedTabAreaInfo id="ref-8" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&amp;gt;
+&amp;lt;tabGroups href="#ref-13"/&amp;gt;
+&amp;lt;tabAreaSide&amp;gt;Bottom&amp;lt;/tabAreaSide&amp;gt;
+&amp;lt;/a1:UnpinnedTabAreaInfo&amp;gt;
+&amp;lt;a1:UnpinnedTabAreaInfo id="ref-9" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&amp;gt;
+&amp;lt;tabGroups href="#ref-14"/&amp;gt;
+&amp;lt;tabAreaSide&amp;gt;Right&amp;lt;/tabAreaSide&amp;gt;
+&amp;lt;/a1:UnpinnedTabAreaInfo&amp;gt;
+&amp;lt;a1:DockAreaPane id="ref-10" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&amp;gt;
+&amp;lt;Size xsi:type="a2:Size" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&amp;gt;
+&amp;lt;width&amp;gt;912&amp;lt;/width&amp;gt;
+&amp;lt;height&amp;gt;74&amp;lt;/height&amp;gt;
+&amp;lt;/Size&amp;gt;
+&amp;lt;Id xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&amp;gt;
+&amp;lt;_a&amp;gt;1343439213&amp;lt;/_a&amp;gt;
+&amp;lt;_b&amp;gt;-31105&amp;lt;/_b&amp;gt;
+&amp;lt;_c&amp;gt;19419&amp;lt;/_c&amp;gt;
+&amp;lt;_d&amp;gt;162&amp;lt;/_d&amp;gt;
+&amp;lt;_e&amp;gt;132&amp;lt;/_e&amp;gt;
+&amp;lt;_f&amp;gt;106&amp;lt;/_f&amp;gt;
+&amp;lt;_g&amp;gt;51&amp;lt;/_g&amp;gt;
+&amp;lt;_h&amp;gt;80&amp;lt;/_h&amp;gt;
+&amp;lt;_i&amp;gt;136&amp;lt;/_i&amp;gt;
+&amp;lt;_j&amp;gt;192&amp;lt;/_j&amp;gt;
+&amp;lt;_k&amp;gt;104&amp;lt;/_k&amp;gt;
+&amp;lt;/Id&amp;gt;
+&amp;lt;DockedParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&amp;gt;
+&amp;lt;_a&amp;gt;0&amp;lt;/_a&amp;gt;
+&amp;lt;_b&amp;gt;0&amp;lt;/_b&amp;gt;
+&amp;lt;_c&amp;gt;0&amp;lt;/_c&amp;gt;
+&amp;lt;_d&amp;gt;0&amp;lt;/_d&amp;gt;
+&amp;lt;_e&amp;gt;0&amp;lt;/_e&amp;gt;
+&amp;lt;_f&amp;gt;0&amp;lt;/_f&amp;gt;
+&amp;lt;_g&amp;gt;0&amp;lt;/_g&amp;gt;
+&amp;lt;_h&amp;gt;0&amp;lt;/_h&amp;gt;
+&amp;lt;_i&amp;gt;0&amp;lt;/_i&amp;gt;
+&amp;lt;_j&amp;gt;0&amp;lt;/_j&amp;gt;
+&amp;lt;_k&amp;gt;0&amp;lt;/_k&amp;gt;
+&amp;lt;/DockedParentId&amp;gt;
+&amp;lt;FloatingParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&amp;gt;
+&amp;lt;_a&amp;gt;0&amp;lt;/_a&amp;gt;
+&amp;lt;_b&amp;gt;0&amp;lt;/_b&amp;gt;
+&amp;lt;_c&amp;gt;0&amp;lt;/_c&amp;gt;
+&amp;lt;_d&amp;gt;0&amp;lt;/_d&amp;gt;
+&amp;lt;_e&amp;gt;0&amp;lt;/_e&amp;gt;
+&amp;lt;_f&amp;gt;0&amp;lt;/_f&amp;gt;
+&amp;lt;_g&amp;gt;0&amp;lt;/_g&amp;gt;
+&amp;lt;_h&amp;gt;0&amp;lt;/_h&amp;gt;
+&amp;lt;_i&amp;gt;0&amp;lt;/_i&amp;gt;
+&amp;lt;_j&amp;gt;0&amp;lt;/_j&amp;gt;
+&amp;lt;_k&amp;gt;0&amp;lt;/_k&amp;gt;
+&amp;lt;/FloatingParentId&amp;gt;
+&amp;lt;Panes href="#ref-16"/&amp;gt;
+&amp;lt;GroupSettings href="#ref-17"/&amp;gt;
+&amp;lt;ChildPaneStyle&amp;gt;2&amp;lt;/ChildPaneStyle&amp;gt;
+&amp;lt;SelectedTabIndex&amp;gt;0&amp;lt;/SelectedTabIndex&amp;gt;
+&amp;lt;DockedLocation&amp;gt;1&amp;lt;/DockedLocation&amp;gt;
+&amp;lt;/a1:DockAreaPane&amp;gt;
+&amp;lt;SOAP-ENC:Array id="ref-11" SOAP-ENC:arrayType="a1:UnpinnedTabGroupInfo[0]" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&amp;gt;
+&amp;lt;/SOAP-ENC:Array&amp;gt;
+&amp;lt;SOAP-ENC:Array id="ref-12" SOAP-ENC:arrayType="a1:UnpinnedTabGroupInfo[0]" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&amp;gt;
+&amp;lt;/SOAP-ENC:Array&amp;gt;
+&amp;lt;SOAP-ENC:Array id="ref-13" SOAP-ENC:arrayType="a1:UnpinnedTabGroupInfo[0]" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&amp;gt;
+&amp;lt;/SOAP-ENC:Array&amp;gt;
+&amp;lt;SOAP-ENC:Array id="ref-14" SOAP-ENC:arrayType="a1:UnpinnedTabGroupInfo[0]" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&amp;gt;
+&amp;lt;/SOAP-ENC:Array&amp;gt;
+&amp;lt;a1:DockablePanesCollection id="ref-16" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&amp;gt;
+&amp;lt;Count&amp;gt;1&amp;lt;/Count&amp;gt;
+&amp;lt;_x0030_ href="#ref-18"/&amp;gt;
+&amp;lt;/a1:DockablePanesCollection&amp;gt;
+&amp;lt;a1:GroupSettings id="ref-17" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&amp;gt;
+&amp;lt;TabLocation&amp;gt;1&amp;lt;/TabLocation&amp;gt;
+&amp;lt;/a1:GroupSettings&amp;gt;
+&amp;lt;a1:DockableControlPane id="ref-18" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&amp;gt;
+&amp;lt;Settings href="#ref-19"/&amp;gt;
+&amp;lt;Text id="ref-20"&amp;gt;JobClose: Tracker&amp;lt;/Text&amp;gt;
+&amp;lt;Size xsi:type="a2:Size" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&amp;gt;
+&amp;lt;width&amp;gt;624&amp;lt;/width&amp;gt;
+&amp;lt;height&amp;gt;392&amp;lt;/height&amp;gt;
+&amp;lt;/Size&amp;gt;
+&amp;lt;Id xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&amp;gt;
+&amp;lt;_a&amp;gt;352728141&amp;lt;/_a&amp;gt;
+&amp;lt;_b&amp;gt;-19881&amp;lt;/_b&amp;gt;
+&amp;lt;_c&amp;gt;17461&amp;lt;/_c&amp;gt;
+&amp;lt;_d&amp;gt;186&amp;lt;/_d&amp;gt;
+&amp;lt;_e&amp;gt;162&amp;lt;/_e&amp;gt;
+&amp;lt;_f&amp;gt;231&amp;lt;/_f&amp;gt;
+&amp;lt;_g&amp;gt;120&amp;lt;/_g&amp;gt;
+&amp;lt;_h&amp;gt;226&amp;lt;/_h&amp;gt;
+&amp;lt;_i&amp;gt;73&amp;lt;/_i&amp;gt;
+&amp;lt;_j&amp;gt;249&amp;lt;/_j&amp;gt;
+&amp;lt;_k&amp;gt;250&amp;lt;/_k&amp;gt;
+&amp;lt;/Id&amp;gt;
+&amp;lt;DockedParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&amp;gt;
+&amp;lt;_a&amp;gt;1343439213&amp;lt;/_a&amp;gt;
+&amp;lt;_b&amp;gt;-31105&amp;lt;/_b&amp;gt;
+&amp;lt;_c&amp;gt;19419&amp;lt;/_c&amp;gt;
+&amp;lt;_d&amp;gt;162&amp;lt;/_d&amp;gt;
+&amp;lt;_e&amp;gt;132&amp;lt;/_e&amp;gt;
+&amp;lt;_f&amp;gt;106&amp;lt;/_f&amp;gt;
+&amp;lt;_g&amp;gt;51&amp;lt;/_g&amp;gt;
+&amp;lt;_h&amp;gt;80&amp;lt;/_h&amp;gt;
+&amp;lt;_i&amp;gt;136&amp;lt;/_i&amp;gt;
+&amp;lt;_j&amp;gt;192&amp;lt;/_j&amp;gt;
+&amp;lt;_k&amp;gt;104&amp;lt;/_k&amp;gt;
+&amp;lt;/DockedParentId&amp;gt;
+&amp;lt;FloatingParentId xsi:type="a3:Guid" xmlns:a3="http://schemas.microsoft.com/clr/ns/System"&amp;gt;
+&amp;lt;_a&amp;gt;0&amp;lt;/_a&amp;gt;
+&amp;lt;_b&amp;gt;0&amp;lt;/_b&amp;gt;
+&amp;lt;_c&amp;gt;0&amp;lt;/_c&amp;gt;
+&amp;lt;_d&amp;gt;0&amp;lt;/_d&amp;gt;
+&amp;lt;_e&amp;gt;0&amp;lt;/_e&amp;gt;
+&amp;lt;_f&amp;gt;0&amp;lt;/_f&amp;gt;
+&amp;lt;_g&amp;gt;0&amp;lt;/_g&amp;gt;
+&amp;lt;_h&amp;gt;0&amp;lt;/_h&amp;gt;
+&amp;lt;_i&amp;gt;0&amp;lt;/_i&amp;gt;
+&amp;lt;_j&amp;gt;0&amp;lt;/_j&amp;gt;
+&amp;lt;_k&amp;gt;0&amp;lt;/_k&amp;gt;
+&amp;lt;/FloatingParentId&amp;gt;
+&amp;lt;Key id="ref-21"&amp;gt;TrackerPanel&amp;lt;/Key&amp;gt;
+&amp;lt;ControlName id="ref-22"&amp;gt;TrackerPanel&amp;lt;/ControlName&amp;gt;
+&amp;lt;OriginalControlBounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing"&amp;gt;
+&amp;lt;x&amp;gt;392&amp;lt;/x&amp;gt;
+&amp;lt;y&amp;gt;240&amp;lt;/y&amp;gt;
+&amp;lt;width&amp;gt;136&amp;lt;/width&amp;gt;
+&amp;lt;height&amp;gt;72&amp;lt;/height&amp;gt;
+&amp;lt;/OriginalControlBounds&amp;gt;
+&amp;lt;ControlPaneIndex&amp;gt;0&amp;lt;/ControlPaneIndex&amp;gt;
+&amp;lt;/a1:DockableControlPane&amp;gt;
+&amp;lt;a1:PaneSettings id="ref-19" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/Infragistics.Win.UltraWinDock/Infragistics4.Win.UltraWinDock.v12.2"&amp;gt;
+&amp;lt;ShowCaption&amp;gt;2&amp;lt;/ShowCaption&amp;gt;
+&amp;lt;/a1:PaneSettings&amp;gt;
+&amp;lt;/SOAP-ENV:Body&amp;gt;
+&amp;lt;/SOAP-ENV:Envelope&amp;gt;
+&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+&lt;/CustomizationDS&gt;</CustomizationDataSetXML>
+    </DashboardViewCustomizations>
+    <DashboardProperties diffgr:id="DashboardProperties10" msdata:rowOrder="0">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <PropertyID>PanelSize</PropertyID>
+      <PropertyValue>{Width=1113, Height=735}</PropertyValue>
+    </DashboardProperties>
+    <DashboardProperties diffgr:id="DashboardProperties11" msdata:rowOrder="1">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <PropertyID>LastPanel</PropertyID>
+      <PropertyValue>ba36914d-7fb1-4153-a3cc-aad8fb1b40f6</PropertyValue>
+    </DashboardProperties>
+    <DashboardProperties diffgr:id="DashboardProperties12" msdata:rowOrder="2">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <PropertyID>Caption</PropertyID>
+      <PropertyValue>Extrel Month End Job Close</PropertyValue>
+    </DashboardProperties>
+    <DashboardProperties diffgr:id="DashboardProperties13" msdata:rowOrder="3">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <PropertyID>Size</PropertyID>
+      <PropertyValue>{Width=1129, Height=774}</PropertyValue>
+    </DashboardProperties>
+    <DashboardProperties diffgr:id="DashboardProperties14" msdata:rowOrder="4">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <PropertyID>Location</PropertyID>
+      <PropertyValue>{X=560,Y=110}</PropertyValue>
+    </DashboardProperties>
+    <DashboardProperties diffgr:id="DashboardProperties15" msdata:rowOrder="5">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <PropertyID>Version</PropertyID>
+      <PropertyValue>3.2.7788.736</PropertyValue>
+    </DashboardProperties>
+    <DashboardProperties diffgr:id="DashboardProperties16" msdata:rowOrder="6">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <PropertyID>AutoRefreshAll</PropertyID>
+      <PropertyValue>False</PropertyValue>
+    </DashboardProperties>
+    <DashboardProperties diffgr:id="DashboardProperties17" msdata:rowOrder="7">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <PropertyID>NavigationData</PropertyID>
+      <PropertyValue>&lt;NavigationDataSet xmlns="http://tempuri.org/NavigationDataSet.xsd"&gt;
+  &lt;xs:schema id="NavigationDataSet" targetNamespace="http://tempuri.org/NavigationDataSet.xsd" xmlns:mstns="http://tempuri.org/NavigationDataSet.xsd" xmlns="http://tempuri.org/NavigationDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified"&gt;
+    &lt;xs:element name="NavigationDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true"&gt;
+      &lt;xs:complexType&gt;
+        &lt;xs:choice minOccurs="0" maxOccurs="unbounded"&gt;
+          &lt;xs:element name="Navigation"&gt;
+            &lt;xs:complexType&gt;
+              &lt;xs:sequence&gt;
+                &lt;xs:element name="Key" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="Seq" type="xs:int" minOccurs="0" /&gt;
+                &lt;xs:element name="IsQuery" type="xs:boolean" minOccurs="0" /&gt;
+                &lt;xs:element name="Name" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="Caption" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="PrevPage" type="xs:string" default="" minOccurs="0" /&gt;
+                &lt;xs:element name="NextPage" type="xs:string" default="" minOccurs="0" /&gt;
+              &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+          &lt;/xs:element&gt;
+          &lt;xs:element name="NavigationJump"&gt;
+            &lt;xs:complexType&gt;
+              &lt;xs:sequence&gt;
+                &lt;xs:element name="Key" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="JumpPage" type="xs:string" /&gt;
+                &lt;xs:element name="Sequence" type="xs:int" minOccurs="0" /&gt;
+              &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+          &lt;/xs:element&gt;
+          &lt;xs:element name="NavigationPage"&gt;
+            &lt;xs:complexType&gt;
+              &lt;xs:sequence&gt;
+                &lt;xs:element name="Key" type="xs:string" minOccurs="0" /&gt;
+                &lt;xs:element name="Caption" type="xs:string" minOccurs="0" /&gt;
+              &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+          &lt;/xs:element&gt;
+        &lt;/xs:choice&gt;
+      &lt;/xs:complexType&gt;
+      &lt;xs:unique name="NavigationTableKey1"&gt;
+        &lt;xs:selector xpath=".//mstns:Navigation" /&gt;
+        &lt;xs:field xpath="mstns:Key" /&gt;
+      &lt;/xs:unique&gt;
+      &lt;xs:unique name="Constraint1"&gt;
+        &lt;xs:selector xpath=".//mstns:NavigationJump" /&gt;
+        &lt;xs:field xpath="mstns:Key" /&gt;
+        &lt;xs:field xpath="mstns:JumpPage" /&gt;
+      &lt;/xs:unique&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:annotation&gt;
+      &lt;xs:appinfo&gt;
+        &lt;msdata:Relationship name="Navigation_NavigationJump" msdata:parent="Navigation" msdata:child="NavigationJump" msdata:parentkey="Key" msdata:childkey="Key" /&gt;
+      &lt;/xs:appinfo&gt;
+    &lt;/xs:annotation&gt;
+  &lt;/xs:schema&gt;
+  &lt;Navigation&gt;
+    &lt;Key&gt;92beaa72-27e0-4d46-b6e5-d4f6cf3158d4&lt;/Key&gt;
+    &lt;Seq&gt;1&lt;/Seq&gt;
+    &lt;IsQuery&gt;true&lt;/IsQuery&gt;
+    &lt;Name&gt;CDI_JobClose&lt;/Name&gt;
+    &lt;Caption&gt;Job Closing&lt;/Caption&gt;
+    &lt;PrevPage /&gt;
+    &lt;NextPage /&gt;
+  &lt;/Navigation&gt;
+  &lt;Navigation&gt;
+    &lt;Key&gt;565eafb6-2d75-44d8-86cd-995b8429670a&lt;/Key&gt;
+    &lt;Seq&gt;2&lt;/Seq&gt;
+    &lt;IsQuery&gt;false&lt;/IsQuery&gt;
+    &lt;Name&gt;Grid: Open, Firm Jobs&lt;/Name&gt;
+    &lt;Caption&gt;Open, Firm Jobs&lt;/Caption&gt;
+    &lt;PrevPage /&gt;
+    &lt;NextPage&gt;Next&lt;/NextPage&gt;
+  &lt;/Navigation&gt;
+  &lt;Navigation&gt;
+    &lt;Key&gt;ba36914d-7fb1-4153-a3cc-aad8fb1b40f6&lt;/Key&gt;
+    &lt;Seq&gt;3&lt;/Seq&gt;
+    &lt;IsQuery&gt;false&lt;/IsQuery&gt;
+    &lt;Name&gt;Tracker: JobClose: Tracker&lt;/Name&gt;
+    &lt;Caption&gt;JobClose: Tracker&lt;/Caption&gt;
+    &lt;PrevPage&gt;Prev&lt;/PrevPage&gt;
+    &lt;NextPage&gt;Next&lt;/NextPage&gt;
+  &lt;/Navigation&gt;
+  &lt;Navigation&gt;
+    &lt;Key&gt;c545ba8e-4cc5-47dd-bf08-d0258282bf63&lt;/Key&gt;
+    &lt;Seq&gt;4&lt;/Seq&gt;
+    &lt;IsQuery&gt;false&lt;/IsQuery&gt;
+    &lt;Name&gt;Grid: Preview - Jobs to be closed&lt;/Name&gt;
+    &lt;Caption&gt;Preview - Jobs to be closed&lt;/Caption&gt;
+    &lt;PrevPage&gt;Prev&lt;/PrevPage&gt;
+    &lt;NextPage /&gt;
+  &lt;/Navigation&gt;
+  &lt;NavigationPage&gt;
+    &lt;Key /&gt;
+    &lt;Caption /&gt;
+  &lt;/NavigationPage&gt;
+  &lt;NavigationPage&gt;
+    &lt;Key&gt;Prev&lt;/Key&gt;
+    &lt;Caption&gt;Prev&lt;/Caption&gt;
+  &lt;/NavigationPage&gt;
+  &lt;NavigationPage&gt;
+    &lt;Key&gt;Next&lt;/Key&gt;
+    &lt;Caption&gt;Next&lt;/Caption&gt;
+  &lt;/NavigationPage&gt;
+  &lt;NavigationPage&gt;
+    &lt;Key&gt;565eafb6-2d75-44d8-86cd-995b8429670a&lt;/Key&gt;
+    &lt;Caption&gt;Open, Firm Jobs&lt;/Caption&gt;
+  &lt;/NavigationPage&gt;
+  &lt;NavigationPage&gt;
+    &lt;Key&gt;ba36914d-7fb1-4153-a3cc-aad8fb1b40f6&lt;/Key&gt;
+    &lt;Caption&gt;JobClose: Tracker&lt;/Caption&gt;
+  &lt;/NavigationPage&gt;
+  &lt;NavigationPage&gt;
+    &lt;Key&gt;c545ba8e-4cc5-47dd-bf08-d0258282bf63&lt;/Key&gt;
+    &lt;Caption&gt;Preview - Jobs to be closed&lt;/Caption&gt;
+  &lt;/NavigationPage&gt;
+&lt;/NavigationDataSet&gt;</PropertyValue>
+    </DashboardProperties>
+    <DashboardProperties diffgr:id="DashboardProperties18" msdata:rowOrder="8">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <PropertyID>PrimaryQuery</PropertyID>
+      <PropertyValue>V_JobClose_1View</PropertyValue>
+    </DashboardProperties>
+    <DashboardQueryOptions diffgr:id="DashboardQueryOptions3" msdata:rowOrder="0">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <PropertyName>AddNewLabel</PropertyName>
+      <PropertyValue>JobClose</PropertyValue>
+    </DashboardQueryOptions>
+    <DashboardQueryOptions diffgr:id="DashboardQueryOptions4" msdata:rowOrder="1">
+      <Company>PI04</Company>
+      <DefinitionID>JobClose</DefinitionID>
+      <QueryID>92beaa72-27e0-4d46-b6e5-d4f6cf3158d4</QueryID>
+      <PropertyName>IsBaqUpdatable</PropertyName>
+      <PropertyValue>True</PropertyValue>
+    </DashboardQueryOptions>
+  </DashboardDataSet>
+</diffgr:diffgram>
