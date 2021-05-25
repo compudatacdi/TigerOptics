@@ -78,7 +78,7 @@
     <Description>PII_TimePhaseInqiry</Description>
     <LastUpdated>2021-05-25T00:00:00-04:00</LastUpdated>
     <LastUpdatedBy>manager</LastUpdatedBy>
-    <Version>5/25/2021 9:24:07 AM</Version>
+    <Version>5/25/2021 11:22:51 A</Version>
     <DataBaseVersion>0</DataBaseVersion>
     <SysCharacter01 />
     <SysCharacter02 />
@@ -98,7 +98,7 @@
     <CommentText />
     <CGCCode />
     <SystemFlag>false</SystemFlag>
-    <SysRevID>72036193</SysRevID>
+    <SysRevID>72036294</SysRevID>
     <SysRowID>f64ba7b4-4a0a-476d-96e2-30b5a2188ca7</SysRowID>
     <SysCheckBox06>false</SysCheckBox06>
     <SysCheckBox07>false</SysCheckBox07>
@@ -304,6 +304,7 @@
 //
 //	eb1 05/24/21 eric blackwelder @ cdi
 //		default 3 checkboxes to false
+//		add 3 columns to grid and populate them
 //		add reference to:
 //			Ice.Contracts.Lib.BOReader.dll
 //
@@ -311,7 +312,6 @@
 
 extern alias Erp_Contracts_BO_PartPlantSearch;
 extern alias Erp_Contracts_BO_Part;
-
 
 
 using System;
@@ -341,7 +341,7 @@ public class Script
 
 	// Add Custom Module Level Variables Here **
 
-	EpiUltraGrid ugTransactions;
+	EpiUltraGrid grdList;
 	private BOReaderImpl _boReader;
 
 	public void InitializeCustomCode()
@@ -354,62 +354,26 @@ public class Script
 		// Begin Wizard Added Custom Method Calls
 
 		// End Wizard Added Custom Method Calls
-/*
-//Ice.Proxy.Lib.BOReaderImpl boReader = WCFServiceSupport.CreateImpl&amp;lt;Ice.Proxy.Lib.BOReaderImpl&amp;gt;((Ice.Core.Session)oTrans.Session,Epicor.ServiceModel.Channels.ImplBase&amp;lt;Ice.Contracts.BOReaderSvcContract&amp;gt;.UriPath);
-Ice.Proxy.Lib.BOReaderImpl boReader = WCFServiceSupport.CreateImpl&amp;lt;BOReaderImpl&amp;gt;(oTrans.CoreSession, BOReaderImpl.UriPath);
-MessageBox.Show("1");
-//works:
-//DataSet ds = boReader.GetRows("Erp:BO:Part","PartNum = '" + "000100" + "'","PartNum,PartDescription");
-//DataSet ds = boReader.GetRows("Erp:BO:Customer","CustID = '" + "001001" + "'","CustID,CustNum,Name");
 
-//DataSet ds = boReader.GetRows("Erp:BO:OrderHed","OrderNum = '" + "67" + "'","OrderNum");
-//DataSet ds = boReader.GetRows("Erp:BO:Order","OrderNum = " + "67" + "","OrderNum");
-DataSet ds = boReader.GetList("Erp:BO:Order","OrderNum = " + "67" + "","OrderNum");
+		grdList = (EpiUltraGrid)csm.GetNativeControlReference("7908565c-cc3c-43d1-b85b-9921ad88fb89");
 
-//DataSet ds = _boReader.GetRows("Erp:BO:OrderHed","OrderNum = " + 67 + "","OrderNum");
-//DataSet ds = _boReader.GetRows("Erp:BO:Order","OrderNum = " + 67 + "","OrderNum");
-//DataSet ds = _boReader.GetRows("Erp:BO:Order","OrderNum = 67","OrderNum");
-//DataSet ds = _boReader.GetRows("Erp.BO.OrderHed","OrderNum = " + 67 + "","OrderNum,CustNum");
-//DataSet ds = _boReader.GetRows("Ice.BO.OrderHed","OrderNum = " + 67 + "","OrderNum,CustNum");
-//DataSet ds = _boReader.GetRows("Erp:BO:Customer","CustNum = 1","CustNum");
+		grdList.DisplayLayout.Bands[0].Columns.Add("RowUpdated");
+		grdList.DisplayLayout.Bands[0].Columns["RowUpdated"].Hidden = true;
 
+		grdList.DisplayLayout.Bands[0].Columns.Add("PartNum2" ,"Parent Item");
+		grdList.DisplayLayout.Bands[0].Columns["PartNum2"].CellActivation = Activation.ActivateOnly;
+		grdList.DisplayLayout.Bands[0].Columns["PartNum2"].Header.VisiblePosition = 18;
 
-MessageBox.Show("2");
-if(ds.Tables[0].Rows.Count &amp;gt; 0)
-{
-	MessageBox.Show("3");
-	//MessageBox.Show("3.5: " + ds.Tables[0].Rows[0]["PartDescription"]);
-	MessageBox.Show("3.5: " + ds.Tables[0].Rows[0]["CustNum"]);
-}
-MessageBox.Show("4");
-*/
+		grdList.DisplayLayout.Bands[0].Columns.Add("CustomerName" ,"Cust Name");
+		grdList.DisplayLayout.Bands[0].Columns["CustomerName"].CellActivation = Activation.ActivateOnly;
+		grdList.DisplayLayout.Bands[0].Columns["CustomerName"].Header.VisiblePosition = 24; 
 
+		grdList.DisplayLayout.Bands[0].Columns.Add("VendorName" ,"Supplier Name");
+		grdList.DisplayLayout.Bands[0].Columns["VendorName"].CellActivation = Activation.ActivateOnly;
+		grdList.DisplayLayout.Bands[0].Columns["VendorName"].Header.VisiblePosition = 26;
 
-		ugTransactions = (EpiUltraGrid)csm.GetNativeControlReference("7908565c-cc3c-43d1-b85b-9921ad88fb89");
-
-		ugTransactions.DisplayLayout.Bands[0].Columns.Add("RowUpdated");
-		ugTransactions.DisplayLayout.Bands[0].Columns["RowUpdated"].Hidden = true;
-
-		ugTransactions.DisplayLayout.Bands[0].Columns.Add("PartNum2" ,"Parent Item");
-		ugTransactions.DisplayLayout.Bands[0].Columns["PartNum2"].CellActivation = Activation.ActivateOnly;
-		ugTransactions.DisplayLayout.Bands[0].Columns["PartNum2"].Header.VisiblePosition = 18;
-
-		ugTransactions.DisplayLayout.Bands[0].Columns.Add("CustomerName" ,"Cust Name");
-		ugTransactions.DisplayLayout.Bands[0].Columns["CustomerName"].CellActivation = Activation.ActivateOnly;
-		ugTransactions.DisplayLayout.Bands[0].Columns["CustomerName"].Header.VisiblePosition = 24; 
-
-		ugTransactions.DisplayLayout.Bands[0].Columns.Add("VendorName" ,"Supplier Name");
-		ugTransactions.DisplayLayout.Bands[0].Columns["VendorName"].CellActivation = Activation.ActivateOnly;
-		ugTransactions.DisplayLayout.Bands[0].Columns["VendorName"].Header.VisiblePosition = 26;
-
-
-		ugTransactions.InitializeRow += new InitializeRowEventHandler(this.ugTransactions_InitializeRow);
-
-		//_boReader = new BOReaderImpl (((Session)oTrans.Session).ConnectionPool);
-
-		//_boReader = WCFServiceSupport.CreateImpl&amp;lt;BOReaderImpl&amp;gt;((Ice.Core.Session)oTrans.Session, Epicor.ServiceModel.Channels.ImplBase&amp;lt;Ice.Contracts.BOReaderSvcContract&amp;gt;.UriPath);
+		grdList.InitializeRow += new InitializeRowEventHandler(this.ugTransactions_InitializeRow);
 	    _boReader = WCFServiceSupport.CreateImpl&amp;lt;BOReaderImpl&amp;gt;(oTrans.CoreSession, BOReaderImpl.UriPath);
-
 
 	}
 
@@ -424,7 +388,7 @@ MessageBox.Show("4");
 
 		// End Custom Code Disposal
 
-		ugTransactions.InitializeRow -= new InitializeRowEventHandler(this.ugTransactions_InitializeRow);
+		grdList.InitializeRow -= new InitializeRowEventHandler(this.ugTransactions_InitializeRow);
 		_boReader = null;
 
 	}
@@ -432,7 +396,6 @@ MessageBox.Show("4");
 
 	private void TimePhasForm_Load(object sender, EventArgs args)
 	{
-
 		Control c1 = csm.GetNativeControlReference("cdf4e0c8-4643-4c8b-9aaf-a53c47ce9985");
 		EpiCheckBox chkSuggestions = (EpiCheckBox)c1;
 		chkSuggestions.Checked = false;
@@ -449,22 +412,6 @@ MessageBox.Show("4");
 
 	private void ugTransactions_InitializeRow(object sender, InitializeRowEventArgs e)
 	{
-
-/*
-		if(!String.IsNullOrEmpty(e.Row.Cells["InternalNumber"].Value.ToString()))
-		{
-			DataSet ds = _boReader.GetRows("Ice.BO.BankTran","TranNum ='" + e.Row.Cells["InternalNumber"].Value.ToString()+ "'","TranReference");
-			if(ds.Tables[0].Rows.Count &amp;gt; 0 )
-			{
-				e.Row.Cells["TranRef"].Value = ds.Tables[0].Rows[0]["TranRef"];
-			}
-		}
-*/
-//MessageBox.Show("init row partnum: " + e.Row.Cells["PartNum"].Value);
-//MessageBox.Show("init row TranReference: " + e.Row.Cells["TranReference"].Value);
-//e.Row.Cells["TranReference"].Value = "x";
-//e.Row.Cells["TranReference"].Value = e.Row.Cells["PartNum"].Value;
-
 		if((string)e.Row.Cells["RowUpdated"].Value != "YES")
 		{
 			try
@@ -491,49 +438,11 @@ MessageBox.Show("4");
 					}
 				}
 
-
-
-/*
-string strBOName = "PO";
-string strSearchField = "PONum";
-string strSearchValue = ((int)e.Row.Cells["PONum"].Value).ToString();
-string strReturnField = "VendorName";
-if((int)e.Row.Cells[strSearchField].Value != 0)
-{
-	DataTable dtPO = _boReader.GetList("Erp:BO:" + strBOName, strSearchField + " = " + strSearchValue + "", strReturnField).Tables[0];
-	if(dtPO.Rows.Count &amp;gt; 0 )
-	{
-			e.Row.Cells[strReturnField].Value = dtPO.Rows[0][strReturnField];
-	}
-}
-*/
-//	private string GetRelatedField(string strBOName, string strSearchField, string strSearchValue, string strReturnField)
-//e.Row.Cells["SupplierName"].Value = GetRelatedField("PO", "PONum", ((int)e.Row.Cells["PONum"].Value).ToString(), "VendorName");
-//e.Row.Cells["SupplierName"].Value = "x";
-//e.Row.Cells["SupplierName"].Value = GetRelatedField("PO", "PONum", ((int)e.Row.Cells["PONum"].Value).ToString(), "VendorName").Value;
-//MessageBox.Show(GetRelatedField("PO", "PONum", ((int)e.Row.Cells["PONum"].Value).ToString(), "VendorName"));
-/*
-if((int)e.Row.Cells["PONum"].Value != 0)
-{
-	//MessageBox.Show(GetRelatedField("PO", "PONum", ((int)e.Row.Cells["PONum"].Value).ToString(), "VendorName"));
-//makes it fail, but message above works fine:
-	e.Row.Cells["SupplierName"].Value = GetRelatedField("PO", "PONum", ((int)e.Row.Cells["PONum"].Value).ToString(), "VendorName");
-}
-*/
-//zzz
-
-//put back in:	
 				if((string)e.Row.Cells["JobNum"].Value != "")
 				{
 					//MessageBox.Show("JobNum: " + ((int)e.Row.Cells["JobNum"].Value).ToString());
 					e.Row.Cells["PartNum2"].Value = "error";
-
-
-//put back in:	
 					DataTable dtJob = _boReader.GetList("Erp:BO:JobEntry","JobNum = '" + (string)e.Row.Cells["JobNum"].Value + "'","PartNum").Tables[0];
-//DataTable dtJob = _boReader.GetList("Erp:BO:JobEntry","JobNum = '000009'","PartNum").Tables[0];
-//MessageBox.Show("x");
-
 					if(dtJob.Rows.Count &amp;gt; 0 )
 					{
 							e.Row.Cells["PartNum2"].Value = dtJob.Rows[0]["PartNum"];
@@ -544,42 +453,9 @@ if((int)e.Row.Cells["PONum"].Value != 0)
 			catch
 			{}
 
-
-
 			e.Row.Cells["RowUpdated"].Value = "YES";
-//MessageBox.Show("init row partnum: " + e.Row.Cells["PartNum"].Value);
-
 
 		}
-
-/*
-		//if(!String.IsNullOrEmpty(e.Row.Cells["TranReference"].Value.ToString()))
-		if(    (String.IsNullOrEmpty(e.Row.Cells["TranReference"].Value.ToString()))
-		    || (e.Row.Cells["TranReference"].ToString() == "")
-		    || (e.Row.Cells["TranReference"].Value == null)
-		    || ((string)e.Row.Cells["TranReference"].Value == "")
-		    || ((string)e.Row.Cells["TranReference"].Value == string.Empty)  )
-		{
-			e.Row.Cells["TranReference"].Value = "x";
-		}
-*/
-
-	}
-
-
-	private string GetRelatedField(string strBOName, string strSearchField, string strSearchValue, string strReturnField)
-	{
-		string strReturnValue = "";
-
-			//MessageBox.Show("PONum: " + ((int)e.Row.Cells["PONum"].Value).ToString());
-
-			DataTable dtPO = _boReader.GetList("Erp:BO:" + strBOName, strSearchField + " = " + strSearchValue + "", strReturnField).Tables[0];
-			if(dtPO.Rows.Count &amp;gt; 0 )
-			{
-					strReturnValue = (string)dtPO.Rows[0][strReturnField];
-			}
-
-		return strReturnValue;
 
 	}
 
