@@ -1,0 +1,1270 @@
+<?xml version="1.0" standalone="yes"?>
+<GenXDataDataSet xmlns="http://www.epicor.com/Ice/300/BO/GenXData/GenXData">
+  <xs:schema id="GenXDataDataSet" targetNamespace="http://www.epicor.com/Ice/300/BO/GenXData/GenXData" xmlns:mstns="http://www.epicor.com/Ice/300/BO/GenXData/GenXData" xmlns="http://www.epicor.com/Ice/300/BO/GenXData/GenXData" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+    <xs:element name="GenXDataDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:ExportFormat="Gen3" msprop:IsMain="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="XXXDef" msprop:SchemaName="Ice">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Company" msprop:ReadOnly="True" msprop:Like="Company.Company" msprop:Format="x(8)" type="xs:string" />
+                <xs:element name="ProductID" msdata:Caption="Product" msprop:ReadOnly="True" msprop:Like="DashBdDef.ProductID" msprop:Format="x(2)" type="xs:string" />
+                <xs:element name="TypeCode" msdata:Caption="Type" msprop:ReadOnly="True" msprop:Like="XXXDef.TypeCode" msprop:Format="x(20)" type="xs:string" />
+                <xs:element name="Key1" msdata:Caption="Key 1" msprop:Like="XXXDef.Key1" msprop:Format="x(50)" type="xs:string" />
+                <xs:element name="Key2" msdata:Caption="Key 2" msprop:Like="XXXDef.Key2" msprop:Format="x(100)" type="xs:string" />
+                <xs:element name="Key3" msdata:Caption="Key 3" msprop:Like="XXXDef.Key3" msprop:Format="x(50)" type="xs:string" />
+                <xs:element name="Description" msprop:Format="x(60)" type="xs:string" minOccurs="0" />
+                <xs:element name="LastUpdated" msdata:Caption="Last Updated" msprop:ReadOnly="True" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="LastUpdatedBy" msdata:Caption="User ID" msprop:ReadOnly="True" msprop:Like="UserFile.UserID" msprop:Format="x(75)" type="xs:string" minOccurs="0" />
+                <xs:element name="Version" msprop:ReadOnly="True" msprop:Format="x(20)" type="xs:string" minOccurs="0" />
+                <xs:element name="DataBaseVersion" msprop:ReadOnly="True" msprop:Format="99999999" type="xs:int" minOccurs="0" />
+                <xs:element name="SysCharacter01" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysCharacter02" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysCharacter03" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysCharacter04" msprop:ReadOnly="True" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysCharacter05" msprop:ReadOnly="True" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysNumber01" type="xs:decimal" minOccurs="0" />
+                <xs:element name="SysNumber02" type="xs:decimal" minOccurs="0" />
+                <xs:element name="SysNumber03" type="xs:decimal" minOccurs="0" />
+                <xs:element name="SysNumber04" type="xs:decimal" minOccurs="0" />
+                <xs:element name="SysNumber05" type="xs:decimal" minOccurs="0" />
+                <xs:element name="SysDate01" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="SysDate02" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="SysDate03" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="SysDate04" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="SysDate05" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="SysCheckBox01" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysCheckBox02" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysCheckBox03" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysCheckBox04" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysCheckBox05" type="xs:boolean" minOccurs="0" />
+                <xs:element name="CommentText" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="CGCCode" msprop:ReadOnly="True" msprop:Format="x(8)" type="xs:string" />
+                <xs:element name="SystemFlag" msprop:ReadOnly="True" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysRevID" msprop:SystemColumn="True" msprop:Format="&gt;&gt;,&gt;&gt;&gt;,&gt;&gt;9" type="xs:long" minOccurs="0" />
+                <xs:element name="SysRowID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:SystemColumn="True" msprop:Format="X(36)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysCheckBox06" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysCheckBox07" type="xs:boolean" minOccurs="0" />
+                <xs:element name="OnMenu" msprop:ReadOnly="True" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Duplicate" msprop:ReadOnly="True" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Cosmetic" msprop:ReadOnly="True" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Content" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="BitFlag" msdata:Caption="Bit Flag" msprop:ReadOnly="True" msprop:SystemColumn="True" msprop:External="True" type="xs:int" minOccurs="0" />
+                <xs:element name="RowMod" msprop:SystemColumn="True" msprop:External="True" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="XXXDefPK_XXXDef" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//mstns:XXXDef" />
+        <xs:field xpath="mstns:Company" />
+        <xs:field xpath="mstns:ProductID" />
+        <xs:field xpath="mstns:TypeCode" />
+        <xs:field xpath="mstns:CGCCode" />
+        <xs:field xpath="mstns:Key1" />
+        <xs:field xpath="mstns:Key2" />
+        <xs:field xpath="mstns:Key3" />
+      </xs:unique>
+    </xs:element>
+  </xs:schema>
+  <XXXDef>
+    <Company />
+    <ProductID>EP</ProductID>
+    <TypeCode>Customization</TypeCode>
+    <Key1>PII_TimePhaseInqiry</Key1>
+    <Key2>App.TimePhasEntry.TimePhasForm</Key2>
+    <Key3 />
+    <Description>PII_TimePhaseInqiry</Description>
+    <LastUpdated>2021-05-25T00:00:00-04:00</LastUpdated>
+    <LastUpdatedBy>manager</LastUpdatedBy>
+    <Version>5/25/2021 8:52:28 AM</Version>
+    <DataBaseVersion>0</DataBaseVersion>
+    <SysCharacter01 />
+    <SysCharacter02 />
+    <SysCharacter03 />
+    <SysCharacter04>Pass</SysCharacter04>
+    <SysCharacter05>3.2.700.0</SysCharacter05>
+    <SysNumber01>0.000000000</SysNumber01>
+    <SysNumber02>0.000000000</SysNumber02>
+    <SysNumber03>0.000000000</SysNumber03>
+    <SysNumber04>0.000000000</SysNumber04>
+    <SysNumber05>0.000000000</SysNumber05>
+    <SysCheckBox01>false</SysCheckBox01>
+    <SysCheckBox02>false</SysCheckBox02>
+    <SysCheckBox03>false</SysCheckBox03>
+    <SysCheckBox04>false</SysCheckBox04>
+    <SysCheckBox05>false</SysCheckBox05>
+    <CommentText />
+    <CGCCode />
+    <SystemFlag>false</SystemFlag>
+    <SysRevID>72036142</SysRevID>
+    <SysRowID>f64ba7b4-4a0a-476d-96e2-30b5a2188ca7</SysRowID>
+    <SysCheckBox06>false</SysCheckBox06>
+    <SysCheckBox07>false</SysCheckBox07>
+    <OnMenu>false</OnMenu>
+    <Duplicate>false</Duplicate>
+    <Cosmetic>false</Cosmetic>
+    <Content>&lt;CustomizationDS xmlns="http://tempuri.org/XMLSchema.xsd"&gt;
+  &lt;xs:schema id="CustomizationDS" targetNamespace="http://tempuri.org/XMLSchema.xsd" xmlns:mstns="http://tempuri.org/XMLSchema.xsd" xmlns="http://tempuri.org/XMLSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified"&gt;
+    &lt;xs:element name="CustomizationDS" msdata:IsDataSet="true" msdata:Locale="" msprop:BuildVersion="3.2.700.0"&gt;
+      &lt;xs:complexType&gt;
+        &lt;xs:choice minOccurs="0" maxOccurs="unbounded"&gt;
+          &lt;xs:element name="Controls"&gt;
+            &lt;xs:complexType&gt;
+              &lt;xs:sequence&gt;
+                &lt;xs:element name="FormsID" type="xs:string" /&gt;
+                &lt;xs:element name="ControlName" type="xs:string" /&gt;
+                &lt;xs:element name="Key" type="xs:string" /&gt;
+                &lt;xs:element name="ParentControlKey" type="xs:string" /&gt;
+                &lt;xs:element name="ControlType" type="xs:string" /&gt;
+                &lt;xs:element name="Company" type="xs:string" /&gt;
+                &lt;xs:element name="Plant" type="xs:string" /&gt;
+                &lt;xs:element name="DcdUserId" type="xs:string" /&gt;
+                &lt;xs:element name="GroupID" type="xs:string" /&gt;
+                &lt;xs:element name="ControlsID" type="xs:string" /&gt;
+              &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+          &lt;/xs:element&gt;
+          &lt;xs:element name="Properties"&gt;
+            &lt;xs:complexType&gt;
+              &lt;xs:sequence&gt;
+                &lt;xs:element name="FormsID" type="xs:string" /&gt;
+                &lt;xs:element name="ControlName" type="xs:string" /&gt;
+                &lt;xs:element name="Key" type="xs:string" /&gt;
+                &lt;xs:element name="PropertyName" type="xs:string" /&gt;
+                &lt;xs:element name="PropertyValue" type="xs:string" /&gt;
+                &lt;xs:element name="Company" type="xs:string" /&gt;
+                &lt;xs:element name="Plant" type="xs:string" /&gt;
+                &lt;xs:element name="DcdUserID" type="xs:string" /&gt;
+                &lt;xs:element name="GroupID" type="xs:string" /&gt;
+                &lt;xs:element name="PropertiesID" type="xs:string" /&gt;
+              &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+          &lt;/xs:element&gt;
+        &lt;/xs:choice&gt;
+      &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:schema&gt;
+  &lt;Controls&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;ice.contracts.lib.boreader.xml.dll&lt;/ControlName&gt;
+    &lt;Key&gt;EpiString.ExecutionPath*ice.contracts.lib.boreader.xml&lt;/Key&gt;
+    &lt;ParentControlKey /&gt;
+    &lt;ControlType&gt;AssemblyReference&lt;/ControlType&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserId /&gt;
+    &lt;GroupID /&gt;
+    &lt;ControlsID /&gt;
+  &lt;/Controls&gt;
+  &lt;Controls&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;ice.contracts.lib.boreader.dll&lt;/ControlName&gt;
+    &lt;Key&gt;EpiString.ExecutionPath*ice.contracts.lib.boreader.dll&lt;/Key&gt;
+    &lt;ParentControlKey /&gt;
+    &lt;ControlType&gt;AssemblyReference&lt;/ControlType&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserId /&gt;
+    &lt;GroupID /&gt;
+    &lt;ControlsID /&gt;
+  &lt;/Controls&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;TimePhasForm&lt;/ControlName&gt;
+    &lt;Key&gt;2dcd1674-5e34-4d98-b493-c75747027376&lt;/Key&gt;
+    &lt;PropertyName&gt;Left&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;248&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;TimePhasForm&lt;/ControlName&gt;
+    &lt;Key&gt;2dcd1674-5e34-4d98-b493-c75747027376&lt;/Key&gt;
+    &lt;PropertyName&gt;Top&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;175&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;TimePhasForm&lt;/ControlName&gt;
+    &lt;Key&gt;2dcd1674-5e34-4d98-b493-c75747027376&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorLeft&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;248&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;TimePhasForm&lt;/ControlName&gt;
+    &lt;Key&gt;2dcd1674-5e34-4d98-b493-c75747027376&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorTop&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;175&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblMinOrderQty&lt;/ControlName&gt;
+    &lt;Key&gt;db989281-9136-4b02-9cb1-ca3109905fbb&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;numMinOrderQty&lt;/ControlName&gt;
+    &lt;Key&gt;5cad27e6-33ee-4d0b-9805-31e900f3f717&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblMinOrderQty&lt;/ControlName&gt;
+    &lt;Key&gt;db989281-9136-4b02-9cb1-ca3109905fbb&lt;/Key&gt;
+    &lt;PropertyName&gt;Top&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;18&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblMinOrderQty&lt;/ControlName&gt;
+    &lt;Key&gt;db989281-9136-4b02-9cb1-ca3109905fbb&lt;/Key&gt;
+    &lt;PropertyName&gt;Left&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;344&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblMinOrderQty&lt;/ControlName&gt;
+    &lt;Key&gt;db989281-9136-4b02-9cb1-ca3109905fbb&lt;/Key&gt;
+    &lt;PropertyName&gt;Width&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;124&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblMinOrderQty&lt;/ControlName&gt;
+    &lt;Key&gt;db989281-9136-4b02-9cb1-ca3109905fbb&lt;/Key&gt;
+    &lt;PropertyName&gt;Height&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;20&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;Customization&lt;/ControlName&gt;
+    &lt;Key&gt;2dcd1674-5e34-4d98-b493-c75747027376&lt;/Key&gt;
+    &lt;PropertyName&gt;Script&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;// **************************************************
+// Custom code for TimePhasForm
+// Created: 5/24/2021 10:12:29 AM
+// **************************************************
+//
+//	REVISION LOG
+//
+//	eb1 05/24/21 eric blackwelder @ cdi
+//		default 3 checkboxes to false
+//		add reference to:
+//			Ice.Contracts.Lib.BOReader.dll
+//
+// **************************************************
+
+extern alias Erp_Contracts_BO_PartPlantSearch;
+extern alias Erp_Contracts_BO_Part;
+
+
+
+using System;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Windows.Forms;
+using Erp.Adapters;
+using Erp.UI;
+using Ice.Lib;
+using Ice.Adapters;
+using Ice.Lib.Customization;
+using Ice.Lib.ExtendedProps;
+using Ice.Lib.Framework;
+using Ice.Lib.Searches;
+using Ice.UI.FormFunctions;
+
+using Ice.Proxy.Lib;
+using Infragistics.Win.UltraWinGrid;
+
+public class Script
+{
+	// ** Wizard Insert Location - Do Not Remove 'Begin/End Wizard Added Module Level Variables' Comments! **
+	// Begin Wizard Added Module Level Variables **
+
+	// End Wizard Added Module Level Variables **
+
+	// Add Custom Module Level Variables Here **
+
+	EpiUltraGrid ugTransactions;
+	private BOReaderImpl _boReader;
+
+	public void InitializeCustomCode()
+	{
+		// ** Wizard Insert Location - Do not delete 'Begin/End Wizard Added Variable Initialization' lines **
+		// Begin Wizard Added Variable Initialization
+
+		// End Wizard Added Variable Initialization
+
+		// Begin Wizard Added Custom Method Calls
+
+		// End Wizard Added Custom Method Calls
+/*
+//Ice.Proxy.Lib.BOReaderImpl boReader = WCFServiceSupport.CreateImpl&amp;lt;Ice.Proxy.Lib.BOReaderImpl&amp;gt;((Ice.Core.Session)oTrans.Session,Epicor.ServiceModel.Channels.ImplBase&amp;lt;Ice.Contracts.BOReaderSvcContract&amp;gt;.UriPath);
+Ice.Proxy.Lib.BOReaderImpl boReader = WCFServiceSupport.CreateImpl&amp;lt;BOReaderImpl&amp;gt;(oTrans.CoreSession, BOReaderImpl.UriPath);
+MessageBox.Show("1");
+//works:
+//DataSet ds = boReader.GetRows("Erp:BO:Part","PartNum = '" + "000100" + "'","PartNum,PartDescription");
+//DataSet ds = boReader.GetRows("Erp:BO:Customer","CustID = '" + "001001" + "'","CustID,CustNum,Name");
+
+//DataSet ds = boReader.GetRows("Erp:BO:OrderHed","OrderNum = '" + "67" + "'","OrderNum");
+//DataSet ds = boReader.GetRows("Erp:BO:Order","OrderNum = " + "67" + "","OrderNum");
+DataSet ds = boReader.GetList("Erp:BO:Order","OrderNum = " + "67" + "","OrderNum");
+
+//DataSet ds = _boReader.GetRows("Erp:BO:OrderHed","OrderNum = " + 67 + "","OrderNum");
+//DataSet ds = _boReader.GetRows("Erp:BO:Order","OrderNum = " + 67 + "","OrderNum");
+//DataSet ds = _boReader.GetRows("Erp:BO:Order","OrderNum = 67","OrderNum");
+//DataSet ds = _boReader.GetRows("Erp.BO.OrderHed","OrderNum = " + 67 + "","OrderNum,CustNum");
+//DataSet ds = _boReader.GetRows("Ice.BO.OrderHed","OrderNum = " + 67 + "","OrderNum,CustNum");
+//DataSet ds = _boReader.GetRows("Erp:BO:Customer","CustNum = 1","CustNum");
+
+
+MessageBox.Show("2");
+if(ds.Tables[0].Rows.Count &amp;gt; 0)
+{
+	MessageBox.Show("3");
+	//MessageBox.Show("3.5: " + ds.Tables[0].Rows[0]["PartDescription"]);
+	MessageBox.Show("3.5: " + ds.Tables[0].Rows[0]["CustNum"]);
+}
+MessageBox.Show("4");
+*/
+
+
+		ugTransactions = (EpiUltraGrid)csm.GetNativeControlReference("7908565c-cc3c-43d1-b85b-9921ad88fb89");
+
+		ugTransactions.DisplayLayout.Bands[0].Columns.Add("RowUpdated");
+		ugTransactions.DisplayLayout.Bands[0].Columns["RowUpdated"].Hidden = true;
+
+		ugTransactions.DisplayLayout.Bands[0].Columns.Add("CustName" ,"Cust Name");
+		ugTransactions.DisplayLayout.Bands[0].Columns["CustName"].CellActivation = Activation.ActivateOnly;
+
+		ugTransactions.DisplayLayout.Bands[0].Columns.Add("VendorName" ,"Supplier Name");
+		ugTransactions.DisplayLayout.Bands[0].Columns["VendorName"].CellActivation = Activation.ActivateOnly;
+
+		ugTransactions.DisplayLayout.Bands[0].Columns.Add("ParentItem" ,"Parent Item");
+		ugTransactions.DisplayLayout.Bands[0].Columns["ParentItem"].CellActivation = Activation.ActivateOnly;
+
+		ugTransactions.InitializeRow += new InitializeRowEventHandler(this.ugTransactions_InitializeRow);
+
+		//_boReader = new BOReaderImpl (((Session)oTrans.Session).ConnectionPool);
+
+		//_boReader = WCFServiceSupport.CreateImpl&amp;lt;BOReaderImpl&amp;gt;((Ice.Core.Session)oTrans.Session, Epicor.ServiceModel.Channels.ImplBase&amp;lt;Ice.Contracts.BOReaderSvcContract&amp;gt;.UriPath);
+	    _boReader = WCFServiceSupport.CreateImpl&amp;lt;BOReaderImpl&amp;gt;(oTrans.CoreSession, BOReaderImpl.UriPath);
+
+
+	}
+
+	public void DestroyCustomCode()
+	{
+		// ** Wizard Insert Location - Do not delete 'Begin/End Wizard Added Object Disposal' lines **
+		// Begin Wizard Added Object Disposal
+
+		// End Wizard Added Object Disposal
+
+		// Begin Custom Code Disposal
+
+		// End Custom Code Disposal
+
+		ugTransactions.InitializeRow -= new InitializeRowEventHandler(this.ugTransactions_InitializeRow);
+		_boReader = null;
+
+	}
+
+
+	private void TimePhasForm_Load(object sender, EventArgs args)
+	{
+
+		Control c1 = csm.GetNativeControlReference("cdf4e0c8-4643-4c8b-9aaf-a53c47ce9985");
+		EpiCheckBox chkSuggestions = (EpiCheckBox)c1;
+		chkSuggestions.Checked = false;
+
+		Control c2 = csm.GetNativeControlReference("7ceb719a-f574-4989-bf03-18263d5719f4");
+		EpiCheckBox chkTOSuggestions = (EpiCheckBox)c2;
+		chkTOSuggestions.Checked = false;
+
+		Control c3 = csm.GetNativeControlReference("7f8e2894-a0c1-4ce6-a392-7bd7fc1faba0");
+		EpiCheckBox chkPlanContractInfo = (EpiCheckBox)c3;
+		chkPlanContractInfo.Checked = false;
+
+	}
+
+	private void ugTransactions_InitializeRow(object sender, InitializeRowEventArgs e)
+	{
+
+/*
+		if(!String.IsNullOrEmpty(e.Row.Cells["InternalNumber"].Value.ToString()))
+		{
+			DataSet ds = _boReader.GetRows("Ice.BO.BankTran","TranNum ='" + e.Row.Cells["InternalNumber"].Value.ToString()+ "'","TranReference");
+			if(ds.Tables[0].Rows.Count &amp;gt; 0 )
+			{
+				e.Row.Cells["TranRef"].Value = ds.Tables[0].Rows[0]["TranRef"];
+			}
+		}
+*/
+//MessageBox.Show("init row partnum: " + e.Row.Cells["PartNum"].Value);
+//MessageBox.Show("init row TranReference: " + e.Row.Cells["TranReference"].Value);
+//e.Row.Cells["TranReference"].Value = "x";
+//e.Row.Cells["TranReference"].Value = e.Row.Cells["PartNum"].Value;
+
+		if((string)e.Row.Cells["RowUpdated"].Value != "YES")
+		{
+			if((int)e.Row.Cells["OrderNum"].Value != 0)
+			{
+				//MessageBox.Show("OrderNum: " + ((int)e.Row.Cells["OrderNum"].Value).ToString());
+
+				//DataSet dsSalesOrder = _boReader.GetList("Erp:BO:SalesOrder","OrderNum = " + (int)e.Row.Cells["OrderNum"].Value + "","OrderNum,CustNum");
+				//DataTable dtSalesOrder = _boReader.GetList("Erp:BO:SalesOrder","OrderNum = " + (int)e.Row.Cells["OrderNum"].Value + "","OrderNum,CustNum").Tables[0];
+				DataTable dtSalesOrder = _boReader.GetList("Erp:BO:SalesOrder","OrderNum = " + (int)e.Row.Cells["OrderNum"].Value + "","OrderNum,CustomerName").Tables[0];
+				//if(dsSalesOrder.Tables[0].Rows.Count &amp;gt; 0 )
+				e.Row.Cells["CustName"].Value = dtSalesOrder.Rows[0]["CustomerName"];
+				/*
+				if(dtSalesOrder.Rows.Count &amp;gt; 0 )
+				{
+					//DataSet dsCustomer = _boReader.GetList("Erp:BO:Customer","CustNum = " + (int)dsSalesOrder.Tables[0].Rows[0]["CustNum"] + "","CustNum,Name");
+					DataTable dtCustomer = _boReader.GetList("Erp:BO:Customer","CustNum = " + (int)dtSalesOrder.Rows[0]["CustNum"] + "","CustNum,Name").Tables[0];
+					//if(dsCustomer.Tables[0].Rows.Count &amp;gt; 0 )
+					if(dtCustomer.Rows.Count &amp;gt; 0 )
+					{
+						//e.Row.Cells["CustName"].Value = dsCustomer.Tables[0].Rows[0]["Name"];
+						e.Row.Cells["CustName"].Value = dtCustomer.Rows[0]["Name"];
+					}
+				}			
+				*/
+			}
+
+			if((int)e.Row.Cells["PONum"].Value != 0)
+			{
+				//MessageBox.Show("PONum: " + ((int)e.Row.Cells["PONum"].Value).ToString());
+
+				DataTable dtPO = _boReader.GetList("Erp:BO:PO","PONum = " + (int)e.Row.Cells["PONum"].Value + "","PONum,VendorName").Tables[0];
+				if(dtPO.Rows.Count &amp;gt; 0 )
+				{
+					e.Row.Cells["VendorName"].Value = dtPO.Rows[0]["VendorName"];
+				}
+			}
+
+/*
+string strBOName = "PO";
+string strSearchField = "PONum";
+string strSearchValue = ((int)e.Row.Cells["PONum"].Value).ToString();
+string strReturnField = "VendorName";
+if((int)e.Row.Cells[strSearchField].Value != 0)
+{
+	DataTable dtPO = _boReader.GetList("Erp:BO:" + strBOName, strSearchField + " = " + strSearchValue + "", strReturnField).Tables[0];
+	if(dtPO.Rows.Count &amp;gt; 0 )
+	{
+			e.Row.Cells[strReturnField].Value = dtPO.Rows[0][strReturnField];
+	}
+}
+*/
+//	private string GetRelatedField(string strBOName, string strSearchField, string strSearchValue, string strReturnField)
+//e.Row.Cells["SupplierName"].Value = GetRelatedField("PO", "PONum", ((int)e.Row.Cells["PONum"].Value).ToString(), "VendorName");
+//e.Row.Cells["SupplierName"].Value = "x";
+//e.Row.Cells["SupplierName"].Value = GetRelatedField("PO", "PONum", ((int)e.Row.Cells["PONum"].Value).ToString(), "VendorName").Value;
+//MessageBox.Show(GetRelatedField("PO", "PONum", ((int)e.Row.Cells["PONum"].Value).ToString(), "VendorName"));
+/*
+if((int)e.Row.Cells["PONum"].Value != 0)
+{
+	//MessageBox.Show(GetRelatedField("PO", "PONum", ((int)e.Row.Cells["PONum"].Value).ToString(), "VendorName"));
+//makes it fail, but message above works fine:
+	e.Row.Cells["SupplierName"].Value = GetRelatedField("PO", "PONum", ((int)e.Row.Cells["PONum"].Value).ToString(), "VendorName");
+}
+*/
+//zzz
+/*
+			if((int)e.Row.Cells["JobNum"].Value != 0)
+			{
+				//MessageBox.Show("PONum: " + ((int)e.Row.Cells["PONum"].Value).ToString());
+
+				DataTable dtJob = _boReader.GetList("Erp:BO:PO","JobEntry = " + (int)e.Row.Cells["JobNum"].Value + "","JobNum,PartNum").Tables[0];
+				if(dtJob.Rows.Count &amp;gt; 0 )
+				{
+						e.Row.Cells["ParentItem"].Value = dtJob.Rows[0]["PartNum"];
+				}
+			}
+*/
+
+
+
+			e.Row.Cells["RowUpdated"].Value = "YES";
+//MessageBox.Show("init row partnum: " + e.Row.Cells["PartNum"].Value);
+
+
+		}
+
+/*
+		//if(!String.IsNullOrEmpty(e.Row.Cells["TranReference"].Value.ToString()))
+		if(    (String.IsNullOrEmpty(e.Row.Cells["TranReference"].Value.ToString()))
+		    || (e.Row.Cells["TranReference"].ToString() == "")
+		    || (e.Row.Cells["TranReference"].Value == null)
+		    || ((string)e.Row.Cells["TranReference"].Value == "")
+		    || ((string)e.Row.Cells["TranReference"].Value == string.Empty)  )
+		{
+			e.Row.Cells["TranReference"].Value = "x";
+		}
+*/
+
+	}
+
+
+	private string GetRelatedField(string strBOName, string strSearchField, string strSearchValue, string strReturnField)
+	{
+		string strReturnValue = "";
+
+			//MessageBox.Show("PONum: " + ((int)e.Row.Cells["PONum"].Value).ToString());
+
+			DataTable dtPO = _boReader.GetList("Erp:BO:" + strBOName, strSearchField + " = " + strSearchValue + "", strReturnField).Tables[0];
+			if(dtPO.Rows.Count &amp;gt; 0 )
+			{
+					strReturnValue = (string)dtPO.Rows[0][strReturnField];
+			}
+
+		return strReturnValue;
+
+	}
+
+}
+
+
+
+
+
+&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;Customization&lt;/ControlName&gt;
+    &lt;Key&gt;2dcd1674-5e34-4d98-b493-c75747027376&lt;/Key&gt;
+    &lt;PropertyName&gt;Language&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;CSharp&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;68d28106-706f-4c2c-922b-6ef1ceb03bb2&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;6&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;68d28106-706f-4c2c-922b-6ef1ceb03bb2&lt;/Key&gt;
+    &lt;PropertyName&gt;Anchor&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;Top, Left&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;68d28106-706f-4c2c-922b-6ef1ceb03bb2&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorTop&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;236&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;68d28106-706f-4c2c-922b-6ef1ceb03bb2&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorLeft&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;12&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;68d28106-706f-4c2c-922b-6ef1ceb03bb2&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorWidth&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;124&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;68d28106-706f-4c2c-922b-6ef1ceb03bb2&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorHeight&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;20&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;cdf4e0c8-4643-4c8b-9aaf-a53c47ce9985&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;5&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;cdf4e0c8-4643-4c8b-9aaf-a53c47ce9985&lt;/Key&gt;
+    &lt;PropertyName&gt;Anchor&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;Top, Left&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;cdf4e0c8-4643-4c8b-9aaf-a53c47ce9985&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorTop&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;236&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;cdf4e0c8-4643-4c8b-9aaf-a53c47ce9985&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorLeft&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;140&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;cdf4e0c8-4643-4c8b-9aaf-a53c47ce9985&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorWidth&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;16&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;cdf4e0c8-4643-4c8b-9aaf-a53c47ce9985&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorHeight&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;17&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;68d28106-706f-4c2c-922b-6ef1ceb03bb2&lt;/Key&gt;
+    &lt;PropertyName&gt;Top&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;236&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;68d28106-706f-4c2c-922b-6ef1ceb03bb2&lt;/Key&gt;
+    &lt;PropertyName&gt;Left&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;12&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;68d28106-706f-4c2c-922b-6ef1ceb03bb2&lt;/Key&gt;
+    &lt;PropertyName&gt;Width&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;124&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;68d28106-706f-4c2c-922b-6ef1ceb03bb2&lt;/Key&gt;
+    &lt;PropertyName&gt;Height&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;20&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblTOSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;fcb7649c-c505-4cad-a233-50a64d247071&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;4&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblTOSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;fcb7649c-c505-4cad-a233-50a64d247071&lt;/Key&gt;
+    &lt;PropertyName&gt;Anchor&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;Top, Left&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblTOSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;fcb7649c-c505-4cad-a233-50a64d247071&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorTop&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;236&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblTOSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;fcb7649c-c505-4cad-a233-50a64d247071&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorLeft&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;172&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblTOSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;fcb7649c-c505-4cad-a233-50a64d247071&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorWidth&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;210&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblTOSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;fcb7649c-c505-4cad-a233-50a64d247071&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorHeight&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;20&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkTOSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;7ceb719a-f574-4989-bf03-18263d5719f4&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;3&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkTOSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;7ceb719a-f574-4989-bf03-18263d5719f4&lt;/Key&gt;
+    &lt;PropertyName&gt;Anchor&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;Top, Left&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkTOSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;7ceb719a-f574-4989-bf03-18263d5719f4&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorTop&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;236&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkTOSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;7ceb719a-f574-4989-bf03-18263d5719f4&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorLeft&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;386&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkTOSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;7ceb719a-f574-4989-bf03-18263d5719f4&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorWidth&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;16&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkTOSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;7ceb719a-f574-4989-bf03-18263d5719f4&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorHeight&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;17&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblTOSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;fcb7649c-c505-4cad-a233-50a64d247071&lt;/Key&gt;
+    &lt;PropertyName&gt;Top&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;236&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblTOSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;fcb7649c-c505-4cad-a233-50a64d247071&lt;/Key&gt;
+    &lt;PropertyName&gt;Left&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;172&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblTOSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;fcb7649c-c505-4cad-a233-50a64d247071&lt;/Key&gt;
+    &lt;PropertyName&gt;Width&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;210&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblTOSuggestions&lt;/ControlName&gt;
+    &lt;Key&gt;fcb7649c-c505-4cad-a233-50a64d247071&lt;/Key&gt;
+    &lt;PropertyName&gt;Height&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;20&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblPlanContractInfo&lt;/ControlName&gt;
+    &lt;Key&gt;083ada51-3484-45a4-a25b-cfdb782771e4&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;2&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblPlanContractInfo&lt;/ControlName&gt;
+    &lt;Key&gt;083ada51-3484-45a4-a25b-cfdb782771e4&lt;/Key&gt;
+    &lt;PropertyName&gt;Anchor&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;Top, Left&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblPlanContractInfo&lt;/ControlName&gt;
+    &lt;Key&gt;083ada51-3484-45a4-a25b-cfdb782771e4&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorTop&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;236&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblPlanContractInfo&lt;/ControlName&gt;
+    &lt;Key&gt;083ada51-3484-45a4-a25b-cfdb782771e4&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorLeft&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;418&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblPlanContractInfo&lt;/ControlName&gt;
+    &lt;Key&gt;083ada51-3484-45a4-a25b-cfdb782771e4&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorWidth&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;195&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblPlanContractInfo&lt;/ControlName&gt;
+    &lt;Key&gt;083ada51-3484-45a4-a25b-cfdb782771e4&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorHeight&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;20&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkPlanContractInfo&lt;/ControlName&gt;
+    &lt;Key&gt;7f8e2894-a0c1-4ce6-a392-7bd7fc1faba0&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkPlanContractInfo&lt;/ControlName&gt;
+    &lt;Key&gt;7f8e2894-a0c1-4ce6-a392-7bd7fc1faba0&lt;/Key&gt;
+    &lt;PropertyName&gt;Anchor&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;Top, Left&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkPlanContractInfo&lt;/ControlName&gt;
+    &lt;Key&gt;7f8e2894-a0c1-4ce6-a392-7bd7fc1faba0&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorTop&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;236&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkPlanContractInfo&lt;/ControlName&gt;
+    &lt;Key&gt;7f8e2894-a0c1-4ce6-a392-7bd7fc1faba0&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorLeft&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;617&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkPlanContractInfo&lt;/ControlName&gt;
+    &lt;Key&gt;7f8e2894-a0c1-4ce6-a392-7bd7fc1faba0&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorWidth&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;16&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;chkPlanContractInfo&lt;/ControlName&gt;
+    &lt;Key&gt;7f8e2894-a0c1-4ce6-a392-7bd7fc1faba0&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorHeight&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;17&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblPlanContractInfo&lt;/ControlName&gt;
+    &lt;Key&gt;083ada51-3484-45a4-a25b-cfdb782771e4&lt;/Key&gt;
+    &lt;PropertyName&gt;Top&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;236&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblPlanContractInfo&lt;/ControlName&gt;
+    &lt;Key&gt;083ada51-3484-45a4-a25b-cfdb782771e4&lt;/Key&gt;
+    &lt;PropertyName&gt;Left&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;418&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblPlanContractInfo&lt;/ControlName&gt;
+    &lt;Key&gt;083ada51-3484-45a4-a25b-cfdb782771e4&lt;/Key&gt;
+    &lt;PropertyName&gt;Width&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;195&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblPlanContractInfo&lt;/ControlName&gt;
+    &lt;Key&gt;083ada51-3484-45a4-a25b-cfdb782771e4&lt;/Key&gt;
+    &lt;PropertyName&gt;Height&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;20&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpKeyGroupBox&lt;/ControlName&gt;
+    &lt;Key&gt;c10fff31-b7d3-46f5-b6c3-a7a8383b01cb&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpKeyGroupBox&lt;/ControlName&gt;
+    &lt;Key&gt;c10fff31-b7d3-46f5-b6c3-a7a8383b01cb&lt;/Key&gt;
+    &lt;PropertyName&gt;Anchor&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;Top, Left&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpKeyGroupBox&lt;/ControlName&gt;
+    &lt;Key&gt;c10fff31-b7d3-46f5-b6c3-a7a8383b01cb&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorTop&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;6&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpKeyGroupBox&lt;/ControlName&gt;
+    &lt;Key&gt;c10fff31-b7d3-46f5-b6c3-a7a8383b01cb&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorLeft&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;6&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpKeyGroupBox&lt;/ControlName&gt;
+    &lt;Key&gt;c10fff31-b7d3-46f5-b6c3-a7a8383b01cb&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorWidth&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;955&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpKeyGroupBox&lt;/ControlName&gt;
+    &lt;Key&gt;c10fff31-b7d3-46f5-b6c3-a7a8383b01cb&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorHeight&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;102&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grdList&lt;/ControlName&gt;
+    &lt;Key&gt;7908565c-cc3c-43d1-b85b-9921ad88fb89&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+&lt;/CustomizationDS&gt;</Content>
+    <BitFlag>0</BitFlag>
+    <RowMod />
+  </XXXDef>
+</GenXDataDataSet>
