@@ -49,6 +49,8 @@ History:
 	change hash totals
 10/09/20 eb7 eric blackwelder @ cdi
 	add record type 7 and other changes
+05/25/21 eb8 eric blackwelder @ cdi
+	tweaks to get record type 7 to work for JPM
 
   ----------------------------------------------------------------------*/
 using System;
@@ -390,7 +392,9 @@ namespace Erp.Internal.EI
 
 			// STANDARD ENTRY CLASS CODE
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 50, "PPD", 3);
-            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 50, "CCD", 3);
+            //eb8:
+			//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 50, "CCD", 3);
+            ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 50, "CTX", 3);
 
             //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 53, "PAYROLL", 10);
             ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 53, "ACH PMT", 10);
@@ -496,14 +500,32 @@ namespace Erp.Internal.EI
 				//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 12, BankAcct.CheckingAccount, 17);
 				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 12, VendBank.BankAcctNumber, 17);
 
-                
 				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 29, SAmount, 10);
                 ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 39, TmpElec.VendorBankID, 15);  /* or maybe tmpElect.VendorAccountRef ?*/
-                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 54, TmpElec.VendorBankNameOnAccount.Trim().SubString(0, 22), 22);
-                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 78, "0", 1);
-				
-				//eb3:
-                //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, ImmediateOrigine.SubString(1, 8) + Compatibility.Convert.ToString(Payment, "9999999"), 15);
+
+//zzz                
+				//eb8:
+                //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 54, TmpElec.VendorBankNameOnAccount.Trim().SubString(0, 22), 22);
+                //ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 78, "0", 1);				
+				////eb3:
+                ////ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, ImmediateOrigine.SubString(1, 8) + Compatibility.Convert.ToString(Payment, "9999999"), 15);
+				//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, "02100002", 8);
+				//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, "0000001", 7);
+				int record7TotalCount = 0;
+				int record7Yes = 0;
+				foreach (var APTran_iterator in (this.SelectAPTran(Session.CompanyID, TmpElec.HeadNum)))
+				{
+					if (APTran_iterator.InvoiceNum != "")
+					{
+						record7TotalCount += 1;
+						record7Yes = 1;
+					}
+				}
+                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 54, record7TotalCount.ToString("D4"), 4);
+                ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 58, TmpElec.VendorBankNameOnAccount.Trim().SubString(0, 16), 16);
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 74, "  ", 2);
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 76, "  ", 2);
+				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 78, record7Yes.ToString(), 1);
 				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 79, "02100002", 8);
 				ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 87, "0000001", 7);
 
@@ -513,6 +535,8 @@ namespace Erp.Internal.EI
 				//invoices:
 				//this is a list of invoice numbers
 				/* 7 - Addenda Record */
+				//eb8: moved this up:
+				/*
 				int record7TotalCount = 0;
 				foreach (var APTran_iterator in (this.SelectAPTran(Session.CompanyID, TmpElec.HeadNum)))
 				{
@@ -521,6 +545,7 @@ namespace Erp.Internal.EI
 						record7TotalCount += 1;
 					}
 				}
+				*/
 
 				int record7Counter = 0;
 				foreach (var APTran_iterator in (this.SelectAPTran(Session.CompanyID, TmpElec.HeadNum)))
@@ -534,7 +559,10 @@ namespace Erp.Internal.EI
 						EISFCommon.ttOutFileLineRows.Add(ttOutFileLine);
 
 						ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 0, "7", 1);
-						ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "200", 3);
+						//eb8:
+						//ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "200", 3);
+						ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 1, "05", 2);
+
 						ttOutFileLine.Line_out = ErpUtilities.Overlay(ttOutFileLine.Line_out, 3, "Invoice " + APTran_iterator.InvoiceNum.ToString(), 80);
 
 						//KEEP for testing:
