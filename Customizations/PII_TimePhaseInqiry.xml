@@ -78,7 +78,7 @@
     <Description>PII_TimePhaseInqiry</Description>
     <LastUpdated>2021-05-25T00:00:00-04:00</LastUpdated>
     <LastUpdatedBy>manager</LastUpdatedBy>
-    <Version>5/25/2021 8:52:28 AM</Version>
+    <Version>5/25/2021 9:24:07 AM</Version>
     <DataBaseVersion>0</DataBaseVersion>
     <SysCharacter01 />
     <SysCharacter02 />
@@ -98,7 +98,7 @@
     <CommentText />
     <CGCCode />
     <SystemFlag>false</SystemFlag>
-    <SysRevID>72036142</SysRevID>
+    <SysRevID>72036193</SysRevID>
     <SysRowID>f64ba7b4-4a0a-476d-96e2-30b5a2188ca7</SysRowID>
     <SysCheckBox06>false</SysCheckBox06>
     <SysCheckBox07>false</SysCheckBox07>
@@ -390,14 +390,18 @@ MessageBox.Show("4");
 		ugTransactions.DisplayLayout.Bands[0].Columns.Add("RowUpdated");
 		ugTransactions.DisplayLayout.Bands[0].Columns["RowUpdated"].Hidden = true;
 
-		ugTransactions.DisplayLayout.Bands[0].Columns.Add("CustName" ,"Cust Name");
-		ugTransactions.DisplayLayout.Bands[0].Columns["CustName"].CellActivation = Activation.ActivateOnly;
+		ugTransactions.DisplayLayout.Bands[0].Columns.Add("PartNum2" ,"Parent Item");
+		ugTransactions.DisplayLayout.Bands[0].Columns["PartNum2"].CellActivation = Activation.ActivateOnly;
+		ugTransactions.DisplayLayout.Bands[0].Columns["PartNum2"].Header.VisiblePosition = 18;
+
+		ugTransactions.DisplayLayout.Bands[0].Columns.Add("CustomerName" ,"Cust Name");
+		ugTransactions.DisplayLayout.Bands[0].Columns["CustomerName"].CellActivation = Activation.ActivateOnly;
+		ugTransactions.DisplayLayout.Bands[0].Columns["CustomerName"].Header.VisiblePosition = 24; 
 
 		ugTransactions.DisplayLayout.Bands[0].Columns.Add("VendorName" ,"Supplier Name");
 		ugTransactions.DisplayLayout.Bands[0].Columns["VendorName"].CellActivation = Activation.ActivateOnly;
+		ugTransactions.DisplayLayout.Bands[0].Columns["VendorName"].Header.VisiblePosition = 26;
 
-		ugTransactions.DisplayLayout.Bands[0].Columns.Add("ParentItem" ,"Parent Item");
-		ugTransactions.DisplayLayout.Bands[0].Columns["ParentItem"].CellActivation = Activation.ActivateOnly;
 
 		ugTransactions.InitializeRow += new InitializeRowEventHandler(this.ugTransactions_InitializeRow);
 
@@ -463,40 +467,31 @@ MessageBox.Show("4");
 
 		if((string)e.Row.Cells["RowUpdated"].Value != "YES")
 		{
-			if((int)e.Row.Cells["OrderNum"].Value != 0)
+			try
 			{
-				//MessageBox.Show("OrderNum: " + ((int)e.Row.Cells["OrderNum"].Value).ToString());
-
-				//DataSet dsSalesOrder = _boReader.GetList("Erp:BO:SalesOrder","OrderNum = " + (int)e.Row.Cells["OrderNum"].Value + "","OrderNum,CustNum");
-				//DataTable dtSalesOrder = _boReader.GetList("Erp:BO:SalesOrder","OrderNum = " + (int)e.Row.Cells["OrderNum"].Value + "","OrderNum,CustNum").Tables[0];
-				DataTable dtSalesOrder = _boReader.GetList("Erp:BO:SalesOrder","OrderNum = " + (int)e.Row.Cells["OrderNum"].Value + "","OrderNum,CustomerName").Tables[0];
-				//if(dsSalesOrder.Tables[0].Rows.Count &amp;gt; 0 )
-				e.Row.Cells["CustName"].Value = dtSalesOrder.Rows[0]["CustomerName"];
-				/*
-				if(dtSalesOrder.Rows.Count &amp;gt; 0 )
+				if((int)e.Row.Cells["OrderNum"].Value != 0)
 				{
-					//DataSet dsCustomer = _boReader.GetList("Erp:BO:Customer","CustNum = " + (int)dsSalesOrder.Tables[0].Rows[0]["CustNum"] + "","CustNum,Name");
-					DataTable dtCustomer = _boReader.GetList("Erp:BO:Customer","CustNum = " + (int)dtSalesOrder.Rows[0]["CustNum"] + "","CustNum,Name").Tables[0];
-					//if(dsCustomer.Tables[0].Rows.Count &amp;gt; 0 )
-					if(dtCustomer.Rows.Count &amp;gt; 0 )
+					//MessageBox.Show("OrderNum: " + ((int)e.Row.Cells["OrderNum"].Value).ToString());
+					e.Row.Cells["CustomerName"].Value = "error";
+					DataTable dtSalesOrder = _boReader.GetList("Erp:BO:SalesOrder","OrderNum = " + (int)e.Row.Cells["OrderNum"].Value + "","OrderNum,CustomerName").Tables[0];
+					if(dtSalesOrder.Rows.Count &amp;gt; 0 )
 					{
-						//e.Row.Cells["CustName"].Value = dsCustomer.Tables[0].Rows[0]["Name"];
-						e.Row.Cells["CustName"].Value = dtCustomer.Rows[0]["Name"];
+						e.Row.Cells["CustomerName"].Value = dtSalesOrder.Rows[0]["CustomerName"];
 					}
-				}			
-				*/
-			}
-
-			if((int)e.Row.Cells["PONum"].Value != 0)
-			{
-				//MessageBox.Show("PONum: " + ((int)e.Row.Cells["PONum"].Value).ToString());
-
-				DataTable dtPO = _boReader.GetList("Erp:BO:PO","PONum = " + (int)e.Row.Cells["PONum"].Value + "","PONum,VendorName").Tables[0];
-				if(dtPO.Rows.Count &amp;gt; 0 )
-				{
-					e.Row.Cells["VendorName"].Value = dtPO.Rows[0]["VendorName"];
 				}
-			}
+	
+				if((int)e.Row.Cells["PONum"].Value != 0)
+				{
+					//MessageBox.Show("PONum: " + ((int)e.Row.Cells["PONum"].Value).ToString());
+					e.Row.Cells["VendorName"].Value = "error";
+					DataTable dtPO = _boReader.GetList("Erp:BO:PO","PONum = " + (int)e.Row.Cells["PONum"].Value + "","PONum,VendorName").Tables[0];
+					if(dtPO.Rows.Count &amp;gt; 0 )
+					{
+						e.Row.Cells["VendorName"].Value = dtPO.Rows[0]["VendorName"];
+					}
+				}
+
+
 
 /*
 string strBOName = "PO";
@@ -526,18 +521,28 @@ if((int)e.Row.Cells["PONum"].Value != 0)
 }
 */
 //zzz
-/*
-			if((int)e.Row.Cells["JobNum"].Value != 0)
-			{
-				//MessageBox.Show("PONum: " + ((int)e.Row.Cells["PONum"].Value).ToString());
 
-				DataTable dtJob = _boReader.GetList("Erp:BO:PO","JobEntry = " + (int)e.Row.Cells["JobNum"].Value + "","JobNum,PartNum").Tables[0];
-				if(dtJob.Rows.Count &amp;gt; 0 )
+//put back in:	
+				if((string)e.Row.Cells["JobNum"].Value != "")
 				{
-						e.Row.Cells["ParentItem"].Value = dtJob.Rows[0]["PartNum"];
+					//MessageBox.Show("JobNum: " + ((int)e.Row.Cells["JobNum"].Value).ToString());
+					e.Row.Cells["PartNum2"].Value = "error";
+
+
+//put back in:	
+					DataTable dtJob = _boReader.GetList("Erp:BO:JobEntry","JobNum = '" + (string)e.Row.Cells["JobNum"].Value + "'","PartNum").Tables[0];
+//DataTable dtJob = _boReader.GetList("Erp:BO:JobEntry","JobNum = '000009'","PartNum").Tables[0];
+//MessageBox.Show("x");
+
+					if(dtJob.Rows.Count &amp;gt; 0 )
+					{
+							e.Row.Cells["PartNum2"].Value = dtJob.Rows[0]["PartNum"];
+					}
 				}
+
 			}
-*/
+			catch
+			{}
 
 
 
