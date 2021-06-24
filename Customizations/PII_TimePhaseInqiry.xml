@@ -69,16 +69,16 @@
     </xs:element>
   </xs:schema>
   <XXXDef>
-    <Company />
+    <Company>PI04</Company>
     <ProductID>EP</ProductID>
     <TypeCode>Customization</TypeCode>
     <Key1>PII_TimePhaseInqiry</Key1>
     <Key2>App.TimePhasEntry.TimePhasForm</Key2>
     <Key3 />
     <Description>PII_TimePhaseInqiry</Description>
-    <LastUpdated>2021-05-25T00:00:00-04:00</LastUpdated>
+    <LastUpdated>2021-06-24T00:00:00-04:00</LastUpdated>
     <LastUpdatedBy>manager</LastUpdatedBy>
-    <Version>5/25/2021 11:22:51 A</Version>
+    <Version>6/24/2021 2:41:32 PM</Version>
     <DataBaseVersion>0</DataBaseVersion>
     <SysCharacter01 />
     <SysCharacter02 />
@@ -98,11 +98,11 @@
     <CommentText />
     <CGCCode />
     <SystemFlag>false</SystemFlag>
-    <SysRevID>72036294</SysRevID>
-    <SysRowID>f64ba7b4-4a0a-476d-96e2-30b5a2188ca7</SysRowID>
+    <SysRevID>93060324</SysRevID>
+    <SysRowID>7c92b102-e8d5-4931-92a8-921d3242f4a1</SysRowID>
     <SysCheckBox06>false</SysCheckBox06>
     <SysCheckBox07>false</SysCheckBox07>
-    <OnMenu>false</OnMenu>
+    <OnMenu>true</OnMenu>
     <Duplicate>false</Duplicate>
     <Cosmetic>false</Cosmetic>
     <Content>&lt;CustomizationDS xmlns="http://tempuri.org/XMLSchema.xsd"&gt;
@@ -396,9 +396,10 @@ public class Script
 
 	private void TimePhasForm_Load(object sender, EventArgs args)
 	{
-		Control c1 = csm.GetNativeControlReference("cdf4e0c8-4643-4c8b-9aaf-a53c47ce9985");
-		EpiCheckBox chkSuggestions = (EpiCheckBox)c1;
-		chkSuggestions.Checked = false;
+		//06/26/21 comment out per robin's request:
+		//Control c1 = csm.GetNativeControlReference("cdf4e0c8-4643-4c8b-9aaf-a53c47ce9985");
+		//EpiCheckBox chkSuggestions = (EpiCheckBox)c1;
+		//chkSuggestions.Checked = false;
 
 		Control c2 = csm.GetNativeControlReference("7ceb719a-f574-4989-bf03-18263d5719f4");
 		EpiCheckBox chkTOSuggestions = (EpiCheckBox)c2;
@@ -460,6 +461,7 @@ public class Script
 	}
 
 }
+
 
 
 
@@ -1136,6 +1138,18 @@ public class Script
     &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
     &lt;ControlName&gt;grdList&lt;/ControlName&gt;
     &lt;Key&gt;7908565c-cc3c-43d1-b85b-9921ad88fb89&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;TimePhasForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtAttributeSetDescription&lt;/ControlName&gt;
+    &lt;Key&gt;a17dafff-243e-4615-be77-e5760461b78b&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
     &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
     &lt;Company /&gt;
