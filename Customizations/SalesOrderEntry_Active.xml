@@ -76,9 +76,9 @@
     <Key2>App.SalesOrderEntry.SalesOrderForm</Key2>
     <Key3 />
     <Description>SalesOrderEntry_Active</Description>
-    <LastUpdated>2021-06-29T00:00:00-04:00</LastUpdated>
+    <LastUpdated>2021-06-30T00:00:00-04:00</LastUpdated>
     <LastUpdatedBy>manager</LastUpdatedBy>
-    <Version>6/29/2021 9:22:05 AM</Version>
+    <Version>6/30/2021 9:49:24 AM</Version>
     <DataBaseVersion>30900</DataBaseVersion>
     <SysCharacter01 />
     <SysCharacter02 />
@@ -114,7 +114,7 @@ Version: 3.2.700.0
 *----------------------------------------------------------*</CommentText>
     <CGCCode />
     <SystemFlag>false</SystemFlag>
-    <SysRevID>71037706</SysRevID>
+    <SysRevID>71041391</SysRevID>
     <SysRowID>84980022-f26a-43c1-8344-e39082ce3683</SysRowID>
     <SysCheckBox06>false</SysCheckBox06>
     <SysCheckBox07>false</SysCheckBox07>
@@ -613,6 +613,9 @@ public class Script
 	private EpiBaseAdapter oTrans_ordAdapter;
 	private bool blnRefreshData = false;
 	private int intRefreshCount = 0;
+	//eb4:
+	private EpiDataView edvOrderRel;
+	private bool blnNewLine = false;
 
 	public void InitializeCustomCode()
 	{
@@ -638,6 +641,7 @@ public class Script
 		//eb4:
 		this.edvfkvPart = ((EpiDataView)(this.oTrans.EpiDataViews["fkvPart"]));
 		this.edvfkvPart.EpiViewNotification += new EpiViewNotification(this.edvfkvPart_EpiViewNotification);
+		this.edvOrderRel = ((EpiDataView)(this.oTrans.EpiDataViews["OrderRel"]));
 
 	}
 
@@ -665,6 +669,7 @@ public class Script
 		//eb4:
 		this.edvfkvPart.EpiViewNotification -= new EpiViewNotification(this.edvfkvPart_EpiViewNotification);
 		this.edvfkvPart = null;
+		this.edvOrderRel = null;
 
 	}
 
@@ -866,16 +871,29 @@ public class Script
 		//MessageBox.Show(args.MethodName);
 		switch (args.MethodName)
 		{
-			case "OnChangeOfQuoteLine":
-//MessageBox.Show("OnChangeOfQuoteLine");
+//			//eb4:
+//			case "Update":
+//MessageBox.Show("x");
+//oTrans.Update();
+//				break;
+
+
+			case "GetNewOrderDtl":
 				blnRefreshData = true;
 				intRefreshCount = 0;
+				//eb4:
+				blnNewLine = true;
+
 				break;
 
+
+			case "Delete":
+			case "Clear":
+				blnNewLine = false;
+				break;
+
+
 			case "Update":
-//MessageBox.Show("Update");
-//EpiDataView CallContextBPMView = (EpiDataView)oTrans.EpiDataViews["CallContextBPMData"];
-//MessageBox.Show("CallContextBPM.ShortChar01: " + CallContextBPMView.dataView[0]["ShortChar01"].ToString());
 				if(blnRefreshData)
 				{
 					// note: update hit once normally, twice if customer is on hold
@@ -889,17 +907,17 @@ public class Script
 					}
 					*/
 
-/*
+					/*
 					if(intRefreshCount &amp;gt; 0)
 					{
-//						oTrans.Refresh();
+						//oTrans.Refresh();
 					}
 					if(intRefreshCount &amp;gt; 2)
 					{
 						blnRefreshData = false;
 						intRefreshCount = 0;
 					}
-*/
+					*/
 					EpiDataView CallContextBPMView = (EpiDataView)oTrans.EpiDataViews["CallContextBPMData"];
 					if((string)CallContextBPMView.dataView[0]["ShortChar01"] == "refresh")
 					{
@@ -909,6 +927,98 @@ public class Script
 
 
 				}
+
+
+//zzz
+//eb4:
+//MessageBox.Show("0");
+if(blnNewLine)
+{
+	int intNewLine = 0;
+
+	EpiDataView edvOrderDtl = ((EpiDataView)(this.oTrans.EpiDataViews["OrderDtl"]));
+	System.Data.DataRow edvOrderDtlRow = edvOrderDtl.CurrentDataRow;
+	if ((edvOrderDtl != null))
+	{
+		//edvOrderHedRow.BeginEdit();
+		//edvOrderHedRow["SFRegion_c"] = adapterRow["RegionCode"];
+		//edvOrderHedRow.EndEdit();
+//		MessageBox.Show("line: " + ((int)edvOrderDtlRow["OrderLine"]).ToString());
+
+		intNewLine = (int)edvOrderDtlRow["OrderLine"];
+	}
+
+	EpiDataView edvOrderRel = ((EpiDataView)(this.oTrans.EpiDataViews["OrderRel"]));
+	System.Data.DataRow edvOrderRelRow = edvOrderRel.CurrentDataRow;
+	if ((edvOrderRel != null))
+	{
+		//edvOrderHedRow.BeginEdit();
+		//edvOrderHedRow["SFRegion_c"] = adapterRow["RegionCode"];
+		//edvOrderHedRow.EndEdit();
+// !! GET INSTANCE ERROR HERE:
+//		MessageBox.Show(((int)edvOrderRelRow["OrderLine"]).ToString()
+//			+ " / " + ((int)edvOrderRelRow["OrderRelNum"]).ToString());
+
+	}
+
+//ZZZ
+//		!!! DISPLAY FKVPART NEXT
+//edvfkvPart
+System.Data.DataRow edvfkvPartRow = edvfkvPart.CurrentDataRow;
+if ((edvfkvPart != null))
+{
+	//edvOrderHedRow.BeginEdit();
+	//edvOrderHedRow["SFRegion_c"] = adapterRow["RegionCode"];
+	//edvOrderHedRow.EndEdit();
+//	MessageBox.Show(((string)edvfkvPartRow["TypeCode"]).ToString());
+
+
+	foreach (DataRow row in edvOrderRel.dataView.Table.Rows)
+
+	{
+/*
+MessageBox.Show(
+//(int)dataRowView["OrderLine"] + " / " +
+//(int)dataRowView["OrderRelNum"] + " / " +
+//(string)dataRowView["ReleaseStatus"] + " / "
+(int)row["OrderLine"] + " / " +
+(int)row["OrderRelNum"] + " / " +
+(string)row["ComplianceMsg"] + " / " +
+(bool)row["Make"] + " / "
+);
+*/
+		if(   (int)row["OrderLine"] == intNewLine
+		   &amp;amp;&amp;amp; (int)row["OrderRelNum"] == 1
+		   &amp;amp;&amp;amp; (string)edvfkvPartRow["TypeCode"] == "M")
+		{
+			row.BeginEdit();
+			row["RowMod"] = "U";
+			row["Make"] = true;
+			row.EndEdit();
+			blnNewLine = false;
+			//note: line below will cause this code to loop, so set blnNewLine false
+			oTrans.Update();
+		}
+
+/*
+	if((string)dataRowView["ReleaseStatus"] == "NEW RELEASE")
+	{
+		dataRowView.BeginEdit();
+		dataRowView["RowMod"] = "U";
+		dataRowView["ReleaseStatus"] = "";
+		dataRowView.EndEdit();
+		oTrans.Update();
+	}
+*/
+	}
+	
+}
+
+
+}
+blnNewLine = false;
+
+
 				break;
 
 		}
@@ -947,6 +1057,7 @@ public class Script
 	}
 
 }
+
 
 
 
@@ -3459,6 +3570,78 @@ public class Script
     &lt;Key&gt;08909a88-e65f-46a1-acf5-84121694376d&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
     &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;SalesOrderForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblAddr&lt;/ControlName&gt;
+    &lt;Key&gt;485841ed-f690-41c3-aa7e-3812df918e96&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;SalesOrderForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtAddr&lt;/ControlName&gt;
+    &lt;Key&gt;ffe95c7f-25a8-4431-a061-0ec9113ec9ab&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;SalesOrderForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblAddr&lt;/ControlName&gt;
+    &lt;Key&gt;485841ed-f690-41c3-aa7e-3812df918e96&lt;/Key&gt;
+    &lt;PropertyName&gt;Top&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;64&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;SalesOrderForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblAddr&lt;/ControlName&gt;
+    &lt;Key&gt;485841ed-f690-41c3-aa7e-3812df918e96&lt;/Key&gt;
+    &lt;PropertyName&gt;Left&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;56&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;SalesOrderForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblAddr&lt;/ControlName&gt;
+    &lt;Key&gt;485841ed-f690-41c3-aa7e-3812df918e96&lt;/Key&gt;
+    &lt;PropertyName&gt;Width&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;80&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;SalesOrderForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblAddr&lt;/ControlName&gt;
+    &lt;Key&gt;485841ed-f690-41c3-aa7e-3812df918e96&lt;/Key&gt;
+    &lt;PropertyName&gt;Height&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;20&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
