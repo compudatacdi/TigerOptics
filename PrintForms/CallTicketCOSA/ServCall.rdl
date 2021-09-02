@@ -646,10 +646,221 @@
                                     </Paragraph>
                                   </Paragraphs>
                                   <Top>0.22in</Top>
-                                  <Left>0.25in</Left>
+                                  <Left>0.875in</Left>
                                   <Height>1.56458in</Height>
-                                  <Width>3.4in</Width>
+                                  <Width>2.75in</Width>
                                   <ZIndex>1</ZIndex>
+                                  <Visibility>
+                                    <Hidden>true</Hidden>
+                                  </Visibility>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Address4">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=First(Fields!Calc_ShipToContactName.Value, "FSCallHd")</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Address2</rd:DefaultName>
+                                  <Top>0.28944in</Top>
+                                  <Left>0.26in</Left>
+                                  <Height>0.18in</Height>
+                                  <Width>3in</Width>
+                                  <ZIndex>2</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Address5">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Split(First(Fields!Calc_ShipToAddr.Value, "FSCallHd"),"~")(0)</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Address2</rd:DefaultName>
+                                  <Top>0.48277in</Top>
+                                  <Left>0.26in</Left>
+                                  <Height>0.18in</Height>
+                                  <Width>3in</Width>
+                                  <ZIndex>3</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Address6">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Split(First(Fields!Calc_ShipToAddr.Value, "FSCallHd"),"~")(1)</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Address2</rd:DefaultName>
+                                  <Top>0.67722in</Top>
+                                  <Left>0.26in</Left>
+                                  <Height>0.18in</Height>
+                                  <Width>3in</Width>
+                                  <ZIndex>4</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Address7">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Split(First(Fields!Calc_ShipToAddr.Value, "FSCallHd"),"~")(2)</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Address2</rd:DefaultName>
+                                  <Top>0.85625in</Top>
+                                  <Left>0.26in</Left>
+                                  <Height>0.18in</Height>
+                                  <Width>3in</Width>
+                                  <ZIndex>5</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Address8">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Split(First(Fields!Calc_ShipToAddr.Value, "FSCallHd"),"~")(3)</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Address2</rd:DefaultName>
+                                  <Top>1.05014in</Top>
+                                  <Left>0.26in</Left>
+                                  <Height>0.18in</Height>
+                                  <Width>3in</Width>
+                                  <ZIndex>6</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Address9">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Split(First(Fields!Calc_ShipToAddr.Value, "FSCallHd"),"~")(4)</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Address2</rd:DefaultName>
+                                  <Top>1.24403in</Top>
+                                  <Left>0.26in</Left>
+                                  <Height>0.18in</Height>
+                                  <Width>3in</Width>
+                                  <ZIndex>7</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Address10">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Split(First(Fields!Calc_ShipToAddr.Value, "FSCallHd"),"~")(5)</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Address2</rd:DefaultName>
+                                  <Top>1.43792in</Top>
+                                  <Left>0.26in</Left>
+                                  <Height>0.18in</Height>
+                                  <Width>3in</Width>
+                                  <ZIndex>8</ZIndex>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Textbox>
+                                <Textbox Name="Address11">
+                                  <CanGrow>true</CanGrow>
+                                  <KeepTogether>true</KeepTogether>
+                                  <Paragraphs>
+                                    <Paragraph>
+                                      <TextRuns>
+                                        <TextRun>
+                                          <Value>=Split(First(Fields!Calc_ShipToAddr.Value, "FSCallHd"),"~")(6)</Value>
+                                          <Style />
+                                        </TextRun>
+                                      </TextRuns>
+                                      <Style />
+                                    </Paragraph>
+                                  </Paragraphs>
+                                  <rd:DefaultName>Address2</rd:DefaultName>
+                                  <Top>1.61792in</Top>
+                                  <Left>0.26in</Left>
+                                  <Height>0.18in</Height>
+                                  <Width>3in</Width>
+                                  <ZIndex>9</ZIndex>
                                   <Style>
                                     <Border>
                                       <Style>None</Style>
@@ -3485,6 +3696,9 @@ and
                   <Height>0.18in</Height>
                   <Width>1.21458in</Width>
                   <ZIndex>2</ZIndex>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3514,6 +3728,9 @@ and
                   <Height>0.18in</Height>
                   <Width>1.20458in</Width>
                   <ZIndex>3</ZIndex>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3523,6 +3740,20 @@ and
                 <Textbox Name="txtShipToAddress2">
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Label>Calc_AddressList</Label>
+                          <Value>COSA Xentaur Corporation</Value>
+                          <Style>
+                            <FontSize>9.5pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                      </Style>
+                    </Paragraph>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
@@ -3542,6 +3773,20 @@ and
                         <TextRun>
                           <Label>Calc_AddressList</Label>
                           <Value>=Split(First(Fields!Calc_AddressList.Value, "Company"),"~")(3)</Value>
+                          <Style>
+                            <FontSize>9.5pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                      </Style>
+                    </Paragraph>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Label>PhoneNum</Label>
+                          <Value>=Mid(First(Fields!PhoneNum.Value, "Company"),4,3)+" - "+Mid(First(Fields!PhoneNum.Value, "Company"),9,3)+" - "+Mid(First(Fields!PhoneNum.Value, "Company"),13,4)</Value>
                           <Style>
                             <FontSize>9.5pt</FontSize>
                           </Style>
@@ -3610,7 +3855,7 @@ and
                   </Paragraphs>
                   <Top>0.91945in</Top>
                   <Left>0.11792in</Left>
-                  <Height>0.56708in</Height>
+                  <Height>0.70041in</Height>
                   <Width>2.42306in</Width>
                   <ZIndex>4</ZIndex>
                   <Style>
@@ -3638,11 +3883,14 @@ and
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.15154in</Top>
-                  <Left>1.6in</Left>
+                  <Top>2.13765in</Top>
+                  <Left>4.66667in</Left>
                   <Height>0.2in</Height>
                   <Width>0.8in</Width>
                   <ZIndex>5</ZIndex>
+                  <Visibility>
+                    <Hidden>true</Hidden>
+                  </Visibility>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3669,10 +3917,10 @@ and
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.15154in</Top>
-                  <Left>2.41in</Left>
+                  <Top>2.15765in</Top>
+                  <Left>6.955in</Left>
                   <Height>0.2in</Height>
-                  <Width>0.9in</Width>
+                  <Width>0.53889in</Width>
                   <ZIndex>6</ZIndex>
                   <Style>
                     <Border>
@@ -3755,7 +4003,7 @@ and
                           <Label>Lbl_Lbl_RptTitle</Label>
                           <Value>Service Quote</Value>
                           <Style>
-                            <FontSize>13.5pt</FontSize>
+                            <FontSize>18pt</FontSize>
                             <FontWeight>Bold</FontWeight>
                           </Style>
                         </TextRun>
@@ -3765,10 +4013,10 @@ and
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.15154in</Top>
-                  <Left>0.09in</Left>
-                  <Height>0.2in</Height>
-                  <Width>1.51in</Width>
+                  <Top>0.91945in</Top>
+                  <Left>3.2in</Left>
+                  <Height>0.34834in</Height>
+                  <Width>1.76694in</Width>
                   <ZIndex>9</ZIndex>
                   <Style>
                     <Border>
@@ -3817,8 +4065,8 @@ and
                       </Action>
                     </Actions>
                   </ActionInfo>
-                  <Top>1.50042in</Top>
-                  <Left>0.11792in</Left>
+                  <Top>1.74209in</Top>
+                  <Left>0.12111in</Left>
                   <Height>0.18in</Height>
                   <Width>3.14945in</Width>
                   <ZIndex>11</ZIndex>
@@ -3854,8 +4102,8 @@ and
                       </Action>
                     </Actions>
                   </ActionInfo>
-                  <Top>1.69431in</Top>
-                  <Left>0.11792in</Left>
+                  <Top>1.93598in</Top>
+                  <Left>0.12111in</Left>
                   <Height>0.18in</Height>
                   <Width>3.14945in</Width>
                   <ZIndex>12</ZIndex>
@@ -3891,8 +4139,8 @@ and
                       </Action>
                     </Actions>
                   </ActionInfo>
-                  <Top>1.91598in</Top>
-                  <Left>0.11792in</Left>
+                  <Top>2.11598in</Top>
+                  <Left>0.12111in</Left>
                   <Height>0.18in</Height>
                   <Width>3.14945in</Width>
                   <ZIndex>13</ZIndex>
@@ -3900,6 +4148,37 @@ and
                     <Border>
                       <Style>None</Style>
                     </Border>
+                  </Style>
+                </Textbox>
+                <Textbox Name="lblRptLiteralsRptTitle2">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Label>Lbl_Lbl_RptTitle</Label>
+                          <Value>Quote</Value>
+                          <Style>
+                            <FontSize>13.5pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                      </Style>
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>2.15765in</Top>
+                  <Left>6.36722in</Left>
+                  <Height>0.2in</Height>
+                  <Width>0.57389in</Width>
+                  <ZIndex>14</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <BackgroundColor>White</BackgroundColor>
                   </Style>
                 </Textbox>
               </ReportItems>
@@ -3978,7 +4257,7 @@ and
                       <TextRuns>
                         <TextRun>
                           <Label>Globals!PageNumber</Label>
-                          <Value>=Globals!PageNumber</Value>
+                          <Value>=Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
                           <Style>
                             <FontSize>9.5pt</FontSize>
                           </Style>
