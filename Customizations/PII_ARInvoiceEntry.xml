@@ -1,0 +1,666 @@
+<?xml version="1.0" standalone="yes"?>
+<GenXDataDataSet xmlns="http://www.epicor.com/Ice/300/BO/GenXData/GenXData">
+  <xs:schema id="GenXDataDataSet" targetNamespace="http://www.epicor.com/Ice/300/BO/GenXData/GenXData" xmlns:mstns="http://www.epicor.com/Ice/300/BO/GenXData/GenXData" xmlns="http://www.epicor.com/Ice/300/BO/GenXData/GenXData" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+    <xs:element name="GenXDataDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:ExportFormat="Gen3" msprop:IsMain="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="XXXDef" msprop:SchemaName="Ice">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Company" msprop:ReadOnly="True" msprop:Like="Company.Company" msprop:Format="x(8)" type="xs:string" />
+                <xs:element name="ProductID" msdata:Caption="Product" msprop:ReadOnly="True" msprop:Like="DashBdDef.ProductID" msprop:Format="x(2)" type="xs:string" />
+                <xs:element name="TypeCode" msdata:Caption="Type" msprop:ReadOnly="True" msprop:Like="XXXDef.TypeCode" msprop:Format="x(20)" type="xs:string" />
+                <xs:element name="Key1" msdata:Caption="Key 1" msprop:Like="XXXDef.Key1" msprop:Format="x(50)" type="xs:string" />
+                <xs:element name="Key2" msdata:Caption="Key 2" msprop:Like="XXXDef.Key2" msprop:Format="x(100)" type="xs:string" />
+                <xs:element name="Key3" msdata:Caption="Key 3" msprop:Like="XXXDef.Key3" msprop:Format="x(50)" type="xs:string" />
+                <xs:element name="Description" msprop:Format="x(60)" type="xs:string" minOccurs="0" />
+                <xs:element name="LastUpdated" msdata:Caption="Last Updated" msprop:ReadOnly="True" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="LastUpdatedBy" msdata:Caption="User ID" msprop:ReadOnly="True" msprop:Like="UserFile.UserID" msprop:Format="x(75)" type="xs:string" minOccurs="0" />
+                <xs:element name="Version" msprop:ReadOnly="True" msprop:Format="x(20)" type="xs:string" minOccurs="0" />
+                <xs:element name="DataBaseVersion" msprop:ReadOnly="True" msprop:Format="99999999" type="xs:int" minOccurs="0" />
+                <xs:element name="SysCharacter01" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysCharacter02" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysCharacter03" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysCharacter04" msprop:ReadOnly="True" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysCharacter05" msprop:ReadOnly="True" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysNumber01" type="xs:decimal" minOccurs="0" />
+                <xs:element name="SysNumber02" type="xs:decimal" minOccurs="0" />
+                <xs:element name="SysNumber03" type="xs:decimal" minOccurs="0" />
+                <xs:element name="SysNumber04" type="xs:decimal" minOccurs="0" />
+                <xs:element name="SysNumber05" type="xs:decimal" minOccurs="0" />
+                <xs:element name="SysDate01" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="SysDate02" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="SysDate03" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="SysDate04" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="SysDate05" type="xs:dateTime" minOccurs="0" />
+                <xs:element name="SysCheckBox01" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysCheckBox02" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysCheckBox03" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysCheckBox04" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysCheckBox05" type="xs:boolean" minOccurs="0" />
+                <xs:element name="CommentText" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="CGCCode" msprop:ReadOnly="True" msprop:Format="x(8)" type="xs:string" />
+                <xs:element name="SystemFlag" msprop:ReadOnly="True" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysRevID" msprop:SystemColumn="True" msprop:Format="&gt;&gt;,&gt;&gt;&gt;,&gt;&gt;9" type="xs:long" minOccurs="0" />
+                <xs:element name="SysRowID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:SystemColumn="True" msprop:Format="X(36)" type="xs:string" minOccurs="0" />
+                <xs:element name="SysCheckBox06" type="xs:boolean" minOccurs="0" />
+                <xs:element name="SysCheckBox07" type="xs:boolean" minOccurs="0" />
+                <xs:element name="OnMenu" msprop:ReadOnly="True" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Duplicate" msprop:ReadOnly="True" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Cosmetic" msprop:ReadOnly="True" type="xs:boolean" minOccurs="0" />
+                <xs:element name="Content" msprop:Format="x(16000)" type="xs:string" minOccurs="0" />
+                <xs:element name="BitFlag" msdata:Caption="Bit Flag" msprop:ReadOnly="True" msprop:SystemColumn="True" msprop:External="True" type="xs:int" minOccurs="0" />
+                <xs:element name="RowMod" msprop:SystemColumn="True" msprop:External="True" type="xs:string" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+      <xs:unique name="XXXDefPK_XXXDef" msdata:PrimaryKey="true">
+        <xs:selector xpath=".//mstns:XXXDef" />
+        <xs:field xpath="mstns:Company" />
+        <xs:field xpath="mstns:ProductID" />
+        <xs:field xpath="mstns:TypeCode" />
+        <xs:field xpath="mstns:CGCCode" />
+        <xs:field xpath="mstns:Key1" />
+        <xs:field xpath="mstns:Key2" />
+        <xs:field xpath="mstns:Key3" />
+      </xs:unique>
+    </xs:element>
+  </xs:schema>
+  <XXXDef>
+    <Company>PI04</Company>
+    <ProductID>EP</ProductID>
+    <TypeCode>Customization</TypeCode>
+    <Key1>PII_ARInvoiceEntry</Key1>
+    <Key2>App.ARInvoiceEntry.ARInvoiceForm</Key2>
+    <Key3 />
+    <Description>PII AR Invoice Entry</Description>
+    <LastUpdated>2021-09-16T00:00:00-04:00</LastUpdated>
+    <LastUpdatedBy>manager</LastUpdatedBy>
+    <Version>9/16/2021 12:03:20 P</Version>
+    <DataBaseVersion>0</DataBaseVersion>
+    <SysCharacter01 />
+    <SysCharacter02 />
+    <SysCharacter03 />
+    <SysCharacter04>Pass</SysCharacter04>
+    <SysCharacter05>3.2.700.0</SysCharacter05>
+    <SysNumber01>0.000000000</SysNumber01>
+    <SysNumber02>0.000000000</SysNumber02>
+    <SysNumber03>0.000000000</SysNumber03>
+    <SysNumber04>0.000000000</SysNumber04>
+    <SysNumber05>0.000000000</SysNumber05>
+    <SysCheckBox01>false</SysCheckBox01>
+    <SysCheckBox02>false</SysCheckBox02>
+    <SysCheckBox03>false</SysCheckBox03>
+    <SysCheckBox04>false</SysCheckBox04>
+    <SysCheckBox05>false</SysCheckBox05>
+    <CommentText />
+    <CGCCode />
+    <SystemFlag>false</SystemFlag>
+    <SysRevID>79821770</SysRevID>
+    <SysRowID>a4ae789f-8e4f-4a5f-a4ca-bb303963c379</SysRowID>
+    <SysCheckBox06>false</SysCheckBox06>
+    <SysCheckBox07>false</SysCheckBox07>
+    <OnMenu>false</OnMenu>
+    <Duplicate>false</Duplicate>
+    <Cosmetic>false</Cosmetic>
+    <Content>&lt;CustomizationDS xmlns="http://tempuri.org/XMLSchema.xsd"&gt;
+  &lt;xs:schema id="CustomizationDS" targetNamespace="http://tempuri.org/XMLSchema.xsd" xmlns:mstns="http://tempuri.org/XMLSchema.xsd" xmlns="http://tempuri.org/XMLSchema.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified"&gt;
+    &lt;xs:element name="CustomizationDS" msdata:IsDataSet="true" msdata:Locale="" msprop:BuildVersion="3.2.700.0"&gt;
+      &lt;xs:complexType&gt;
+        &lt;xs:choice minOccurs="0" maxOccurs="unbounded"&gt;
+          &lt;xs:element name="Controls"&gt;
+            &lt;xs:complexType&gt;
+              &lt;xs:sequence&gt;
+                &lt;xs:element name="FormsID" type="xs:string" /&gt;
+                &lt;xs:element name="ControlName" type="xs:string" /&gt;
+                &lt;xs:element name="Key" type="xs:string" /&gt;
+                &lt;xs:element name="ParentControlKey" type="xs:string" /&gt;
+                &lt;xs:element name="ControlType" type="xs:string" /&gt;
+                &lt;xs:element name="Company" type="xs:string" /&gt;
+                &lt;xs:element name="Plant" type="xs:string" /&gt;
+                &lt;xs:element name="DcdUserId" type="xs:string" /&gt;
+                &lt;xs:element name="GroupID" type="xs:string" /&gt;
+                &lt;xs:element name="ControlsID" type="xs:string" /&gt;
+              &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+          &lt;/xs:element&gt;
+          &lt;xs:element name="Properties"&gt;
+            &lt;xs:complexType&gt;
+              &lt;xs:sequence&gt;
+                &lt;xs:element name="FormsID" type="xs:string" /&gt;
+                &lt;xs:element name="ControlName" type="xs:string" /&gt;
+                &lt;xs:element name="Key" type="xs:string" /&gt;
+                &lt;xs:element name="PropertyName" type="xs:string" /&gt;
+                &lt;xs:element name="PropertyValue" type="xs:string" /&gt;
+                &lt;xs:element name="Company" type="xs:string" /&gt;
+                &lt;xs:element name="Plant" type="xs:string" /&gt;
+                &lt;xs:element name="DcdUserID" type="xs:string" /&gt;
+                &lt;xs:element name="GroupID" type="xs:string" /&gt;
+                &lt;xs:element name="PropertiesID" type="xs:string" /&gt;
+              &lt;/xs:sequence&gt;
+            &lt;/xs:complexType&gt;
+          &lt;/xs:element&gt;
+        &lt;/xs:choice&gt;
+      &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:schema&gt;
+  &lt;Controls&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;erp.adapters.salesorder.dll&lt;/ControlName&gt;
+    &lt;Key&gt;EpiString.ExecutionPath*erp.adapters.salesorder.dll&lt;/Key&gt;
+    &lt;ParentControlKey /&gt;
+    &lt;ControlType&gt;AssemblyReference&lt;/ControlType&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserId /&gt;
+    &lt;GroupID /&gt;
+    &lt;ControlsID /&gt;
+  &lt;/Controls&gt;
+  &lt;Controls&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;epicor.servicemodel.dll&lt;/ControlName&gt;
+    &lt;Key&gt;EpiString.ExecutionPath*epicor.servicemodel.dll&lt;/Key&gt;
+    &lt;ParentControlKey /&gt;
+    &lt;ControlType&gt;AssemblyReference&lt;/ControlType&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserId /&gt;
+    &lt;GroupID /&gt;
+    &lt;ControlsID /&gt;
+  &lt;/Controls&gt;
+  &lt;Controls&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;erp.common.contractinterfaces.dll&lt;/ControlName&gt;
+    &lt;Key&gt;EpiString.ExecutionPath*erp.common.contractinterfaces.dll&lt;/Key&gt;
+    &lt;ParentControlKey /&gt;
+    &lt;ControlType&gt;AssemblyReference&lt;/ControlType&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserId /&gt;
+    &lt;GroupID /&gt;
+    &lt;ControlsID /&gt;
+  &lt;/Controls&gt;
+  &lt;Controls&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;ice.core.session.dll&lt;/ControlName&gt;
+    &lt;Key&gt;EpiString.ExecutionPath*ice.core.session.dll&lt;/Key&gt;
+    &lt;ParentControlKey /&gt;
+    &lt;ControlType&gt;AssemblyReference&lt;/ControlType&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserId /&gt;
+    &lt;GroupID /&gt;
+    &lt;ControlsID /&gt;
+  &lt;/Controls&gt;
+  &lt;Controls&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;erp.contracts.bo.salesorder.dll&lt;/ControlName&gt;
+    &lt;Key&gt;EpiString.ExecutionPath*erp.contracts.bo.salesorder.dll&lt;/Key&gt;
+    &lt;ParentControlKey /&gt;
+    &lt;ControlType&gt;AssemblyReference&lt;/ControlType&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserId /&gt;
+    &lt;GroupID /&gt;
+    &lt;ControlsID /&gt;
+  &lt;/Controls&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpGroupInfo&lt;/ControlName&gt;
+    &lt;Key&gt;d65adf17-ac82-4b1c-a67a-c8f8ff24615e&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpGroupInfo&lt;/ControlName&gt;
+    &lt;Key&gt;d65adf17-ac82-4b1c-a67a-c8f8ff24615e&lt;/Key&gt;
+    &lt;PropertyName&gt;Anchor&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;Top, Left&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpGroupInfo&lt;/ControlName&gt;
+    &lt;Key&gt;d65adf17-ac82-4b1c-a67a-c8f8ff24615e&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorTop&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;8&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpGroupInfo&lt;/ControlName&gt;
+    &lt;Key&gt;d65adf17-ac82-4b1c-a67a-c8f8ff24615e&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorLeft&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;8&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpGroupInfo&lt;/ControlName&gt;
+    &lt;Key&gt;d65adf17-ac82-4b1c-a67a-c8f8ff24615e&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorWidth&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;720&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grpGroupInfo&lt;/ControlName&gt;
+    &lt;Key&gt;d65adf17-ac82-4b1c-a67a-c8f8ff24615e&lt;/Key&gt;
+    &lt;PropertyName&gt;AnchorHeight&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;103&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;Customization&lt;/ControlName&gt;
+    &lt;Key&gt;ca8acbbd-23e8-426c-a330-92907659cc2c&lt;/Key&gt;
+    &lt;PropertyName&gt;Script&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;// **************************************************
+// Custom code for ARInvoiceForm
+// Created: 9/14/2021 9:11:55 AM
+// **************************************************
+//
+//	REVISION LOG
+//
+//	eb1 09/14/21 eric blackwelder @ compudata
+//		new customization
+//		add references to:
+//			Ice.Core.Session.dll
+//			Epicor.ServiceModel.dll
+//			Erp.Common.ContractInterfaces.dll
+//			Erp.Contracts.BO.SalesOrder.dll
+//			Erp.Adapters.SalesOrder.dll
+//
+// **************************************************
+
+extern alias Erp_Contracts_BO_ARInvoice;
+extern alias Erp_Contracts_BO_ARPromissoryNotes;
+extern alias Erp_Contracts_BO_ARInvSearch;
+extern alias Erp_Contracts_BO_ARInvcDtlSearch;
+extern alias Erp_Contracts_BO_Customer;
+extern alias Erp_Contracts_BO_Company;
+extern alias Erp_Contracts_BO_Part;
+extern alias Erp_Adapters_SalesOrder;
+extern alias Erp_Common_ContractInterfaces;
+extern alias Erp_Contracts_BO_SalesOrder;
+
+
+using System;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Windows.Forms;
+using Erp.Adapters;
+using Erp.UI;
+using Ice.Lib;
+using Ice.Adapters;
+using Ice.Lib.Customization;
+using Ice.Lib.ExtendedProps;
+using Ice.Lib.Framework;
+using Ice.Lib.Searches;
+using Ice.UI.FormFunctions;
+
+using Erp.Proxy.BO;
+using Ice.Core;
+using System.Collections.Generic;
+using Epicor.Mfg.Lib;
+using Epicor.ServiceModel.Channels;
+using Erp.Contracts;
+using Erp.BO;	
+using Ice.Common;
+
+
+public class Script
+{
+	// ** Wizard Insert Location - Do Not Remove 'Begin/End Wizard Added Module Level Variables' Comments! **
+	// Begin Wizard Added Module Level Variables **
+
+	private EpiBaseAdapter oTrans_adapter;
+	private EpiBaseAdapter oTrans_originalAdapter;
+	private EpiBaseAdapter oTrans_invSearchAdapter;
+	private EpiDataView edvInvcHead;
+	private EpiDataView edvInvcDtl;
+	// End Wizard Added Module Level Variables **
+
+	// Add Custom Module Level Variables Here **
+
+	private static Erp.Proxy.BO.SalesOrderImpl SalesOrderImpl;
+	private SalesOrderImpl salesOrder;
+	private SalesOrderDataSet SalesOrderDS; 
+		
+
+	public void InitializeCustomCode()
+	{
+		// ** Wizard Insert Location - Do not delete 'Begin/End Wizard Added Variable Initialization' lines **
+		// Begin Wizard Added Variable Initialization
+
+		this.oTrans_adapter = ((EpiBaseAdapter)(this.csm.TransAdaptersHT["oTrans_adapter"]));
+		this.oTrans_adapter.AfterAdapterMethod += new AfterAdapterMethod(this.oTrans_adapter_AfterAdapterMethod);
+		this.oTrans_originalAdapter = ((EpiBaseAdapter)(this.csm.TransAdaptersHT["oTrans_originalAdapter"]));
+		this.oTrans_originalAdapter.AfterAdapterMethod += new AfterAdapterMethod(this.oTrans_originalAdapter_AfterAdapterMethod);
+		this.oTrans_invSearchAdapter = ((EpiBaseAdapter)(this.csm.TransAdaptersHT["oTrans_invSearchAdapter"]));
+		this.oTrans_invSearchAdapter.AfterAdapterMethod += new AfterAdapterMethod(this.oTrans_invSearchAdapter_AfterAdapterMethod);
+		this.InvcDtl_Column.ColumnChanged += new DataColumnChangeEventHandler(this.InvcDtl_AfterFieldChange);
+		this.edvInvcHead = ((EpiDataView)(this.oTrans.EpiDataViews["InvcHead"]));
+		this.edvInvcHead.EpiViewNotification += new EpiViewNotification(this.edvInvcHead_EpiViewNotification);
+		this.edvInvcDtl = ((EpiDataView)(this.oTrans.EpiDataViews["InvcDtl"]));
+		this.edvInvcDtl.EpiViewNotification += new EpiViewNotification(this.edvInvcDtl_EpiViewNotification);
+		// End Wizard Added Variable Initialization
+
+		// Begin Wizard Added Custom Method Calls
+
+		// End Wizard Added Custom Method Calls
+
+	
+		Session session = (Session)oTrans.Session;
+		//SalesOrderImpl salesOrder = WCFServiceSupport.CreateImpl&amp;lt;SalesOrderImpl&amp;gt;(session, ImplBase&amp;lt;SalesOrderSvcContract&amp;gt;.UriPath);
+		salesOrder = WCFServiceSupport.CreateImpl&amp;lt;SalesOrderImpl&amp;gt;(session, ImplBase&amp;lt;SalesOrderSvcContract&amp;gt;.UriPath);
+		//SalesOrderDataSet SalesOrderDS; 
+		SalesOrderDS = new SalesOrderDataSet();
+/*
+		bool morePages = false;
+		SalesOrderDS = salesOrder.GetByID(47482);
+		decimal dExtPrice = 0;
+		if(SalesOrderDS.OrderHed.Rows.Count &amp;gt; 0)
+		{
+			foreach (DataRow row in SalesOrderDS.OrderDtl)
+			{
+				if((int)row["OrderLine"] == 1)
+				{
+//					MessageBox.Show("line 1 UnitPrice: " + row["UnitPrice"]);
+//					MessageBox.Show("line 1 SellingQuantity: " + row["SellingQuantity"]);
+//					MessageBox.Show("line 1 DiscountPercent: " + row["DiscountPercent"]);
+//					MessageBox.Show("line 1 Discount: " + row["Discount"]);
+					dExtPrice = ((decimal)row["SellingQuantity"] * (decimal)row["UnitPrice"]) - (decimal)row["Discount"];
+				}
+			}
+			foreach (DataRow row in SalesOrderDS.OrderMsc)
+			{
+				if((int)row["OrderLine"] == 1)
+				{
+					//NOTE COULD BE MULTIPLE
+//					MessageBox.Show("line 1 MiscAmt: " + row["MiscAmt"]);
+					dExtPrice += (decimal)row["MiscAmt"];
+				}
+			}
+			foreach (DataRow row in SalesOrderDS.OrderRelTax)
+			{
+				if((int)row["OrderLine"] == 1)
+				{
+					//NOTE COULD BE MULTIPLE
+//					MessageBox.Show("line 1 TaxAmt: " + row["TaxAmt"]);
+					dExtPrice += (decimal)row["TaxAmt"];
+				}
+			}
+		}
+MessageBox.Show("dExtPrice: " + dExtPrice.ToString());
+*/
+
+//zzz
+
+	}
+
+	public void DestroyCustomCode()
+	{
+		// ** Wizard Insert Location - Do not delete 'Begin/End Wizard Added Object Disposal' lines **
+		// Begin Wizard Added Object Disposal
+
+		this.oTrans_adapter.AfterAdapterMethod -= new AfterAdapterMethod(this.oTrans_adapter_AfterAdapterMethod);
+		this.oTrans_adapter = null;
+		this.oTrans_originalAdapter.AfterAdapterMethod -= new AfterAdapterMethod(this.oTrans_originalAdapter_AfterAdapterMethod);
+		this.oTrans_originalAdapter = null;
+		this.oTrans_invSearchAdapter.AfterAdapterMethod -= new AfterAdapterMethod(this.oTrans_invSearchAdapter_AfterAdapterMethod);
+		this.oTrans_invSearchAdapter = null;
+		this.InvcDtl_Column.ColumnChanged -= new DataColumnChangeEventHandler(this.InvcDtl_AfterFieldChange);
+		this.edvInvcHead.EpiViewNotification -= new EpiViewNotification(this.edvInvcHead_EpiViewNotification);
+		this.edvInvcHead = null;
+		this.edvInvcDtl.EpiViewNotification -= new EpiViewNotification(this.edvInvcDtl_EpiViewNotification);
+		this.edvInvcDtl = null;
+		// End Wizard Added Object Disposal
+
+		// Begin Custom Code Disposal
+
+		// End Custom Code Disposal
+	}
+
+	private void oTrans_adapter_AfterAdapterMethod(object sender, AfterAdapterMethodArgs args)
+	{
+		// ** Argument Properties and Uses **
+		// ** args.MethodName **
+		// ** Add Event Handler Code **
+
+		// ** Use MessageBox to find adapter method name
+		// EpiMessageBox.Show(args.MethodName)
+//MessageBox.Show("oTrans_adapter : " + args.MethodName);
+		switch (args.MethodName)
+		{
+			case "GetNewInvcDtl":
+//MessageBox.Show("x");
+				break;
+		}
+
+	}
+
+	private void oTrans_originalAdapter_AfterAdapterMethod(object sender, AfterAdapterMethodArgs args)
+	{
+		// ** Argument Properties and Uses **
+		// ** args.MethodName **
+		// ** Add Event Handler Code **
+
+		// ** Use MessageBox to find adapter method name
+		// EpiMessageBox.Show(args.MethodName)
+//MessageBox.Show("oTrans_originalAdapter : " + args.MethodName);
+		switch (args.MethodName)
+		{
+			case "Update":
+				break;
+		}
+
+	}
+
+	private void oTrans_invSearchAdapter_AfterAdapterMethod(object sender, AfterAdapterMethodArgs args)
+	{
+		// ** Argument Properties and Uses **
+		// ** args.MethodName **
+		// ** Add Event Handler Code **
+
+		// ** Use MessageBox to find adapter method name
+		// EpiMessageBox.Show(args.MethodName)
+//MessageBox.Show("oTrans_invSearchAdapter : " + args.MethodName);
+		switch (args.MethodName)
+		{
+			case "Update":
+				break;
+		}
+
+	}
+
+	private void InvcDtl_AfterFieldChange(object sender, DataColumnChangeEventArgs args)
+	{
+		// ** Argument Properties and Uses **
+		// args.Row["FieldName"]
+		// args.Column, args.ProposedValue, args.Row
+		// Add Event Handler Code
+//MessageBox.Show("InvcDtl_AfterFieldChange : " + args.Column.ColumnName);
+		switch (args.Column.ColumnName)
+		{
+			case "OrderLine":
+				//NOTE: this fired after the bpm
+
+//MessageBox.Show("InvcDtl_AfterFieldChange : " + args.Column.ColumnName);
+//MessageBox.Show("InvoiceType : " + edvInvcHead.CurrentDataRow["InvoiceType"]);
+	if((string)edvInvcHead.CurrentDataRow["InvoiceType"] == "ADV")
+	{
+
+		//bool morePages = false;
+		SalesOrderDS = salesOrder.GetByID((int)edvInvcDtl.CurrentDataRow["OrderNum"]);
+		decimal dExtPrice = 0;
+		if(SalesOrderDS.OrderHed.Rows.Count &amp;gt; 0)
+		{
+			foreach (DataRow row in SalesOrderDS.OrderDtl)
+			{
+				if((int)row["OrderLine"] == 1)
+				{
+//					MessageBox.Show("line 1 UnitPrice: " + row["UnitPrice"]);
+//					MessageBox.Show("line 1 SellingQuantity: " + row["SellingQuantity"]);
+//					MessageBox.Show("line 1 DiscountPercent: " + row["DiscountPercent"]);
+//					MessageBox.Show("line 1 Discount: " + row["Discount"]);
+					dExtPrice = ((decimal)row["SellingQuantity"] * (decimal)row["UnitPrice"]) - (decimal)row["Discount"];
+				}
+			}
+			foreach (DataRow row in SalesOrderDS.OrderMsc)
+			{
+				if((int)row["OrderLine"] == 1)
+				{
+					//NOTE COULD BE MULTIPLE
+//					MessageBox.Show("line 1 MiscAmt: " + row["MiscAmt"]);
+					dExtPrice += (decimal)row["MiscAmt"];
+				}
+			}
+			foreach (DataRow row in SalesOrderDS.OrderRelTax)
+			{
+				if((int)row["OrderLine"] == 1)
+				{
+					//NOTE COULD BE MULTIPLE
+//					MessageBox.Show("line 1 TaxAmt: " + row["TaxAmt"]);
+					dExtPrice += (decimal)row["TaxAmt"];
+				}
+			}
+		}
+//MessageBox.Show("dExtPrice: " + dExtPrice.ToString());
+
+		edvInvcDtl.CurrentDataRow["DspDocExtPrice"] = dExtPrice;
+
+
+	}
+
+ 
+
+				break;
+		}
+	}
+
+//delete?:
+	private void edvInvcHead_EpiViewNotification(EpiDataView view, EpiNotifyArgs args)
+	{
+		// ** Argument Properties and Uses **
+		// view.dataView[args.Row]["FieldName"]
+		// args.Row, args.Column, args.Sender, args.NotifyType
+		// NotifyType.Initialize, NotifyType.AddRow, NotifyType.DeleteRow, NotifyType.InitLastView, NotifyType.InitAndResetTreeNodes
+		if ((args.NotifyType == EpiTransaction.NotifyType.AddRow))
+		{
+			if ((args.Row &amp;gt; -1))
+			{
+			}
+		}
+	}
+
+//delete?:
+	private void edvInvcDtl_EpiViewNotification(EpiDataView view, EpiNotifyArgs args)
+	{
+		// ** Argument Properties and Uses **
+		// view.dataView[args.Row]["FieldName"]
+		// args.Row, args.Column, args.Sender, args.NotifyType
+		// NotifyType.Initialize, NotifyType.AddRow, NotifyType.DeleteRow, NotifyType.InitLastView, NotifyType.InitAndResetTreeNodes
+		if ((args.NotifyType == EpiTransaction.NotifyType.AddRow))
+		{
+			if ((args.Row &amp;gt; -1))
+			{
+			}
+		}
+	}
+
+}
+
+
+
+
+
+&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;Customization&lt;/ControlName&gt;
+    &lt;Key&gt;ca8acbbd-23e8-426c-a330-92907659cc2c&lt;/Key&gt;
+    &lt;PropertyName&gt;Language&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;CSharp&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtPartNum&lt;/ControlName&gt;
+    &lt;Key&gt;b7505712-6225-4cce-90bb-c39ee8c9efae&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;txtPartNum&lt;/ControlName&gt;
+    &lt;Key&gt;b7505712-6225-4cce-90bb-c39ee8c9efae&lt;/Key&gt;
+    &lt;PropertyName&gt;EpiBinding&lt;/PropertyName&gt;
+    &lt;PropertyValue /&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;grdList&lt;/ControlName&gt;
+    &lt;Key&gt;fe13aebf-c0cd-4ae4-ad55-ece046bcf3ce&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+&lt;/CustomizationDS&gt;</Content>
+    <BitFlag>0</BitFlag>
+    <RowMod />
+  </XXXDef>
+</GenXDataDataSet>
