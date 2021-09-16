@@ -78,7 +78,7 @@
     <Description>PII AR Invoice Entry</Description>
     <LastUpdated>2021-09-16T00:00:00-04:00</LastUpdated>
     <LastUpdatedBy>manager</LastUpdatedBy>
-    <Version>9/16/2021 12:03:20 P</Version>
+    <Version>9/16/2021 4:28:48 PM</Version>
     <DataBaseVersion>0</DataBaseVersion>
     <SysCharacter01 />
     <SysCharacter02 />
@@ -98,11 +98,11 @@
     <CommentText />
     <CGCCode />
     <SystemFlag>false</SystemFlag>
-    <SysRevID>79821770</SysRevID>
+    <SysRevID>79823588</SysRevID>
     <SysRowID>a4ae789f-8e4f-4a5f-a4ca-bb303963c379</SysRowID>
     <SysCheckBox06>false</SysCheckBox06>
     <SysCheckBox07>false</SysCheckBox07>
-    <OnMenu>false</OnMenu>
+    <OnMenu>true</OnMenu>
     <Duplicate>false</Duplicate>
     <Cosmetic>false</Cosmetic>
     <Content>&lt;CustomizationDS xmlns="http://tempuri.org/XMLSchema.xsd"&gt;
@@ -523,11 +523,13 @@ MessageBox.Show("dExtPrice: " + dExtPrice.ToString());
 		//bool morePages = false;
 		SalesOrderDS = salesOrder.GetByID((int)edvInvcDtl.CurrentDataRow["OrderNum"]);
 		decimal dExtPrice = 0;
+		decimal dTax = 0;
 		if(SalesOrderDS.OrderHed.Rows.Count &amp;gt; 0)
 		{
 			foreach (DataRow row in SalesOrderDS.OrderDtl)
 			{
-				if((int)row["OrderLine"] == 1)
+//				if((int)row["OrderLine"] == 1)
+				if((int)row["OrderLine"] == (int)edvInvcDtl.CurrentDataRow["OrderLine"])
 				{
 //					MessageBox.Show("line 1 UnitPrice: " + row["UnitPrice"]);
 //					MessageBox.Show("line 1 SellingQuantity: " + row["SellingQuantity"]);
@@ -538,7 +540,8 @@ MessageBox.Show("dExtPrice: " + dExtPrice.ToString());
 			}
 			foreach (DataRow row in SalesOrderDS.OrderMsc)
 			{
-				if((int)row["OrderLine"] == 1)
+//				if((int)row["OrderLine"] == 1)
+				if((int)row["OrderLine"] == (int)edvInvcDtl.CurrentDataRow["OrderLine"])
 				{
 					//NOTE COULD BE MULTIPLE
 //					MessageBox.Show("line 1 MiscAmt: " + row["MiscAmt"]);
@@ -547,17 +550,21 @@ MessageBox.Show("dExtPrice: " + dExtPrice.ToString());
 			}
 			foreach (DataRow row in SalesOrderDS.OrderRelTax)
 			{
-				if((int)row["OrderLine"] == 1)
+//				if((int)row["OrderLine"] == 1)
+				if((int)row["OrderLine"] == (int)edvInvcDtl.CurrentDataRow["OrderLine"])
 				{
 					//NOTE COULD BE MULTIPLE
 //					MessageBox.Show("line 1 TaxAmt: " + row["TaxAmt"]);
-					dExtPrice += (decimal)row["TaxAmt"];
+					//dExtPrice += (decimal)row["TaxAmt"];
+					dTax  += (decimal)row["TaxAmt"];
 				}
 			}
 		}
 //MessageBox.Show("dExtPrice: " + dExtPrice.ToString());
 
 		edvInvcDtl.CurrentDataRow["DspDocExtPrice"] = dExtPrice;
+		//edvInvcDtl.CurrentDataRow["DspLineTax"] = dTax;
+		edvInvcDtl.CurrentDataRow["DspDocLineTax"] = dTax;
 
 
 	}
@@ -653,6 +660,78 @@ MessageBox.Show("dExtPrice: " + dExtPrice.ToString());
     &lt;Key&gt;fe13aebf-c0cd-4ae4-ad55-ece046bcf3ce&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
     &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblTax&lt;/ControlName&gt;
+    &lt;Key&gt;0ba6acd7-0a8b-455b-999f-e4423eb2b6ff&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;curTax&lt;/ControlName&gt;
+    &lt;Key&gt;181eea03-8919-48fb-a2dc-f3db74baa5d0&lt;/Key&gt;
+    &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblTax&lt;/ControlName&gt;
+    &lt;Key&gt;0ba6acd7-0a8b-455b-999f-e4423eb2b6ff&lt;/Key&gt;
+    &lt;PropertyName&gt;Top&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;101&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblTax&lt;/ControlName&gt;
+    &lt;Key&gt;0ba6acd7-0a8b-455b-999f-e4423eb2b6ff&lt;/Key&gt;
+    &lt;PropertyName&gt;Left&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;6&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblTax&lt;/ControlName&gt;
+    &lt;Key&gt;0ba6acd7-0a8b-455b-999f-e4423eb2b6ff&lt;/Key&gt;
+    &lt;PropertyName&gt;Width&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;173&lt;/PropertyValue&gt;
+    &lt;Company /&gt;
+    &lt;Plant /&gt;
+    &lt;DcdUserID /&gt;
+    &lt;GroupID /&gt;
+    &lt;PropertiesID /&gt;
+  &lt;/Properties&gt;
+  &lt;Properties&gt;
+    &lt;FormsID&gt;ARInvoiceForm&lt;/FormsID&gt;
+    &lt;ControlName&gt;lblTax&lt;/ControlName&gt;
+    &lt;Key&gt;0ba6acd7-0a8b-455b-999f-e4423eb2b6ff&lt;/Key&gt;
+    &lt;PropertyName&gt;Height&lt;/PropertyName&gt;
+    &lt;PropertyValue&gt;20&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
