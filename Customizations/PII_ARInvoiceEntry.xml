@@ -76,9 +76,9 @@
     <Key2>App.ARInvoiceEntry.ARInvoiceForm</Key2>
     <Key3 />
     <Description>PII AR Invoice Entry</Description>
-    <LastUpdated>2021-09-16T00:00:00-04:00</LastUpdated>
+    <LastUpdated>2021-09-21T00:00:00-04:00</LastUpdated>
     <LastUpdatedBy>manager</LastUpdatedBy>
-    <Version>9/16/2021 4:28:48 PM</Version>
+    <Version>9/21/2021 8:57:54 AM</Version>
     <DataBaseVersion>0</DataBaseVersion>
     <SysCharacter01 />
     <SysCharacter02 />
@@ -98,7 +98,7 @@
     <CommentText />
     <CGCCode />
     <SystemFlag>false</SystemFlag>
-    <SysRevID>79823588</SysRevID>
+    <SysRevID>80104269</SysRevID>
     <SysRowID>a4ae789f-8e4f-4a5f-a4ca-bb303963c379</SysRowID>
     <SysCheckBox06>false</SysCheckBox06>
     <SysCheckBox07>false</SysCheckBox07>
@@ -211,7 +211,7 @@
     &lt;ControlName&gt;grpGroupInfo&lt;/ControlName&gt;
     &lt;Key&gt;d65adf17-ac82-4b1c-a67a-c8f8ff24615e&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
@@ -300,6 +300,9 @@
 //			Erp.Adapters.SalesOrder.dll
 //
 // **************************************************
+
+extern alias Erp_Contracts_BO_OrderRelSearch;
+
 
 extern alias Erp_Contracts_BO_ARInvoice;
 extern alias Erp_Contracts_BO_ARPromissoryNotes;
@@ -564,7 +567,14 @@ MessageBox.Show("dExtPrice: " + dExtPrice.ToString());
 
 		edvInvcDtl.CurrentDataRow["DspDocExtPrice"] = dExtPrice;
 		//edvInvcDtl.CurrentDataRow["DspLineTax"] = dTax;
-		edvInvcDtl.CurrentDataRow["DspDocLineTax"] = dTax;
+//		edvInvcDtl.CurrentDataRow["DspDocLineTax"] = dTax;
+		
+
+//this not help with value staying
+//		edvInvcDtl.CurrentDataRow["DspLineTax"] = dTax;
+		//oTrans.Update();
+//		oTrans.NotifyAll();
+//		oTrans.Update(true);
 
 
 	}
@@ -606,6 +616,7 @@ MessageBox.Show("dExtPrice: " + dExtPrice.ToString());
 	}
 
 }
+
 
 
 
@@ -659,7 +670,7 @@ MessageBox.Show("dExtPrice: " + dExtPrice.ToString());
     &lt;ControlName&gt;grdList&lt;/ControlName&gt;
     &lt;Key&gt;fe13aebf-c0cd-4ae4-ad55-ece046bcf3ce&lt;/Key&gt;
     &lt;PropertyName&gt;ChildIndex&lt;/PropertyName&gt;
-    &lt;PropertyValue&gt;0&lt;/PropertyValue&gt;
+    &lt;PropertyValue&gt;1&lt;/PropertyValue&gt;
     &lt;Company /&gt;
     &lt;Plant /&gt;
     &lt;DcdUserID /&gt;
