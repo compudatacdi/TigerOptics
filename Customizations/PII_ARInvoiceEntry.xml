@@ -78,7 +78,7 @@
     <Description>PII AR Invoice Entry</Description>
     <LastUpdated>2021-09-21T00:00:00-04:00</LastUpdated>
     <LastUpdatedBy>manager</LastUpdatedBy>
-    <Version>9/21/2021 8:57:54 AM</Version>
+    <Version>9/21/2021 9:59:48 AM</Version>
     <DataBaseVersion>0</DataBaseVersion>
     <SysCharacter01 />
     <SysCharacter02 />
@@ -98,7 +98,7 @@
     <CommentText />
     <CGCCode />
     <SystemFlag>false</SystemFlag>
-    <SysRevID>80104269</SysRevID>
+    <SysRevID>80105034</SysRevID>
     <SysRowID>a4ae789f-8e4f-4a5f-a4ca-bb303963c379</SysRowID>
     <SysCheckBox06>false</SysCheckBox06>
     <SysCheckBox07>false</SysCheckBox07>
@@ -366,16 +366,11 @@ public class Script
 		// Begin Wizard Added Variable Initialization
 
 		this.oTrans_adapter = ((EpiBaseAdapter)(this.csm.TransAdaptersHT["oTrans_adapter"]));
-		this.oTrans_adapter.AfterAdapterMethod += new AfterAdapterMethod(this.oTrans_adapter_AfterAdapterMethod);
 		this.oTrans_originalAdapter = ((EpiBaseAdapter)(this.csm.TransAdaptersHT["oTrans_originalAdapter"]));
-		this.oTrans_originalAdapter.AfterAdapterMethod += new AfterAdapterMethod(this.oTrans_originalAdapter_AfterAdapterMethod);
 		this.oTrans_invSearchAdapter = ((EpiBaseAdapter)(this.csm.TransAdaptersHT["oTrans_invSearchAdapter"]));
-		this.oTrans_invSearchAdapter.AfterAdapterMethod += new AfterAdapterMethod(this.oTrans_invSearchAdapter_AfterAdapterMethod);
 		this.InvcDtl_Column.ColumnChanged += new DataColumnChangeEventHandler(this.InvcDtl_AfterFieldChange);
 		this.edvInvcHead = ((EpiDataView)(this.oTrans.EpiDataViews["InvcHead"]));
-		this.edvInvcHead.EpiViewNotification += new EpiViewNotification(this.edvInvcHead_EpiViewNotification);
 		this.edvInvcDtl = ((EpiDataView)(this.oTrans.EpiDataViews["InvcDtl"]));
-		this.edvInvcDtl.EpiViewNotification += new EpiViewNotification(this.edvInvcDtl_EpiViewNotification);
 		// End Wizard Added Variable Initialization
 
 		// Begin Wizard Added Custom Method Calls
@@ -436,16 +431,11 @@ MessageBox.Show("dExtPrice: " + dExtPrice.ToString());
 		// ** Wizard Insert Location - Do not delete 'Begin/End Wizard Added Object Disposal' lines **
 		// Begin Wizard Added Object Disposal
 
-		this.oTrans_adapter.AfterAdapterMethod -= new AfterAdapterMethod(this.oTrans_adapter_AfterAdapterMethod);
 		this.oTrans_adapter = null;
-		this.oTrans_originalAdapter.AfterAdapterMethod -= new AfterAdapterMethod(this.oTrans_originalAdapter_AfterAdapterMethod);
 		this.oTrans_originalAdapter = null;
-		this.oTrans_invSearchAdapter.AfterAdapterMethod -= new AfterAdapterMethod(this.oTrans_invSearchAdapter_AfterAdapterMethod);
 		this.oTrans_invSearchAdapter = null;
 		this.InvcDtl_Column.ColumnChanged -= new DataColumnChangeEventHandler(this.InvcDtl_AfterFieldChange);
-		this.edvInvcHead.EpiViewNotification -= new EpiViewNotification(this.edvInvcHead_EpiViewNotification);
 		this.edvInvcHead = null;
-		this.edvInvcDtl.EpiViewNotification -= new EpiViewNotification(this.edvInvcDtl_EpiViewNotification);
 		this.edvInvcDtl = null;
 		// End Wizard Added Object Disposal
 
@@ -454,172 +444,61 @@ MessageBox.Show("dExtPrice: " + dExtPrice.ToString());
 		// End Custom Code Disposal
 	}
 
-	private void oTrans_adapter_AfterAdapterMethod(object sender, AfterAdapterMethodArgs args)
-	{
-		// ** Argument Properties and Uses **
-		// ** args.MethodName **
-		// ** Add Event Handler Code **
-
-		// ** Use MessageBox to find adapter method name
-		// EpiMessageBox.Show(args.MethodName)
-//MessageBox.Show("oTrans_adapter : " + args.MethodName);
-		switch (args.MethodName)
-		{
-			case "GetNewInvcDtl":
-//MessageBox.Show("x");
-				break;
-		}
-
-	}
-
-	private void oTrans_originalAdapter_AfterAdapterMethod(object sender, AfterAdapterMethodArgs args)
-	{
-		// ** Argument Properties and Uses **
-		// ** args.MethodName **
-		// ** Add Event Handler Code **
-
-		// ** Use MessageBox to find adapter method name
-		// EpiMessageBox.Show(args.MethodName)
-//MessageBox.Show("oTrans_originalAdapter : " + args.MethodName);
-		switch (args.MethodName)
-		{
-			case "Update":
-				break;
-		}
-
-	}
-
-	private void oTrans_invSearchAdapter_AfterAdapterMethod(object sender, AfterAdapterMethodArgs args)
-	{
-		// ** Argument Properties and Uses **
-		// ** args.MethodName **
-		// ** Add Event Handler Code **
-
-		// ** Use MessageBox to find adapter method name
-		// EpiMessageBox.Show(args.MethodName)
-//MessageBox.Show("oTrans_invSearchAdapter : " + args.MethodName);
-		switch (args.MethodName)
-		{
-			case "Update":
-				break;
-		}
-
-	}
-
 	private void InvcDtl_AfterFieldChange(object sender, DataColumnChangeEventArgs args)
 	{
 		// ** Argument Properties and Uses **
 		// args.Row["FieldName"]
 		// args.Column, args.ProposedValue, args.Row
 		// Add Event Handler Code
-//MessageBox.Show("InvcDtl_AfterFieldChange : " + args.Column.ColumnName);
+		//MessageBox.Show("InvcDtl_AfterFieldChange : " + args.Column.ColumnName);
 		switch (args.Column.ColumnName)
 		{
 			case "OrderLine":
 				//NOTE: this fired after the bpm
 
-//MessageBox.Show("InvcDtl_AfterFieldChange : " + args.Column.ColumnName);
-//MessageBox.Show("InvoiceType : " + edvInvcHead.CurrentDataRow["InvoiceType"]);
-	if((string)edvInvcHead.CurrentDataRow["InvoiceType"] == "ADV")
-	{
-
-		//bool morePages = false;
-		SalesOrderDS = salesOrder.GetByID((int)edvInvcDtl.CurrentDataRow["OrderNum"]);
-		decimal dExtPrice = 0;
-		decimal dTax = 0;
-		if(SalesOrderDS.OrderHed.Rows.Count &amp;gt; 0)
-		{
-			foreach (DataRow row in SalesOrderDS.OrderDtl)
-			{
-//				if((int)row["OrderLine"] == 1)
-				if((int)row["OrderLine"] == (int)edvInvcDtl.CurrentDataRow["OrderLine"])
+				if((string)edvInvcHead.CurrentDataRow["InvoiceType"] == "ADV")
 				{
-//					MessageBox.Show("line 1 UnitPrice: " + row["UnitPrice"]);
-//					MessageBox.Show("line 1 SellingQuantity: " + row["SellingQuantity"]);
-//					MessageBox.Show("line 1 DiscountPercent: " + row["DiscountPercent"]);
-//					MessageBox.Show("line 1 Discount: " + row["Discount"]);
-					dExtPrice = ((decimal)row["SellingQuantity"] * (decimal)row["UnitPrice"]) - (decimal)row["Discount"];
+			
+					//bool morePages = false;
+					SalesOrderDS = salesOrder.GetByID((int)edvInvcDtl.CurrentDataRow["OrderNum"]);
+					decimal dExtPrice = 0;
+					decimal dTax = 0;
+					if(SalesOrderDS.OrderHed.Rows.Count &amp;gt; 0)
+					{
+						foreach (DataRow row in SalesOrderDS.OrderDtl)
+						{
+							if((int)row["OrderLine"] == (int)edvInvcDtl.CurrentDataRow["OrderLine"])
+							{
+								dExtPrice = ((decimal)row["SellingQuantity"] * (decimal)row["UnitPrice"]) - (decimal)row["Discount"];
+							}
+						}
+						foreach (DataRow row in SalesOrderDS.OrderMsc)
+						{
+							if((int)row["OrderLine"] == (int)edvInvcDtl.CurrentDataRow["OrderLine"])
+							{
+								dExtPrice += (decimal)row["MiscAmt"];
+							}
+						}
+						foreach (DataRow row in SalesOrderDS.OrderRelTax)
+						{
+							if((int)row["OrderLine"] == (int)edvInvcDtl.CurrentDataRow["OrderLine"])
+							{
+								dTax  += (decimal)row["TaxAmt"];
+							}
+						}
+					}
+			
+					edvInvcDtl.CurrentDataRow["DspDocExtPrice"] = dExtPrice;
+			
 				}
-			}
-			foreach (DataRow row in SalesOrderDS.OrderMsc)
-			{
-//				if((int)row["OrderLine"] == 1)
-				if((int)row["OrderLine"] == (int)edvInvcDtl.CurrentDataRow["OrderLine"])
-				{
-					//NOTE COULD BE MULTIPLE
-//					MessageBox.Show("line 1 MiscAmt: " + row["MiscAmt"]);
-					dExtPrice += (decimal)row["MiscAmt"];
-				}
-			}
-			foreach (DataRow row in SalesOrderDS.OrderRelTax)
-			{
-//				if((int)row["OrderLine"] == 1)
-				if((int)row["OrderLine"] == (int)edvInvcDtl.CurrentDataRow["OrderLine"])
-				{
-					//NOTE COULD BE MULTIPLE
-//					MessageBox.Show("line 1 TaxAmt: " + row["TaxAmt"]);
-					//dExtPrice += (decimal)row["TaxAmt"];
-					dTax  += (decimal)row["TaxAmt"];
-				}
-			}
-		}
-//MessageBox.Show("dExtPrice: " + dExtPrice.ToString());
-
-		edvInvcDtl.CurrentDataRow["DspDocExtPrice"] = dExtPrice;
-		//edvInvcDtl.CurrentDataRow["DspLineTax"] = dTax;
-//		edvInvcDtl.CurrentDataRow["DspDocLineTax"] = dTax;
-		
-
-//this not help with value staying
-//		edvInvcDtl.CurrentDataRow["DspLineTax"] = dTax;
-		//oTrans.Update();
-//		oTrans.NotifyAll();
-//		oTrans.Update(true);
-
-
-	}
-
- 
 
 				break;
 		}
 	}
 
-//delete?:
-	private void edvInvcHead_EpiViewNotification(EpiDataView view, EpiNotifyArgs args)
-	{
-		// ** Argument Properties and Uses **
-		// view.dataView[args.Row]["FieldName"]
-		// args.Row, args.Column, args.Sender, args.NotifyType
-		// NotifyType.Initialize, NotifyType.AddRow, NotifyType.DeleteRow, NotifyType.InitLastView, NotifyType.InitAndResetTreeNodes
-		if ((args.NotifyType == EpiTransaction.NotifyType.AddRow))
-		{
-			if ((args.Row &amp;gt; -1))
-			{
-			}
-		}
-	}
 
-//delete?:
-	private void edvInvcDtl_EpiViewNotification(EpiDataView view, EpiNotifyArgs args)
-	{
-		// ** Argument Properties and Uses **
-		// view.dataView[args.Row]["FieldName"]
-		// args.Row, args.Column, args.Sender, args.NotifyType
-		// NotifyType.Initialize, NotifyType.AddRow, NotifyType.DeleteRow, NotifyType.InitLastView, NotifyType.InitAndResetTreeNodes
-		if ((args.NotifyType == EpiTransaction.NotifyType.AddRow))
-		{
-			if ((args.Row &amp;gt; -1))
-			{
-			}
-		}
-	}
 
 }
-
-
-
-
 
 
 &lt;/PropertyValue&gt;
